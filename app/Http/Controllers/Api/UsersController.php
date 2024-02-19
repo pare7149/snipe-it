@@ -82,10 +82,6 @@ class UsersController extends Controller
             $users = $users->where('users.activated', '=', $request->input('activated'));
         }
 
-        if ($request->filled('company_id')) {
-            $users = $users->where('users.company_id', '=', $request->input('company_id'));
-        }
-
         if ($request->filled('location_id')) {
             $users = $users->where('users.location_id', '=', $request->input('location_id'));
         }
@@ -267,9 +263,6 @@ class UsersController extends Controller
             $users = $users->withTrashed();
         }
 
-        $users = Company::scopeCompanyables($users);
-
-
         // Make sure the offset and limit are actually integers and do not exceed system limits
         $offset = ($request->input('offset') > $users->count()) ? $users->count() : app('api_offset_value');
         $limit = app('api_limit_value');
@@ -306,8 +299,6 @@ class UsersController extends Controller
                 'users.email',
             ]
             )->where('show_in_list', '=', '1');
-
-        $users = Company::scopeCompanyables($users);
 
         if ($request->filled('search')) {
             $users = $users->where(function ($query) use ($request) {

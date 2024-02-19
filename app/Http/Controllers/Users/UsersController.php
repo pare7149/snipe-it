@@ -45,7 +45,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $this->authorize('index', User::class);
+        $this->authorize('view', User::class);
 
         return view('users/index');
     }
