@@ -2,7 +2,7 @@
 
 return [
 
-    'asset_tag'   	=> 'Asset Tag',
+    'asset_tag'   	=> 'Inventarnummer',
     'asset_model'       => 'Modell',
     'assigned_to'   => 'Zugewiesen an',
     'book_value'  	=> 'Aktueller Wert',

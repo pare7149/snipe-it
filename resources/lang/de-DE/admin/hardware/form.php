@@ -42,7 +42,7 @@ return [
     'select_statustype'	=> 'Status Typ auswählen',
     'serial'			=> 'Seriennummer',
     'status'			=> 'Status',
-    'tag'				=> 'Asset Tag',
+    'tag'				=> 'Inventarnummer',
     'update'			=> 'Asset Update',
     'warranty'			=> 'Garantie',
         'warranty_expires'		=> 'Garantie Ablaufdatum',

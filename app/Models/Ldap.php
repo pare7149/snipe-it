@@ -116,13 +116,47 @@ class Ldap extends Model
         $filterQuery = $settings->ldap_auth_filter_query.$username;
         $filter = Setting::getSettings()->ldap_filter; //FIXME - this *does* respect the ldap filter, but I believe that AdLdap2 did *not*.
         $filterQuery = "({$filter}({$filterQuery}))";
-	\Log::debug('Filter query: '.$filterQuery);
 
-	self::bindAdminToLdap($connection);
+        \Log::debug('Filter query: '.$filterQuery);
 
         if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
             \Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
-            if (! $ldapbind = self::bindAdminToLdap($connection)) {
+	    try {
+			self::bindAdminToLdap($connection);
+			
+            if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
+                throw new Exception('Could not search LDAP: ');
+            }
+
+            if (! $entry = ldap_first_entry($connection, $results)) {
+                return false;
+            }
+    
+            if (! $user = ldap_get_attributes($connection, $entry)) {
+                return false;
+			}
+
+            $userDn = 'cn='.$user["cn"][0].','.$settings->ldap_basedn;
+
+            if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
+                \Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
+            }
+
+            if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
+                throw new Exception('Could not search LDAP: ');
+            }
+    
+            if (! $entry = ldap_first_entry($connection, $results)) {
+                return false;
+            }
+    
+            if (! $user = ldap_get_attributes($connection, $entry)) {
+                return false;
+            }
+    
+            return array_change_key_case($user);
+		}
+		catch (Exception $e) {
                 /*
                  * TODO PLEASE:
                  *
@@ -136,9 +170,9 @@ class Ldap extends Model
                  * Let's definitely fix this at the next refactor!!!!
                  *
                  */
-                \Log::debug("Status of binding Admin user: $userDn to directory instead: ".($ldapbind ? "success" : "FAILURE"));
-                return false;
-            }
+                	\Log::debug("Status of binding Admin user: $userDn to directory instead: ".($ldapbind ? "success" : "FAILURE"));
+	                return false;
+            	}
         }
 
         if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {

@@ -21,7 +21,7 @@ class PredefinedKitsController extends Controller
     public function index(Request $request)
     {
         $this->authorize('view', PredefinedKit::class);
-        $allowed_columns = ['id', 'name'];
+        $allowed_columns = ['id', 'name', 'checkincheckout'];
 
         $kits = PredefinedKit::query();
 
