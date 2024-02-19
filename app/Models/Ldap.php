@@ -116,8 +116,9 @@ class Ldap extends Model
         $filterQuery = $settings->ldap_auth_filter_query.$username;
         $filter = Setting::getSettings()->ldap_filter; //FIXME - this *does* respect the ldap filter, but I believe that AdLdap2 did *not*.
         $filterQuery = "({$filter}({$filterQuery}))";
+	\Log::debug('Filter query: '.$filterQuery);
 
-        \Log::debug('Filter query: '.$filterQuery);
+	self::bindAdminToLdap($connection);
 
         if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
             \Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));

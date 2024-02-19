@@ -15,46 +15,46 @@
 
         @page {
             size: A4;
-        }
+	}
+	
         table.inventory th, table.inventory td {
-            border: solid #000;
+	    border: solid #000;
             border-width: 0 1px 1px 0;
-            padding: 3px;
-            font-size: 12px;
+            padding: 6px;
+            font-size: 22px;
         }
 
-        .print-logo {
-            max-height: 40px;
-        }
+	.print-logo {
+	    height:80px;
+	    position: absolute;
+	    right: 20px;
+	    top: 20px;
+	}
 
+	p {
+	    font-size: 18px;
+	}
+	
+	.signature td {
+		font-size:18px;
+	}
     </style>
 </head>
 <body>
 
 @if ($snipeSettings->logo_print_assets=='1')
-    @if ($snipeSettings->brand == '3')
-
-        <h2>
-            @if ($snipeSettings->logo!='')
-                <img class="print-logo" src="{{ config('app.url') }}/uploads/{{ $snipeSettings->logo }}">
-            @endif
-            {{ $snipeSettings->site_name }}
-        </h2>
-    @elseif ($snipeSettings->brand == '2')
-        @if ($snipeSettings->logo!='')
-            <img class="print-logo" src="{{ config('app.url') }}/uploads/{{ $snipeSettings->logo }}">
-        @endif
-    @else
-        <h2>{{ $snipeSettings->site_name }}</h2>
-    @endif
+	<h1>
+	    Ausleihbestätigung
+	</h1>
+	<img class="print-logo" src="{{ config('app.url') }}/uploads/{{ $snipeSettings->logo }}">
 @endif
 
 <h3>{{ trans('general.assigned_to', ['name' => $show_user->present()->fullName()]) }} {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
 </h3>
     @if ($assets->count() > 0)
         @php
-            $counter = 1;
-        @endphp
+	    $counter = 1;
+	@endphp
         <table class="inventory">
             <thead>
             <tr>
@@ -64,28 +64,26 @@
             <thead>
             <tr>
                 <th style="width: 20px;"></th>
-                <th style="width: 20%;">{{ trans('admin/hardware/table.asset_tag') }}</th>
+                <th style="width: 20%;">Inventarnummer</th>
                 <th style="width: 20%;">{{ trans('general.name') }}</th>
-                <th style="width: 10%;">{{ trans('general.category') }}</th>
-                <th style="width: 20%;">{{ trans('admin/hardware/form.model') }}</th>
-                <th style="width: 20%;">{{ trans('admin/hardware/form.serial') }}</th>
-                <th style="width: 10%;">{{ trans('admin/hardware/table.checkout_date') }}</th>
-                <th data-formatter="imageFormatter" style="width: 20%;">{{ trans('general.signature') }}</th>
+		<th style="width: 10%;">Ausgabe am</th>
+		<th style="width: 10%;">Rückgabe bis</th>
+		<th style="width: 40%;">Notizen</th>
             </tr>
             </thead>
 
             @foreach ($assets as $asset)
-
+	    	@php
+		    $checkout_date_object = date_create_from_format("Y-m-d H:i:s", $asset->last_checkout); 
+		    $checkin_date_object = date_create_from_format("Y-m-d H:i:s", $asset->expected_checkin);
+		@endphp
                 <tr>
                     <td>{{ $counter }}</td>
                     <td>{{ $asset->asset_tag }}</td>
                     <td>{{ $asset->name }}</td>
-                    <td>{{ (($asset->model) && ($asset->model->category)) ? $asset->model->category->name : trans('general.invalid_category') }}</td>
-                    <td>{{ ($asset->model) ? $asset->model->name : trans('general.invalid_model') }}</td>
-                    <td>{{ $asset->serial }}</td>
-                    <td>
-                        {{ $asset->last_checkout }}</td>
-                    <td>
+                    <td>{{ $asset->last_checkout }}</td>
+                    <td>{{ $asset->expected_checkin }}</td>
+                    <td>{{ $asset->notes }}</td>
                         @if (($asset->assetlog->first()) && ($asset->assetlog->first()->accept_signature!=''))
                             <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $asset->assetlog->first()->accept_signature }}">
                         @endif
@@ -240,22 +238,27 @@
             @endforeach
         </table>
     @endif
-
-    <br>
-    <br>
-    {{ trans('admin/users/general.all_assigned_list_generation')}} {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}
-    <br>
-    <br>
-    <table>
-        <tr>
-            <td>{{ trans('general.signed_off_by') }}:</td>
-            <td>________________________________________________________</td>
-            <td></td>
-            <td>{{ trans('general.date') }}:</td>
-            <td>________________________________________________________</td>
-        </tr>
-    </table>
-
-
+        <div>
+	    <br>
+	    <br>
+		<h3>Die Rückgabefristen finden Sie neben dem Medium aufgelistet. Die Medien sind bis zur angegebenen Rückgabefrist zurückzugeben!</h3>
+		<h3>Der Entleiher haftet persöhnlich für den entliehenen Gegenstand. Mit ihrer Unterschrift bestätigen Sie die Übernahme der oben aufgeführten Hardware.</h3>
+	    <br>
+	    <br>
+	    <br>
+	    <br>
+		<p>Erstellt am: {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}</p>
+	    <br>
+	    <br>
+	    <table class="signature">
+	        <tr>
+	            <td>Unterschrift:</td>
+	            <td>__________________________________________</td>
+	            <td></td>
+	            <td>{{ trans('general.date') }}:</td>
+	            <td>__________________________________________</td>
+	        </tr>
+	    </table>
+        </div>
 </body>
 </html>

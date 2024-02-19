@@ -873,7 +873,7 @@
 
                                     @can('update', $asset)
                                         @if ($asset->deleted_at=='')
-                                        <div class="col-md-12" style="padding-top: 5px;">
+                                        <div class="col-md-12">
                                             <a href="{{ route('hardware.edit', $asset->id) }}" style="width: 100%;" class="btn btn-sm btn-primary hidden-print">
                                                 {{ trans('admin/hardware/general.edit') }}
                                             </a>

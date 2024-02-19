@@ -164,8 +164,7 @@
                 <img src="{{ $user->present()->gravatar() }}"  class=" img-thumbnail hidden-print" style="margin-bottom: 20px;" alt="{{ $user->present()->fullName() }}">  
                </div>
                
-          
-
+		
               @can('update', $user)
                 <div class="col-md-12">
                   <a href="{{ route('users.edit', $user->id) }}" style="width: 100%;" class="btn btn-sm btn-primary hidden-print">{{ trans('admin/users/general.edit') }}</a>
