@@ -194,50 +194,6 @@
             @endforeach
         </table>
     @endif
-
-    @if ($consumables->count() > 0)
-        <br><br>
-        <table class="inventory">
-            <thead>
-            <tr>
-                <th colspan="4">{{ trans('general.consumables') }}</th>
-            </tr>
-            </thead>
-            <thead>
-            <tr>
-                <th style="width: 20px;"></th>
-                <th style="width: 40%;">{{ trans('general.name') }}</th>
-                <th style="width: 50%;">{{ trans('general.category') }}</th>
-                <th style="width: 10%;">{{ trans('admin/hardware/table.checkout_date') }}</th>
-            </tr>
-            </thead>
-            @php
-                $ccounter = 1;
-            @endphp
-
-            @foreach ($consumables as $consumable)
-                @if ($consumable)
-                    <tr>
-                        <td>{{ $ccounter }}</td>
-
-
-                        <td>
-                        @if ($consumable->deleted_at!='')
-                            <td>{{ ($consumable->manufacturer) ? $consumable->manufacturer->name : '' }}  {{ $consumable->name }} {{ $consumable->model_number }}</td>
-                            @else
-                            {{ ($consumable->manufacturer) ? $consumable->manufacturer->name : '' }}  {{ $consumable->name }} {{ $consumable->model_number }}
-                            @endif
-                            </td>
-                            <td>{{ ($consumable->category) ? $consumable->category->name : ' invalid/deleted category' }} </td>
-                            <td>{{  $consumable->pivot->created_at }}</td>
-                    </tr>
-                    @php
-                        $ccounter++
-                    @endphp
-                @endif
-            @endforeach
-        </table>
-    @endif
         <div>
 	    <br>
 	    <br>
