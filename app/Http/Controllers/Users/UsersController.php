@@ -435,7 +435,7 @@ class UsersController extends Controller
 
         $userlog = $user->userlog->load('item');
 
-        $this->authorize('view', $user);
+        $this->authorize('view', User::class);
 
         return view('users/view', compact('user', 'userlog'))
             ->with('settings', Setting::getSettings());
