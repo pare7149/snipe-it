@@ -7,6 +7,7 @@ use App\Http\Requests\ImageUploadRequest;
 use App\Models\Actionlog;
 use App\Models\Asset;
 use App\Models\AssetModel;
+use App\Models\CustomField;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -442,7 +443,6 @@ class AssetModelsController extends Controller
             $del_count = 0;
 
             foreach ($models as $model) {
-                \Log::debug($model->id);
 
                 if ($model->assets_count > 0) {
                     $del_error_count++;
@@ -452,8 +452,6 @@ class AssetModelsController extends Controller
                 }
             }
 
-            \Log::debug($del_count);
-            \Log::debug($del_error_count);
 
             if ($del_error_count == 0) {
                 return redirect()->route('models.index')
@@ -489,11 +487,11 @@ class AssetModelsController extends Controller
      * @param  array      $defaultValues
      * @return void
      */
-    private function assignCustomFieldsDefaultValues(AssetModel $model, array $defaultValues)
+    private function assignCustomFieldsDefaultValues(AssetModel $model, array $defaultValues): bool
     {
         $data = array();
         foreach ($defaultValues as $customFieldId => $defaultValue) {
-            $customField = \App\Models\CustomField::find($customFieldId);
+            $customField = CustomField::find($customFieldId);
 
             $data[$customField->db_column] = $defaultValue;
         }

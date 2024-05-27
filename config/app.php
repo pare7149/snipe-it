@@ -199,7 +199,10 @@ return [
     |
     */
 
-    'enable_csp' => env('ENABLE_CSP', false),
+    'enable_csp' => env('ENABLE_CSP', true),
+
+    'additional_csp_urls' => env('ADDITIONAL_CSP_URLS', ''),
+
 
 
     /*

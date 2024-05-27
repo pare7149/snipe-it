@@ -3,14 +3,28 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>{{ trans('general.assigned_to', ['name' => $show_user->present()->fullName()]) }} - {{ date('Y-m-d H:i', time()) }}</title>
+
+    <link rel="shortcut icon" type="image/ico" href="{{ ($snipeSettings) && ($snipeSettings->favicon!='') ?  Storage::disk('public')->url(e($snipeSettings->favicon)) : config('app.url').'/favicon.ico' }}">
+
+    {{-- stylesheets --}}
+    <link rel="stylesheet" href="{{ url(mix('css/dist/all.css')) }}">
+
+    <script nonce="{{ csrf_token() }}">
+        window.snipeit = {
+            settings: {
+                "per_page": 50
+            }
+        };
+    </script>
+
     <style>
         body {
             font-family: "Arial, Helvetica", sans-serif;
+            padding: 20px;
         }
         table.inventory {
-            border: solid #000;
-            border-width: 1px 1px 1px 1px;
             width: 100%;
+            border: 1px solid #d3d3d3;
         }
 
         @page {
@@ -39,6 +53,15 @@
 		font-size:18px;
 	}
     </style>
+
+    <script nonce="{{ csrf_token() }}">
+        window.snipeit = {
+            settings: {
+                "per_page": 50
+            }
+        };
+    </script>
+
 </head>
 <body>
 
@@ -49,17 +72,29 @@
 	<img class="print-logo" src="{{ config('app.url') }}/uploads/{{ $snipeSettings->logo }}">
 @endif
 
-<h3>{{ trans('general.assigned_to', ['name' => $show_user->present()->fullName()]) }} {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
+<h3>
+    {{ trans('general.assigned_to', ['name' => $show_user->present()->fullName()]) }}
+    {{ ($show_user->employee_num!='') ? ' (#'.$show_user->employee_num.') ' : '' }}
+    {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
 </h3>
+<p></p>{{ trans('admin/users/general.all_assigned_list_generation')}} {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}</body>
     @if ($assets->count() > 0)
         @php
 	    $counter = 1;
 	@endphp
         <table class="inventory">
             <thead>
-            <tr>
-                <th colspan="8">{{ trans('general.assets') }}</th>
-            </tr>
+                <th data-field="asset_id" data-sortable="false" data-visible="true" data-switchable="false">#</th>
+                <th data-field="asset_image" data-sortable="true" data-visible="false" data-switchable="true">{{ trans('general.image') }}</th>
+                <th data-field="asset_tag" data-sortable="true" data-visible="true" data-switchable="false">{{ trans('admin/hardware/table.asset_tag') }}</th>
+                <th data-field="asset_name" data-sortable="true" data-visible="true">{{ trans('general.name') }}</th>
+                <th data-field="asset_category" data-sortable="true" data-visible="true">{{ trans('general.category') }}</th>
+                <th data-field="asset_model" data-sortable="true" data-visible="true">{{ trans('admin/hardware/form.model') }}</th>
+                <th data-field="rtd_location" data-sortable="true" data-visible="true">{{ trans('admin/hardware/form.default_location') }}</th>
+                <th data-field="asset_location" data-sortable="true" data-visible="false">{{ trans('general.location') }}</th>
+                <th data-field="asset_serial" data-sortable="true" data-visible="true">{{ trans('admin/hardware/form.serial') }}</th>
+                <th data-field="asset_checkout_date" data-sortable="true" data-visible="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
+                <th data-field="signature" data-sortable="true" data-visible="true">{{ trans('general.signature') }}</th>
             </thead>
             <thead>
             <tr>
@@ -79,6 +114,11 @@
 		@endphp
                 <tr>
                     <td>{{ $counter }}</td>
+                    <td>
+                        @if ($asset->getImageUrl())
+                            <img src="{{ $asset->getImageUrl() }}" class="thumbnail" style="max-height: 50px;">
+                        @endif
+                    </td>
                     <td>{{ $asset->asset_tag }}</td>
                     <td>{{ $asset->name }}</td>
                     <td>{{ $asset->last_checkout }}</td>
@@ -89,7 +129,7 @@
                         @endif
                     </td>
                 </tr>
-                @if($settings->show_assigned_assets)
+                @if ($settings->show_assigned_assets)
                     @php
                         $assignedCounter = 1;
                     @endphp
@@ -97,9 +137,16 @@
 
                         <tr>
                             <td>{{ $counter }}.{{ $assignedCounter }}</td>
+                            <td data-formatter="imageFormatter">
+                                @if ($asset->getImageUrl())
+                                    <img src="{{ $asset->getImageUrl() }}" class="thumbnail" style="max-height: 50px;">
+                                @endif
+                            </td>
                             <td>{{ $asset->asset_tag }}</td>
                             <td>{{ $asset->name }}</td>
                             <td>{{ $asset->model->category->name }}</td>
+                            <td>{{ ($asset->defaultLoc) ? $asset->defaultLoc->name : '' }}</td>
+                            <td>{{ ($asset->location) ? $asset->location->name : '' }}</td>
                             <td>{{ $asset->model->name }}</td>
                             <td>{{ $asset->serial }}</td>
                             <td>{{ $asset->last_checkout }}</td>
@@ -114,23 +161,35 @@
                     $counter++
                 @endphp
             @endforeach
+            </tbody>
         </table>
     @endif
 
     @if ($licenses->count() > 0)
-        <br><br>
-        <table class="inventory">
+        <div id="licenses-toolbar">
+            <h4>{{ trans_choice('general.countable.licenses', $licenses->count(), ['count' => $licenses->count()]) }}</h4>
+        </div>
+
+        <table
+                class="snipe-table table table-striped inventory"
+                id="licensessAssigned"
+                data-toolbar="#licenses-toolbar"
+                data-pagination="false"
+                data-id-table="licensessAssigned"
+                data-search="false"
+                data-side-pagination="client"
+                data-sortable="true"
+                data-show-columns="true"
+                data-sort-order="desc"
+                data-sort-name="created_at"
+                data-show-columns-toggle-all="true"
+                data-cookie-id-table="licensessAssigned">
             <thead>
             <tr>
-                <th colspan="4">{{ trans('general.licenses') }}</th>
-            </tr>
-            </thead>
-            <thead>
-            <tr>
-                <th style="width: 20px;"></th>
-                <th style="width: 40%;">{{ trans('general.name') }}</th>
-                <th style="width: 50%;">{{ trans('admin/licenses/form.license_key') }}</th>
-                <th style="width: 10%;">{{ trans('admin/hardware/table.checkout_date') }}</th>
+                <th style="width: 20px;" data-sortable="false" data-switchable="false">#</th>
+                <th style="width: 40%;" data-sortable="true" data-switchable="false">{{ trans('general.name') }}</th>
+                <th style="width: 50%;" data-sortable="true">{{ trans('admin/licenses/form.license_key') }}</th>
+                <th style="width: 10%;" data-sortable="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
             </tr>
             </thead>
             @php
@@ -149,7 +208,7 @@
                             <i class="fa-lock" aria-hidden="true"></i> {{ str_repeat('x', 15) }}
                         @endcan
                     </td>
-                    <td>{{  $license->pivot->created_at }}</td>
+                    <td>{{  $license->pivot->updated_at }}</td>
                 </tr>
                 @php
                     $lcounter++
@@ -160,19 +219,32 @@
 
 
     @if ($accessories->count() > 0)
-        <br><br>
-        <table class="inventory">
+        <div id="accessories-toolbar">
+            <h4>{{ trans_choice('general.countable.accessories', $accessories->count(), ['count' => $accessories->count()]) }}</h4>
+        </div>
+
+        <table
+                class="snipe-table table table-striped inventory"
+                id="accessoriesAssigned"
+                data-toolbar="#accessories-toolbar"
+                data-pagination="false"
+                data-id-table="accessoriesAssigned"
+                data-search="false"
+                data-side-pagination="client"
+                data-sortable="true"
+                data-show-columns="true"
+                data-sort-order="desc"
+                data-sort-name="created_at"
+                data-show-columns-toggle-all="true"
+                data-cookie-id-table="accessoriesAssigned">
             <thead>
             <tr>
-                <th colspan="4">{{ trans('general.accessories') }}</th>
-            </tr>
-            </thead>
-            <thead>
-            <tr>
-                <th style="width: 20px;"></th>
-                <th style="width: 40%;">{{ trans('general.name') }}</th>
-                <th style="width: 50%;">{{ trans('general.category') }}</th>
-                <th style="width: 10%;">{{ trans('admin/hardware/table.checkout_date') }}</th>
+                <th style="width: 20px;" data-sortable="false" data-switchable="false">#</th>
+                <th data-field="accessory_image" data-sortable="true"  data-visible="true">{{ trans('general.image') }}</th>
+                <th style="width: 40%;" data-sortable="true" data-switchable="false">{{ trans('general.name') }}</th>
+                <th style="width: 50%;" data-sortable="true">{{ trans('general.category') }}</th>
+                <th style="width: 10%;" data-sortable="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
+                <th style="width: 10%;" data-sortable="true">{{ trans('general.signature') }}</th>
             </tr>
             </thead>
             @php
@@ -183,9 +255,20 @@
                 @if ($accessory)
                     <tr>
                         <td>{{ $acounter }}</td>
+                        <td>
+                            @if ($accessory->getImageUrl())
+                                <img src="{{ $accessory->getImageUrl() }}" class="thumbnail" style="max-height: 50px;">
+                            @endif
+                        </td>
                         <td>{{ ($accessory->manufacturer) ? $accessory->manufacturer->name : '' }} {{ $accessory->name }} {{ $accessory->model_number }}</td>
                         <td>{{ $accessory->category->name }}</td>
                         <td>{{ $accessory->pivot->created_at }}</td>
+
+                        <td>
+                            @if (($accessory->assetlog->first()) && ($accessory->assetlog->first()->accept_signature!=''))
+                            <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $accessory->assetlog->first()->accept_signature }}">
+                            @endif
+                        </td>
                     </tr>
                     @php
                         $acounter++
