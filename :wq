@@ -1,8 +1,0 @@
-{
-	 "proxies": {
-	    "default": {
-	         "httpProxy": "http://clouseau.rz.tu-ilmenau.de:8080",
-		 "httpsProxy": "http://clouseau.rz.tu-ilmenau.de:8080"
-	    }
-	 }
-}
