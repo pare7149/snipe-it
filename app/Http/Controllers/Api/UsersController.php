@@ -289,7 +289,7 @@ class UsersController extends Controller
         }
 
         // Apply companyable scope
-        $users = Company::scopeCompanyables($users);
+        //$users = Company::scopeCompanyables($users);
 
 
         // Make sure the offset and limit are actually integers and do not exceed system limits

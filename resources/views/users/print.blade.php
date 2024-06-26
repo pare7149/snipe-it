@@ -33,7 +33,7 @@
 	
         table.inventory th, table.inventory td {
 	    border: solid #000;
-            border-width: 0 1px 1px 0;
+            border-width: 2px;
             padding: 6px;
             font-size: 22px;
         }
@@ -77,25 +77,12 @@
     {{ ($show_user->employee_num!='') ? ' (#'.$show_user->employee_num.') ' : '' }}
     {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
 </h3>
-<p></p>{{ trans('admin/users/general.all_assigned_list_generation')}} {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}</body>
+</body>
     @if ($assets->count() > 0)
         @php
 	    $counter = 1;
 	@endphp
         <table class="inventory">
-            <thead>
-                <th data-field="asset_id" data-sortable="false" data-visible="true" data-switchable="false">#</th>
-                <th data-field="asset_image" data-sortable="true" data-visible="false" data-switchable="true">{{ trans('general.image') }}</th>
-                <th data-field="asset_tag" data-sortable="true" data-visible="true" data-switchable="false">{{ trans('admin/hardware/table.asset_tag') }}</th>
-                <th data-field="asset_name" data-sortable="true" data-visible="true">{{ trans('general.name') }}</th>
-                <th data-field="asset_category" data-sortable="true" data-visible="true">{{ trans('general.category') }}</th>
-                <th data-field="asset_model" data-sortable="true" data-visible="true">{{ trans('admin/hardware/form.model') }}</th>
-                <th data-field="rtd_location" data-sortable="true" data-visible="true">{{ trans('admin/hardware/form.default_location') }}</th>
-                <th data-field="asset_location" data-sortable="true" data-visible="false">{{ trans('general.location') }}</th>
-                <th data-field="asset_serial" data-sortable="true" data-visible="true">{{ trans('admin/hardware/form.serial') }}</th>
-                <th data-field="asset_checkout_date" data-sortable="true" data-visible="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
-                <th data-field="signature" data-sortable="true" data-visible="true">{{ trans('general.signature') }}</th>
-            </thead>
             <thead>
             <tr>
                 <th style="width: 20px;"></th>
@@ -114,52 +101,12 @@
 		@endphp
                 <tr>
                     <td>{{ $counter }}</td>
-                    <td>
-                        @if ($asset->getImageUrl())
-                            <img src="{{ $asset->getImageUrl() }}" class="thumbnail" style="max-height: 50px;">
-                        @endif
-                    </td>
                     <td>{{ $asset->asset_tag }}</td>
                     <td>{{ $asset->name }}</td>
-                    <td>{{ $asset->last_checkout }}</td>
-                    <td>{{ $asset->expected_checkin }}</td>
+                    <td>{{ Helper::getFormattedDateObject( $asset->last_checkout, "date", false ) }}</td>
+                    <td>{{ Helper::getFormattedDateObject( $asset->expected_checkin, "date", false )  }}</td>
                     <td>{{ $asset->notes }}</td>
-                        @if (($asset->assetlog->first()) && ($asset->assetlog->first()->accept_signature!=''))
-                            <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $asset->assetlog->first()->accept_signature }}">
-                        @endif
-                    </td>
                 </tr>
-                @if ($settings->show_assigned_assets)
-                    @php
-                        $assignedCounter = 1;
-                    @endphp
-                    @foreach ($asset->assignedAssets as $asset)
-
-                        <tr>
-                            <td>{{ $counter }}.{{ $assignedCounter }}</td>
-                            <td data-formatter="imageFormatter">
-                                @if ($asset->getImageUrl())
-                                    <img src="{{ $asset->getImageUrl() }}" class="thumbnail" style="max-height: 50px;">
-                                @endif
-                            </td>
-                            <td>{{ $asset->asset_tag }}</td>
-                            <td>{{ $asset->name }}</td>
-                            <td>{{ $asset->model->category->name }}</td>
-                            <td>{{ ($asset->defaultLoc) ? $asset->defaultLoc->name : '' }}</td>
-                            <td>{{ ($asset->location) ? $asset->location->name : '' }}</td>
-                            <td>{{ $asset->model->name }}</td>
-                            <td>{{ $asset->serial }}</td>
-                            <td>{{ $asset->last_checkout }}</td>
-                            <td><img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $asset->assetlog->first()->accept_signature }}"></td>
-                        </tr>
-                        @php
-                            $assignedCounter++
-                        @endphp
-                    @endforeach
-                @endif
-                @php
-                    $counter++
-                @endphp
             @endforeach
             </tbody>
         </table>
@@ -292,9 +239,8 @@
 	    <table class="signature">
 	        <tr>
 	            <td>Unterschrift:</td>
-	            <td>__________________________________________</td>
-	            <td></td>
-	            <td>{{ trans('general.date') }}:</td>
+		    <td>__________________________________________</td>
+	            <td>&nbsp;&nbsp;&nbsp;&nbsp;Abholdatum:</td>
 	            <td>__________________________________________</td>
 	        </tr>
 	    </table>
