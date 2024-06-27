@@ -41,7 +41,7 @@ class SendExpectedCheckinAlerts extends Command
      */
     public function handle()
     {
-        $settings = Setting::getSettings();
+        /*$settings = Setting::getSettings();
         $interval = $settings->audit_warning_days ?? 0;
         $today = Carbon::now();
         $interval_date = $today->copy()->addDays($interval);
@@ -67,6 +67,6 @@ class SendExpectedCheckinAlerts extends Command
             $this->info('Sending Admin ExpectedCheckinNotification to: '.$settings->alert_email);
             \Notification::send($recipients, new ExpectedCheckinAdminNotification($assets));
 
-        }
+	}*/
     }
 }
