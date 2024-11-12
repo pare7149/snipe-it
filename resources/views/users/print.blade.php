@@ -29,7 +29,7 @@
 
         @page {
             size: A4;
-	}
+	    }
 	
         table.inventory th, table.inventory td {
 	    border: solid #000;
@@ -38,20 +38,26 @@
             font-size: 22px;
         }
 
-	.print-logo {
-	    height:80px;
-	    position: absolute;
-	    right: 20px;
-	    top: 20px;
-	}
+        .print-logo {
+            height:80px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
 
-	p {
-	    font-size: 18px;
-	}
-	
-	.signature td {
-		font-size:18px;
-	}
+        p {
+            font-size: 18px;
+        }
+        
+        .signature td {
+            font-size:18px;
+        }
+
+        @media print {
+            .page2 {
+                page-break-before: always;
+            }
+        }
     </style>
 
     <script nonce="{{ csrf_token() }}">
@@ -65,40 +71,40 @@
 </head>
 <body>
 
-@if ($snipeSettings->logo_print_assets=='1')
-	<h1>
-	    Ausleihbestätigung
-	</h1>
-	<img class="print-logo" src="{{ config('app.url') }}/uploads/{{ $snipeSettings->logo }}">
-@endif
+<div class="page1">
+    @if ($snipeSettings->logo_print_assets=='1')
+        <h1>
+            Ausleihbestätigung (für ITSD)
+        </h1>
+        <img class="print-logo" src="{{ config('app.url') }}/uploads/{{ $snipeSettings->logo }}">
+    @endif
 
-<h3>
-    {{ trans('general.assigned_to', ['name' => $show_user->present()->fullName()]) }}
-    {{ ($show_user->employee_num!='') ? ' (#'.$show_user->employee_num.') ' : '' }}
-    {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
-</h3>
-</body>
+    <h3>
+        {{ trans('general.assigned_to', ['name' => $show_user->present()->fullName()]) }}
+        {{ ($show_user->employee_num!='') ? ' (#'.$show_user->employee_num.') ' : '' }}
+        {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
+    </h3>
     @if ($assets->count() > 0)
         @php
-	    $counter = 1;
-	@endphp
+        $counter = 1;
+    @endphp
         <table class="inventory">
             <thead>
-            <tr>
-                <th style="width: 20px;"></th>
-                <th style="width: 20%;">Inventarnummer</th>
-                <th style="width: 20%;">{{ trans('general.name') }}</th>
-		<th style="width: 10%;">Ausgabe am</th>
-		<th style="width: 10%;">Rückgabe bis</th>
-		<th style="width: 40%;">Notizen</th>
-            </tr>
+                <tr>
+                    <th style="width: 20px;"></th>
+                    <th style="width: 20%;">Inventarnummer</th>
+                    <th style="width: 20%;">{{ trans('general.name') }}</th>
+                    <th style="width: 10%;">Ausgabe am</th>
+                    <th style="width: 10%;">Rückgabe bis</th>
+                    <th style="width: 40%;">Notizen</th>
+                </tr>
             </thead>
 
             @foreach ($assets as $asset)
-	    	@php
-		    $checkout_date_object = date_create_from_format("Y-m-d H:i:s", $asset->last_checkout); 
-		    $checkin_date_object = date_create_from_format("Y-m-d H:i:s", $asset->expected_checkin);
-		@endphp
+            @php
+            $checkout_date_object = date_create_from_format("Y-m-d H:i:s", $asset->last_checkout); 
+            $checkin_date_object = date_create_from_format("Y-m-d H:i:s", $asset->expected_checkin);
+        @endphp
                 <tr>
                     <td>{{ $counter }}</td>
                     <td>{{ $asset->asset_tag }}</td>
@@ -111,59 +117,6 @@
             </tbody>
         </table>
     @endif
-
-    @if ($licenses->count() > 0)
-        <div id="licenses-toolbar">
-            <h4>{{ trans_choice('general.countable.licenses', $licenses->count(), ['count' => $licenses->count()]) }}</h4>
-        </div>
-
-        <table
-                class="snipe-table table table-striped inventory"
-                id="licensessAssigned"
-                data-toolbar="#licenses-toolbar"
-                data-pagination="false"
-                data-id-table="licensessAssigned"
-                data-search="false"
-                data-side-pagination="client"
-                data-sortable="true"
-                data-show-columns="true"
-                data-sort-order="desc"
-                data-sort-name="created_at"
-                data-show-columns-toggle-all="true"
-                data-cookie-id-table="licensessAssigned">
-            <thead>
-            <tr>
-                <th style="width: 20px;" data-sortable="false" data-switchable="false">#</th>
-                <th style="width: 40%;" data-sortable="true" data-switchable="false">{{ trans('general.name') }}</th>
-                <th style="width: 50%;" data-sortable="true">{{ trans('admin/licenses/form.license_key') }}</th>
-                <th style="width: 10%;" data-sortable="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
-            </tr>
-            </thead>
-            @php
-                $lcounter = 1;
-            @endphp
-
-            @foreach ($licenses as $license)
-
-                <tr>
-                    <td>{{ $lcounter }}</td>
-                    <td>{{ $license->name }}</td>
-                    <td>
-                        @can('viewKeys', $license)
-                            {{ $license->serial }}
-                        @else
-                            <i class="fa-lock" aria-hidden="true"></i> {{ str_repeat('x', 15) }}
-                        @endcan
-                    </td>
-                    <td>{{  $license->pivot->updated_at }}</td>
-                </tr>
-                @php
-                    $lcounter++
-                @endphp
-            @endforeach
-        </table>
-    @endif
-
 
     @if ($accessories->count() > 0)
         <div id="accessories-toolbar">
@@ -225,25 +178,147 @@
         </table>
     @endif
         <div>
-	    <br>
-	    <br>
-		<h3>Die Rückgabefristen finden Sie neben dem Medium aufgelistet. Die Medien sind bis zur angegebenen Rückgabefrist zurückzugeben!</h3>
-		<h3>Der Entleiher haftet persöhnlich für den entliehenen Gegenstand. Mit ihrer Unterschrift bestätigen Sie die Übernahme der oben aufgeführten Hardware.</h3>
-	    <br>
-	    <br>
-	    <br>
-	    <br>
-		<p>Erstellt am: {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}</p>
-	    <br>
-	    <br>
-	    <table class="signature">
-	        <tr>
-	            <td>Unterschrift:</td>
-		    <td>__________________________________________</td>
-	            <td>&nbsp;&nbsp;&nbsp;&nbsp;Abholdatum:</td>
-	            <td>__________________________________________</td>
-	        </tr>
-	    </table>
+        <br>
+        <br>
+        <h3>Die Rückgabefristen finden Sie neben dem Medium aufgelistet. Die Medien sind bis zur angegebenen Rückgabefrist zurückzugeben!</h3>
+        <h3>Der Entleiher haftet persöhnlich für den entliehenen Gegenstand. Mit ihrer Unterschrift bestätigen Sie die Übernahme der oben aufgeführten Hardware.</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>Erstellt am: {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}</p>
+        <br>
+        <br>
+        <table class="signature">
+            <tr>
+                <td>Unterschrift:</td>
+            <td>__________________________________________</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;Abholdatum:</td>
+                <td>__________________________________________</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="page2">
+    @if ($snipeSettings->logo_print_assets=='1')
+        <h1>
+            Ausleihbestätigung (für Ausleiher)
+        </h1>
+        <img class="print-logo" src="{{ config('app.url') }}/uploads/{{ $snipeSettings->logo }}">
+    @endif
+
+    <h3>
+        {{ trans('general.assigned_to', ['name' => $show_user->present()->fullName()]) }}
+        {{ ($show_user->employee_num!='') ? ' (#'.$show_user->employee_num.') ' : '' }}
+        {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
+    </h3>
+    @if ($assets->count() > 0)
+        @php
+        $counter = 1;
+    @endphp
+        <table class="inventory">
+            <thead>
+                <tr>
+                    <th style="width: 20px;"></th>
+                    <th style="width: 20%;">Inventarnummer</th>
+                    <th style="width: 20%;">{{ trans('general.name') }}</th>
+                    <th style="width: 10%;">Ausgabe am</th>
+                    <th style="width: 10%;">Rückgabe bis</th>
+                    <th style="width: 40%;">Notizen</th>
+                </tr>
+            </thead>
+
+            @foreach ($assets as $asset)
+            @php
+            $checkout_date_object = date_create_from_format("Y-m-d H:i:s", $asset->last_checkout); 
+            $checkin_date_object = date_create_from_format("Y-m-d H:i:s", $asset->expected_checkin);
+        @endphp
+                <tr>
+                    <td>{{ $counter }}</td>
+                    <td>{{ $asset->asset_tag }}</td>
+                    <td>{{ $asset->name }}</td>
+                    <td>{{ Helper::getFormattedDateObject( $asset->last_checkout, "date", false ) }}</td>
+                    <td>{{ Helper::getFormattedDateObject( $asset->expected_checkin, "date", false )  }}</td>
+                    <td>{{ $asset->notes }}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    @endif
+
+    @if ($accessories->count() > 0)
+        <div id="accessories-toolbar">
+            <h4>{{ trans_choice('general.countable.accessories', $accessories->count(), ['count' => $accessories->count()]) }}</h4>
         </div>
+
+        <table
+                class="snipe-table table table-striped inventory"
+                id="accessoriesAssigned"
+                data-toolbar="#accessories-toolbar"
+                data-pagination="false"
+                data-id-table="accessoriesAssigned"
+                data-search="false"
+                data-side-pagination="client"
+                data-sortable="true"
+                data-show-columns="true"
+                data-sort-order="desc"
+                data-sort-name="created_at"
+                data-show-columns-toggle-all="true"
+                data-cookie-id-table="accessoriesAssigned">
+            <thead>
+            <tr>
+                <th style="width: 20px;" data-sortable="false" data-switchable="false">#</th>
+                <th data-field="accessory_image" data-sortable="true"  data-visible="true">{{ trans('general.image') }}</th>
+                <th style="width: 40%;" data-sortable="true" data-switchable="false">{{ trans('general.name') }}</th>
+                <th style="width: 50%;" data-sortable="true">{{ trans('general.category') }}</th>
+                <th style="width: 10%;" data-sortable="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
+                <th style="width: 10%;" data-sortable="true">{{ trans('general.signature') }}</th>
+            </tr>
+            </thead>
+            @php
+                $acounter = 1;
+            @endphp
+
+            @foreach ($accessories as $accessory)
+                @if ($accessory)
+                    <tr>
+                        <td>{{ $acounter }}</td>
+                        <td>
+                            @if ($accessory->getImageUrl())
+                                <img src="{{ $accessory->getImageUrl() }}" class="thumbnail" style="max-height: 50px;">
+                            @endif
+                        </td>
+                        <td>{{ ($accessory->manufacturer) ? $accessory->manufacturer->name : '' }} {{ $accessory->name }} {{ $accessory->model_number }}</td>
+                        <td>{{ $accessory->category->name }}</td>
+                        <td>{{ $accessory->pivot->created_at }}</td>
+
+                        <td>
+                            @if (($accessory->assetlog->first()) && ($accessory->assetlog->first()->accept_signature!=''))
+                            <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $accessory->assetlog->first()->accept_signature }}">
+                            @endif
+                        </td>
+                    </tr>
+                    @php
+                        $acounter++
+                    @endphp
+                @endif
+            @endforeach
+        </table>
+    @endif
+        <div>
+        <br>
+        <br>
+        <h3>Die Rückgabefristen finden Sie neben dem Medium aufgelistet. Die Medien sind bis zur angegebenen Rückgabefrist zurückzugeben!</h3>
+        <h3>Der Entleiher haftet persöhnlich für den entliehenen Gegenstand. Mit ihrer Unterschrift bestätigen Sie die Übernahme der oben aufgeführten Hardware.</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>Erstellt am: {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}</p>
+        <br>
+        <br>
+    </div>
+</div>
 </body>
 </html>
