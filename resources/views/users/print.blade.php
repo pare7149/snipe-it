@@ -74,14 +74,14 @@
 <div class="page1">
     @if ($snipeSettings->logo_print_assets=='1')
         <h1>
-            Ausleihbestätigung / Loan confirmation (für ITSD)
+            Ausleihbestätigung / Loan confirmation (für ITSD / for ITSD)
         </h1>
         <img class="print-logo" src="{{ config('app.url') }}/uploads/{{ $snipeSettings->logo }}">
     @endif
 
     <h3>
         Zugewiesen an: / Assigned to:
-        {{ ['name' => $show_user->present()->fullName()]) }}
+        {{ $show_user->present()->fullName() }}
         {{ ($show_user->employee_num!='') ? ' (#'.$show_user->employee_num.') ' : '' }}
         {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
     </h3>
@@ -184,9 +184,10 @@
         <h3>Die Rückgabefristen finden Sie neben dem Medium aufgelistet. Die Medien sind bis zur angegebenen Rückgabefrist zurückzugeben!</h3>
         <h3>Der Entleiher haftet persöhnlich für den entliehenen Gegenstand. Mit ihrer Unterschrift bestätigen Sie die Übernahme der oben aufgeführten Hardware.</h3>
         <br>
-        <br>
+
         <h3>The return deadlines are listed next to the device. The device must be returned by the specified return deadline!</h3>
         <h3>The borrower is personally liable for the borrowed item. With your signature you confirm that you have accepted the hardware listed above.</h3>
+        <br>
         <br>
         <br>
         <p>Erstellt am / Created at: {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}</p>
@@ -195,8 +196,9 @@
         <table class="signature">
             <tr>
                 <td>Unterschrift / Signature:</td>
-            <td>__________________________________________</td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;Abholdatum / Pick-up date:</td>
+                <td>__________________________________________</td>
+            <br>
+                <td>Abholdatum / Pick-up date:</td>
                 <td>__________________________________________</td>
             </tr>
         </table>
@@ -213,7 +215,7 @@
 
     <h3>
         Zugewiesen an: / Assigned to:
-        {{ ['name' => $show_user->present()->fullName()]) }}
+        {{ $show_user->present()->fullName() }}
         {{ ($show_user->employee_num!='') ? ' (#'.$show_user->employee_num.') ' : '' }}
         {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
     </h3>
@@ -316,9 +318,9 @@
         <h3>Die Rückgabefristen finden Sie neben dem Medium aufgelistet. Die Medien sind bis zur angegebenen Rückgabefrist zurückzugeben!</h3>
         <h3>Der Entleiher haftet persöhnlich für den entliehenen Gegenstand. Mit ihrer Unterschrift bestätigen Sie die Übernahme der oben aufgeführten Hardware.</h3>
         <br>
-        <br>
         <h3>The return deadlines are listed next to the device. The device must be returned by the specified return deadline!</h3>
         <h3>The borrower is personally liable for the borrowed item. With your signature you confirm that you have accepted the hardware listed above.</h3>
+        <br>
         <br>
         <br>
         <p>Erstellt am / Created at: {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}</p>
