@@ -81,10 +81,10 @@ class PredefinedKitPresenter extends Presenter
                 'title' => trans('general.id'),
                 'visible' => false,
             ], [
-                'field' => 'image'
+                'field' => 'image',
                 'searchable' => 'false',
-                'sortable' => 'false'
-                'switchable' => 'false'
+                'sortable' => 'false',
+                'switchable' => 'false',
                 'title' => 'Bild'
             ],[
                 'field' => 'name',
