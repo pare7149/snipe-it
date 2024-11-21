@@ -150,7 +150,7 @@ class PredefinedKitCheckoutService
                 // assets
                 foreach ($assets_to_add as $asset) {
                     $asset->location_id = $user->location_id;
-                    $error = $asset->checkOut($user, $admin, $checkout_at, $expected_checkin, $note, null);
+                    $error = $asset->checkOut($user, $admin, $checkout_at, $expected_checkin, $note, $asset->name);
                     if ($error) {
                         array_merge_recursive($errors, $asset->getErrors()->toArray());
                     }
