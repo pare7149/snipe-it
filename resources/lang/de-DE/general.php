@@ -246,6 +246,7 @@ return [
     'requested_assets_menu' => 'Angeforderte Assets',
     'request_canceled'      => 'Anfrage abgebrochen',
     'request_item'          => 'Diesen Artikel anfordern',
+    'requestable_items'     => 'Anforderbare Geräte',
     'external_link_tooltip' => 'Externer Link zu',
     'save'  				=> 'Speichern',
     'select_var'            => ':thing auswählen... ', // this will eventually replace all of our other selects
