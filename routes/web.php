@@ -23,6 +23,7 @@ use App\Http\Controllers\ViewAssetsController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Livewire\Importer;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -52,7 +53,6 @@ Route::group(['middleware' => 'auth'], function () {
     /*
      * Locations
      */
-
     Route::group(['prefix' => 'locations', 'middleware' => ['auth']], function () {
 
         Route::post(
@@ -64,6 +64,11 @@ Route::group(['middleware' => 'auth'], function () {
             'bulkedit',
             [LocationsController::class, 'postBulkDeleteStore']
         )->name('locations.bulkdelete.store');
+
+        Route::post(
+            '{location}/restore',
+            [LocationsController::class, 'postRestore']
+        )->name('locations.restore');
 
 
         Route::get('{locationId}/clone',
@@ -262,7 +267,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'authorize:superuser
 */
 
 Route::get('/import',
-    \App\Http\Livewire\Importer::class
+    Importer::class
 )->middleware('auth')->name('imports.index');
 
 /*
@@ -530,12 +535,15 @@ Route::group(['middleware' => 'web'], function () {
     )->name('logout.post');
 });
 
-//Auth::routes();
 
-Route::get(
-    '/health', 
+/**
+ * Health check route - skip middleware
+ */
+Route::withoutMiddleware(['web'])->get(
+    '/health',
     [HealthController::class, 'get']
 )->name('health');
+
 
 Route::middleware(['auth'])->get(
     '/',

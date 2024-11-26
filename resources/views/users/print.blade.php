@@ -2,9 +2,15 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>{{ trans('general.assigned_to', ['name' => $show_user->present()->fullName()]) }} - {{ date('Y-m-d H:i', time()) }}</title>
+    @if ((isset($users) && count($users) === 1))
+        <title>{{ trans('general.assigned_to', ['name' => $users[0]->present()->fullName()]) }} - {{ date('Y-m-d H:i', time()) }}</title>
+    @else
+        <title>{{ trans('admin/users/general.print_assigned') }} - {{ date('Y-m-d H:i', time()) }}</title>
+    @endisset
 
     <link rel="shortcut icon" type="image/ico" href="{{ ($snipeSettings) && ($snipeSettings->favicon!='') ?  Storage::disk('public')->url(e($snipeSettings->favicon)) : config('app.url').'/favicon.ico' }}">
+
+    <link rel="stylesheet" href="{{ url(mix('css/dist/bootstrap-table.css')) }}">
 
     {{-- stylesheets --}}
     <link rel="stylesheet" href="{{ url(mix('css/dist/all.css')) }}">
@@ -37,7 +43,7 @@
             padding: 6px;
             font-size: 22px;
         }
-
+        
         .print-logo {
             height:80px;
             position: absolute;
@@ -60,13 +66,6 @@
         }
     </style>
 
-    <script nonce="{{ csrf_token() }}">
-        window.snipeit = {
-            settings: {
-                "per_page": 50
-            }
-        };
-    </script>
 
 </head>
 <body>
