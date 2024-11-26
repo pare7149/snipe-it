@@ -1437,7 +1437,7 @@ class Asset extends Depreciable
     {
         $table = $query->getModel()->getTable();
 
-        $query = $query->orWhere("assets.company", "=", "*");
+        $query = $query->orWhere("assets.company_id", "=", "*");
 
         return $query->where($table.'.requestable', '=', 1)
         ->whereHas('assetstatus', function ($query) {
