@@ -177,6 +177,7 @@
               <div class="col-md-12 text-center">
                 <img src="{{ $user->present()->gravatar() }}"  class=" img-thumbnail hidden-print" style="margin-bottom: 20px;" alt="{{ $user->present()->fullName() }}">  
                </div>
+
               @can('update', $user)
                 <div class="col-md-12">
                   <a href="{{ route('users.edit', $user->id) }}" style="width: 100%;" class="btn btn-sm btn-warning btn-social hidden-print">
@@ -199,7 +200,9 @@
                       {{ trans('admin/users/general.print_assigned') }}</button>
                 @endif
                 </div>
+                @endcan
 
+                @can('view', $user)
                   <div class="col-md-12" style="padding-top: 5px;">
                   @if(!empty($user->email) && ($user->allAssignedCount() != '0'))
                     <form action="{{ route('users.email',['userId'=> $user->id]) }}" method="POST">
@@ -221,6 +224,7 @@
                       </button>
                   @endif
                   </div>
+                @endcan
 
                 @can('update', $user)
                   @if (($user->activated == '1') && ($user->ldap_import == '0'))
