@@ -85,7 +85,7 @@
             {{ ($show_user->employee_num!='') ? ' (#'.$show_user->employee_num.') ' : '' }}
             {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
         </h3>
-        @if ($assets->count() > 0)
+        @if ($show_user->assets->count() > 0)
             @php
             $counter = 1;
         @endphp
@@ -101,7 +101,7 @@
                     </tr>
                 </thead>
 
-                @foreach ($assets as $asset)
+                @foreach ($show_user->assets as $asset)
                 @php
                 $checkout_date_object = date_create_from_format("Y-m-d H:i:s", $asset->last_checkout); 
                 $checkin_date_object = date_create_from_format("Y-m-d H:i:s", $asset->expected_checkin);
@@ -119,7 +119,7 @@
             </table>
         @endif
 
-        @if ($accessories->count() > 0)
+        @if ($hsow_user->accessories->count() > 0)
             <div id="accessories-toolbar">
                 <h4>{{ trans_choice('general.countable.accessories', $accessories->count(), ['count' => $accessories->count()]) }}</h4>
             </div>
@@ -152,7 +152,7 @@
                     $acounter = 1;
                 @endphp
 
-                @foreach ($accessories as $accessory)
+                @foreach ($show_user->accessories as $accessory)
                     @if ($accessory)
                         <tr>
                             <td>{{ $acounter }}</td>
@@ -219,7 +219,7 @@
             {{ ($show_user->employee_num!='') ? ' (#'.$show_user->employee_num.') ' : '' }}
             {{ ($show_user->jobtitle!='' ? ' - '.$show_user->jobtitle : '') }}
         </h3>
-        @if ($assets->count() > 0)
+        @if ($show_user->assets->count() > 0)
             @php
             $counter = 1;
         @endphp
@@ -235,7 +235,7 @@
                     </tr>
                 </thead>
 
-                @foreach ($assets as $asset)
+                @foreach ($show_user->assets as $asset)
                 @php
                 $checkout_date_object = date_create_from_format("Y-m-d H:i:s", $asset->last_checkout); 
                 $checkin_date_object = date_create_from_format("Y-m-d H:i:s", $asset->expected_checkin);
@@ -253,7 +253,7 @@
             </table>
         @endif
 
-        @if ($accessories->count() > 0)
+        @if ($show_user->accessories->count() > 0)
             <div id="accessories-toolbar">
                 <h4>{{ trans_choice('general.countable.accessories', $accessories->count(), ['count' => $accessories->count()]) }}</h4>
             </div>
@@ -286,7 +286,7 @@
                     $acounter = 1;
                 @endphp
 
-                @foreach ($accessories as $accessory)
+                @foreach ($show_user->accessories as $accessory)
                     @if ($accessory)
                         <tr>
                             <td>{{ $acounter }}</td>
