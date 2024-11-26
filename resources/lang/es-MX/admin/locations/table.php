@@ -2,30 +2,13 @@
 
 return [
     'about_locations_title'     => 'Acerca de las ubicaciones',
-<<<<<<< HEAD
-    'about_locations'           => 'Las ubicaciones son utilizadas para hacer seguimiento de la información sobre ubicación de usuarios, activos, y otros ítems',
-=======
     'about_locations'           => 'Las ubicaciones se utilizan para hacer un seguimiento de la ubicación de usuarios, activos y otros elementos',
->>>>>>> origin/upstream
     'assets_rtd'                => 'Activos', // This has NEVER meant Assets Retired. I don't know how it keeps getting reverted.
     'assets_checkedout'         => 'Activos asignados',
     'id'                        => 'ID',
     'city'                      => 'Ciudad',
     'state'                     => 'Provincia',
     'country'                   => 'País',
-<<<<<<< HEAD
-    'create'                    => 'Crear Ubicación',
-    'update'                    => 'Actualizar ubicación',
-    'print_assigned'            => 'Imprimir los asignados',
-    'print_all_assigned'        => 'Imprimir todos los asignados',
-    'name'                      => 'Nombre Localización',
-    'address'                   => 'Dirección',
-    'address2'                   => '2da linea de Dirección',
-    'zip'                       => 'Código postal',
-    'locations'                 => 'Localizaciones',
-    'parent'                    => 'Ubicación padre',
-    'currency'                  => 'Divisa de la Localización',
-=======
     'create'                    => 'Crear ubicación',
     'update'                    => 'Actualizar ubicación',
     'print_assigned'            => 'Imprimir los asignados',
@@ -37,7 +20,6 @@ return [
     'locations'                 => 'Ubicaciones',
     'parent'                    => 'Ubicación padre',
     'currency'                  => 'Divisa de la ubicación',
->>>>>>> origin/upstream
     'ldap_ou'                   => 'Búsqueda LDAP OU',
     'user_name'                 => 'Nombre de usuario',
     'department'                => 'Departamento',

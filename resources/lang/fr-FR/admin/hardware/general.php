@@ -15,13 +15,8 @@ return [
     'delete_confirm'            => 'Êtes-vous sûr·e de vouloir supprimer cet actif ?',
     'edit'  					=> 'Editer le Bien',
     'model_deleted'  			=> 'Ce modèle d\'actifs a été supprimé. Vous devez restaurer le modèle avant de pouvoir restaurer l\'actif.',
-<<<<<<< HEAD
-    'model_invalid'             => 'This model for this asset is invalid.',
-    'model_invalid_fix'         => 'The asset must be updated use a valid asset model before attempting to check it in or out, or to audit it.',
-=======
     'model_invalid'             => 'Le modèle de cet actif n\'est pas valide.',
     'model_invalid_fix'         => 'L\'actif doit être mis à jour et utiliser un modèle de bien valide avant de tenter de l\'enregistrer, de le sortir ou de l\'auditer.',
->>>>>>> origin/upstream
     'requestable'               => 'Demandable',
     'requested'				    => 'Demandé',
     'not_requestable'           => 'Non demandable',

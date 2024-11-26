@@ -37,28 +37,16 @@ return array(
         'update' => 'При изменении пользователя возникла проблема. Пожалуйста попробуйте снова.',
         'delete' => 'При удалении пользователя возникла проблема. Пожалуйста попробуйте снова.',
         'delete_has_assets' => 'У пользователя есть назначенные ему активы и не может быть удалён.',
-<<<<<<< HEAD
-        'delete_has_assets_var' => 'This user still has an asset assigned. Please check it in first.|This user still has :count assets assigned. Please check their assets in first.',
-        'delete_has_licenses_var' => 'This user still has a license seats assigned. Please check it in first.|This user still has :count license seats assigned. Please check them in first.',
-        'delete_has_accessories_var' => 'This user still has an accessory assigned. Please check it in first.|This user still has :count accessories assigned. Please check their assets in first.',
-        'delete_has_locations_var' => 'This user still manages a location. Please select another manager first.|This user still manages :count locations. Please select another manager first.',
-        'delete_has_users_var' => 'This user still manages another user. Please select another manager for that user first.|This user still manages :count users. Please select another manager for them first.',
-=======
         'delete_has_assets_var' => 'У этого пользователя все еще есть назначенный актив. Пожалуйста, проверьте его сначала.|Этот пользователь все еще имеет :count назначенных активов. Пожалуйста, проверьте его активы в первую очередь.',
         'delete_has_licenses_var' => 'У этого пользователя все еще есть назначенные лицензионные места. Пожалуйста, проверьте их сначала.|У этого пользователя все еще есть назначенные :count лицензионные места. Пожалуйста, проверьте их сначала.',
         'delete_has_accessories_var' => 'У этого пользователя все еще есть назначенный аксессуар. Пожалуйста, проверьте его сначала.|У этого пользователя все еще есть назначенные :count аксессуары. Пожалуйста, проверьте его активы сначала.',
         'delete_has_locations_var' => 'Этот пользователь все еще управляет местоположением. Сначала выберите другого управляющего.|Этот пользователь все еще управляет :count местоположениями. Сначала выберите другого управляющего.',
         'delete_has_users_var' => 'Этот пользователь все еще является руководителем другого пользователя. Сначала выберите другого руководителя для этого пользователя.|Этот пользователь все является руководителем :count пользователей. Сначала выберите для них другого руководителя.',
->>>>>>> origin/upstream
         'unsuspend' => 'При разморозке пользователя возникла проблема. Пожалуйста попробуйте снова.',
         'import'    => 'При импорте пользователей произошла ошибка. Попробуйте еще раз.',
         'asset_already_accepted' => 'Этот актив уже был принят.',
         'accept_or_decline' => 'Примите или отклоните актив.',
-<<<<<<< HEAD
-        'cannot_delete_yourself' => 'We would feel really bad if you deleted yourself, please reconsider.',
-=======
         'cannot_delete_yourself' => 'Нам было бы очень жаль, если бы вы удалили себя. Пожалуйста, подумайте еще раз.',
->>>>>>> origin/upstream
         'incorrect_user_accepted' => 'Актив, который вы попытались принять, не был записан на вас.',
         'ldap_could_not_connect' => 'Не могу подключиться к серверу LDAP. Проверьте настройки LDAP сервера в файле конфигурации LDAP.<br>Ошибка от LDAP сервера:',
         'ldap_could_not_bind' => 'Не могу связаться (bind) с сервером LDAP. Проверьте настройки LDAP сервера в файле конфигурации LDAP.<br>Ошибка от LDAP сервера: ',

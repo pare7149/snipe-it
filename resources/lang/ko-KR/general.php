@@ -11,15 +11,9 @@ return [
     'activity_report'		=> '활동 보고서',
     'address'				=> '주소',
     'admin'					=> '관리자',
-<<<<<<< HEAD
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin_tooltip'			=> '현재 사용자는 어드민 권한을 가지고 있습니다.',
     'superuser'				=> '슈퍼유저',
     'superuser_tooltip'		=> '현재 사용자는 슈퍼유저 권한을 가지고 있습니다.',
->>>>>>> origin/upstream
     'administrator'			=> '관리자',
     'add_seats'             => '추가한 Seat',
     'age'                   => "나이",
@@ -141,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Last Name First Initial (smith_j@example.com)',
     'firstinitial.lastname' => 'First Initial Last Name (j.smith@example.com)',
     'firstnamelastinitial'  => 'First Name Last Initial (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> '이름',
     'first_name_format'		=> '이름 (jane@example.com)',
     'files'                 => '파일',

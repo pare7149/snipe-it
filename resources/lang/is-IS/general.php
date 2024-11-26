@@ -99,11 +99,7 @@ return [
     'debug_warning_text'    => 'This application is running in production mode with debugging enabled. This can expose sensitive data if your application is accessible to the outside world. Disable debug mode by setting the <code>APP_DEBUG</code> value in your <code>.env</code> file to <code>false</code>.',
     'delete'  				=> 'Eyða',
     'delete_confirm'  		=> 'Ertu viss um að þú viljir eyða þessum :item?',
-<<<<<<< HEAD
-    'delete_confirm_no_undo' => 'Ertu viss um að þú viljir eyða þessum :item? Þessi aðgerð er óafturkræf.',
-=======
     'delete_confirm_no_undo' => 'Are you sure, you wish to delete :item? This cannot be undone.',
->>>>>>> origin/upstream
     'deleted'  				=> 'Eytt',
     'delete_seats'  		=> 'Eydd leyfi',
     'deletion_failed'       => 'Eyðing mistókst',
@@ -139,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Last Name First Initial (smith_j@example.com)',
     'firstinitial.lastname' => 'First Initial Last Name (j.smith@example.com)',
     'firstnamelastinitial'  => 'First Name Last Initial (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Fornafn',
     'first_name_format'		=> 'Fornafn (jane@example.com)',
     'files'                 => 'Skrár',

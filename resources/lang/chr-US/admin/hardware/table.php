@@ -25,10 +25,6 @@ return [
     'image'		    => 'Device Image',
     'days_without_acceptance' => 'Days Without Acceptance',
     'monthly_depreciation' => 'Monthly Depreciation',
-<<<<<<< HEAD
-    'assigned_to'    => 'Assigned To',
-=======
->>>>>>> origin/upstream
     'requesting_user' => 'Requesting User',
     'requested_date' => 'Requested Date',
     'changed'       => 'Changed',

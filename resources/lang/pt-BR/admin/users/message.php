@@ -37,28 +37,16 @@ return array(
         'update' => 'Houve um problema ao atualizar o usuário. Tente novamente.',
         'delete' => 'Houve um problema ao excluir o usuário. Tente novamente.',
         'delete_has_assets' => 'Este usuário tem itens atribuídos e não pôde ser excluído.',
-<<<<<<< HEAD
-        'delete_has_assets_var' => 'This user still has an asset assigned. Please check it in first.|This user still has :count assets assigned. Please check their assets in first.',
-        'delete_has_licenses_var' => 'This user still has a license seats assigned. Please check it in first.|This user still has :count license seats assigned. Please check them in first.',
-        'delete_has_accessories_var' => 'This user still has an accessory assigned. Please check it in first.|This user still has :count accessories assigned. Please check their assets in first.',
-        'delete_has_locations_var' => 'This user still manages a location. Please select another manager first.|This user still manages :count locations. Please select another manager first.',
-        'delete_has_users_var' => 'This user still manages another user. Please select another manager for that user first.|This user still manages :count users. Please select another manager for them first.',
-=======
         'delete_has_assets_var' => 'Este usuário ainda tem um ativo atribuído. Por favor, faça a devolução primeiro. | Este usuário ainda tem :count ativos atribuídos. Por favor, faça a devolução dos ativos primeiro.',
         'delete_has_licenses_var' => 'Este usuário ainda tem uma licença atribuída. Por favor, faça a devolução primeiro. | Este usuário ainda tem :count licenças atribuídas. Por favor, faça a devolução delas primeiro.',
         'delete_has_accessories_var' => 'Este usuário ainda tem um acessório atribuído. Por favor, faça a devolução primeiro. | Este usuário ainda tem :count acessórios atribuídos. Por favor, faça a devolução dos ativos primeiro.',
         'delete_has_locations_var' => 'Este usuário ainda gerencia um local. Por favor, selecione outro gerente primeiro. | Este usuário ainda gerencia :count locais. Por favor, selecione outro gerente primeiro.',
         'delete_has_users_var' => 'Este usuário ainda gerencia outro usuário. Por favor, selecione outro gerente para esse usuário primeiro. | Este usuário ainda gerencia :count usuários. Por favor, selecione outro gerente para eles primeiro.',
->>>>>>> origin/upstream
         'unsuspend' => 'Houve um problema ao remover a suspensão do usuário. Tente novamente.',
         'import'    => 'Houve um problema ao importar usuários. Tente novamente.',
         'asset_already_accepted' => 'Este ativo já foi aceito.',
         'accept_or_decline' => 'Você precisa aceita ou rejeitar esse ativo.',
-<<<<<<< HEAD
-        'cannot_delete_yourself' => 'We would feel really bad if you deleted yourself, please reconsider.',
-=======
         'cannot_delete_yourself' => 'Nós nos sentiríamos muito mal se você se deletasse, por favor, reconsidere.',
->>>>>>> origin/upstream
         'incorrect_user_accepted' => 'O ativo que tentou aceitar não foi solicitado por você.',
         'ldap_could_not_connect' => 'Não foi possível conectar ao servidor LDAP. Por favor verifique as configurações do servidor LDAP no arquivo de configurações.<br>Erro do Servidor LDAP:',
         'ldap_could_not_bind' => 'Não foi possível se ligar ao servidor LDAP. Por favor verifique as configurações do servidor LDAP no arquivo de configurações.<br>Erro do Servidor LDAP: ',

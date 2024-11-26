@@ -3,17 +3,10 @@
 return array(
 
     'accepted'                  => 'Ha aceptado este artículo exitosamente.',
-<<<<<<< HEAD
-    'declined'                  => 'Ha declinado con éxito este equipo.',
-    'bulk_manager_warn'	        => 'Sus usuarios han sido actualizados con éxito, sin embargo, la entrada de administrador no fue guardada porque el gerente seleccionado también estaba en la lista de usuarios a ser editada, y los usuarios no pueden ser sus propios gerentes. Vuelva a seleccionar los usuarios, excluyendo al gerente.',
-    'user_exists'               => 'El Usuario ya existe!',
-    'user_not_found'            => 'Usuario inexistente.',
-=======
     'declined'                  => 'Ha rechazado correctamente este activo.',
     'bulk_manager_warn'	        => 'Sus usuarios han sido actualizados con éxito, sin embargo, la entrada supervisor (manager) no fue guardada porque el supervisor seleccionado también estaba en la lista de usuarios a editar, y los usuarios no pueden ser su propio supervisor. Vuelva a seleccionar los usuarios, excluyendo al supervisor.',
     'user_exists'               => '¡El usuario ya existe!',
     'user_not_found'            => 'El usuario no existe o usted no tiene permisos para verlo.',
->>>>>>> origin/upstream
     'user_login_required'       => 'El campo usuario es obligatorio',
     'user_has_no_assets_assigned' => 'No hay activos asignados al usuario.',
     'user_password_required'    => 'La contraseña es obligatoria.',
@@ -40,26 +33,6 @@ return array(
     ),
 
     'error' => array(
-<<<<<<< HEAD
-        'create' => 'Ha habido un problema creando el Usuario. Intentalo de nuevo.',
-        'update' => 'Ha habido un problema actualizando el Usuario. Intentalo de nuevo.',
-        'delete' => 'Ha habido un problema eliminando el  Usuario. Intentalo de nuevo.',
-        'delete_has_assets' => 'Este usuario tiene elementos asignados y no se pueden eliminar.',
-        'delete_has_assets_var' => 'This user still has an asset assigned. Please check it in first.|This user still has :count assets assigned. Please check their assets in first.',
-        'delete_has_licenses_var' => 'This user still has a license seats assigned. Please check it in first.|This user still has :count license seats assigned. Please check them in first.',
-        'delete_has_accessories_var' => 'This user still has an accessory assigned. Please check it in first.|This user still has :count accessories assigned. Please check their assets in first.',
-        'delete_has_locations_var' => 'This user still manages a location. Please select another manager first.|This user still manages :count locations. Please select another manager first.',
-        'delete_has_users_var' => 'This user still manages another user. Please select another manager for that user first.|This user still manages :count users. Please select another manager for them first.',
-        'unsuspend' => 'Ha habido un problema marcando como no suspendido el Usuario. Intentalo de nuevo.',
-        'import'    => 'Ha habido un problema importando los usuarios. Por favor intente nuevamente.',
-        'asset_already_accepted' => 'Este equipo ya ha sido aceptado.',
-        'accept_or_decline' => 'Debe aceptar o rechazar este equipo.',
-        'cannot_delete_yourself' => 'We would feel really bad if you deleted yourself, please reconsider.',
-        'incorrect_user_accepted' => 'El elemento que ha intentado aceptar no fue asignado a usted.',
-        'ldap_could_not_connect' => 'No se ha podido conectar con el servidor LDAP. Por favor verifique la configuración de su servidor LDAP en su archivo de configuración.<br> Error del servidor LDAP:',
-        'ldap_could_not_bind' => 'No se ha podido vincular con el servidor LDAP. Por favor verifique la configuración de su servidor LDAP en su archivo de configuración.<br> Error del servidor LDAP: ',
-        'ldap_could_not_search' => 'No se ha podido buscar en el servidor LDAP. Por favor verifique la configuración de su servidor LDAP en su archivo de configuración.<br> Error del servidor LDAP:',
-=======
         'create' => 'Hubo un problema al crear el usuario. Por favor, inténtelo de nuevo.',
         'update' => 'Hubo un problema al actualizar el usuario. Por favor, inténtelo de nuevo.',
         'delete' => 'Hubo un problema al eliminar el usuario. Por favor, inténtelo de nuevo.',
@@ -78,7 +51,6 @@ return array(
         'ldap_could_not_connect' => 'No se pudo conectar al servidor LDAP. Por favor, compruebe la configuración del servidor LDAP en el archivo de configuración LDAP. <br>Error del servidor LDAP:',
         'ldap_could_not_bind' => 'No se ha podido vincular al servidor LDAP. Por favor verifique la configuración de su servidor LDAP en su archivo de configuración.<br> Error del servidor LDAP: ',
         'ldap_could_not_search' => 'No se pudo buscar en el servidor LDAP. Por favor, compruebe la configuración del servidor LDAP en el archivo de configuración LDAP. <br>Error del servidor LDAP:',
->>>>>>> origin/upstream
         'ldap_could_not_get_entries' => 'No se han podido obtener entradas del servidor LDAP. Por favor verifique la configuración de su servidor LDAP en su archivo de configuración.<br> Error del servidor LDAP:',
         'password_ldap' => 'La contraseña para esta cuenta es administrada por LDAP / Active Directory. Póngase en contacto con su departamento de TI para cambiar su contraseña.',
         'multi_company_items_assigned' => 'Este usuario tiene elementos asignados que pertenecen a una empresa diferente. Por favor, ingréselos o edite su empresa.'

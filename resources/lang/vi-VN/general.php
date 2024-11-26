@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Họ trước Tên sau (smith_j@example.com)',
     'firstinitial.lastname' => 'Tên trước Họ sau (j.smith@example.com)',
     'firstnamelastinitial'  => 'Tên Họ Viết tắt (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Họ và tên đệm',
     'first_name_format'		=> 'Tên (jane@example.com)',
     'files'                 => 'Các tập tin',
@@ -432,20 +428,13 @@ return [
     'assets_by_status_type'      => 'Tài sản theo kiểu trạng thái',
     'pie_chart_type'        => 'Kiểu Biểu Đồ Tròn Dashboard',
     'hello_name'            => 'Xin chào, :name!',
-<<<<<<< HEAD
-    'unaccepted_profile_warning'   => 'Bạn đang có :count yêu cầu chờ chấp nhận. Nhấn để chấp nhận hoặc từ chối các yêu cầu',
-=======
     'unaccepted_profile_warning'   => 'You have one item requiring acceptance. Click here to accept or decline it | You have :count items requiring acceptance. Click here to accept or decline them',
->>>>>>> origin/upstream
     'start_date'            => 'Ngày Bắt Đầu',
     'end_date'            => 'Ngày Kết Thúc',
     'alt_uploaded_image_thumbnail' => 'Tải ảnh nhỏ lên',
     'placeholder_kit'       => 'Chọn công cụ',
     'file_not_found'        => 'Không tìm thấy tệp',
-<<<<<<< HEAD
-=======
     'log_record_not_found'  => 'No record for that log entry was found.',
->>>>>>> origin/upstream
     'preview_not_available' => '(không có bản xem trước)',
     'setup'                 => 'Cài đặt',
     'pre_flight'            => 'Pre-Flight',

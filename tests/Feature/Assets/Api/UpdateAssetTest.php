@@ -3,10 +3,6 @@
 namespace Tests\Feature\Assets\Api;
 
 use App\Models\Asset;
-<<<<<<< HEAD
-use App\Models\CustomField;
-use App\Models\User;
-=======
 use App\Models\AssetModel;
 use App\Models\Company;
 use App\Models\Location;
@@ -14,14 +10,11 @@ use App\Models\Statuslabel;
 use App\Models\Supplier;
 use App\Models\User;
 use App\Models\CustomField;
->>>>>>> origin/upstream
 use Illuminate\Support\Facades\Crypt;
 use Tests\TestCase;
 
 class UpdateAssetTest extends TestCase
 {
-<<<<<<< HEAD
-=======
     public function testThatANonExistentAssetIdReturnsError()
     {
         $this->actingAsForApi(User::factory()->editAssets()->createAssets()->create())
@@ -368,7 +361,6 @@ class UpdateAssetTest extends TestCase
         $this->assertTrue($asset->location->is($location));
     }
 
->>>>>>> origin/upstream
     public function testEncryptedCustomFieldCanBeUpdated()
     {
         $this->markIncompleteIfMySQL('Custom Fields tests do not work on MySQL');
@@ -411,8 +403,6 @@ class UpdateAssetTest extends TestCase
         $asset->refresh();
         $this->assertEquals("encrypted value should not change", Crypt::decrypt($asset->{$field->db_column_name()}));
     }
-<<<<<<< HEAD
-=======
 
     public function testCheckoutToUserOnAssetUpdate()
     {
@@ -585,5 +575,4 @@ class UpdateAssetTest extends TestCase
             '_snipeit_non_existent_custom_field_50' => 'test attribute',
         ])->assertStatusMessageIs('error');
     }
->>>>>>> origin/upstream
 }

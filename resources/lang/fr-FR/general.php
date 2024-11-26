@@ -11,15 +11,9 @@ return [
     'activity_report'		=> 'Rapport d\'activité',
     'address'				=> 'Adresse',
     'admin'					=> 'Admin',
-<<<<<<< HEAD
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin_tooltip'			=> 'Cet utilisateur a des privilèges d\'administrateur',
     'superuser'				=> 'Super-utilisateur',
     'superuser_tooltip'		=> 'Cet utilisateur a des privilèges de super-utilisateur',
->>>>>>> origin/upstream
     'administrator'			=> 'Administrateur·trice',
     'add_seats'             => 'Places ajoutées',
     'age'                   => "Âge",
@@ -141,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Nom de famille et première lettre du prénom (smith_j@example.com)',
     'firstinitial.lastname' => 'Première lettre du prénom et nom de famille (j.smith@example.com)',
     'firstnamelastinitial'  => 'Prénom (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Nom.Prénom (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Prénom',
     'first_name_format'		=> 'Prénom (jane@example.com)',
     'files'                 => 'Fichiers',
@@ -257,13 +247,8 @@ return [
     'requested_assets'      => 'Actifs demandés',
     'requested_assets_menu' => 'Actifs demandés',
     'request_canceled'      => 'Demande annulée',
-<<<<<<< HEAD
-    'request_item'          => 'Request this item',
-    'external_link_tooltip' => 'External link to',
-=======
     'request_item'          => 'Demander cet article',
     'external_link_tooltip' => 'Lien externe vers',
->>>>>>> origin/upstream
     'save'  				=> 'Sauvegarder',
     'select_var'            => 'Sélectionner :thing... ', // this will eventually replace all of our other selects
     'select'				=> 'Sélectionner',
@@ -423,15 +408,9 @@ return [
     'accessory_name'       => 'Nom de l’accessoire :',
     'clone_item'            => 'Cloner l\'élément',
     'checkout_tooltip' => 'Affecter cet élément',
-<<<<<<< HEAD
-    'checkin_tooltip' => 'Check this item in so that it is available for re-issue, re-imaging, etc',
-    'checkout_user_tooltip' => 'Affecter cet élément à un utilisateur',
-    'checkin_to_diff_location' => 'You can choose to check this asset in to a location other than this asset\'s default location of :default_location if one is set',
-=======
     'checkin_tooltip' => 'Enregistrez cet élément afin qu\'il soit disponible pour une réédition, une réimpression, etc',
     'checkout_user_tooltip' => 'Affecter cet élément à un utilisateur',
     'checkin_to_diff_location' => 'Vous pouvez choisir de vérifier cette ressource à un emplacement autre que l\'emplacement par défaut de cette ressource :default_location si elle est définie',
->>>>>>> origin/upstream
     'maintenance_mode'      => 'Le service est temporairement indisponible en raison d\'une mise à jour du système. Veuillez revenir plus tard.',
     'maintenance_mode_title' => 'Le système est temporairement indisponible',
     'ldap_import'           => 'Le mot de passe de l\'utilisateur ne devrait pas être géré par LDAP. (Cela vous permet d\'envoyer des demandes de mot de passe oublié.)',
@@ -533,11 +512,7 @@ return [
         'address2' => 'Adresse Ligne 2',
         'import_note' => 'Importé à l\'aide de l\'importateur CSV',
     ],
-<<<<<<< HEAD
-    'remove_customfield_association' => 'Remove this field from the fieldset. This will not delete the custom field, only this field\'s association with this fieldset.',
-=======
     'remove_customfield_association' => 'Supprimer ce champ de l\'ensemble de champs. Cette opération ne supprime pas le champ personnalisé, mais uniquement l\'association de ce champ à cet ensemble de champs.',
->>>>>>> origin/upstream
     'checked_out_to_fields' => 'Checked Out To Fields',
     'percent_complete' => '% terminé',
     'uploading' => 'Téléversement... ',

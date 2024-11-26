@@ -2,16 +2,6 @@
 
 return [
 
-<<<<<<< HEAD
-    'undeployable' 		=> '<strong>Achtung:</strong>Dieses Asset wurde kürzlich als nicht verteilbar markiert.
-                        Falls sich dieser Status verändert hat, aktualisiere bitte den Asset Status.',
-    'does_not_exist' 	=> 'Asset existiert nicht.',
-    'does_not_exist_var'=> 'Asset mit Tag :asset_tag nicht gefunden.',
-    'no_tag' 	        => 'Kein Asset Tag angegeben.',
-    'does_not_exist_or_not_requestable' => 'Dieses Asset existiert nicht oder kann nicht angefordert werden.',
-    'assoc_users'	 	=> 'Dieses Asset ist im Moment an einen Benutzer herausgegeben und kann nicht entfernt werden. Bitte buche das Asset wieder ein und versuche dann erneut, es zu entfernen. ',
-    'warning_audit_date_mismatch' 	=> 'Das nächste Prüfdatum dieses Assets (:next_audit_date) liegt vor dem letzten Prüfdatum (:last_audit_date). Bitte aktualisieren Sie das nächste Prüfdatum.',
-=======
     'undeployable' 		 => '<strong>Warnung: </strong> Dieses Asset wurde als derzeit nicht einsetzbar markiert. Wenn sich dieser Status geändert hat, aktualisieren Sie bitte den Asset-Status.',
     'does_not_exist' 	 => 'Asset existiert nicht.',
     'does_not_exist_var' => 'Asset mit Asset-Tag :asset_tag nicht gefunden.',
@@ -22,7 +12,6 @@ return [
     'labels_generated'   => 'Labels wurden erfolgreich generiert.',
     'error_generating_labels' => 'Fehler beim Generieren der Labels.',
     'no_assets_selected' => 'Keine Assets ausgewählt.',
->>>>>>> origin/upstream
 
     'create' => [
         'error'   		=> 'Asset wurde nicht erstellt. Bitte versuche es erneut. :(',

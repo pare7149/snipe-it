@@ -127,26 +127,6 @@ return [
     ],
     'percent'       => 'El mínimo de amortización debe estar entre 0 y 100 cuando el tipo de amortización es porcentual.',
 
-<<<<<<< HEAD
-    'not_in'               => 'El :attribute seleccionado no es correcto.',
-    'numeric'              => ':attribute debe ser un número.',
-    'present'              => 'El campo: atributo debe estar presente.',
-    'valid_regex'          => 'Este no es un regex válido. ',
-    'regex'                => ':attribute formato incorrecto.',
-    'required'             => 'El campo :attribute es obligatorio.',
-    'required_if'          => 'El campo :attribute es obligatorio cuando :other es :value.',
-    'required_unless'      => 'El campo :attribute es obligatorio a menos que :other esté en :values.',
-    'required_with'        => ':attribute es obligatrio cuando :values es present.',
-    'required_with_all'    => 'El campo: atributo se requiere cuando: los valores están presentes.',
-    'required_without'     => ':attribute es obligatrio cuando :values es not present.',
-    'required_without_all' => 'El campo: atributo es necesario cuando ninguno de: valores están presentes.',
-    'same'                 => ':attribute y :other deben coincidir.',
-    'size'                 => [
-        'numeric' => ':attribute debe tener :size.',
-        'file'    => ':attribute debe tener :size kilobytes.',
-        'string'  => ':attribute debe tener :size caracteres.',
-        'array'   => 'El atributo: debe contener: elementos de tamaño.',
-=======
     'present' => 'El campo: atributo debe estar presente.',
     'present_if' => 'El campo :attribute debe estar presente cuando :other sea :value.',
     'present_unless' => 'El campo :attribute debe estar presente a menos que :other sea :value.',
@@ -173,7 +153,6 @@ return [
         'file' => 'El campo :attribute debe ser de :size kilobytes.',
         'numeric' => 'El campo :attribute debe ser :size.',
         'string' => 'El campo :attribute debe ser de :size caracteres.',
->>>>>>> origin/upstream
     ],
     'starts_with' => 'El campo :attribute debe iniciar con uno de los siguientes: :values.',
     'string'               => 'El atributo: debe ser una cadena.',
@@ -216,17 +195,6 @@ return [
         'custom_field_not_found_on_model' => 'Este campo parece existir, pero no está disponible en este conjunto de campos para el modelo de activo.',
 
         // date_format validation with slightly less stupid messages. It duplicates a lot, but it gets the job done :(
-<<<<<<< HEAD
-        // We use this because the default error message for date_format is reflects php Y-m-d, which non-PHP
-        // people won't know how to format. 
-        'purchase_date.date_format'     => 'El :attribute debe ser una fecha válida en formato AAAA-MM-DD',
-        'last_audit_date.date_format'   =>  'El :attribute debe ser una fecha válida en formato AAAA-MM-DD hh:mm:ss',
-        'expiration_date.date_format'   =>  'El :attribute debe ser una fecha válida en formato AAAA-MM-DD',
-        'termination_date.date_format'  =>  'El :attribute debe ser una fecha válida en formato AAAA-MM-DD',
-        'expected_checkin.date_format'  =>  ':attribute debe ser una fecha válida en formato AAA-MM-DD',
-        'start_date.date_format'        =>  'El :attribute debe ser una fecha válida en formato AAAA-MM-DD',
-        'end_date.date_format'          =>  'El :attribute debe ser una fecha válida en formato AAAA-MM-DD',
-=======
         // We use this because the default error message for date_format reflects php Y-m-d, which non-PHP
         // people won't know how to format.
         'purchase_date.date_format'     => ':attribute debe ser una fecha válida en formato AAAA-MM-DD',
@@ -239,7 +207,6 @@ return [
         'checkboxes'           => ':attribute contiene opciones no válidas.',
         'radio_buttons'        => 'El valor de :attribute no es válido.',
         'invalid_value_in_field' => 'Valor no válido incluido en este campo',
->>>>>>> origin/upstream
 
         'ldap_username_field' => [
             'not_in' =>         '<code>sAMAccountName</code> (mezcla de mayúsculas y minúsculas) no funcionará. Debe utilizar <code>samaccountname</code> (minúsculas) en su lugar.'

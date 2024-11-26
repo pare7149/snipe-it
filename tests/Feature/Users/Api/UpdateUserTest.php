@@ -2,10 +2,7 @@
 
 namespace Tests\Feature\Users\Api;
 
-<<<<<<< HEAD
-=======
 use App\Models\Asset;
->>>>>>> origin/upstream
 use App\Models\Company;
 use App\Models\Department;
 use App\Models\Group;
@@ -54,9 +51,6 @@ class UpdateUserTest extends TestCase
                 'start_date' => '2021-08-01',
                 'end_date' => '2025-12-31',
             ])
-<<<<<<< HEAD
-            ->assertOk();
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('success')
@@ -135,7 +129,6 @@ class UpdateUserTest extends TestCase
             ->assertStatus(200)
             ->assertStatusMessageIs('success')
             ->json();
->>>>>>> origin/upstream
 
         $user->refresh();
         $this->assertEquals('Mabel', $user->first_name, 'First name was not updated');
@@ -238,110 +231,74 @@ class UpdateUserTest extends TestCase
         // Admin for Company A should allow updating user from Company A
         $this->actingAsForApi($adminA)
             ->patchJson(route('api.users.update', $scoped_user_in_companyA))
-<<<<<<< HEAD
-            ->assertStatus(200);
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('success')
             ->json();
->>>>>>> origin/upstream
 
         // Admin for Company A should get denied updating user from Company B
         $this->actingAsForApi($adminA)
             ->patchJson(route('api.users.update', $scoped_user_in_companyB))
-<<<<<<< HEAD
-            ->assertStatus(403);
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('error')
             ->json();
->>>>>>> origin/upstream
 
         // Admin for Company A should get denied updating user without a company
         $this->actingAsForApi($adminA)
             ->patchJson(route('api.users.update', $scoped_user_in_no_company))
-<<<<<<< HEAD
-            ->assertStatus(403);
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('error')
             ->json();
->>>>>>> origin/upstream
 
         // Admin for Company B should allow updating user from Company B
         $this->actingAsForApi($adminB)
             ->patchJson(route('api.users.update', $scoped_user_in_companyB))
-<<<<<<< HEAD
-            ->assertStatus(200);
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('success')
             ->json();
->>>>>>> origin/upstream
 
         // Admin for Company B should get denied updating user from Company A
         $this->actingAsForApi($adminB)
             ->patchJson(route('api.users.update', $scoped_user_in_companyA))
-<<<<<<< HEAD
-            ->assertStatus(403);
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('error')
             ->json();
->>>>>>> origin/upstream
 
         // Admin for Company B should get denied updating user without a company
         $this->actingAsForApi($adminB)
             ->patchJson(route('api.users.update', $scoped_user_in_no_company))
-<<<<<<< HEAD
-            ->assertStatus(403);
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('error')
             ->json();
->>>>>>> origin/upstream
 
         // Admin without a company should allow updating user without a company
         $this->actingAsForApi($adminNoCompany)
             ->patchJson(route('api.users.update', $scoped_user_in_no_company))
-<<<<<<< HEAD
-            ->assertStatus(200);
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('success')
             ->json();
->>>>>>> origin/upstream
 
         // Admin without a company should get denied updating user from Company A
         $this->actingAsForApi($adminNoCompany)
             ->patchJson(route('api.users.update', $scoped_user_in_companyA))
-<<<<<<< HEAD
-            ->assertStatus(403);
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('error')
             ->json();
->>>>>>> origin/upstream
 
         // Admin without a company should get denied updating user from Company B
         $this->actingAsForApi($adminNoCompany)
             ->patchJson(route('api.users.update', $scoped_user_in_companyB))
-<<<<<<< HEAD
-            ->assertStatus(403);
-=======
             ->assertOk()
             ->assertStatus(200)
             ->assertStatusMessageIs('error')
             ->json();
->>>>>>> origin/upstream
     }
 
     public function testUserGroupsAreOnlyUpdatedIfAuthenticatedUserIsSuperUser()
@@ -465,8 +422,6 @@ class UpdateUserTest extends TestCase
         $this->assertTrue($user->refresh()->groups->contains($groupB));
     }
 
-<<<<<<< HEAD
-=======
     public function testMultiCompanyUserCannotBeMovedIfHasAssetInDifferentCompany()
     {
         $this->settings->enableMultipleFullCompanySupport();
@@ -557,5 +512,4 @@ class UpdateUserTest extends TestCase
         ])->assertStatusMessageIs('error');
     }
 
->>>>>>> origin/upstream
 }

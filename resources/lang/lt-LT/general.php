@@ -22,22 +22,6 @@ return [
     'archived'              => 'Archyvuotas',
     'asset_models'			=> 'Turto modeliai',
     'asset_model'			=> 'Modelis',
-<<<<<<< HEAD
-    'asset'					=> 'Įranga',
-    'asset_report'          => 'Įrangos ataskaita',
-    'asset_tag'				=> 'Inventorinis numeris',
-    'asset_tags'            => 'Inventoriniai numeriai',
-    'assets_available'		=> 'Turima įranga',
-    'accept_assets'         => 'Priimti įrangą :name',
-    'accept_assets_menu'    => 'Priimti įrangą',
-    'audit'				    => 'Auditas',
-    'audit_report'			=> 'Audito žurnalas',
-    'assets'				=> 'Įranga',
-    'assets_audited'        => 'audituota įranga',
-    'assets_checked_in_count'     => 'įranga paimta',
-    'assets_checked_out_count'     => 'įranga išduota',
-    'asset_deleted_warning'     => 'Ši įranga buvo panaikinta. Jūs turite ją atkurti, kad galėtumėte vėl ją kam nors išduoti.',
-=======
     'asset'					=> 'Turtas',
     'asset_report'          => 'Turto ataskaita',
     'asset_tag'				=> 'Inventorinis numeris',
@@ -52,7 +36,6 @@ return [
     'assets_checked_in_count'     => 'paimtas turtas',
     'assets_checked_out_count'     => 'išduotas turtas',
     'asset_deleted_warning'     => 'Šis turtas buvo panaikintas. Jūs turite jį atkurti, kad galėtumėte vėl jį kam nors išduoti.',
->>>>>>> origin/upstream
     'assigned_date'         => 'Išdavimo data',
     'assigned_to'           => 'Išduota :name',
     'assignee'              => 'Išduota',
@@ -67,11 +50,7 @@ return [
     'bulk_delete'           => 'Panaikinti kelis',
     'bulk_actions'          => 'Masiniai veiksmai',
     'bulk_checkin_delete'   => 'Masinis paėmimas / Naudotojų panaikinimas',
-<<<<<<< HEAD
-    'byod'                  => 'Naudotojų asmeninė įranga (BYOD)',
-=======
     'byod'                  => 'Naudotojų asmeninis turtas (BYOD)',
->>>>>>> origin/upstream
     'byod_help'             => 'Įrenginys yra naudotojo nuosavybė',
     'bystatus'              => 'pagal būseną',
     'cancel'  				=> 'Atšaukti',
@@ -85,10 +64,7 @@ return [
     'checkout'  			=> 'Išduoti',
     'checkouts_count'       => 'Išduota',
     'checkins_count'        => 'Paimta',
-<<<<<<< HEAD
-=======
     'checkin_and_delete'  	=> 'Paimti ir panaikinti',
->>>>>>> origin/upstream
     'user_requests_count'   => 'Užklausos',
     'city'  				=> 'Miestas',
     'click_here'			=> 'Paspauskite čia',
@@ -101,19 +77,11 @@ return [
     'consumable'			=> 'Eksploatacinė medžiaga',
     'consumables'			=> 'Eksploatacinės medžiagos',
     'country'  				=> 'Šalis',
-<<<<<<< HEAD
-    'could_not_restore'     => 'Atstatymo klaida :item_type: :error',
-    'not_deleted'           => ':item_type nėra panaikintas, todėl negali būti atkurtas',
-    'create'				=> 'Sukurti naują',
-    'created'               => 'Elementas sukurtas',
-    'created_asset'			=> 'įranga sukurta',
-=======
     'could_not_restore'     => 'Klaida atkuriant :item_type: :error',
     'not_deleted'           => ':item_type nėra panaikintas, todėl negali būti atkurtas',
     'create'				=> 'Sukurti naują',
     'created'               => 'Daiktas sukurtas',
     'created_asset'			=> 'sukurtas turtas',
->>>>>>> origin/upstream
     'created_at' 			=> 'Sukurta',
     'created_by'            => 'Sukūrė',
     'record_created' 		=> 'Įrašas sukurtas',
@@ -122,38 +90,22 @@ return [
     'current'  				=> 'Dabartinis',
     'current_password'      => 'Dabartinis slaptažodis',
     'customize_report'      => 'Individualizuoti ataskaitą',
-<<<<<<< HEAD
-    'custom_report'         => 'Individualizuota įrangos ataskaita',
-=======
     'custom_report'         => 'Individualizuota turto ataskaita',
->>>>>>> origin/upstream
     'dashboard'				=> 'Valdymo skydas',
     'days'      			=> 'dienos',
     'days_to_next_audit'    => 'Dienos iki kito audito',
     'date'					=> 'Data',
     'debug_warning'         => 'Įspėjimas!',
-<<<<<<< HEAD
-    'debug_warning_text'    => 'Ši programa veikia derinimo režimu. Tai gali atskleisti neskelbtinus duomenis, jei jūsų programa yra pasiekiama išoriniam pasauliui. Išjunkite derinimo režimą nustatydami <code>APP_DEBUG</code> reikšmę savo <code>.env</code> faile į <code>false</code>.',
-    'delete'  				=> 'Panaikinti',
-    'delete_confirm'  		=> 'Ar tikrai norite panaikinti :item?',
-    'delete_confirm_no_undo' => 'Ar tikrai norite panaikinti :item? Šis veiksmas negrįžtamas.',
-    'deleted'  				=> 'Panaikinta',
-=======
     'debug_warning_text'    => 'Ši programa veikia gamybiniu režimu, įjungus derinimą. Tai gali atskleisti neskelbtinus duomenis, jei jūsų programa yra pasiekiama išoriniam pasauliui. Išjunkite derinimo režimą nustatydami <code>APP_DEBUG</code> reikšmę savo <code>.env</code> faile į <code>false</code>.',
     'delete'  				=> 'Panaikinti',
     'delete_confirm'  		=> 'Ar tikrai norite panaikinti :item?',
     'delete_confirm_no_undo' => 'Ar tikrai norite panaikinti :item? Šis veiksmas negrįžtamas.',
     'deleted'  				=> 'Panaikintas',
->>>>>>> origin/upstream
     'delete_seats'  		=> 'Panaikintos licencijos vietos',
     'deletion_failed'       => 'Panaikinti nepavyko',
     'departments'           => 'Skyriai',
     'department'            => 'Skyrius',
-<<<<<<< HEAD
-    'deployed'				=> 'Naudojama',
-=======
     'deployed'				=> 'Naudojamas',
->>>>>>> origin/upstream
     'depreciation'			=> 'Nusidėvėjimas',
     'depreciations'         => 'Nusidėvėjimas',
     'depreciation_report'	=> 'Nusidėvėjimo ataskaita',
@@ -167,16 +119,6 @@ return [
     'employee_number'       => 'Darbuotojo numeris',
     'email_domain_help'		=> 'Naudojama el. pašto adresų generavimui importavimo metu.',
     'error'				    => 'Klaida',
-<<<<<<< HEAD
-    'exclude_archived'      => 'Neįtraukti archyvuotos įrangos',
-    'exclude_deleted'       => 'Neįtraukti panaikintos įrangos',
-    'example'				=> 'Pavyzdys: ',
-    'filastname_format'			=> 'Vardo pirmoji raidė, Pavardė (vpavarde@example.com)',
-    'firstname_lastname_format'	=> 'Vardas Pavardė (vardas.pavarde@example.com)',
-    'firstname_lastname_underscore_format' => 'Vardas Pavardė (vardas_pavarde@example.com)',
-    'lastnamefirstinitial_format' =>  'Pavardė, Vardo pirmoji raidė (pavardev@example.com)',
-    'firstintial_dot_lastname_format' => 'V. Pavardė (v.pavarde@example.com)',
-=======
     'exclude_archived'      => 'Neįtraukti archyvuoto turto',
     'exclude_deleted'       => 'Neįtraukti panaikinto turto',
     'example'				=> 'Pavyzdys: ',
@@ -185,24 +127,15 @@ return [
     'firstname_lastname_underscore_format' => 'Vardas_Pavardė (vardas_pavarde@example.com)',
     'lastnamefirstinitial_format' =>  'Pavardė, Vardo pirmoji raidė (pavardev@example.com)',
     'firstintial_dot_lastname_format' => 'Vardo pirmoji raidė.Pavardė (v.pavarde@example.com)',
->>>>>>> origin/upstream
     'firstname_lastname_display'	=> 'Vardas Pavardė (Vardenis Pavardenis)',
     'lastname_firstname_display'	=> 'Pavardė Vardas (Pavardenis Vardenis)',
     'name_display_format'	=> 'Vardo atvaizdavimo formatas',
     'first'					=> 'Pirmas',
-<<<<<<< HEAD
-    'firstnamelastname'     => 'Vardas Pavardė (vardaspavarde@example.com)',
-    'lastname_firstinitial' => 'Pavardė, Vardo pirmoji raidė (pavarde_v@example.com)',
-    'firstinitial.lastname' => 'V. Pavardė (v.pavarde@example.com)',
-    'firstnamelastinitial'  => 'Vardas, Pavardės pirmoji raidė (vardasp@example.com)',
-    'lastnamefirstname'      => 'Pavardė, Vardas (pavardenis.vardenis@example.com)',
-=======
     'firstnamelastname'     => 'VardasPavardė (vardaspavarde@example.com)',
     'lastname_firstinitial' => 'Pavardė_Vardo pirmoji raidė (pavarde_v@example.com)',
     'firstinitial.lastname' => 'Vardo pirmoji raidė.Pavardė (v.pavarde@example.com)',
     'firstnamelastinitial'  => 'Vardas, Pavardės pirmoji raidė (vardasp@example.com)',
     'lastnamefirstname'      => 'Pavardė.Vardas (pavardenis.vardenis@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Vardas',
     'first_name_format'		=> 'Vardas (vardas@example.com)',
     'files'                 => 'Failai',
@@ -211,55 +144,26 @@ return [
     'filesize'              => 'Failo dydis',
     'file_uploads'			=> 'Įkelti failai',
     'file_upload'           => 'Failo įkėlimas',
-<<<<<<< HEAD
-    'generate'				=> 'Sukurti',
-    'generate_labels'       => 'Generuoti etiketes',
-    'github_markdown'      => 'Šis laukas leidžia naudoti <a href="https://help.github.com/articles/github-flavored-markdown/">Github tipo žymėjimą (markdown)</a>.',
-    'groups'				=> 'Grupės',
-    'gravatar_email'        => 'Gravatar el. paštas',
-=======
     'generate'				=> 'Generuoti',
     'generate_labels'       => 'Generuoti etiketes',
     'github_markdown'      => 'Šis laukas leidžia naudoti <a href="https://help.github.com/articles/github-flavored-markdown/">Github tipo žymėjimą (markdown)</a>.',
     'groups'				=> 'Grupės',
     'gravatar_email'        => 'Gravatar el. pašto adresas',
->>>>>>> origin/upstream
     'gravatar_url'          => '<a href="http://gravatar.com"><small>Pasikeiskite savo avatarą Gravatar.com</small></a>.',
     'history'  			    => 'Istorija',
     'history_for'  			=> 'Istorija žmogui: ',
     'id'  					=> 'ID',
     'image'                 => 'Atvaizdas',
     'image_delete'         	=> 'Ištrinti atvaizdą',
-<<<<<<< HEAD
-    'include_deleted'       => 'Įtraukti panaikintą įrangą',
-    'image_upload'         	=> 'Įkelti atvaizdą',
-    'filetypes_accepted_help'    => 'Leidžiamas failo tipas yra :types. Didžiausias leistinas įkeliamo failo dydis yra :size.|Leidžiami failų tipai yra :types. Didžiausias leistinas įkeliamų failų dydis yra :size.',
-    'filetypes_size_help'   => 'Didžiausias leistinas įkeliamų failų dydis yra :size.',
-    'image_filetypes_help'  => 'Leidžiami failų tipai yra: jpg, webp, png, gif ir svg. Didžiausias leistinas įkeliamų failų dydis yra :size.',
-=======
     'include_deleted'       => 'Įtraukti panaikintą turtą',
     'image_upload'         	=> 'Įkelti atvaizdą',
     'filetypes_accepted_help'    => 'Leidžiamas failo tipas yra :types. Didžiausias leistinas įkeliamo failo dydis yra :size.|Leidžiami failų tipai yra :types. Didžiausias leistinas įkeliamų failų dydis yra :size.',
     'filetypes_size_help'   => 'Didžiausias leistinas įkeliamų failų dydis yra :size.',
     'image_filetypes_help'  => 'Leidžiami failų tipai yra: jpg, webp, png, gif, svg ir avif. Didžiausias leistinas įkeliamų failų dydis yra :size.',
->>>>>>> origin/upstream
     'unaccepted_image_type'  => 'Šio atvaizdo failo nepavyko nuskaityti. Leidžiami failų tipai yra: jpg, webp, png, gif ir svg. Šio failo mimetype identifikatorius yra: :mimetype.',
     'import'         	    => 'Importavimas',
     'import_this_file'      => 'Susieti laukus ir apdoroti šį failą',
     'importing'         	=> 'Importuojama',
-<<<<<<< HEAD
-    'importing_help'        => 'Galite importuoti įrangą, priedus, licencijas, komponentus, eksploatacines medžiagas ir vartotojus naudodami CSV failą. <br><br>CSV reikšmės turėtų būti atskirtos kableliais, o failas suformatuotas su antraštėmis, kurios atitinka esančias <a href="https://snipe-it.readme.io/docs/importing" target="_new">CSV pavyzdžiuose</a>.',
-    'import-history'        => 'Importuoti istoriją',
-    'asset_maintenance'        => 'Įrangos aptarnavimas',
-    'asset_maintenance_report' => 'Įrangos aptarnavimo ataskaita',
-    'asset_maintenances'       => 'Įrangos aptarnavimas',
-    'item'  				=> 'Elementas',
-    'item_name'             => 'Elemento pavadinimas',
-    'import_file'  			=> 'importuoti CSV failą',
-    'import_type'  			=> 'CSV importo tipas',
-    'insufficient_permissions' => 'Nepakankamos teisės!',
-    'kits'       			=> 'Įrangos rinkiniai',
-=======
     'importing_help'        => 'Galite importuoti turtą, priedus, licencijas, komponentus, eksploatacines medžiagas ir naudotojus, naudodami CSV failą. <br><br>CSV reikšmės turėtų būti atskirtos kableliais, o failas suformuotas su antraštėmis, kurios sutampa su esančiomis <a href="https://snipe-it.readme.io/docs/importing" target="_new">CSV pavyzdžiuose</a>.',
     'import-history'        => 'Importuoti istoriją',
     'asset_maintenance'        => 'Turto aptarnavimas',
@@ -271,7 +175,6 @@ return [
     'import_type'  			=> 'CSV importo tipas',
     'insufficient_permissions' => 'Nepakankamos teisės!',
     'kits'       			=> 'Turto rinkiniai',
->>>>>>> origin/upstream
     'language'				=> 'Kalba',
     'last'					=> 'Paskutinis',
     'last_login'            => 'Paskutinis prisijungimas',
@@ -289,22 +192,14 @@ return [
     'locations'				=> 'Vietos',
     'logo_size'				=> '"Logotipas + tekstas" tipui labiausiai tinka kvadratiniai logotipai. Didžiausias logotipo rodymo dydis yra 50 pikselių aukščio ir 500 pikselių pločio.  ',
     'logout'				=> 'Atsijungti',
-<<<<<<< HEAD
-    'lookup_by_tag'     => 'Paieška pagal inventorinį numerį',
-=======
     'lookup_by_tag'     => 'Paieška pagal inventorinį Nr.',
->>>>>>> origin/upstream
     'maintenances'          => 'Aptarnavimai',
     'manage_api_keys'       => 'Tvarkyti API raktus',
     'manufacturer'			=> 'Gamintojas',
     'manufacturers'			=> 'Gamintojai',
     'markdown'				=> 'Šis laukas leidžia naudoti <a href="https://help.github.com/articles/github-flavored-markdown/">Github tipo žymes (markdown)</a>.',
     'min_amt'				=> 'Mažiausias kiekis',
-<<<<<<< HEAD
-    'min_amt_help'          => 'Mažiausias turimų elementų kiekis, kurį pasiekus yra aktyvuojamas įspėjimas. Palikite lauką "Mažiausias kiekis" tuščią, jei nenorite gauti įspėjimų apie mažą atsargų likutį.',
-=======
     'min_amt_help'          => 'Mažiausias turimų daiktų kiekis, kurį pasiekus yra aktyvuojamas įspėjimas. Palikite lauką "Mažiausias kiekis" tuščią, jei nenorite gauti įspėjimų apie mažą atsargų likutį.',
->>>>>>> origin/upstream
     'model_no'				=> 'Modelio Nr.',
     'months'				=> 'mėnesiai',
     'moreinfo'				=> 'Išsamiau',
@@ -313,11 +208,7 @@ return [
     'next'					=> 'Sekantis',
     'next_audit_date'		=> 'Kito audito data',
     'next_audit_date_help'  => 'Jei organizacijoje naudojate auditą, įprastai tai yra apskaičiuojama automatiškai, atsižvelgiant į paskutinio audito datą ir dažnumą, todėl šį lauką (skiltyje <code>Administratoriaus nustatymai &gt; Įspėjimai</code>) galite palikti tuščią. Jei reikia, rankiniu būdu čia galite nustatyti šią datą, tačiau ji privalo būti vėlesnė nei paskutinio audito data. ',
-<<<<<<< HEAD
-    'audit_images_help'     => 'Audito atvaizdus galite rasti įrangos skirtuke „Istorija“.',
-=======
     'audit_images_help'     => 'Audito atvaizdus galite rasti turto skirtuke „Istorija“.',
->>>>>>> origin/upstream
     'no_email'              => 'Su šiuo naudotoju nėra susietas joks el. pašto adresas',
     'last_audit'		    => 'Paskutinis auditas',
     'new'					=> 'naujas!',
@@ -326,17 +217,10 @@ return [
     'no'  					=> 'Ne',
     'notes'  				=> 'Pastabos',
     'order_number'          => 'Užsakymo numeris',
-<<<<<<< HEAD
-    'only_deleted'          => 'Tik panaikinta įranga',
-    'page_menu'				=> 'Rodomi _MENU_ elementai',
-    'pagination_info'		=> 'Rodomi nuo _START_ iki _END_ iš _TOTAL_ vienetų',
-    'pending'				=> 'Ruošiama',
-=======
     'only_deleted'          => 'Tik panaikintas turtas',
     'page_menu'				=> 'Rodomi _MENU_ elementai',
     'pagination_info'		=> 'Rodomi nuo _START_ iki _END_ iš _TOTAL_ vienetų',
     'pending'				=> 'Ruošiamas',
->>>>>>> origin/upstream
     'people'				=> 'Žmonės',
     'per_page'				=> 'Rezultatų puslapyje',
     'previous'				=> 'Ankstesnis',
@@ -346,17 +230,10 @@ return [
     'purchase_date'         => 'Pirkimo data',
     'qty'		            => 'Kiekis',
     'quantity'		        => 'Kiekis',
-<<<<<<< HEAD
-    'quantity_minimum'      => 'Jūs turite įrangos (:count), kurios likutis artimas arba mažesnis už minimalų',
-    'quickscan_checkin'  	=> 'Greitas paėmimas skenuojant',
-    'quickscan_checkin_status'  	=> 'Paėmimo būsena',
-    'ready_to_deploy'		=> 'Paruošta naudojimui',
-=======
     'quantity_minimum'      => 'You have one item below or almost below minimum quantity levels|You have :count items below or almost below minimum quantity levels',
     'quickscan_checkin'  	=> 'Greitas paėmimas skenuojant',
     'quickscan_checkin_status'  	=> 'Paėmimo būsena',
     'ready_to_deploy'		=> 'Paruoštas naudojimui',
->>>>>>> origin/upstream
     'recent_activity'		=> 'Paskutiniai veiksmai',
     'remaining'             => 'Likutis',
     'remove_company'        => 'Pašalinti sąsają su įmone',
@@ -364,12 +241,8 @@ return [
     'restored'				=> 'atkurta',
     'restore'				=> 'Atkurti',
     'requestable_models'    => 'Užsakomi modeliai',
-<<<<<<< HEAD
-    'requested'				=> 'Užsakyta',
-=======
     'requestable_items'     => 'Užsakomi daiktai',
     'requested'				=> 'Užsakytas',
->>>>>>> origin/upstream
     'requested_date'        => 'Prašymo data',
     'requested_assets'      => 'Prašomas turtas',
     'requested_assets_menu' => 'Prašomas turtas',
@@ -393,38 +266,24 @@ return [
     'select_date'			=> 'Pasirinkite datą (MMMM-MM-DD)',
     'select_statuslabel'	=> 'Pasirinkti būseną',
     'select_company'    	=> 'Pasirinkite įmonę',
-<<<<<<< HEAD
-    'select_asset'    		=> 'Pasirinkite įrangą',
-=======
     'select_asset'    		=> 'Pasirinkite turtą',
->>>>>>> origin/upstream
     'settings'				=> 'Nustatymai',
     'show_deleted'  		=> 'Rodyti panaikintus',
     'show_current'  		=> 'Rodyti dabartinį',
     'sign_in'				=> 'Prisijungti',
     'signature'             => 'Parašas',
-<<<<<<< HEAD
-    'signed_off_by'         => 'Nurašyta',
-    'skin'       			=> 'Išvaizda',
-=======
     'signed_off_by'         => 'Pasirašė',
     'skin'       			=> 'Tema',
->>>>>>> origin/upstream
     'webhook_msg_note'        => 'Pranešimas bus išsiųstas naudojant „webhook“',
     'webhook_test_msg'        => 'Oh hai! Panašu jog jūsų :app integracija su Snipe-IT veikia!',
     'some_features_disabled' => 'DEMO REŽIMAS: šiame režime kai kurios funkcijos yra išjungtos.',
     'site_name'				=> 'Puslapio pavadinimas',
     'state'  				=> 'Rajonas',
     'status_labels'			=> 'Būsenos žymos',
-<<<<<<< HEAD
-    'status'    			=> 'Būsena',
-    'accept_eula'           => 'Licencinis sutikimas',
-=======
     'status_label'			=> 'Būsenos žyma',
     'status'    			=> 'Būsena',
     'accept_eula'           => 'Licencinis sutikimas',
     'show_or_hide_eulas' => 'Rodyti/slėpti licencinius sutikimus',
->>>>>>> origin/upstream
     'supplier'              => 'Tiekėjas',
     'suppliers'  			=> 'Tiekėjai',
     'sure_to_delete'        => 'Ar tikrai norite panaikinti',
@@ -433,41 +292,24 @@ return [
     'submit'				=> 'Pateikti',
     'target'                => 'Tikslas',
     'time_and_date_display' => 'Laiko ir datos rodymas',
-<<<<<<< HEAD
-    'total_assets'			=> 'iš viso įrangos',
-=======
     'total_assets'			=> 'iš viso turto',
->>>>>>> origin/upstream
     'total_licenses'		=> 'iš viso licencijų',
     'total_accessories'		=> 'iš viso priedų',
     'total_consumables'		=> 'iš viso eksploatacinių medžiagų',
     'type'  				=> 'Tipas',
-<<<<<<< HEAD
-    'undeployable'			=> 'Nepanaudojama',
-=======
     'undeployable'			=> 'Neišduotinas',
->>>>>>> origin/upstream
     'unknown_admin'			=> 'Nežinomas administratorius',
     'username_format'		=> 'Naudotojo vardo formatas',
     'username'              => 'Naudotojo vardas',
     'update'                => 'Atnaujinti',
     'upload_filetypes_help'      => 'Leidžiami failų tipai yra: png, gif, jpg, jpeg, doc, docx, pdf, xls, xlsx, txt, lic, xml, zip, rtf ir rar. Didžiausias leidžiamas įkeliamų failų dydis yra :size.',
-<<<<<<< HEAD
-    'uploaded'              => 'Įkelti',
-=======
     'uploaded'              => 'Įkelta',
->>>>>>> origin/upstream
     'user'					=> 'Naudotojas',
     'accepted'			    => 'priimta',
     'declined'			    => 'nepriimta',
     'declined_note'         => 'Atsisakymo pastabos',
-<<<<<<< HEAD
-    'unassigned'            => 'Nepriskirta',
-    'unaccepted_asset_report' => 'Nepriimta įranga',
-=======
     'unassigned'            => 'Nepriskirtas',
     'unaccepted_asset_report' => 'Nepriimtas turtas',
->>>>>>> origin/upstream
     'users'                 => 'Naudotojai',
     'viewall'				=> 'Rodyti viską',
     'viewassets'  			=> 'Peržiūrėti priskirtą turtą',
@@ -484,17 +326,6 @@ return [
     'token_expired'         => 'Jūsų sesija baigėsi. Bandykite dar kartą.',
     'login_enabled'         => 'Prisijungimas įjungtas',
     'audit_due'             => 'Laukia audito',
-<<<<<<< HEAD
-    'audit_due_days'        => 'Įranga, kuriai turi būti atliktas auditas per :days dieną|Įranga, kuriai turi būti atliktas auditas per :days dienas',
-    'checkin_due'           => 'Laukia paėmimo',
-    'checkin_overdue'       => 'Vėluojama paimti',
-    'checkin_due_days'      => 'Įranga, kuri turi būti paimta per :days dieną|Įranga, kuri turi būti paimta per :days dienas',
-    'audit_overdue'         => 'Audito laikas praėjęs',
-    'accept'                => 'Priimti :asset',
-    'i_accept'              => 'Aš sutinku',
-    'i_decline'             => 'Aš nesutinku',
-    'accept_decline'        => 'Sutikti/Nesutikti',
-=======
     'audit_due_days'        => 'Turtas, kuriam turi būti atliktas auditas per :days dieną|Turtas, kuriam turi būti atliktas auditas per :days dienas (-ų)',
     'checkin_due'           => 'Laukia paėmimo',
     'checkin_overdue'       => 'Vėluojama paimti',
@@ -504,7 +335,6 @@ return [
     'i_accept'              => 'Aš priimu',
     'i_decline'             => 'Aš nepriimu',
     'accept_decline'        => 'Priimti/Nepriimti',
->>>>>>> origin/upstream
     'sign_tos'              => 'Pasirašykite žemiau, kad patvirtintumėte savo sutikimą su paslaugos sąlygomis:',
     'clear_signature'       => 'Išvalyti parašą',
     'show_help'             => 'Parodyti pagalbą',
@@ -528,15 +358,6 @@ return [
     'checked_out_to'        => 'Kam išduota',
     'fields'                => 'Laukai',
     'last_checkout'         => 'Paskutinis išdavimas',
-<<<<<<< HEAD
-    'due_to_checkin'        => 'Šie daiktai (:count) netrukus turės būti išduoti:',
-    'expected_checkin'      => 'Numatoma paėmimo data',
-    'reminder_checked_out_items' => 'Tai yra pranešimas apie jums išduotą įrangą. Jei manote, kad šis sąrašas yra netikslus (kažko trūksta ar yra priskirta tai, ko jūs manote, kad niekada nesate gavę), prašome susisiekti el. paštu su :reply_to_name šiuo adresu :reply_to_address.',
-    'changed'               => 'Pakeista',
-    'to'                    => 'Iki',
-    'report_fields_info'    => '<p>Pasirinkite laukus, kuriuos norėtumėte įtraukti į savo ataskaitą, ir spustelėkite Generuoti. Failas (custom-asset-report-YYYY-mm-dd.csv) bus parsiųstas automatiškai ir galėsite jį atidaryti programoje „Excel“.</p>
-            <p>Jei norite eksportuoti tik tam tikrą įrangą, naudokite žemiau pateiktas parinktis, kad patikslintumėte rezultatus.</p>',
-=======
     'due_to_checkin'        => 'Šie :count daiktai (-ų) netrukus turės būti paimti:',
     'expected_checkin'      => 'Numatoma paėmimo data',
     'reminder_checked_out_items' => 'Tai yra pranešimas apie jums išduotus daiktus. Jei manote, kad šis sąrašas yra netikslus (kažko trūksta ar yra priskirta tai, ko jūs manote, kad niekada nesate gavę), prašome susisiekti el. paštu su :reply_to_name šiuo adresu :reply_to_address.',
@@ -544,7 +365,6 @@ return [
     'to'                    => 'Kam',
     'report_fields_info'    => '<p>Pasirinkite laukus, kuriuos norėtumėte įtraukti į savo ataskaitą, ir spustelėkite Generuoti. Failas (custom-asset-report-YYYY-mm-dd.csv) bus parsiųstas automatiškai ir galėsite jį atidaryti programoje „Excel“.</p>
             <p>Jei norite eksportuoti tik tam tikrą turtą, naudokite žemiau pateiktas parinktis, kad patikslintumėte rezultatus.</p>',
->>>>>>> origin/upstream
     'range'                 => 'Intervalas',
     'bom_remark'            => 'Pridėti BOM (byte-order mark) prie šio CSV',
     'improvements'          => 'Patobulinimai',
@@ -556,22 +376,13 @@ return [
     'ldap_user_sync'        => 'LDAP naudotojų sinchronizacija',
     'synchronize'           => 'Sinchronizuoti',
     'sync_results'          => 'Sinchronizacijos rezultatai',
-<<<<<<< HEAD
-    'license_serial'        => 'Serijos / produkto raktas',
-=======
     'license_serial'        => 'Serijinis / produkto raktas',
->>>>>>> origin/upstream
     'invalid_category'      => 'Neteisinga kategorija arba tokios kategorijos nėra',
     'invalid_item_category_single' => 'Neteisinga :type kategorija arba tokios kategorijos nėra. Prieš bandydami išduoti daiktą, atnaujinkite šią :type kategoriją, kad joje būtų tinkama kategorija.',
     'dashboard_info'        => 'Tai jūsų valdymo skydas. Yra daug panašių, bet šis yra jūsų.',
     '60_percent_warning'    => '60% baigta (įspėjimas)',
-<<<<<<< HEAD
-    'dashboard_empty'       => 'Atrodo, kad dar nieko nepridėjote, todėl neturime nieko nuostabaus, ką parodyti. Pradėkite dabar, pridėdami įrangos, priedų, eksploatacinių medžiagų ar licencijų!',
-    'new_asset'             => 'Nauja įranga',
-=======
     'dashboard_empty'       => 'Atrodo, kad dar nieko nepridėjote, todėl neturime nieko nuostabaus, ką parodyti. Pradėkite dabar, pridėdami turto, priedų, eksploatacinių medžiagų ar licencijų!',
     'new_asset'             => 'Naujas turtas',
->>>>>>> origin/upstream
     'new_license'           => 'Nauja licencija',
     'new_accessory'         => 'Naujas priedas',
     'new_consumable'        => 'Nauja eksploatacinė medžiaga',
@@ -590,25 +401,11 @@ return [
     'notification_info'      => 'Informacija',
     'asset_information'     => 'Turto informacija',
     'model_name'            => 'Modelio pavadinimas',
-<<<<<<< HEAD
-    'asset_name'            => 'Įrangos pavadinimas',
-=======
     'asset_name'            => 'Turto pavadinimas',
->>>>>>> origin/upstream
     'consumable_information' => 'Eksploatacinės medžiagos informacija:',
     'consumable_name'       => 'Eksploatacinės medžiagos pavadinimas:',
     'accessory_information' => 'Priedo informacija:',
     'accessory_name'       => 'Priedo pavadinimas:',
-<<<<<<< HEAD
-    'clone_item'            => 'Klonuoti elementą',
-    'checkout_tooltip' => 'Išduoti šį daiktą',
-    'checkin_tooltip' => 'Paimti šį daiktą, kad jį būtų galima pakartotinai išduoti, atlikti jam aptarnavimą ir pan.',
-    'checkout_user_tooltip' => 'Išduoti šį daiktą naudotojui',
-    'checkin_to_diff_location' => 'Paimamą įrangą galite perkelti ir į kitą, o ne į numatytąją vietą :default_location (jei tokia yra nurodyta)',
-    'maintenance_mode'      => 'Paslauga laikinai nepasiekiama dėl sistemos naujinimo. Bandykite dar kartą vėliau.',
-    'maintenance_mode_title' => 'Sistema laikinai nepasiekiama',
-    'ldap_import'           => 'Vartotojo slaptažodis neturėtų būti valdomas LDAP. (Tai leidžia siųsti užklausas dėl pamiršto slaptažodžio.)',
-=======
     'clone_item'            => 'Klonuoti daiktą',
     'checkout_tooltip' => 'Išduoti šį daiktą',
     'checkin_tooltip' => 'Paimti šį daiktą, kad jį būtų galima pakartotinai išduoti, atlikti jam aptarnavimą ir pan.',
@@ -617,24 +414,11 @@ return [
     'maintenance_mode'      => 'Paslauga laikinai nepasiekiama dėl sistemos naujinimo. Bandykite dar kartą vėliau.',
     'maintenance_mode_title' => 'Sistema laikinai nepasiekiama',
     'ldap_import'           => 'Naudotojo slaptažodis neturėtų būti valdomas LDAP. (Tai leidžia siųsti užklausas dėl pamiršto slaptažodžio.)',
->>>>>>> origin/upstream
     'purge_not_allowed'     => 'Panaikintų duomenų valymas .env faile yra išjungtas. Susisiekite su palaikymo tarnyba arba savo sistemos administratoriumi.',
     'backup_delete_not_allowed'     => 'Atsarginių kopijų trynimas .env faile yra išjungtas. Susisiekite su palaikymo tarnyba arba savo sistemos administratoriumi.',
     'additional_files'           => 'Papildomi failai',
     'shitty_browser'        => 'Neaptiktas joks parašas. Jei naudojate senesnę naršyklę, naudokite modernesnę naršyklę, kad užbaigtumėte turto priėmimą.',
     'bulk_soft_delete'      =>'Taip pat, panaikinti šiuos naudotojus. Jų turto istorija išliks nepakitusi, kol neišvalysite ištrintų įrašų administratoriaus nustatymuose.',
-<<<<<<< HEAD
-    'bulk_checkin_delete_success' => 'Jūsų pasirinkti naudotojai buvo panaikinti, o jų elementai buvo paimti.',
-    'bulk_checkin_success' => 'Nurodytų naudotojų elementai buvo paimti.',
-    'set_to_null'           => 'Išvalyti šios įrangos reikšmes|Išvalyti visų :asset_count įrangų reikšmes ',
-    'set_users_field_to_null'  => 'Išvalyti :field reikšmes šiam naudotojui|Išvalyti :field reikšmes visiems :user_count naudotojams ',
-    'na_no_purchase_date'   => 'N/D - Nenurodyta įsigijimo data',
-    'assets_by_status'      => 'Įranga pagal būseną',
-    'assets_by_status_type'      => 'Įranga pagal būsenos tipą',
-    'pie_chart_type'        => 'Valdymo skydo skritulinės diagramos tipas',
-    'hello_name'            => 'Sveiki, :name!',
-    'unaccepted_profile_warning'   => 'Turite :count elementus, kuriuos reikia priimti. Spustelėkite čia, jei norite juos priimti arba atmesti',
-=======
     'bulk_checkin_delete_success' => 'Jūsų pasirinkti naudotojai buvo panaikinti, o jų daiktai buvo paimti.',
     'bulk_checkin_success' => 'Nurodytų naudotojų daiktai buvo paimti.',
     'set_to_null'           => 'Ištrinti šio pasirinkimo reikšmes|Ištrinti visų :selection_count pasirinkimų reikšmes ',
@@ -645,7 +429,6 @@ return [
     'pie_chart_type'        => 'Valdymo skydo skritulinės diagramos tipas',
     'hello_name'            => 'Sveiki, :name!',
     'unaccepted_profile_warning'   => 'Turite vieną daiktą, kurį reikia priimti. Spustelėkite čia, jei norite jį priimti arba atmesti | Turite :count daiktus(-ų), kuriuos reikia priimti. Spustelėkite čia, jei norite juos priimti arba atmesti',
->>>>>>> origin/upstream
     'start_date'            => 'Pradžios data',
     'end_date'            => 'Pabaigos data',
     'alt_uploaded_image_thumbnail' => 'Įkelta miniatiūra',
@@ -659,15 +442,6 @@ return [
     'toggle_navigation'     => 'Rodyti/slėpti navigaciją',
     'alerts'                => 'Įspėjimai',
     'tasks_view_all'        => 'Peržiūrėti visas užduotis',
-<<<<<<< HEAD
-    'true'                  => 'Teisingas',
-    'false'                 => 'Klaidingas',
-    'integration_option'    => 'Integravimo galimybė',
-    'log_does_not_exist'    => 'Nerasta atitinkančių žurnalo įrašų.',
-    'merge_users'           => 'Sujungti naudotojus',
-    'merge_information' =>  'Bus sujungti :count naudotojai į vieną. Pasirinkite naudotoją, prie kurio prijungsite kitus. Visa susijusi įranga, licencijos ir kt. bus perkelta pasirinktam naudotojui, o kiti naudotojai bus pažymėti kaip panaikinti.',
-    'warning_merge_information' => 'Šis veiksmas yra NEGRĮŽTAMAS ir jį reiktų naudoti TIK tada, kai reikia sujungti vartotojus po blogo importavimo arba sinchronizavimo. Būtinai pirmiau sukurkite atsarginę kopiją.',
-=======
     'true'                  => 'True',
     'false'                 => 'False',
     'integration_option'    => 'Integravimo galimybė',
@@ -675,7 +449,6 @@ return [
     'merge_users'           => 'Sujungti naudotojus',
     'merge_information' =>  'Bus sujungti :count naudotojai į vieną. Pasirinkite naudotoją, prie kurio prijungsite kitus. Visas susijęs turtas, licencijos ir kt. bus perkelta pasirinktam naudotojui, o kiti naudotojai bus pažymėti kaip panaikinti.',
     'warning_merge_information' => 'Šis veiksmas yra NEGRĮŽTAMAS ir jį reiktų naudoti TIK tada, kai reikia sujungti naudotojus po blogo importavimo arba sinchronizavimo. Būtinai pirmiau sukurkite atsarginę kopiją.',
->>>>>>> origin/upstream
     'no_users_selected'     => 'Nepasirinktas joks naudotojas',
     'not_enough_users_selected'     => 'Turi būti pasirinkti bent :count naudotojai',
     'merge_success'         => ':count naudotojai sėkmingai sujungti į :into_username!',
@@ -685,11 +458,7 @@ return [
     'clear_and_save'            => 'Išvalyti ir išsaugoti',
     'update_existing_values'    => 'Atnaujinti esamas reikšmes?',
     'auto_incrementing_asset_tags_disabled_so_tags_required' => 'Automatiškai didėjančių inventorinių numerių generavimas yra išjungtas, todėl visose eilutėse, laukas „Inventorinis numeris“ privalo būti užpildytas.',
-<<<<<<< HEAD
-    'auto_incrementing_asset_tags_enabled_so_now_assets_will_be_created' => 'Pastaba: įjungtas automatiškai didėjančių inventorinių numerių generavimas, todėl eilutėms, kuriose nėra užpildytas laukas „Inventorinis numeris“, bus sukurta nauja įranga. Eilutėse, kuriose laukas „Inventorinis numeris“ yra užpildytas, bus atnaujinta pateikta informacija.',
-=======
     'auto_incrementing_asset_tags_enabled_so_now_assets_will_be_created' => 'Pastaba: įjungtas automatiškai didėjančių inventorinių numerių generavimas, todėl eilutėms, kuriose nėra užpildytas laukas „Inventorinis numeris“, bus sukurtas naujas turtas. Eilutėse, kuriose laukas „Inventorinis numeris“ yra užpildytas, bus atnaujinta pateikta informacija.',
->>>>>>> origin/upstream
     'send_welcome_email_to_users'   => ' Siųsti sveikinimo laišką naujiems naudotojams?',
     'send_email'                => 'Siųsti laišką',
     'call'                      => 'Skambinti numeriu',
@@ -713,16 +482,6 @@ return [
     'autoassign_licenses_help_long' => 'Tai leidžia priskirti licencijas naudotojui, naudojant masinio licencijų priskyrimo sąsają arba cli įrankius. (Pavyzdžiui, galite nenorėti, kad jūsų subrangovai automatiškai gautų tik darbuotojams skirtas licencijas. Jūs vis tiek galite priskirti licencijas šiems naudotojams atskirai, bet jie nebus įtraukti į funkciją „Priskirti licenciją visiems naudotojams“.)',
     'no_autoassign_licenses_help' => 'Naudotojo neįtraukti į masinį priskyrimą naudojant licencijų priskyrimo sąsają arba cli įrankius.',
     'modal_confirm_generic'      => 'Esate tikri?',
-<<<<<<< HEAD
-    'cannot_be_deleted'      => 'Šis elemento ištrinti negalima',
-    'cannot_be_edited'      => 'Šio elemento redaguoti negalima.',
-    'undeployable_tooltip'      => 'Šis elemento negalima išduoti. Patikrinkite likutį.',
-    'serial_number'        => 'Serijos numeris',
-    'item_notes' => ':item Pastabos',
-    'item_name_var' => ':failo Pavadinimas',
-    'error_user_company' => 'Paskirties ir įrangos įmonės nesutampa',
-    'error_user_company_accept_view' => 'Jums paskirta įranga priklauso kitai įmonei, todėl Jūs negalite jos priimti ar atmesti, pasitarkite su savo vadovu',
-=======
     'cannot_be_deleted'      => 'Šio daikto ištrinti negalima',
     'cannot_be_edited'      => 'Šio daikto redaguoti negalima.',
     'undeployable_tooltip'      => 'Šio daikto išduoti negalima. Patikrinkite likutį.',
@@ -731,7 +490,6 @@ return [
     'item_name_var' => ':item Pavadinimas',
     'error_user_company' => 'Paskirties ir turto įmonės nesutampa',
     'error_user_company_accept_view' => 'Jums paskirtas turtas priklauso kitai įmonei, todėl jūs negalite jo priimti arba atsisakyti. Kreipkitės į savo vadovą.',
->>>>>>> origin/upstream
     'importer' => [
         'checked_out_to_fullname' => 'Išduota: vardas, pavardė',
         'checked_out_to_first_name' => 'Išduota: vardas',
@@ -761,13 +519,8 @@ return [
     'upload_error' => 'Klaida įkeliant failą. Patikrinkite, ar nėra tuščių eilučių ir besidubliuojančių stulpelių pavadinimų.',
     'copy_to_clipboard' => 'Kopijuoti į iškarpinę',
     'copied' => 'Nukopijuota!',
-<<<<<<< HEAD
-    'status_compatibility' => 'Jei įranga jau yra išduota, jos būsena negali būti pakeista į neišduodamos būsenos tipą, todėl šios reikšmės pakeitimas nebus atliekamas.',
-    'rtd_location_help' => 'Tai yra įrangos buvimo vieta, kai ji nėra išduota',
-=======
     'status_compatibility' => 'Jei turtas jau yra išduotas, jo būsena negali būti pakeista į neišduotinos būsenos tipą, todėl šios reikšmės pakeitimas nebus atliekamas.',
     'rtd_location_help' => 'Tai yra turto buvimo vieta, kai jis nėra išduotas',
->>>>>>> origin/upstream
     'item_not_found' => ':item_type ID :id neegzistuoja arba buvo panaikintas',
     'action_permission_denied' => 'Neturite teisių atlikti :action :item_type ID :id',
     'action_permission_generic' => 'Neturite teisių atlikti :action šiam :item_type',
@@ -779,10 +532,7 @@ return [
     'permission_denied_superuser_demo' => 'Leidimas nesuteiktas. Demonstraciniame režime negalite keisti superadministratoriaus naudotojo informacijos.',
     'pwd_reset_not_sent' => 'Naudotojas nesuaktyvintas, yra sinchronizuotas LDAP arba neturi el. pašto adreso',
     'error_sending_email' => 'Siunčiant el. laišką įvyko klaida',
-<<<<<<< HEAD
-=======
     'sad_panda' => 'Liūdna panda. Jūs neturite reikiamų teisių šiam veiksmui. Verčiau <a href=":link">grįžkite į valdymo skydą</a> arba susisiekite su administratoriumi.',
->>>>>>> origin/upstream
     'bulk' => [
             'delete' =>
                 [
@@ -794,18 +544,6 @@ return [
                 'partial'   =>  'Panaikinti :success_count :object_type, bet :error_count :object_type negali būti panaikinti',
              ],
     ],
-<<<<<<< HEAD
-    'no_requestable' => 'Nėra užsakomos įrangos arba įrangos modelių.',
-
-    'countable' => [
-        'accessories'  => ':count Priedas|:count Priedai',
-        'assets'  => ':count Įranga|:count Įranga',
-        'licenses'  => ':count Licencija|:count Licencijos',
-        'license_seats'  => ':count Licencijos vieta|:count Licencijos vietos',
-        'consumables'  => ':count Eksploatacinė medžiaga|:count Eksploatacinės medžiagos',
-        'components'  => ':count Komponentas|:count Komponentai',
-    ]
-=======
     'no_requestable' => 'Nėra užsakomo turto arba turto modelių.',
 
     'countable' => [
@@ -827,6 +565,5 @@ return [
     'label' => 'Etiketė',
     'import_asset_tag_exists' => 'Turtas su inventoriniu numeriu :asset_tag jau yra ir atnaujinimo užklausa nebuvo pateikta. Jokie pakeitimai nebuvo atlikti.',
     'countries_manually_entered_help' => 'Žvaigždute (*) pažymėtos reikšmės buvo įvestos rankiniu būdu ir neatitinka esamų ISO 3166 išskleidžiamojo sąrašo reikšmių',
->>>>>>> origin/upstream
 
 ];

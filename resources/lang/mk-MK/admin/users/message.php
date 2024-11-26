@@ -37,28 +37,16 @@ return array(
         'update' => 'Имаше проблем со ажурирање на корисникот. Обидете се повторно.',
         'delete' => 'Имаше проблем со бришење на корисникот. Обидете се повторно.',
         'delete_has_assets' => 'Корисникот има задолжени ставки и не може да биде избришан.',
-<<<<<<< HEAD
-        'delete_has_assets_var' => 'This user still has an asset assigned. Please check it in first.|This user still has :count assets assigned. Please check their assets in first.',
-        'delete_has_licenses_var' => 'This user still has a license seats assigned. Please check it in first.|This user still has :count license seats assigned. Please check them in first.',
-        'delete_has_accessories_var' => 'This user still has an accessory assigned. Please check it in first.|This user still has :count accessories assigned. Please check their assets in first.',
-        'delete_has_locations_var' => 'This user still manages a location. Please select another manager first.|This user still manages :count locations. Please select another manager first.',
-        'delete_has_users_var' => 'This user still manages another user. Please select another manager for that user first.|This user still manages :count users. Please select another manager for them first.',
-=======
         'delete_has_assets_var' => 'Овој корисник сè уште има доделено додатоци. Ве молиме прво проверете.|Овој корисник има :count додатоци. Ве молиме прво проверете.',
         'delete_has_licenses_var' => 'Овој корисник сè уште има доделено лиценци. Ве молиме прво проверете.|Овој корисник има :count лиценци. Ве молиме прво проверете.',
         'delete_has_accessories_var' => 'Овој корисник сè уште има доделено додатоци. Ве молиме прво проверете.|Овој корисник има :count доделени додатоци. Ве молиме прво проверете.',
         'delete_has_locations_var' => 'Овој корисник сè уште управува со локацијата. Ве молиме прво изберете друг менаџер.|Овој корисник управува со :count локации. Ве молиме прво изберете друг менаџер.',
         'delete_has_users_var' => 'Овој корисник сè уште управува со друг корисник. Ве молиме прво изберете друг менаџер за тој корисник.|Овој корисник управува со :count корисници. Ве молиме прво за него изберете друг менаџер.',
->>>>>>> origin/upstream
         'unsuspend' => 'Имаше проблем со отстранување на привременото блокирање. Обидете се повторно.',
         'import'    => 'Имаше проблем со увозот на корисници. Обидете се повторно.',
         'asset_already_accepted' => 'Ова основно средство веќе е прифатено.',
         'accept_or_decline' => 'Мора да го прифатите или одбиете основното средство.',
-<<<<<<< HEAD
-        'cannot_delete_yourself' => 'We would feel really bad if you deleted yourself, please reconsider.',
-=======
         'cannot_delete_yourself' => 'Ќе се чувствуваме навистина лошо ако се избришите самиот себе, ве молиме размислете.',
->>>>>>> origin/upstream
         'incorrect_user_accepted' => 'Средството што се обидовте да го прифатите не е задожено на Вас.',
         'ldap_could_not_connect' => 'Не можам да се поврзам со LDAP серверот. Проверете ја конфигурацијата за LDAP сервер во LDAP конфигурациската датотека. <br>Грешка од LDAP-серверот:',
         'ldap_could_not_bind' => 'Не можам да се поврзам со LDAP серверот. Проверете ја конфигурацијата за LDAP сервер во LDAP конфигурациската датотека. <br>Грешка од LDAP-серверот: ',

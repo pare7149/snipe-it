@@ -37,28 +37,16 @@ return array(
         'update' => 'Er was een probleem tijdens het bijwerken van de gebruiker. Probeer opnieuw, aub.',
         'delete' => 'Er was een probleem tijdens het verwijderen van de gebruiker. Probeer opnieuw, aub.',
         'delete_has_assets' => 'Deze gebruiker heeft toegewezen items en kon niet worden verwijderd.',
-<<<<<<< HEAD
-        'delete_has_assets_var' => 'This user still has an asset assigned. Please check it in first.|This user still has :count assets assigned. Please check their assets in first.',
-        'delete_has_licenses_var' => 'This user still has a license seats assigned. Please check it in first.|This user still has :count license seats assigned. Please check them in first.',
-        'delete_has_accessories_var' => 'This user still has an accessory assigned. Please check it in first.|This user still has :count accessories assigned. Please check their assets in first.',
-        'delete_has_locations_var' => 'This user still manages a location. Please select another manager first.|This user still manages :count locations. Please select another manager first.',
-        'delete_has_users_var' => 'This user still manages another user. Please select another manager for that user first.|This user still manages :count users. Please select another manager for them first.',
-=======
         'delete_has_assets_var' => 'Deze gebruiker heeft nog een asset toegewezen. Controleer dit eerst.|Deze gebruiker heeft nog steeds :count assets toegewezen. Controleer dit eerst.',
         'delete_has_licenses_var' => 'Deze gebruiker heeft nog een licentie toegewezen. Controleer dit eerst.|Deze gebruiker heeft nog steeds :count licenties toegewezen. Controleer dit eerst.',
         'delete_has_accessories_var' => 'Deze gebruiker heeft nog een accessoires toegewezen. Controleer dit eerst.|Deze gebruiker heeft nog steeds :count accessoires toegewezen. Controleer dit eerst.',
         'delete_has_locations_var' => 'Deze gebruiker beheert nog een locatie. Selecteer eerst een andere manager.|Deze gebruiker beheert nog steeds :count locaties. Selecteer eerst een andere manager.',
         'delete_has_users_var' => 'Deze gebruiker beheert nog een andere gebruiker. Selecteer eerst een andere manager.|Deze gebruiker beheert nog steeds :count gebruikers. Selecteer eerst een andere manager.',
->>>>>>> origin/upstream
         'unsuspend' => 'Er was een probleem tijdens het opnieuw inschakelen van de gebruiker. Probeer opnieuw, aub.',
         'import'    => 'Er was een probleem met het importeren van de gebruikers. Probeer het opnieuw.',
         'asset_already_accepted' => 'Dit asset is al geaccepteerd.',
         'accept_or_decline' => 'Je moet dit asset accepteren of weigeren.',
-<<<<<<< HEAD
-        'cannot_delete_yourself' => 'We would feel really bad if you deleted yourself, please reconsider.',
-=======
         'cannot_delete_yourself' => 'We zouden het heel erg vinden als je jezelf zou verwijderen, overweeg alsjeblieft opnieuw.',
->>>>>>> origin/upstream
         'incorrect_user_accepted' => 'Het asset dat je probeerde te accepteren is niet uitgecheckt aan jou.',
         'ldap_could_not_connect' => 'Kan niet verbinden met de LDAP server. Controleer je LDAP server configuratie in de LDAP configuratie bestand. <br>Fout van LDAP server:',
         'ldap_could_not_bind' => 'Kan niet verbinden met de LDAP server. Controleer je LDAP server configuratie in de LDAP configuratie bestand. <br>Fout van LDAP server: ',

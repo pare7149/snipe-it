@@ -16,30 +16,13 @@ return array(
     ),
 
     'delete' => array(
-<<<<<<< HEAD
-        'confirm'   => '¿Estás seguro de que deseas borrar este consumible?',
-        'error'   => 'Hubo un problema al eliminar el consumible. Por favor inténtelo de nuevo.',
-        'success' => 'El consumible fue borrado con éxito.'
-=======
         'confirm'   => '¿Está seguro de que desea eliminar este consumible?',
         'error'   => 'Hubo un problema al eliminar el consumible. Por favor inténtelo de nuevo.',
         'success' => 'El consumible ha sido eliminado correctamente.'
->>>>>>> origin/upstream
     ),
 
      'checkout' => array(
         'error'   		=> 'El consumible no fue asignado, por favor inténtelo de nuevo',
-<<<<<<< HEAD
-        'success' 		=> 'El consumible fue retirado con éxito.',
-        'user_does_not_exist' => 'El usuario es inválido. Por favor, inténtelo de nuevo.',
-         'unavailable'      => 'No hay suficientes consumibles para este pago. Por favor, compruebe la cantidad restante. ',
-    ),
-
-    'checkin' => array(
-        'error'   		=> 'Consumible no fue devuelto, por favor inténtelo de nuevo',
-        'success' 		=> 'El consumible fue ingresado con éxito.',
-        'user_does_not_exist' => 'El usuario es inválido. Por favor inténtelo de nuevo.'
-=======
         'success' 		=> 'Consumible asignado correctamente.',
         'user_does_not_exist' => 'Ese usuario no es válido. Por favor, inténtelo de nuevo.',
          'unavailable'      => 'No hay suficientes consumibles para esta asignación. Por favor, compruebe la cantidad disponible. ',
@@ -49,7 +32,6 @@ return array(
         'error'   		=> 'El consumible no fue ingresado, por favor inténtelo de nuevo',
         'success' 		=> 'El consumible fue ingresado correctamente.',
         'user_does_not_exist' => 'Ese usuario no es válido. Por favor, inténtelo de nuevo.'
->>>>>>> origin/upstream
     )
 
 

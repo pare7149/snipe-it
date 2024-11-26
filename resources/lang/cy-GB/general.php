@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Last Name First Initial (smith_j@example.com)',
     'firstinitial.lastname' => 'Llythyren Cyntaf Enw Cyntaf Cyfenw (jsmith@example.com)',
     'firstnamelastinitial'  => 'First Name Last Initial (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Enw cyntaf',
     'first_name_format'		=> 'Enw Cyntaf (jane@example.com)',
     'files'                 => 'Ffeiliau',

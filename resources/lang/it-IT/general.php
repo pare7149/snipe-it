@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Cognome_ Iniziale Nome (smith_j@example.com)',
     'firstinitial.lastname' => 'Iniziale Nome . Cognome (j.smith@example.com)',
     'firstnamelastinitial'  => 'Nome + Iniziale Cognome (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Cognome.Nome (rossi.mario@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Nome',
     'first_name_format'		=> 'Nome (jane@example.com)',
     'files'                 => 'Files',
@@ -414,11 +410,7 @@ return [
     'checkout_tooltip' => 'Assegna questo articolo',
     'checkin_tooltip' => 'Restituisci questo oggetto in modo che sia disponibile per una riassegnazione, ripristino, ecc...',
     'checkout_user_tooltip' => 'Assegna questo articolo a un utente',
-<<<<<<< HEAD
-    'checkin_to_diff_location' => 'Puoi scegliere di restituire questo Bene a una sede diversa da quella predefinita di :default_location , se è stata impostata',
-=======
     'checkin_to_diff_location' => 'Puoi scegliere di restituire questo Bene a una Sede diversa da quella predefinita di :default_location, se è stata impostata',
->>>>>>> origin/upstream
     'maintenance_mode'      => 'Servizio temporaneamente non disponibile per aggiornamenti. Si prega di riprovare più tardi.',
     'maintenance_mode_title' => 'Sistema Temporaneamente Non Disponibile',
     'ldap_import'           => 'La password dell\'utente non deve essere gestita da LDAP. (Consente di inviare le richieste di password dimenticate.)',

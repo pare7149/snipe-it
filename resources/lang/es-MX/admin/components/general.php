@@ -11,11 +11,6 @@ return array(
     'order'					=> 'Número de orden',
     'remaining' 			             => 'Restante',
     'total' 			                 => 'Total',
-<<<<<<< HEAD
-    'update'                            => 'Actualizar Componente',
-    'checkin_limit'            => 'La cantidad devuelta debe ser igual o menor que :assigned_qty'
-=======
     'update'                            => 'Actualizar componente',
     'checkin_limit'            => 'La cantidad ingresada debe ser igual o menor que :assigned_qty'
->>>>>>> origin/upstream
 );

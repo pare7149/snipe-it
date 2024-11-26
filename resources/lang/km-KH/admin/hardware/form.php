@@ -39,13 +39,8 @@ return [
     'order'				=> 'លេខបញ្ជាទិញ',
     'qr'				=> 'QR Code',
     'requestable'		=> 'អ្នកប្រើប្រាស់អាចស្នើសុំ Asset នេះ',
-<<<<<<< HEAD
-    'redirect_to_all'   => 'Return to all :type',
-    'redirect_to_type'   => 'Go to :type',
-=======
     'redirect_to_all'   => 'ត្រឡប់ទៅ ទាំងអស់ វិញ ៖ ប្រភេទ',
     'redirect_to_type'   => 'ចូលទៅកាន់៖ ប្រភេទ',
->>>>>>> origin/upstream
     'redirect_to_checked_out_to'   => 'Go to Checked Out to',
     'select_statustype'	=> 'ជ្រើសរើសប្រភេទស្ថានភាព',
     'serial'			=> 'Serial',

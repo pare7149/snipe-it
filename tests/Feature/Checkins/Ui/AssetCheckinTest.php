@@ -196,8 +196,6 @@ class AssetCheckinTest extends TestCase
             ->assertSessionHas('error')
             ->assertRedirect(route('hardware.show', ['hardware' => $asset->id]));
     }
-<<<<<<< HEAD
-=======
 
     public function testAssetCheckinPagePostIsRedirectedIfRedirectSelectionIsIndex()
     {
@@ -225,5 +223,4 @@ class AssetCheckinTest extends TestCase
             ->assertSessionHasNoErrors()
             ->assertRedirect(route('hardware.show', ['hardware' => $asset->id]));
     }
->>>>>>> origin/upstream
 }

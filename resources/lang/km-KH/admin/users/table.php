@@ -5,11 +5,7 @@ return array(
     'allow'  				=> 'អនុញ្ញាត',
     'checkedout'  			=> 'ទ្រព្យសកម្ម',
     'created_at' 			=> 'បានបង្កើត',
-<<<<<<< HEAD
-    'createuser' 			=> 'Create User',
-=======
     'createuser' 			=> 'បង្កើតអ្នកប្រើប្រាស់',
->>>>>>> origin/upstream
     'deny'  				=> 'បដិសេធ',
     'email'      			=> 'អ៊ីមែល',
     'employee_num'      	=> 'លេខបុគ្គលិក',
@@ -34,21 +30,12 @@ return array(
     'show_current'          => 'បង្ហាញអ្នកប្រើប្រាស់បច្ចុប្បន្ន',
     'show_deleted'          => 'បង្ហាញអ្នកប្រើប្រាស់ដែលបានលុប',
     'title' 				=> 'ចំណងជើង',
-<<<<<<< HEAD
-	'to_restore_them'		=> 'to restore them.',
-    'total_assets_cost'     => "Total Assets Cost",
-    'updateuser' 			=> 'Update User',
-    'username' 				=> 'ឈ្មោះ​អ្នកប្រើប្រាស់',
-	'user_deleted_text' 	=> 'This user has been marked as deleted.',
-    'username_note' 		=> '(This is used for Active Directory binding only, not for login.)',
-=======
 	'to_restore_them'		=> 'ដើម្បីស្ដារពួកគេ។',
     'total_assets_cost'     => "តម្លៃទ្រព្យសកម្មសរុប",
     'updateuser' 			=> 'ធ្វើបច្ចុប្បន្នភាពអ្នកប្រើប្រាស់',
     'username' 				=> 'ឈ្មោះ​អ្នកប្រើប្រាស់',
 	'user_deleted_text' 	=> 'អ្នកប្រើប្រាស់នេះត្រូវបានសម្គាល់ថាបានលុប។',
     'username_note' 		=> '(វា​ត្រូវ​បាន​ប្រើ​សម្រាប់​តែ​ការ​ចង Active Directory ប៉ុណ្ណោះ មិន​មែន​សម្រាប់​ចូល​ទេ។)',
->>>>>>> origin/upstream
     'cloneuser'             => 'ក្លូន អ្នកប្រើប្រាស់',
     'viewusers' 			=> 'មើលអ្នកប្រើប្រាស់',
 );

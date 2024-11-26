@@ -39,11 +39,7 @@ return [
     'order'				=> 'Nº de encomenda',
     'qr'				=> 'Código QR',
     'requestable'		=> 'Utilizadores podem solicitar este ativo',
-<<<<<<< HEAD
-    'redirect_to_all'   => 'Return to all :type',
-=======
     'redirect_to_all'   => 'Retornar para :type',
->>>>>>> origin/upstream
     'redirect_to_type'   => 'Go to :type',
     'redirect_to_checked_out_to'   => 'Go to Checked Out to',
     'select_statustype'	=> 'Selecionar Estado',

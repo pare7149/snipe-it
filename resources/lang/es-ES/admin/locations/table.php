@@ -2,11 +2,7 @@
 
 return [
     'about_locations_title'     => 'Acerca de las ubicaciones',
-<<<<<<< HEAD
-    'about_locations'           => 'Las ubicaciones son utilizadas para hacer seguimiento de la información sobre ubicación de usuarios, activos, y otros ítems',
-=======
     'about_locations'           => 'Las ubicaciones se utilizan para hacer un seguimiento de la ubicación de usuarios, activos y otros elementos',
->>>>>>> origin/upstream
     'assets_rtd'                => 'Activos', // This has NEVER meant Assets Retired. I don't know how it keeps getting reverted.
     'assets_checkedout'         => 'Activos asignados',
     'id'                        => 'ID',
@@ -21,15 +17,9 @@ return [
     'address'                   => 'Dirección',
     'address2'                   => 'Dirección (línea 2)',
     'zip'                       => 'Código postal',
-<<<<<<< HEAD
-    'locations'                 => 'Localizaciones',
-    'parent'                    => 'Ubicación padre',
-    'currency'                  => 'Divisa de la Localización',
-=======
     'locations'                 => 'Ubicaciones',
     'parent'                    => 'Ubicación padre',
     'currency'                  => 'Divisa de la ubicación',
->>>>>>> origin/upstream
     'ldap_ou'                   => 'Búsqueda LDAP OU',
     'user_name'                 => 'Nombre de usuario',
     'department'                => 'Departamento',
@@ -41,11 +31,7 @@ return [
     'asset_model'               => 'Modelo',
     'asset_serial'              => 'Número de serie',
     'asset_location'            => 'Ubicación',
-<<<<<<< HEAD
-    'asset_checked_out'         => 'Asignado',
-=======
     'asset_checked_out'         => 'Asignado a',
->>>>>>> origin/upstream
     'asset_expected_checkin'    => 'Fecha esperada de devolución',
     'date'                      => 'Fecha:',
     'phone'                     => 'Teléfono ubicación',

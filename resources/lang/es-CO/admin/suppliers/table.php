@@ -8,11 +8,7 @@ return array(
     'city'                  => 'Ciudad',
     'contact'               => 'Nombre de contacto',
     'country'               => 'País',
-<<<<<<< HEAD
-    'create'                => 'Crear Proveedor',
-=======
     'create'                => 'Crear un proveedor',
->>>>>>> origin/upstream
     'email'                 => 'Correo electrónico',
     'fax'                   => 'Fax',
     'id'                    => 'ID',
@@ -23,11 +19,7 @@ return array(
     'state'                 => 'Departamento',
     'suppliers'             => 'Proveedores',
     'update'                => 'Actualizar proveedor',
-<<<<<<< HEAD
-    'view'                  => 'Ver Proveedor',
-=======
     'view'                  => 'Ver proveedor',
->>>>>>> origin/upstream
     'view_assets_for'       => 'Ver activos para',
     'zip'                   => 'Código postal',
 

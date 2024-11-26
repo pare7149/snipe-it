@@ -2,22 +2,11 @@
 
 namespace Tests\Feature\Checkouts\Api;
 
-<<<<<<< HEAD
-=======
 use App\Mail\CheckoutAccessoryMail;
->>>>>>> origin/upstream
 use App\Models\Accessory;
 use App\Models\Actionlog;
 use App\Models\User;
 use App\Notifications\CheckoutAccessoryNotification;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Notification;
-use Tests\TestCase;
-
-class AccessoryCheckoutTest extends TestCase
-{
-    public function testCheckingOutAccessoryRequiresCorrectPermission()
-=======
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Notification;
 use Tests\Concerns\TestsPermissionsRequirement;
@@ -26,7 +15,6 @@ use Tests\TestCase;
 class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirement
 {
     public function testRequiresPermission()
->>>>>>> origin/upstream
     {
         $this->actingAsForApi(User::factory()->create())
             ->postJson(route('api.accessories.checkout', Accessory::factory()->create()))
@@ -37,11 +25,7 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
     {
         $this->actingAsForApi(User::factory()->checkoutAccessories()->create())
             ->postJson(route('api.accessories.checkout', Accessory::factory()->create()), [
-<<<<<<< HEAD
-                // missing assigned_to
-=======
                 // missing assigned_user, assigned_location, assigned_asset
->>>>>>> origin/upstream
             ])
             ->assertStatusMessageIs('error');
     }
@@ -50,14 +34,6 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
     {
         $this->actingAsForApi(User::factory()->checkoutAccessories()->create())
             ->postJson(route('api.accessories.checkout', Accessory::factory()->withoutItemsRemaining()->create()), [
-<<<<<<< HEAD
-                'assigned_to' => User::factory()->create()->id,
-            ])
-            ->assertStatusMessageIs('error');
-    }
-
-    public function testAccessoryCanBeCheckedOut()
-=======
                 'assigned_user' => User::factory()->create()->id,
                 'checkout_to_type' => 'user'
             ])
@@ -152,19 +128,12 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
     }
 
     public function testAccessoryCannotBeCheckedOutToInvalidUser()
->>>>>>> origin/upstream
     {
         $accessory = Accessory::factory()->create();
         $user = User::factory()->create();
 
         $this->actingAsForApi(User::factory()->checkoutAccessories()->create())
             ->postJson(route('api.accessories.checkout', $accessory), [
-<<<<<<< HEAD
-                'assigned_to' => $user->id,
-            ]);
-
-        $this->assertTrue($accessory->users->contains($user));
-=======
                 'assigned_user' => 'invalid-user-id',
                 'checkout_to_type' => 'user',
                 'note' => 'oh hi there',
@@ -175,28 +144,17 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
             ->json();
 
             $this->assertFalse($accessory->checkouts()->where('assigned_type', User::class)->where('assigned_to', $user->id)->count() > 0);
->>>>>>> origin/upstream
     }
 
     public function testUserSentNotificationUponCheckout()
     {
-<<<<<<< HEAD
-        Notification::fake();
-=======
         Mail::fake();
->>>>>>> origin/upstream
 
         $accessory = Accessory::factory()->requiringAcceptance()->create();
         $user = User::factory()->create();
 
         $this->actingAsForApi(User::factory()->checkoutAccessories()->create())
             ->postJson(route('api.accessories.checkout', $accessory), [
-<<<<<<< HEAD
-                'assigned_to' => $user->id,
-            ]);
-
-        Notification::assertSentTo($user, CheckoutAccessoryNotification::class);
-=======
                 'assigned_user' => $user->id,
                 'checkout_to_type' => 'user',
             ]);
@@ -204,7 +162,6 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
         Mail::assertSent(CheckoutAccessoryMail::class, function ($mail) use ($user) {
             return $mail->hasTo($user->email);
         });
->>>>>>> origin/upstream
     }
 
     public function testActionLogCreatedUponCheckout()
@@ -215,12 +172,8 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
 
         $this->actingAsForApi($actor)
             ->postJson(route('api.accessories.checkout', $accessory), [
-<<<<<<< HEAD
-                'assigned_to' => $user->id,
-=======
                 'assigned_user' => $user->id,
                 'checkout_to_type' => 'user',
->>>>>>> origin/upstream
                 'note' => 'oh hi there',
             ]);
 
@@ -232,11 +185,7 @@ class AccessoryCheckoutTest extends TestCase implements TestsPermissionsRequirem
                 'target_type' => User::class,
                 'item_id' => $accessory->id,
                 'item_type' => Accessory::class,
-<<<<<<< HEAD
-                'user_id' => $actor->id,
-=======
                 'created_by' => $actor->id,
->>>>>>> origin/upstream
                 'note' => 'oh hi there',
             ])->count(),
             'Log entry either does not exist or there are more than expected'

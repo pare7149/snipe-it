@@ -20,11 +20,7 @@ return array(
     'suppliers'             => 'Tiekėjai',
     'update'                => 'Atnaujinti tiekėją',
     'view'                  => 'Peržiūrėti tiekėją',
-<<<<<<< HEAD
-    'view_assets_for'       => 'Įrangos peržiūra –',
-=======
     'view_assets_for'       => 'Turto peržiūra –',
->>>>>>> origin/upstream
     'zip'                   => 'Pašto kodas',
 
 );

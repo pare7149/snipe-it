@@ -10,15 +10,9 @@ return array(
     'invalid_category_type' => 'El tipo de esta categoría debe ser categoría de activos.',
 
     'create' => array(
-<<<<<<< HEAD
-        'error'   => 'El modelo no fue creado, por favor inténtalo de nuevo.',
-        'success' => 'Modelo creado con éxito.',
-        'duplicate_set' => 'Ya existe un modelo de equipo con el mismo nombre, fabricante y número de modelo.',
-=======
         'error'   => 'El modelo no fue creado, por favor inténtelo de nuevo.',
         'success' => 'El modelo fue creado exitosamente.',
         'duplicate_set' => 'Ya existe un modelo de activo con el mismo nombre, fabricante y número de modelo.',
->>>>>>> origin/upstream
     ),
 
     'update' => array(

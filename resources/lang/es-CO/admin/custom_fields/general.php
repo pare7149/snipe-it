@@ -2,24 +2,6 @@
 
 return [
     'custom_fields'		        => 'Campos personalizados',
-<<<<<<< HEAD
-    'manage'                    => 'Gestionar',
-    'field'		                => 'Campo',
-    'about_fieldsets_title'		=> 'Acerca de los grupos de campos',
-    'about_fieldsets_text'		=> 'Los grupos de campos le permiten agrupar campos personalizados que se reutilizan frecuentemente para determinados modelos de activos.',
-    'custom_format'             => 'Formato de Regex personalizado...',
-    'encrypt_field'      	        => 'Encriptar el valor de este campo en la base de datos',
-    'encrypt_field_help'      => 'ADVERTENCIA: Encriptar un campo hace que no se pueda buscar.',
-    'encrypted'      	        => 'Encriptado',
-    'fieldset'      	        => 'Grupo de campos',
-    'qty_fields'      	      => 'Campos de cantidad',
-    'fieldsets'      	        => 'Grupo de campos',
-    'fieldset_name'           => 'Nombre del grupo de campos',
-    'field_name'              => 'Nombre del Campo',
-    'field_values'            => 'Valores del Campo',
-    'field_values_help'       => 'Añade opciones seleccionables, una por línea. Líneas en blanco además de la primera será ignorada.',
-    'field_element'           => 'Elemento de Formulario',
-=======
     'manage'                    => 'Administrar',
     'field'		                => 'Campo',
     'about_fieldsets_title'		=> 'Acerca de los grupos de campos',
@@ -36,7 +18,6 @@ return [
     'field_values'            => 'Valores de los campos',
     'field_values_help'       => 'Agregue opciones seleccionables, una por línea. Se ignorarán las líneas en blanco que no sean la primera.',
     'field_element'           => 'Elemento de formulario',
->>>>>>> origin/upstream
     'field_element_short'     => 'Elemento',
     'field_format'            => 'Formato',
     'field_custom_format'     => 'Expresión regular personalizada',
@@ -48,15 +29,9 @@ return [
     'create_fieldset'         => 'Nuevo grupo de campos',
     'update_fieldset'         => 'Actualizar grupo de campos',
     'fieldset_does_not_exist'   => 'El grupo de campos :id no existe',
-<<<<<<< HEAD
-    'fieldset_updated'         => 'Conjunto de campos actualizado',
-    'create_fieldset_title' => 'Crear un nuevo conjunto de campos',
-    'create_field'            => 'Nuevo Campo Personalizado',
-=======
     'fieldset_updated'         => 'Se actualizó el grupo de campos',
     'create_fieldset_title' => 'Crear un nuevo grupo de campos',
     'create_field'            => 'Nuevo campo personalizado',
->>>>>>> origin/upstream
     'create_field_title' => 'Crear un nuevo campo personalizado',
     'value_encrypted'      	        => 'El valor de este campo está cifrado en la base de datos. Solo los administradores pueden ver el valor descifrado',
     'show_in_email'     => '¿Incluir el valor de este campo en los correos de asignación enviados al usuario? Los campos cifrados no se pueden incluir en los correos electrónicos',
@@ -75,17 +50,10 @@ return [
     'unique' => 'Único',
     'display_in_user_view' => 'Permitir al usuario ver estos valores en la página "Ver activos asignados"',
     'display_in_user_view_table' => 'Visible para el usuario',
-<<<<<<< HEAD
-    'auto_add_to_fieldsets' => 'Añadir automáticamente a cada nuevo conjunto de campos',
-    'add_to_preexisting_fieldsets' => 'Añadir a cualquier conjunto de campos existente',
-    'show_in_listview' => 'Mostrar por defecto en las vistas de la lista. Los usuarios autorizados podrán mostrar/ocultar a través del selector de columnas',
-    'show_in_listview_short' => 'Mostrar en listas',
-=======
     'auto_add_to_fieldsets' => 'Añadir automáticamente a cada nuevo grupo de campos',
     'add_to_preexisting_fieldsets' => 'Añadir a cualquier grupo de campos existente',
     'show_in_listview' => 'Mostrar por defecto en las consultas. Los usuarios autorizados podrán mostrar/ocultar a través del selector de columnas',
     'show_in_listview_short' => 'Mostrar en las listas',
->>>>>>> origin/upstream
     'show_in_requestable_list_short' => 'Mostrar en la lista de activos que se pueden solicitar',
     'show_in_requestable_list' => 'Mostrar el valor en la lista de activos que se pueden solicitar. Los campos cifrados no se mostrarán',
     'encrypted_options' => 'Este campo está cifrado, por lo que algunas opciones de visualización no estarán disponibles.',

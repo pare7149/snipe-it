@@ -11,15 +11,9 @@ return [
     'activity_report'		=> 'Raport Aktywności',
     'address'				=> 'Adres',
     'admin'					=> 'Admin',
-<<<<<<< HEAD
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin_tooltip'			=> 'Ten użytkownik ma uprawnienia administratora',
     'superuser'				=> 'Superużytkownik',
     'superuser_tooltip'		=> 'Ten użytkownik ma uprawnienia superużytkownika',
->>>>>>> origin/upstream
     'administrator'			=> 'Administrator',
     'add_seats'             => 'Dodano miejsca',
     'age'                   => "Wiek",
@@ -141,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Nazwisko i pierwsza litera imienia (smith_j@example.com)',
     'firstinitial.lastname' => 'Pierwsza litera imienia i nazwisko (jsmith@example.com)',
     'firstnamelastinitial'  => 'Nazwisko i pierwsza litera imienia (smithj@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Nazwisko.Imię (kowal.jan@przyklad.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Imię',
     'first_name_format'		=> 'Imię (jane@example.com)',
     'files'                 => 'Pliki',
@@ -258,11 +248,7 @@ return [
     'requested_assets_menu' => 'Żądane zasoby',
     'request_canceled'      => 'Żądanie anulowane',
     'request_item'          => 'Request this item',
-<<<<<<< HEAD
-    'external_link_tooltip' => 'External link to',
-=======
     'external_link_tooltip' => 'Zewnętrzny link do',
->>>>>>> origin/upstream
     'save'  				=> 'Zapisz',
     'select_var'            => 'Wybierz :thing... ', // this will eventually replace all of our other selects
     'select'				=> 'Wybierz',

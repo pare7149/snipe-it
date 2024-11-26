@@ -11,15 +11,9 @@ return [
     'activity_report'		=> 'Справка за дейностите',
     'address'				=> 'Aдрес',
     'admin'					=> 'Администриране',
-<<<<<<< HEAD
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin_tooltip'			=> 'Този потребител има администраторски привилегии',
     'superuser'				=> 'Супер потребител',
     'superuser_tooltip'		=> 'Този потребител има привилегии на супер потребител',
->>>>>>> origin/upstream
     'administrator'			=> 'Администратор',
     'add_seats'             => 'Добавени работни места',
     'age'                   => "Години",
@@ -141,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Фамилия и Първа буква от име (ivanov_i@example.com)',
     'firstinitial.lastname' => 'Първа буква от името и Фамилия (i.ivanov@example.com)',
     'firstnamelastinitial'  => 'Име и първа буква от фамилия (ivani@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Фамилно име.Собствено име (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Собствено име',
     'first_name_format'		=> 'Име (jane@example.com)',
     'files'                 => 'Файлове',
@@ -257,13 +247,8 @@ return [
     'requested_assets'      => 'Изискуеми активи',
     'requested_assets_menu' => 'Изискуеми активи',
     'request_canceled'      => 'Заявка отменена',
-<<<<<<< HEAD
-    'request_item'          => 'Request this item',
-    'external_link_tooltip' => 'External link to',
-=======
     'request_item'          => 'Поискайте този артикул',
     'external_link_tooltip' => 'Външна връзка към',
->>>>>>> origin/upstream
     'save'  				=> 'Запис',
     'select_var'            => 'Избран :thing... ', // this will eventually replace all of our other selects
     'select'				=> 'Избор',
@@ -423,15 +408,9 @@ return [
     'accessory_name'       => 'Име на аксесоар:',
     'clone_item'            => 'Клониране',
     'checkout_tooltip' => 'Изпишете този артикул',
-<<<<<<< HEAD
-    'checkin_tooltip' => 'Check this item in so that it is available for re-issue, re-imaging, etc',
-    'checkout_user_tooltip' => 'Изпишете този артикул на потребител',
-    'checkin_to_diff_location' => 'You can choose to check this asset in to a location other than this asset\'s default location of :default_location if one is set',
-=======
     'checkin_tooltip' => 'Маркирайте този артикул, така че да е наличен за повторно издаване, повторно изобразяване и т. н.',
     'checkout_user_tooltip' => 'Изпишете този артикул на потребител',
     'checkin_to_diff_location' => 'Можете да изберете да проверите този актив на място, различно от местоположението по подразбиране на този актив :default_location, ако е зададено такова',
->>>>>>> origin/upstream
     'maintenance_mode'      => 'Услугата е временно недостъпна поради обновяване. Моля опитайте по-късно.',
     'maintenance_mode_title' => 'Системата е временно недостъпна',
     'ldap_import'           => 'Потребителската парола не трябва да се управлява от LDAP. (Това ви позволява да изпращате заявки за забравена парола)',
@@ -533,13 +512,8 @@ return [
         'address2' => 'Адрес ред 2',
         'import_note' => 'Импортирано използвайки CSV импорт',
     ],
-<<<<<<< HEAD
-    'remove_customfield_association' => 'Remove this field from the fieldset. This will not delete the custom field, only this field\'s association with this fieldset.',
-    'checked_out_to_fields' => 'Checked Out To Fields',
-=======
     'remove_customfield_association' => 'Премахнете това поле от набора полета. Това няма да изтрие персонализираното поле, а само връзката на това поле с този набор от полета.',
     'checked_out_to_fields' => 'Checked Out To полета',
->>>>>>> origin/upstream
     'percent_complete' => '% завърешен',
     'uploading' => 'Качване... ',
     'upload_error' => 'Грешка при качване на файл. Моля проверете да няма празни редове или повтарящи се колони.',

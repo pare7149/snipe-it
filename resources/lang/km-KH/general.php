@@ -64,10 +64,7 @@ return [
     'checkout'  			=> 'ប្រគល់អោយ',
     'checkouts_count'       => 'Checkouts',
     'checkins_count'        => 'Checkins',
-<<<<<<< HEAD
-=======
     'checkin_and_delete'  	=> 'Checkin and Delete',
->>>>>>> origin/upstream
     'user_requests_count'   => 'សំណើ',
     'city'  				=> 'ទីក្រុង',
     'click_here'			=> 'ចុច​ទីនេះ',
@@ -78,17 +75,10 @@ return [
     'components'			=> 'សមាសធាតុ ច្រើន',
     'complete'				=> 'បញ្ចប់',
     'consumable'			=> 'ប្រើប្រាស់បាន។',
-<<<<<<< HEAD
-    'consumables'			=> 'Consumables',
-    'country'  				=> 'ប្រទេស',
-    'could_not_restore'     => 'កំហុសក្នុងការស្តារ :item_type: :error',
-    'not_deleted'           => ':item_type មិនត្រូវបានលុបទេ ដូច្នេះវាមិនអាចស្ដារឡើងវិញបានទេ។',
-=======
     'consumables'			=> 'សម្ភារៈប្រើប្រាស់',
     'country'  				=> 'ប្រទេស',
     'could_not_restore'     => 'កំហុសក្នុងការស្តារ :item_type: :error',
     'not_deleted'           => ':item_type មិនត្រូវបានលុបទេ ដូច្នេះហើយមិនអាចស្តារឡើងវិញបានទេ។',
->>>>>>> origin/upstream
     'create'				=> 'បង្កើត​ថ្មី',
     'created'               => 'ធាតុត្រូវបានបង្កើត',
     'created_asset'			=> 'ទ្រព្យសកម្មដែលបានបង្កើត',
@@ -145,11 +135,7 @@ return [
     'lastname_firstinitial' => 'នាមត្រកូល នាមខ្លួនដំបូង (smith_j@example.com)',
     'firstinitial.lastname' => 'នាមត្រកូលដំបូង (j.smith@example.com)',
     'firstnamelastinitial'  => 'នាមខ្លួន នាមត្រកូលដំបូង (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'នាមត្រកូល.នាមខ្លួន (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'នាមខ្លួន',
     'first_name_format'		=> 'នាមខ្លួន (jane@example.com)',
     'files'                 => 'ឯកសារ',
@@ -160,11 +146,7 @@ return [
     'file_upload'           => 'ឯកសារ​ផ្ទុក​ឡើង',
     'generate'				=> 'បង្កើត',
     'generate_labels'       => 'បង្កើតស្លាក',
-<<<<<<< HEAD
-    'github_markdown'      => 'This field accepts <a href="https://help.github.com/articles/github-flavored-markdown/">Github flavored markdown</a>.',
-=======
     'github_markdown'      => 'វាលនេះទទួលយក <a href="https://help.github.com/articles/github-flavored-markdown/">Github flavored markdown</a>។',
->>>>>>> origin/upstream
     'groups'				=> 'ក្រុម',
     'gravatar_email'        => 'អាសយដ្ឋានអ៊ីមែល Gravatar',
     'gravatar_url'          => '<a href="http://gravatar.com"><small>ផ្លាស់ប្តូររូបតំណាងរបស់អ្នកនៅ Gravatar.com</small></a>។',
@@ -251,24 +233,6 @@ return [
     'quantity_minimum'      => 'អ្នកមានធាតុមួយខាងក្រោម ឬស្ទើរតែទាបជាងកម្រិតបរិមាណអប្បបរមា|អ្នកមាន៖ រាប់ធាតុខាងក្រោម ឬស្ទើរតែទាបជាងកម្រិតបរិមាណអប្បបរមា',
     'quickscan_checkin'  	=> 'ពិនិត្យស្កេនរហ័ស',
     'quickscan_checkin_status'  	=> 'Checkin Status',
-<<<<<<< HEAD
-    'ready_to_deploy'		=> 'Ready to Deploy',
-    'recent_activity'		=> 'Recent Activity',
-    'remaining'             => 'Remaining',
-    'remove_company'        => 'Remove Company Association',
-    'reports'				=> 'Reports',
-    'restored'				=> 'restored',
-    'restore'				=> 'ស្តារ',
-    'requestable_models'    => 'Requestable Models',
-    'requested'				=> 'បានស្នើសុំ',
-    'requested_date'        => 'Requested Date',
-    'requested_assets'      => 'Requested Assets',
-    'requested_assets_menu' => 'Requested Assets',
-    'request_canceled'      => 'Request Canceled',
-    'request_item'          => 'Request this item',
-    'external_link_tooltip' => 'External link to',
-    'save'  				=> 'Save',
-=======
     'ready_to_deploy'		=> 'រួចរាល់អាចប្រើប្រាស់',
     'recent_activity'		=> 'សកម្មភាពថ្មីៗ',
     'remaining'             => 'នៅសល់',
@@ -286,7 +250,6 @@ return [
     'request_item'          => 'ស្នើសុំធាតុនេះ។',
     'external_link_tooltip' => 'តំណភ្ជាប់ទៅខាងក្រៅ',
     'save'  				=> 'រក្សា​ទុក',
->>>>>>> origin/upstream
     'select_var'            => 'Select :thing... ', // this will eventually replace all of our other selects
     'select'				=> 'ជ្រើសរើស',
     'select_all'            => 'ជ្រើសរើសទាំងអស់។',
@@ -338,15 +301,9 @@ return [
     'unknown_admin'			=> 'មិនស្គាល់ Admin',
     'username_format'		=> 'Username Format',
     'username'              => 'ឈ្មោះ​អ្នកប្រើប្រាស់',
-<<<<<<< HEAD
-    'update'                => 'Update',
-    'upload_filetypes_help'      => 'Allowed filetypes are png, gif, jpg, jpeg, doc, docx, pdf, xls, xlsx, txt, lic, xml, zip, rtf and rar. Max upload size allowed is :size.',
-    'uploaded'              => 'Uploaded',
-=======
     'update'                => 'ធ្វើបច្ចុប្បន្នភាព',
     'upload_filetypes_help'      => 'ប្រភេទឯកសារដែលបានអនុញ្ញាតគឺ png, gif, jpg, jpeg, doc, docx, pdf, xls, xlsx, txt, lic, xml, zip, rtf និង rar ។ ទំហំផ្ទុកឡើងអតិបរមាដែលអនុញ្ញាតគឺ៖ ទំហំ។',
     'uploaded'              => 'បានបង្ហោះ',
->>>>>>> origin/upstream
     'user'					=> 'អ្នក​ប្រើ',
     'accepted'			    => 'យល់ព្រម',
     'declined'			    => 'បានបដិសេធ',
@@ -454,15 +411,6 @@ return [
     'checkin_tooltip' => 'Check this item in so that it is available for re-issue, re-imaging, etc',
     'checkout_user_tooltip' => 'Check this item out to a user',
     'checkin_to_diff_location' => 'You can choose to check this asset in to a location other than this asset\'s default location of :default_location if one is set',
-<<<<<<< HEAD
-    'maintenance_mode'      => 'The service is temporarily unavailable for system updates. Please check back later.',
-    'maintenance_mode_title' => 'System Temporarily Unavailable',
-    'ldap_import'           => 'User password should not be managed by LDAP. (This allows you to send forgotten password requests.)',
-    'purge_not_allowed'     => 'Purging deleted data has been disabled in the .env file. Contact support or your systems administrator.',
-    'backup_delete_not_allowed'     => 'Deleting backups has been disabled in the .env file. Contact support or your systems administrator.',
-    'additional_files'           => 'Additional Files',
-    'shitty_browser'        => 'No signature detected. If you are using an older browser, please use a more modern browser to complete your asset acceptance.',
-=======
     'maintenance_mode'      => 'សេវាកម្មនេះមិនមានជាបណ្តោះអាសន្នសម្រាប់ការអាប់ដេតប្រព័ន្ធទេ។ សូមពិនិត្យមើលឡើងវិញនៅពេលក្រោយ។',
     'maintenance_mode_title' => 'ប្រព័ន្ធមិនអាចប្រើបានជាបណ្តោះអាសន្ន',
     'ldap_import'           => 'ពាក្យសម្ងាត់របស់អ្នកប្រើមិនគួរត្រូវបានគ្រប់គ្រងដោយ LDAP ទេ។ (វាអនុញ្ញាតឱ្យអ្នកផ្ញើសំណើសុំពាក្យសម្ងាត់ដែលភ្លេច។)',
@@ -470,7 +418,6 @@ return [
     'backup_delete_not_allowed'     => 'ការលុបការបម្រុងទុកត្រូវបានបិទនៅក្នុងឯកសារ .env ។ ទាក់ទងផ្នែកជំនួយ ឬអ្នកគ្រប់គ្រងប្រព័ន្ធរបស់អ្នក។',
     'additional_files'           => 'ឯកសារបន្ថែម',
     'shitty_browser'        => 'រកមិនឃើញហត្ថលេខាទេ។ ប្រសិនបើអ្នកកំពុងប្រើកម្មវិធីរុករកចាស់ សូមប្រើកម្មវិធីរុករកតាមអ៊ីនធឺណិតទំនើបជាងមុន ដើម្បីបញ្ចប់ការទទួលយកទ្រព្យសកម្មរបស់អ្នក។',
->>>>>>> origin/upstream
     'bulk_soft_delete'      =>'Also soft-delete these users. Their asset history will remain intact unless/until you purge deleted records in the Admin Settings.',
     'bulk_checkin_delete_success' => 'Your selected users have been deleted and their items have been checked in.',
     'bulk_checkin_success' => 'The items for the selected users have been checked in.',

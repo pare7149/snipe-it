@@ -294,17 +294,6 @@ return [
     'oauth_clients' => 'OAuth Clients',
     'oauth' => 'OAuth',
     'oauth_help' => 'Oauth eindpunt instellingen',
-<<<<<<< HEAD
-    'oauth_no_clients' => 'You have not created any OAuth clients yet.',
-    'oauth_secret' => 'Secret',
-    'oauth_authorized_apps' => 'Authorized Applications',
-    'oauth_redirect_url' => 'Redirect URL',
-    'oauth_name_help' => ' Something your users will recognize and trust.',
-    'oauth_scopes' => 'Scopes',
-    'oauth_callback_url' => 'Your application authorization callback URL.',
-    'create_client' => 'Create Client',
-    'no_scopes' => 'No scopes',
-=======
     'oauth_no_clients' => 'Je hebt nog geen OAuth clients aangemaakt.',
     'oauth_secret' => 'Secret',
     'oauth_authorized_apps' => 'Geautoriseerde toepassingen',
@@ -314,7 +303,6 @@ return [
     'oauth_callback_url' => 'Uw applicatie autorisatie callback URL.',
     'create_client' => 'Client aanmaken',
     'no_scopes' => 'Geen scopes',
->>>>>>> origin/upstream
     'asset_tag_title' => 'Update Asset Tag Instellingen',
     'barcode_title' => 'Barcode instellingen bijwerken',
     'barcodes' => 'Barcodes',

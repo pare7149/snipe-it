@@ -39,15 +39,9 @@ return [
     'order'				=> '注文番号',
     'qr'				=> 'ＱＲコード',
     'requestable'		=> '利用者がこの資産を要求するかもしれません。',
-<<<<<<< HEAD
-    'redirect_to_all'   => 'Return to all :type',
-    'redirect_to_type'   => 'Go to :type',
-    'redirect_to_checked_out_to'   => 'Go to Checked Out to',
-=======
     'redirect_to_all'   => '全ての:typeに戻る',
     'redirect_to_type'   => ':type に移動',
     'redirect_to_checked_out_to'   => 'チェックアウト先へ移動',
->>>>>>> origin/upstream
     'select_statustype'	=> 'ステータスタイプを選択',
     'serial'			=> 'シリアル',
     'status'			=> 'ステータス',

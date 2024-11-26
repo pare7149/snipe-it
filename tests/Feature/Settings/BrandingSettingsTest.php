@@ -2,28 +2,17 @@
 
 namespace Tests\Feature\Settings;
 
-<<<<<<< HEAD
-use App\Models\User;
-use Tests\TestCase;
-=======
 use Tests\TestCase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 use App\Models\Setting;
 
->>>>>>> origin/upstream
 
 class BrandingSettingsTest extends TestCase
 {
     public function testSiteNameIsRequired()
     {
-<<<<<<< HEAD
-        $this->actingAs(User::factory()->superuser()->create())
-            ->post(route('settings.branding.save', ['site_name' => '']))
-            ->assertInvalid('site_name');
-    }
-=======
         $response = $this->actingAs(User::factory()->superuser()->create())
             ->from(route('settings.branding.index'))
             ->post(route('settings.branding.save', ['site_name' => '']))
@@ -323,5 +312,4 @@ class BrandingSettingsTest extends TestCase
 
 
 
->>>>>>> origin/upstream
 }

@@ -291,15 +291,6 @@ return [
     'zerofill_count'        => 'Długość znaczników zasobów, w tym zerofill',
     'username_format_help'   => 'To ustawienie będzie używane przez proces importu tylko wtedy, gdy nazwa użytkownika nie jest podana i musimy wygenerować nazwę użytkownika dla Ciebie.',
     'oauth_title' => 'Ustawienia API OAuth',
-<<<<<<< HEAD
-    'oauth_clients' => 'OAuth Clients',
-    'oauth' => 'OAuth',
-    'oauth_help' => 'Ustawienia punktu końcowego Oauth',
-    'oauth_no_clients' => 'You have not created any OAuth clients yet.',
-    'oauth_secret' => 'Secret',
-    'oauth_authorized_apps' => 'Authorized Applications',
-    'oauth_redirect_url' => 'Redirect URL',
-=======
     'oauth_clients' => 'Klienci OAuth',
     'oauth' => 'OAuth',
     'oauth_help' => 'Ustawienia punktu końcowego Oauth',
@@ -307,7 +298,6 @@ return [
     'oauth_secret' => 'Sekret',
     'oauth_authorized_apps' => 'Authorized Applications',
     'oauth_redirect_url' => 'URL przekierowania',
->>>>>>> origin/upstream
     'oauth_name_help' => ' Something your users will recognize and trust.',
     'oauth_scopes' => 'Scopes',
     'oauth_callback_url' => 'Your application authorization callback URL.',

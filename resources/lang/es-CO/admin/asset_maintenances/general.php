@@ -2,17 +2,10 @@
 
     return [
         'asset_maintenances' => 'Mantenimiento de activos',
-<<<<<<< HEAD
-        'edit'               => 'Editar Mantenimiento de Activos',
-        'delete'             => 'Eliminar Mantenimiento de Activos',
-        'view'               => 'Ver Detalles de Mantenimiento de Activos',
-        'repair'             => 'Reparación',
-=======
         'edit'               => 'Editar mantenimiento del activo',
         'delete'             => 'Eliminar mantenimiento del activo',
         'view'               => 'Ver detalles del mantenimiento del activo',
         'repair'             => 'Reparar',
->>>>>>> origin/upstream
         'maintenance'        => 'Mantenimiento',
         'upgrade'            => 'Mejorar',
         'calibration'        => 'Calibración',

@@ -2,14 +2,6 @@
 
 return array(
     'personal_api_keys' => 'Persoonlijke API-sleutels',
-<<<<<<< HEAD
-    'api_key_warning' => 'When generating an API token, be sure to copy it down immediately as they will not be visible to you again.',
-    'api_base_url' => 'Je API-basis-url bevindt zich op:',
-    'api_base_url_endpoint' => '/&lt;endpoint&gt;',
-    'api_token_expiration_time' => 'API tokens zijn ingesteld om te verlopen in:',
-    'api_reference' => 'Please check the <a href="https://snipe-it.readme.io/reference" target="_blank">API reference</a> to find specific API endpoints and additional API documentation.',
-    'profile_updated' => 'Account successfully updated',
-=======
     'personal_access_token' => 'Persoonlijke toegangs-token',
     'personal_api_keys_success' => 'Persoonlijke API-sleutel :key succesvol gemaakt',
     'here_is_api_key' => 'Hier is je nieuwe persoonlijke toegangstoken. Dit is de enige keer dat het wordt weergegeven, dus verlies het niet! Je kunt nu deze token gebruiken om API-verzoeken te doen.',
@@ -22,5 +14,4 @@ return array(
     'no_tokens' => 'Je hebt geen persoonlijke toegangs-tokens aangemaakt.',
     'enable_sounds' => 'Zet geluid effecten aan',
     'enable_confetti' => 'Zet confetti effecten aan',
->>>>>>> origin/upstream
 );

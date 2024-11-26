@@ -49,13 +49,8 @@ return array(
     ),
 
     'checkin' => array(
-<<<<<<< HEAD
-        'error'   => 'Hubo un problema devolviendo la licencia. Por favor, inténtalo de nuevo.',
-        'success' => 'La licencia fue registrada con éxito'
-=======
         'error'   => 'Hubo un problema ingresando la licencia. Por favor, inténtelo de nuevo.',
         'success' => 'La licencia fue ingresada correctamente'
->>>>>>> origin/upstream
     ),
 
 );

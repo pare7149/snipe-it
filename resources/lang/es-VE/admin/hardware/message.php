@@ -2,16 +2,6 @@
 
 return [
 
-<<<<<<< HEAD
-    'undeployable' 		=> '<strong>Atención:</strong> Este elemento ha sido marcado como no utilizable.
-                        Si no es correcto, actualice el estado.',
-    'does_not_exist' 	=> 'El activo no existe.',
-    'does_not_exist_var'=> 'Activo con etiqueta :asset_tag no encontrado.',
-    'no_tag' 	        => 'No se ha proporcionado ninguna etiqueta de activo.',
-    'does_not_exist_or_not_requestable' => 'Ese activo no existe o no es solicitable.',
-    'assoc_users'	 	=> 'Este activo está actualmente asignado a un usuario y no puede ser borrado. Por favor, revisa el activo primero y luego intenta borrarlo. ',
-    'warning_audit_date_mismatch' 	=> 'La próxima fecha de auditoría de este activo (:next_audit_date) es anterior a la última fecha de auditoría (:last_audit_date). Por favor, actualice la próxima fecha de auditoría.',
-=======
     'undeployable' 		 => '<strong>Advertencia:</strong> Este activo actualmente está marcado como no utilizable. Si este estado ha cambiado, por favor, actualice el estado del activo.',
     'does_not_exist' 	 => 'El activo no existe.',
     'does_not_exist_var' => 'Activo con placa :asset_tag no encontrado.',
@@ -22,7 +12,6 @@ return [
     'labels_generated'   => 'Las etiquetas fueron generadas exitosamente.',
     'error_generating_labels' => 'Error en la generación de etiquetas.',
     'no_assets_selected' => 'No se han seleccionado activos.',
->>>>>>> origin/upstream
 
     'create' => [
         'error'   		=> 'El activo no fue creado, por favor, inténtelo de nuevo. :(',
@@ -50,11 +39,7 @@ return [
 
     'audit' => [
         'error'   		=> 'Auditoría de activos fallida: :error ',
-<<<<<<< HEAD
-        'success' 		=> 'Audoría de activo registrada con éxito.',
-=======
         'success' 		=> 'Auditoría de activos registrada correctamente.',
->>>>>>> origin/upstream
     ],
 
 
@@ -67,11 +52,7 @@ return [
         'error'   => 'Archivo(s) no cargado(s). Por favor, inténtelo nuevamente.',
         'success' => 'Archivo(s) cargado(s) exitosamente.',
         'nofiles' => 'No seleccionó ningún archivo para ser cargado, o el archivo que está tratando de cargar es demasiado grande',
-<<<<<<< HEAD
-        'invalidfiles' => 'Uno o más de tus archivos es demasiado grande o es de un tipo que no está permitido. Los tipos de archivo permitidos son png, gif, jpg, doc, docx, pdf, y txt.',
-=======
         'invalidfiles' => 'Uno o más de sus archivos son demasiado grandes o son de un tipo de archivo que no está permitido. Los tipos de archivo permitidos son png, gif, jpg, doc, docx, pdf y txt.',
->>>>>>> origin/upstream
     ],
 
     'import' => [
@@ -97,19 +78,6 @@ return [
 
     'checkout' => [
         'error'   		=> 'El activo no fue asignado, por favor inténtelo de nuevo',
-<<<<<<< HEAD
-        'success' 		=> 'Activo asignado con éxito.',
-        'user_does_not_exist' => 'El usuario es inválido. Por favor, inténtelo de nuevo.',
-        'not_available' => '¡Ese activo no está disponible para retirar!',
-        'no_assets_selected' => 'Debes seleccionar al menos un activo de la lista',
-    ],
-
-    'checkin' => [
-        'error'   		=> 'El equipo no se pudo devolver, por favor inténtelo de nuevo',
-        'success' 		=> 'El activo fue devuelto exitosamente.',
-        'user_does_not_exist' => 'Es usuario no es correcto, por favor inténtelo de nuevo.',
-        'already_checked_in'  => 'El equipo ya ha sido devuelto.',
-=======
         'success' 		=> 'Equipo asignado correctamente.',
         'user_does_not_exist' => 'Este usuario no es correcto. Por favor, inténtelo de nuevo.',
         'not_available' => '¡Ese equipo no está disponible para ser asignado!',
@@ -126,7 +94,6 @@ return [
         'success' 		=> 'El activo fue ingresado exitosamente.',
         'user_does_not_exist' => 'Este usuario no es correcto. Por favor, inténtelo de nuevo.',
         'already_checked_in'  => 'El equipo ya ha sido recibido.',
->>>>>>> origin/upstream
 
     ],
 

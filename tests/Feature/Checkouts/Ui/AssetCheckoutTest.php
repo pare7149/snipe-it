@@ -2,13 +2,9 @@
 
 namespace Tests\Feature\Checkouts\Ui;
 
-<<<<<<< HEAD
-use App\Events\CheckoutableCheckedOut;
-=======
 use PHPUnit\Framework\Attributes\DataProvider;
 use App\Events\CheckoutableCheckedOut;
 use App\Models\Accessory;
->>>>>>> origin/upstream
 use App\Models\Asset;
 use App\Models\Company;
 use App\Models\LicenseSeat;
@@ -126,11 +122,7 @@ class AssetCheckoutTest extends TestCase
      * This data provider contains checkout targets along with the
      * asset's expected location after the checkout process.
      */
-<<<<<<< HEAD
-    public function checkoutTargets(): array
-=======
     public static function checkoutTargets(): array
->>>>>>> origin/upstream
     {
         return [
             'User' => [function () {
@@ -176,11 +168,7 @@ class AssetCheckoutTest extends TestCase
         ];
     }
 
-<<<<<<< HEAD
-    /** @dataProvider checkoutTargets */
-=======
     #[DataProvider('checkoutTargets')]
->>>>>>> origin/upstream
     public function testAssetCanBeCheckedOut($data)
     {
         ['checkout_type' => $type, 'target' => $target, 'expected_location' => $expectedLocation] = $data();
@@ -265,24 +253,6 @@ class AssetCheckoutTest extends TestCase
             ->assertRedirect(route('hardware.show',['hardware' => $asset->id]));
     }
 
-<<<<<<< HEAD
-    public function testAssetCheckoutPagePostIsRedirectedIfModelIsInvalid()
-    {
-        $asset = Asset::factory()->create();
-        $asset->model_id = 0;
-        $asset->forceSave();
-        $user = User::factory()->create();
-        
-        $this->actingAs(User::factory()->admin()->create())
-            ->post(route('hardware.checkout.store', $asset), [
-                'checkout_to_type' => 'user',
-                'assigned_user' => $user->id,
-            ])
-            ->assertStatus(302)
-            ->assertSessionHas('error')
-            ->assertRedirect(route('hardware.show', ['hardware' => $asset->id]));
-    }
-=======
     public function testAssetCheckoutPagePostIsRedirectedIfRedirectSelectionIsIndex()
     {
         $asset = Asset::factory()->create();
@@ -364,5 +334,4 @@ class AssetCheckoutTest extends TestCase
             ->assertStatus(302)
             ->assertRedirect(route('locations.show', ['location' => $target]));
     }
->>>>>>> origin/upstream
 }

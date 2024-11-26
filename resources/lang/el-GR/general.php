@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Πρώτο Όνομα Αρχικό (smith_j@example.com)',
     'firstinitial.lastname' => 'Πρώτο Αρχικό Όνομα (j.smith@example.com)',
     'firstnamelastinitial'  => 'Επίθετο Όνομα (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Όνομα',
     'first_name_format'		=> 'Όνομα (jane@example.com)',
     'files'                 => 'Αρχεία',
@@ -414,11 +410,7 @@ return [
     'checkout_tooltip' => 'Ελέγξτε αυτό το στοιχείο έξω',
     'checkin_tooltip' => 'Check this item in so that it is available for re-issue, re-imaging, etc',
     'checkout_user_tooltip' => 'Επιλέξτε αυτό το στοιχείο έξω σε ένα χρήστη',
-<<<<<<< HEAD
-    'checkin_to_diff_location' => 'You can choose to check this asset in to a location other than this asset\'s default location of :default_location if one is set',
-=======
     'checkin_to_diff_location' => 'Μπορείτε να επιλέξετε να ελέγξετε αυτό το στοιχείο σε μια τοποθεσία άλλη από την προεπιλεγμένη θέση αυτού του περιουσιακού στοιχείου του :default_location αν έχει οριστεί',
->>>>>>> origin/upstream
     'maintenance_mode'      => 'Η υπηρεσία δεν είναι προσωρινά διαθέσιμη για ενημερώσεις συστήματος. Παρακαλούμε ελέγξτε ξανά αργότερα.',
     'maintenance_mode_title' => 'Προσωρινά Μη Διαθέσιμο Σύστημα',
     'ldap_import'           => 'Ο κωδικός πρόσβασης χρήστη δεν πρέπει να γίνεται από το LDAP. (Αυτό σας επιτρέπει να στείλετε αιτήματα ξεχασμένων κωδικών.)',

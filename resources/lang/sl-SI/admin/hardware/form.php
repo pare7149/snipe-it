@@ -39,15 +39,9 @@ return [
     'order'				=> 'Številka naročila',
     'qr'				=> 'QR-koda',
     'requestable'		=> 'Uporabniki lahko zahtevajo to sredstvo',
-<<<<<<< HEAD
-    'redirect_to_all'   => 'Return to all :type',
-    'redirect_to_type'   => 'Go to :type',
-    'redirect_to_checked_out_to'   => 'Go to Checked Out to',
-=======
     'redirect_to_all'   => 'Vrni se na vse :tip',
     'redirect_to_type'   => 'Pojdi na :tip',
     'redirect_to_checked_out_to'   => 'Pojdite na odjavljeno do',
->>>>>>> origin/upstream
     'select_statustype'	=> 'Izberite vrsto statusa',
     'serial'			=> 'Serijska številka',
     'status'			=> 'Status',

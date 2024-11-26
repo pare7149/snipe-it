@@ -1,21 +1,6 @@
 <?php
 
 return [
-<<<<<<< HEAD
-    'bulk_delete'		=> 'Patvirtinkite masinį įrangos panaikinimą',
-    'bulk_restore'      => 'Patvirtinkite masinį įrangos atkūrimą', 
-  'bulk_delete_help'	=> 'Peržiūrėkite įrangą, kurią norite panaikinti. Panaikintą įrangą galima atkurti, tačiau ji nebebus susieta su tais naudotojais, kuriems šiuo metu yra išduota.',
-  'bulk_restore_help'	=> 'Peržiūrėkite įrangą, kurią norite atkurti. Atkūrus įrangą, ji nebus susieta su tais naudotojais, kuriems anksčiau buvo išduota.',
-  'bulk_delete_warn'	=> 'Bus panaikinta įrangos vienetų: :asset_count.',
-  'bulk_restore_warn'	=> 'Bus atkurta įrangos vienetų: :asset_count.',
-    'bulk_update'		=> 'Masinis įrangos atnaujinimas',
-    'bulk_update_help'	=> 'Ši forma suteikia galimybę atnaujinti iškart kelis įrangos vienetus. Užpildykite tik tuos laukus, kuriuos norite pakeisti. Laukai, kuriuos paliksite tuščius, liks nepakeisti. ',
-    'bulk_update_warn'	=> 'Ketinate redaguoti vienos įrangos ypatybes.|Ketinate redaguoti :asset_count įrangų ypatybes.',
-    'bulk_update_with_custom_field' => 'Atminkite, kad įranga yra :asset_model_count skirtingų modelių tipų.',
-    'bulk_update_model_prefix' => 'Modeliams', 
-    'bulk_update_custom_field_unique' => 'Tai unikalus laukas, todėl jo negalima redaguoti masinio redagavimo būdu.',
-    'checkedout_to'		=> 'Išduota',
-=======
     'bulk_delete'		=> 'Patvirtinkite masinį turto panaikinimą',
     'bulk_restore'      => 'Patvirtinkite masinį turto atkūrimą', 
   'bulk_delete_help'	=> 'Peržiūrėkite turtą, kurį norite panaikinti. Panaikintą turtą galima atkurti, tačiau jis nebebus susietas su tais naudotojais, kuriems šiuo metu yra išduotas.',
@@ -29,7 +14,6 @@ return [
     'bulk_update_model_prefix' => 'Modeliams', 
     'bulk_update_custom_field_unique' => 'Tai unikalus laukas, todėl jo negalima redaguoti masinio redagavimo būdu.',
     'checkedout_to'		=> 'Kam išduota',
->>>>>>> origin/upstream
     'checkout_date'		=> 'Išdavimo data',
     'checkin_date'		=> 'Paėmimo data',
     'checkout_to'		=> 'Išduoti',
@@ -45,11 +29,7 @@ return [
     'expected_checkin'  => 'Numatoma paėmimo data',
     'expires'			=> 'Baigsis',
     'fully_depreciated'	=> 'Visiškai nusidėvėjo',
-<<<<<<< HEAD
-    'help_checkout'		=> 'Jei norite nedelsiant išduoti šią įrangą, aukščiau esančiame būsenų sąraše pasirinkite „Paruošta naudojimui“. ',
-=======
     'help_checkout'		=> 'Jei norite nedelsiant išduoti šį turtą, aukščiau esančiame būsenų sąraše pasirinkite „Paruoštas naudojimui“. ',
->>>>>>> origin/upstream
     'mac_address'		=> 'MAC adresas',
     'manufacturer'		=> 'Gamintojas',
     'model'				=> 'Modelis',
@@ -58,11 +38,7 @@ return [
     'notes'				=> 'Pastabos',
     'order'				=> 'Užsakymo numeris',
     'qr'				=> 'QR kodas',
-<<<<<<< HEAD
-    'requestable'		=> 'Naudotojai gali užsakyti šią įrangą',
-=======
     'requestable'		=> 'Naudotojai gali užsakyti šį turtą',
->>>>>>> origin/upstream
     'redirect_to_all'   => 'Grįžti prie visų :type',
     'redirect_to_type'   => 'Eiti į :type',
     'redirect_to_checked_out_to'   => 'Eiti į išduotus',
@@ -70,21 +46,6 @@ return [
     'serial'			=> 'Serijos numeris',
     'status'			=> 'Būsena',
     'tag'				=> 'Inventorinis numeris',
-<<<<<<< HEAD
-    'update'			=> 'Įrangos atnaujinimas',
-    'warranty'			=> 'Garantija',
-        'warranty_expires'		=> 'Garantija baigiasi',
-    'years'				=> 'metai',
-    'asset_location' => 'Atnaujinti įrangos vietą',
-    'asset_location_update_default_current' => 'Atnaujinti numatytąją vietą IR faktinę vietą',
-    'asset_location_update_default' => 'Atnaujinti tik numatytąją vietą',
-    'asset_location_update_actual' => 'Atnaujinti tik faktinę vietą',
-    'asset_not_deployable' => 'Įrangos būsena netinkama išdavimui, todėl ši įranga negali būti išduota.',
-    'asset_deployable' => 'Įrangos būsena tinkama išdavimui, todėl ši įranga gali būti išduota.',
-    'processing_spinner' => 'Apdorojama... (Dideliems failams gali šiek tiek užtrukti)',
-    'optional_infos'  => 'Papildoma informacija',
-    'order_details'   => 'Su užsakymu susijusi informacija'
-=======
     'update'			=> 'Turto atnaujinimas',
     'warranty'			=> 'Garantija',
         'warranty_expires'		=> 'Garantija baigiasi',
@@ -100,5 +61,4 @@ return [
     'optional_infos'  => 'Papildoma informacija',
     'order_details'   => 'Su užsakymu susijusi informacija',
     'calc_eol'    => 'If nulling the EOL date, use automatic EOL calculation based on the purchase date and EOL rate.',
->>>>>>> origin/upstream
 ];

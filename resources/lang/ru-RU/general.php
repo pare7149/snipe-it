@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Фамилия Первая буква имени (ivanov_i@example.com)',
     'firstinitial.lastname' => 'Первая буква имени и фамилия (i.ivanov@example.com)',
     'firstnamelastinitial'  => 'First Name Last Initial (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Фамилия.Имя (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Имя',
     'first_name_format'		=> 'Имя (jane@example.com)',
     'files'                 => 'Файлы',
@@ -251,11 +247,7 @@ return [
     'requested_assets'      => 'Запрашиваемые активы',
     'requested_assets_menu' => 'Запрошенные активы',
     'request_canceled'      => 'Запрос отменен',
-<<<<<<< HEAD
-    'request_item'          => 'Request this item',
-=======
     'request_item'          => 'Запросить этот элемент',
->>>>>>> origin/upstream
     'external_link_tooltip' => 'Внешняя ссылка на',
     'save'  				=> 'Сохранить',
     'select_var'            => 'Выберите :thing... ', // this will eventually replace all of our other selects
@@ -416,15 +408,9 @@ return [
     'accessory_name'       => 'Название аксессуара:',
     'clone_item'            => 'Клонировать позицию',
     'checkout_tooltip' => 'Выдать этот элемент',
-<<<<<<< HEAD
-    'checkin_tooltip' => 'Check this item in so that it is available for re-issue, re-imaging, etc',
-    'checkout_user_tooltip' => 'Выдать эту единицу пользователю',
-    'checkin_to_diff_location' => 'You can choose to check this asset in to a location other than this asset\'s default location of :default_location if one is set',
-=======
     'checkin_tooltip' => 'Пометить этот элемент, чтобы он был доступен для повторного использования, повторного отображения и т.д.',
     'checkout_user_tooltip' => 'Выдать эту единицу пользователю',
     'checkin_to_diff_location' => 'Вы можете забрать этот актив в расположение, отличное от указанного для актива по умолчанию :default_location, если оно задано',
->>>>>>> origin/upstream
     'maintenance_mode'      => 'Служба временно недоступна для системных обновлений. Пожалуйста, проверьте позже.',
     'maintenance_mode_title' => 'Система временно недоступна',
     'ldap_import'           => 'Пароль пользователя не должен управляться LDAP. (Это позволяет отправлять ссылку на сброс забытого пароля.)',
@@ -526,13 +512,8 @@ return [
         'address2' => 'Адрес, строка 2',
         'import_note' => 'Импортировано с помощью csv импортера',
     ],
-<<<<<<< HEAD
-    'remove_customfield_association' => 'Remove this field from the fieldset. This will not delete the custom field, only this field\'s association with this fieldset.',
-    'checked_out_to_fields' => 'Checked Out To Fields',
-=======
     'remove_customfield_association' => 'Удалить это поле из набора полей. Это не удалит пользовательское поле, только связь поля с этим набором.',
     'checked_out_to_fields' => 'Перемещено в Поля',
->>>>>>> origin/upstream
     'percent_complete' => '% завершено',
     'uploading' => 'Загрузка... ',
     'upload_error' => 'Ошибка загрузки файла. Пожалуйста, проверьте, что нет пустых строк и нет повторяющихся названий столбцов.',

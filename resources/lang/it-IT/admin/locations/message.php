@@ -2,17 +2,10 @@
 
 return array(
 
-<<<<<<< HEAD
-    'does_not_exist' => 'La posizione non esiste.',
-    'assoc_users'    => 'This location is not currently deletable because it is the location of record for at least one asset or user, has assets assigned to it, or is the parent location of another location. Please update your models to no longer reference this company and try again. ',
-    'assoc_assets'	 => 'Questa posizione è associata ad almeno un prodotto e non può essere cancellata. Si prega di aggiornare i vostri prodotti di riferimento e riprovare. ',
-    'assoc_child_loc'	 => 'Questa posizione è parente di almeno un\'altra posizione e non può essere cancellata. Si prega di aggiornare le vostre posizioni di riferimento e riprovare. ',
-=======
     'does_not_exist' => 'La Sede non esiste.',
     'assoc_users'    => 'Non puoi eliminare questa Sede perché è associata ad almeno un Bene o un Utente, o ha Beni assegnati, o è la Sede sotto la quale sono registrate altre Sedi. Aggiorna le altre voci in modo che non facciano più riferimento a questa Sede e poi riprova. ',
     'assoc_assets'	 => 'Questa Sede è associata ad almeno un prodotto e non può essere cancellata. Si prega di aggiornare i vostri prodotti di riferimento e riprovare. ',
     'assoc_child_loc'	 => 'La Sede contiene almeno un\'altra Sede, pertanto non può essere eliminata. Aggiorna le Sedi in modo che non siano parte di questa Sede e riprova. ',
->>>>>>> origin/upstream
     'assigned_assets' => 'Beni Assegnati',
     'current_location' => 'Sede attuale',
     'open_map' => 'Apri con :map_provider_icon Maps',

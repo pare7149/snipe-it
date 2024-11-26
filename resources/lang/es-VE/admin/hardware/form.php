@@ -12,22 +12,6 @@ return [
     'bulk_update_warn'	=> 'Está a punto de editar las propiedades de un solo activo.|Está a punto de editar las propiedades de :asset_count activos.',
     'bulk_update_with_custom_field' => 'Tenga en cuenta que los activos corresponden a :asset_model_count tipos diferentes de modelos.',
     'bulk_update_model_prefix' => 'En modelos', 
-<<<<<<< HEAD
-    'bulk_update_custom_field_unique' => 'Este es un campo único y no puede ser editado a granel.',
-    'checkedout_to'		=> 'Asignado A',
-    'checkout_date'		=> 'Fecha de asignación',
-    'checkin_date'		=> 'Fecha de devolución',
-    'checkout_to'		=> 'Asignar A',
-    'cost'				=> 'Costo de Compra',
-    'create'			=> 'Crear Activo',
-    'date'				=> 'Fecha de compra',
-    'depreciation'	    => 'Depreciación',
-    'depreciates_on'	=> 'Se Deprecia En',
-    'default_location'	=> 'Ubicación predeterminada',
-    'default_location_phone' => 'Teléfono de ubicación por defecto',
-    'eol_date'			=> 'Fecha fin de soporte (EOL)',
-    'eol_rate'			=> 'Tasa de Fin de Vida',
-=======
     'bulk_update_custom_field_unique' => 'Este es un campo único y no puede ser editado de forma masiva.',
     'checkedout_to'		=> 'Asignado a',
     'checkout_date'		=> 'Fecha de asignación',
@@ -42,7 +26,6 @@ return [
     'default_location_phone' => 'Teléfono de ubicación predeterminada',
     'eol_date'			=> 'Fecha fin de soporte (EOL)',
     'eol_rate'			=> 'Tasa fin de soporte (EOL)',
->>>>>>> origin/upstream
     'expected_checkin'  => 'Fecha esperada de devolución',
     'expires'			=> 'Vence',
     'fully_depreciated'	=> 'Completamente depreciado',
@@ -56,19 +39,11 @@ return [
     'order'				=> 'Número de orden',
     'qr'				=> 'Código QR',
     'requestable'		=> 'Los usuarios pueden solicitar este elemento',
-<<<<<<< HEAD
-    'redirect_to_all'   => 'Return to all :type',
-    'redirect_to_type'   => 'Ir a :type',
-    'redirect_to_checked_out_to'   => 'Go to Checked Out to',
-    'select_statustype'	=> 'Seleccione un tipo de estado',
-    'serial'			=> 'Serial',
-=======
     'redirect_to_all'   => 'Regresar a :type',
     'redirect_to_type'   => 'Ir a :type',
     'redirect_to_checked_out_to'   => 'Ir a elementos asignados',
     'select_statustype'	=> 'Seleccionar un tipo de estado',
     'serial'			=> 'Número de serie',
->>>>>>> origin/upstream
     'status'			=> 'Estado',
     'tag'				=> 'Placa del activo',
     'update'			=> 'Actualizar activo',
@@ -80,10 +55,7 @@ return [
     'asset_location_update_default' => 'Actualizar sólo la ubicación predeterminada',
     'asset_location_update_actual' => 'Actualizar sólo la ubicación actual',
     'asset_not_deployable' => 'Ese estado de activos es no utilizable. Este activo no puede ser asignado.',
-<<<<<<< HEAD
-=======
     'asset_not_deployable_checkin' => 'Ese estado del activo no es utilizable. El uso de esta etiqueta de estado ingresará el activo.',
->>>>>>> origin/upstream
     'asset_deployable' => 'El estado indica que es utilizable. Este activo puede ser asignado.',
     'processing_spinner' => 'Procesando... (Esto puede tomar un poco de tiempo en archivos grandes)',
     'optional_infos'  => 'Información opcional',

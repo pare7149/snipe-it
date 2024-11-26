@@ -2,14 +2,6 @@
 
 return array(
     'personal_api_keys' => 'Clés personnelles d\'API',
-<<<<<<< HEAD
-    'api_key_warning' => 'When generating an API token, be sure to copy it down immediately as they will not be visible to you again.',
-    'api_base_url' => 'L\'URL de base de l\'API est situé à:',
-    'api_base_url_endpoint' => '/&lt;endpoint&gt;',
-    'api_token_expiration_time' => 'Les jetons d\'API sont configurés pour expirer après:',
-    'api_reference' => 'Please check the <a href="https://snipe-it.readme.io/reference" target="_blank">API reference</a> to find specific API endpoints and additional API documentation.',
-    'profile_updated' => 'Account successfully updated',
-=======
     'personal_access_token' => 'Jeton d\'accès personnel',
     'personal_api_keys_success' => 'Clé d\'API personnelle :key créée avec succès',
     'here_is_api_key' => 'Voici votre nouveau jeton d\'accès personnel. C\'est la seule fois qu\'il sera affiché, ne le perdez donc pas ! Vous pouvez maintenant utiliser ce jeton pour faire des requêtes d\'API.',
@@ -22,5 +14,4 @@ return array(
     'no_tokens' => 'Vous n\'avez pas encore créé de jeton d\'accès personnel.',
     'enable_sounds' => 'Activer les effets sonores',
     'enable_confetti' => 'Enable confetti effects',
->>>>>>> origin/upstream
 );

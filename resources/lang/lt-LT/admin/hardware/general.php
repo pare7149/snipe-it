@@ -1,35 +1,6 @@
 <?php
 
 return [
-<<<<<<< HEAD
-    'about_assets_title'           => 'Apie įrangą',
-    'about_assets_text'            => 'Įranga, tai turtas, kurį galima sekti pagal serijos ar inventoriaus numerį. Įprastai, tai yra didesnės vertės daiktai, kurių individualus identifikavimas yra svarbus.',
-    'archived'  				=> 'Archyvuota',
-    'asset'  					=> 'Įranga',
-    'bulk_checkout'             => 'Išduoti įrangą',
-    'bulk_checkin'              => 'Paimti įrangą',
-    'checkin'  					=> 'Paimti įrangą',
-    'checkout'  				=> 'Išduoti įrangą',
-    'clone'  					=> 'Klonuoti įrangą',
-    'deployable'  				=> 'Galima naudoti',
-    'deleted'  					=> 'Ši įranga buvo panaikinta.',
-    'delete_confirm'            => 'Ar tikrai norite panaikinti šią įrangą?',
-    'edit'  					=> 'Redaguoti įrangą',
-    'model_deleted'  			=> 'Šis įrangos modelis buvo panaikintas. Pirmiau turite atkurti modelį, tada galėsite atkurti įrangą.',
-    'model_invalid'             => 'Šiai įrangai šis modelis netinka.',
-    'model_invalid_fix'         => 'Įranga turi būti atnaujinta parenkant tinkamą įrangos modelį, kad ją būtų galima išduoti/paimti ar audituoti.',
-    'requestable'               => 'Užsakoma',
-    'requested'				    => 'Užsakyta',
-    'not_requestable'           => 'Neužsakoma',
-    'requestable_status_warning' => 'Nekeisti užsakomos įrangos būsenos',
-    'restore'  					=> 'Atkurti įrangą',
-    'pending'  					=> 'Ruošiama',
-    'undeployable'  			=> 'Negalimas naudoti',
-    'undeployable_tooltip'  	=> 'Ši įranga yra pažymėta kaip neišduotina, todėl šiuo metu jos negalima išduoti.',
-    'view'  					=> 'Peržiūrėti įrangą',
-    'csv_error' => 'Jūsų CSV faile yra klaida:',
-    'import_text' => '<p>Įkelkite CSV, kuriame yra įrangos istorija. Įranga ir naudotojai PRIVALO būti sistemoje, kitaip jie bus praleisti. Atliekant istorijos importavimą, įranga yra susiejama pagal inventorinį numerį. Bandysime rasti atitinkantį naudotoją pagal jūsų pateiktą naudotojo vardą ir žemiau pasirinktus kriterijus. Jei nepasirinksite jokio kriterijaus, tiesiog bus bandoma atlikti susiejimą pagal naudotojo vardo formatą, kurį pasirininkote <code>Administratorius &gt; Bendrieji nustatymai</code> nustatymuose.</p><p>Į CSV įtraukti laukai turi atitikti antraštes: <strong>Inventorinis numeris, Pavadinimas, Išdavimo data, Paėmimo data</strong>. Visi papildomi laukai bus ignoruojami. </p><p>Paėmimo data: tuščia arba nurodyta būsima paėmimo data –  įranga bus išduota susijusiam naudotojui. Nepasirinkus stulpelio „Paėmimo data“, bus sukurta paėmimo data su šiandienos data.</p>
-=======
     'about_assets_title'           => 'Apie turtą',
     'about_assets_text'            => 'Turtas, tai daiktai, kuriuos galima sekti pagal serijinį ar inventorinį numerį. Įprastai, tai yra didesnės vertės daiktai, kurių individualus identifikavimas yra svarbus.',
     'archived'  				=> 'Archyvuotas',
@@ -57,7 +28,6 @@ return [
     'view'  					=> 'Peržiūrėti turtą',
     'csv_error' => 'Jūsų CSV faile yra klaida:',
     'import_text' => '<p>Įkelkite CSV, kuriame yra turto istorija. Turtas ir naudotojai PRIVALO būti sistemoje, kitaip jie bus praleisti. Atliekant istorijos importavimą, turtas yra susiejamas pagal inventorinį numerį. Bus bandoma rasti atitinkantį naudotoją pagal jūsų pateiktą naudotojo vardą ir žemiau pasirinktus kriterijus. Jei nepasirinksite jokio kriterijaus, tiesiog bus bandoma atlikti susiejimą pagal naudotojo vardo formatą, kurį pasirinkote <code>Administratorius &gt; Bendrieji nustatymai</code> nustatymuose.</p><p>Į CSV įtraukti laukai turi atitikti antraštes: <strong>Inventorinis numeris, Pavadinimas, Išdavimo data, Paėmimo data</strong>. Visi papildomi laukai bus ignoruojami. </p><p>Paėmimo data: tuščia arba nurodyta būsima paėmimo data –  turtas bus priskirtas susijusiam naudotojui. Nepasirinkus stulpelio „Paėmimo data“, bus sukurta paėmimo data su šiandienos data.</p>
->>>>>>> origin/upstream
     ',
     'csv_import_match_f-l' => 'Bandyti susieti naudotojus pagal formatą <strong>vardas.pavardė</strong> (<code>vardenis.pavardenis</code>)',
     'csv_import_match_initial_last' => 'Bandyti susieti naudotojus pagal formatą <strong>pirmoji vardo raidė ir pavardė</strong> (<code>vpavardenis</code>)',

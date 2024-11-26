@@ -5,10 +5,6 @@ return array(
     'id'      					=> 'ID',
     'parent'   					=> 'Pagrindinė',
     'require_acceptance'      	=> 'Sutikimas',
-<<<<<<< HEAD
-    'title'      				=> 'Įrangos kategorijos pavadinimas',
-=======
     'title'      				=> 'Turto kategorijos pavadinimas',
->>>>>>> origin/upstream
 
 );

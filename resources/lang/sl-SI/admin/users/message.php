@@ -41,20 +41,12 @@ return array(
         'delete_has_licenses_var' => 'This user still has a license seats assigned. Please check it in first.|This user still has :count license seats assigned. Please check them in first.',
         'delete_has_accessories_var' => 'This user still has an accessory assigned. Please check it in first.|This user still has :count accessories assigned. Please check their assets in first.',
         'delete_has_locations_var' => 'This user still manages a location. Please select another manager first.|This user still manages :count locations. Please select another manager first.',
-<<<<<<< HEAD
-        'delete_has_users_var' => 'This user still manages another user. Please select another manager for that user first.|This user still manages :count users. Please select another manager for them first.',
-=======
         'delete_has_users_var' => 'Ta uporabnik še vedno upravlja drugega uporabnika. Prosimo, da najprej izberete drugega upravitelja za tega uporabnika.|Ta uporabnik še vedno upravlja :seštevek uporabnikov. Prosimo, da najprej izberete drugega menedžerja zanje.',
->>>>>>> origin/upstream
         'unsuspend' => 'Prišlo je do težave pri od-suspendiranju uporabnika. Prosim poskusite ponovno.',
         'import'    => 'Pri uvozu uporabnikov je prišlo do težave. Prosim poskusite ponovno.',
         'asset_already_accepted' => 'To sredstvo je bilo že sprejeto.',
         'accept_or_decline' => 'To sredstev morate sprejeti ali zavrniti.',
-<<<<<<< HEAD
-        'cannot_delete_yourself' => 'We would feel really bad if you deleted yourself, please reconsider.',
-=======
         'cannot_delete_yourself' => 'Počutili bi se zelo slabo, če bi se izbrisali, zato razmislite o tem.',
->>>>>>> origin/upstream
         'incorrect_user_accepted' => 'Sredstev, ki ste ga poskušali sprejeti, ni bilo izdano za vas.',
         'ldap_could_not_connect' => 'Povezave s strežnikom LDAP ni bilo mogoče vzpostaviti. Preverite konfiguracijo strežnika LDAP v konfiguracijski datoteki LDAP. <br>Napaka strežnika LDAP:',
         'ldap_could_not_bind' => 'Povezave s strežnikom LDAP ni bilo mogoče vzpostaviti. Preverite konfiguracijo strežnika LDAP v konfiguracijski datoteki LDAP. <br>Napaka strežnika LDAP: ',

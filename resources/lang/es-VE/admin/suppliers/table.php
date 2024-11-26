@@ -18,13 +18,8 @@ return array(
     'phone'                 => 'Teléfono',
     'state'                 => 'Estado',
     'suppliers'             => 'Proveedores',
-<<<<<<< HEAD
-    'update'                => 'Actualizar Proveedor',
-    'view'                  => 'Ver Proveedor',
-=======
     'update'                => 'Actualizar proveedor',
     'view'                  => 'Ver proveedor',
->>>>>>> origin/upstream
     'view_assets_for'       => 'Ver activos para',
     'zip'                   => 'Código postal',
 

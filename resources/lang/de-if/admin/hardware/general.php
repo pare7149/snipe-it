@@ -14,11 +14,7 @@ return [
     'deleted'  					=> 'Dieses Asset wurde gelöscht.',
     'delete_confirm'            => 'Bist du sicher, dass du dieses Asset löschen möchtest?',
     'edit'  					=> 'Asset bearbeiten',
-<<<<<<< HEAD
-    'model_deleted'  			=> 'Dieses Modell für Assets wurde gelöscht. Du musst das Modell wiederherstellen, bevor Du das Asset wiederherstellen kannst.',
-=======
     'model_deleted'  			=> 'Dieses Modell für Assets wurde gelöscht. Du musst das Modell wiederherstellen, bevor du das Asset wiederherstellen kannst.',
->>>>>>> origin/upstream
     'model_invalid'             => 'Das Modell für dieses Asset ist ungültig.',
     'model_invalid_fix'         => 'Das Asset muss aktualisiert und ein gültiges Asset-Modell verwendet werden, bevor versucht wird, es ein- oder auszuchecken oder es zu prüfen.',
     'requestable'               => 'Anforderbar',

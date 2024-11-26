@@ -291,20 +291,6 @@ return [
     'zerofill_count'        => 'Längd på tillgångstaggar, inklusive zerofill',
     'username_format_help'   => 'Denna inställning kommer endast att användas av importprocessen om ett användarnamn inte finns och vi måste generera ett användarnamn åt dig.',
     'oauth_title' => 'OAuth API-inställningar',
-<<<<<<< HEAD
-    'oauth_clients' => 'OAuth Clients',
-    'oauth' => 'OAuth',
-    'oauth_help' => 'Oauth användarvillkor inställningar',
-    'oauth_no_clients' => 'You have not created any OAuth clients yet.',
-    'oauth_secret' => 'Secret',
-    'oauth_authorized_apps' => 'Authorized Applications',
-    'oauth_redirect_url' => 'Redirect URL',
-    'oauth_name_help' => ' Something your users will recognize and trust.',
-    'oauth_scopes' => 'Scopes',
-    'oauth_callback_url' => 'Your application authorization callback URL.',
-    'create_client' => 'Create Client',
-    'no_scopes' => 'No scopes',
-=======
     'oauth_clients' => 'OAuth-klienter',
     'oauth' => 'OAuth',
     'oauth_help' => 'Oauth användarvillkor inställningar',
@@ -317,7 +303,6 @@ return [
     'oauth_callback_url' => 'Din applikations authorization callback URL.',
     'create_client' => 'Skapa klient',
     'no_scopes' => 'Inga scopes',
->>>>>>> origin/upstream
     'asset_tag_title' => 'Uppdatera stöldmärknings inställningar',
     'barcode_title' => 'Uppdatera streckkodsinställningar',
     'barcodes' => 'Streckkoder',

@@ -2,10 +2,7 @@
 
 return array(
 
-<<<<<<< HEAD
-=======
     'invalid_category_type' => 'Kategorija turi būti eksploatacinių medžiagų kategorija.',
->>>>>>> origin/upstream
     'does_not_exist' => 'Tokios eksploatacinės medžiagos nėra.',
 
     'create' => array(

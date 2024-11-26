@@ -37,30 +37,17 @@ return array(
         'update' => 'មានបញ្ហាក្នុងការអាប់ដេតអ្នកប្រើប្រាស់។ សូម​ព្យាយាម​ម្តង​ទៀត។',
         'delete' => 'មានបញ្ហាក្នុងការលុបអ្នកប្រើប្រាស់។ សូម​ព្យាយាម​ម្តង​ទៀត។',
         'delete_has_assets' => 'អ្នក​ប្រើ​នេះ​មាន​ធាតុ​ដែល​បាន​កំណត់ ហើយ​មិន​អាច​លុប​បាន​ទេ។',
-<<<<<<< HEAD
-        'delete_has_assets_var' => 'This user still has an asset assigned. Please check it in first.|This user still has :count assets assigned. Please check their assets in first.',
-        'delete_has_licenses_var' => 'This user still has a license seats assigned. Please check it in first.|This user still has :count license seats assigned. Please check them in first.',
-        'delete_has_accessories_var' => 'This user still has an accessory assigned. Please check it in first.|This user still has :count accessories assigned. Please check their assets in first.',
-        'delete_has_locations_var' => 'This user still manages a location. Please select another manager first.|This user still manages :count locations. Please select another manager first.',
-        'delete_has_users_var' => 'This user still manages another user. Please select another manager for that user first.|This user still manages :count users. Please select another manager for them first.',
-=======
         'delete_has_assets_var' => 'អ្នកប្រើប្រាស់នេះនៅតែមានទ្រព្យសម្បត្តិដែលបានកំណត់។ សូមពិនិត្យមើលវាជាមុនសិន។|អ្នកប្រើប្រាស់នេះនៅតែមាន៖ រាប់ទ្រព្យសម្បត្តិដែលបានកំណត់។ សូមពិនិត្យមើលទ្រព្យសម្បត្តិរបស់ពួកគេជាមុនសិន។',
         'delete_has_licenses_var' => 'អ្នកប្រើប្រាស់នេះនៅតែមានកន្លែងផ្តល់អាជ្ញាប័ណ្ណ។ សូមពិនិត្យមើលវាជាមុនសិន។|អ្នកប្រើប្រាស់នេះនៅតែមាន៖ រាប់ចំនួនអាសនៈអាជ្ញាប័ណ្ណដែលបានកំណត់។ សូមពិនិត្យមើលពួកវាជាមុនសិន។',
         'delete_has_accessories_var' => 'អ្នកប្រើប្រាស់នេះនៅតែមានគ្រឿងបន្លាស់ដែលបានកំណត់។ សូមពិនិត្យមើលវាជាមុនសិន។|អ្នកប្រើប្រាស់នេះនៅតែមានៈរាប់គ្រឿងបន្ថែមដែលបានកំណត់។ សូមពិនិត្យមើលទ្រព្យសម្បត្តិរបស់ពួកគេជាមុនសិន។',
         'delete_has_locations_var' => 'អ្នកប្រើប្រាស់នេះនៅតែគ្រប់គ្រងទីតាំង។ សូមជ្រើសរើសអ្នកគ្រប់គ្រងផ្សេងទៀតជាមុនសិន។|អ្នកប្រើប្រាស់នេះនៅតែគ្រប់គ្រង៖ រាប់ទីតាំង។ សូមជ្រើសរើសអ្នកគ្រប់គ្រងផ្សេងទៀតជាមុនសិន។',
         'delete_has_users_var' => 'អ្នកប្រើប្រាស់នេះនៅតែគ្រប់គ្រងអ្នកប្រើប្រាស់ផ្សេងទៀត។ សូមជ្រើសរើសអ្នកគ្រប់គ្រងផ្សេងទៀតសម្រាប់អ្នកប្រើប្រាស់នោះជាមុនសិន។|អ្នកប្រើប្រាស់នេះនៅតែគ្រប់គ្រង៖ រាប់អ្នកប្រើប្រាស់។ សូមជ្រើសរើសអ្នកគ្រប់គ្រងផ្សេងទៀតសម្រាប់ពួកគេជាមុនសិន។',
->>>>>>> origin/upstream
         'unsuspend' => 'មានបញ្ហាក្នុងការឈប់ផ្អាកអ្នកប្រើប្រាស់។ សូម​ព្យាយាម​ម្តង​ទៀត។',
         'import'    => 'មានបញ្ហាក្នុងការនាំចូលអ្នកប្រើប្រាស់។ សូម​ព្យាយាម​ម្តង​ទៀត។',
         'asset_already_accepted' => 'ទ្រព្យសកម្មនេះត្រូវបានទទួលរួចហើយ។',
         'accept_or_decline' => 'អ្នក​ត្រូវតែ​ទទួល​យក ឬ​បដិសេធ​ទ្រព្យសកម្ម​នេះ។',
-<<<<<<< HEAD
-        'cannot_delete_yourself' => 'We would feel really bad if you deleted yourself, please reconsider.',
-        'incorrect_user_accepted' => 'The asset you have attempted to accept was not checked out to you.',
-=======
         'cannot_delete_yourself' => 'យើងពិតជាមានអារម្មណ៍មិនល្អ ប្រសិនបើអ្នកលុបខ្លួនឯង សូមពិចារណាឡើងវិញ។',
         'incorrect_user_accepted' => 'ទ្រព្យសកម្មដែលអ្នកបានព្យាយាមទទួលយកមិនត្រូវបានពិនិត្យចេញសម្រាប់អ្នកទេ។',
->>>>>>> origin/upstream
         'ldap_could_not_connect' => 'មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេ LDAP បានទេ។ សូមពិនិត្យមើលការកំណត់រចនាសម្ព័ន្ធម៉ាស៊ីនមេ LDAP របស់អ្នកនៅក្នុងឯកសារកំណត់រចនាសម្ព័ន្ធ LDAP ។ <br>កំហុសពីម៉ាស៊ីនមេ LDAP៖',
         'ldap_could_not_bind' => 'មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេ LDAP បានទេ។ សូមពិនិត្យមើលការកំណត់រចនាសម្ព័ន្ធម៉ាស៊ីនមេ LDAP របស់អ្នកនៅក្នុងឯកសារកំណត់រចនាសម្ព័ន្ធ LDAP ។ <br>កំហុសពីម៉ាស៊ីនមេ LDAP៖ ',
         'ldap_could_not_search' => 'មិនអាចស្វែងរកម៉ាស៊ីនមេ LDAP បានទេ។ សូមពិនិត្យមើលការកំណត់រចនាសម្ព័ន្ធម៉ាស៊ីនមេ LDAP របស់អ្នកនៅក្នុងឯកសារកំណត់រចនាសម្ព័ន្ធ LDAP ។ <br>កំហុសពីម៉ាស៊ីនមេ LDAP៖',

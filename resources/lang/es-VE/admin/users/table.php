@@ -17,15 +17,9 @@ return array(
     'last_login'  			=> 'Último inicio de sesión',
     'last_name'  			=> 'Apellido',
     'location'  			=> 'Ubicación',
-<<<<<<< HEAD
-    'lock_passwords'		=> 'Los detalles de acceso no pueden ser cambiados en esta instalación.',
-    'manager' 				=> 'Supervisor',
-    'managed_locations'     => 'Ubicaciones adminsitradas',
-=======
     'lock_passwords'		=> 'Los detalles de inicio de sesión no pueden ser cambiados en esta instalación.',
     'manager' 				=> 'Supervisor',
     'managed_locations'     => 'Ubicaciones gestionadas',
->>>>>>> origin/upstream
     'managed_users'         => 'Usuarios gestionados',
     'name' 					=> 'Nombre',
     'nogroup'               => 'Aún no se han creado grupos. Para añadir uno, visite: ',

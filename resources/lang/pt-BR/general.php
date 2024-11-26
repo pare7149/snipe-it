@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Sobrenome Primeira Inicial (silva_j@exemplo.com.br)',
     'firstinitial.lastname' => 'Inicial do Nome sobrenome (j.silva@exemplo.com.br)',
     'firstnamelastinitial'  => 'Primeiro Nome com Inicial do Sobrenome (joses@exemplo.com.br)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Sobrenome Primeiro Nome (silva_j@exemplo.com.br)',
-=======
     'lastnamefirstname'      => 'Último Nome.Primeiro nome (smith.jane@exemplo.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Primeiro Nome',
     'first_name_format'		=> 'Primeiro Nome (jose@exemplo.com.br)',
     'files'                 => 'Arquivos',
@@ -412,17 +408,10 @@ Resultados da Sincronização',
     'accessory_information' => 'Informações do Acessório:',
     'accessory_name'       => 'Nome do Acessório:',
     'clone_item'            => 'Clonar Item',
-<<<<<<< HEAD
-    'checkout_tooltip' => 'Fazer check-out do item',
-    'checkin_tooltip' => 'Selecione este item para que ele esteja disponível para re-questão, re-imagem, etc',
-    'checkout_user_tooltip' => 'Fazer check-out deste item para um usuário',
-    'checkin_to_diff_location' => 'You can choose to check this asset in to a location other than this asset\'s default location of :default_location if one is set',
-=======
     'checkout_tooltip' => 'Realizar saída do item',
     'checkin_tooltip' => 'Selecione este item para que ele esteja disponível para re-questão, re-imagem, etc',
     'checkout_user_tooltip' => 'Disponibilizar este item para um usuário',
     'checkin_to_diff_location' => 'Você pode optar por alocar este ativo em um local diferente da localização padrão deste ativo de :default_location se este atributo estiver definido',
->>>>>>> origin/upstream
     'maintenance_mode'      => 'O serviço está temporariamente indisponível para atualizações do sistema. Por favor, volte mais tarde.',
     'maintenance_mode_title' => 'Sistema Temporariamente Indisponível',
     'ldap_import'           => 'A senha do usuário não deve ser gerenciada pelo LDAP. (Isso permite que você envie solicitações de senha esquecidas.)',
@@ -525,11 +514,7 @@ Resultados da Sincronização',
         'import_note' => 'Importado usando o importador csv',
     ],
     'remove_customfield_association' => 'Remover este campo do conjunto de campos. Isto não irá apagar o campo personalizado, apenas a associação deste campo com este conjunto de campos.',
-<<<<<<< HEAD
-    'checked_out_to_fields' => 'Checked Out To Fields',
-=======
     'checked_out_to_fields' => 'Check-out para os campos',
->>>>>>> origin/upstream
     'percent_complete' => '% completo',
     'uploading' => 'Enviando... ',
     'upload_error' => 'Erro ao enviar o arquivo. Por favor, verifique se não existem linhas vazias e se nenhum nome de coluna está duplicado.',

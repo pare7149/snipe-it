@@ -56,8 +56,6 @@ class LicenseCheckoutTest extends TestCase
             'note' => 'oh hi there',
         ]);
     }
-<<<<<<< HEAD
-=======
 
     public function testLicenseCheckoutPagePostIsRedirectedIfRedirectSelectionIsIndex()
     {
@@ -116,5 +114,4 @@ class LicenseCheckoutTest extends TestCase
             ->assertStatus(302)
             ->assertRedirect(route('hardware.show', ['hardware' => $asset->id]));
     }
->>>>>>> origin/upstream
 }

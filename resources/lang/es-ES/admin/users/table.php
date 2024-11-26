@@ -16,13 +16,8 @@ return array(
     'job' 					=> 'Cargo',
     'last_login'  			=> 'Último inicio de sesión',
     'last_name'  			=> 'Apellidos',
-<<<<<<< HEAD
-    'location'  			=> 'Localización',
-    'lock_passwords'		=> 'Los detalles de acceso no pueden ser cambiados en esta instalación.',
-=======
     'location'  			=> 'Ubicación',
     'lock_passwords'		=> 'Los detalles de inicio de sesión no pueden ser cambiados en esta instalación.',
->>>>>>> origin/upstream
     'manager' 				=> 'Supervisor',
     'managed_locations'     => 'Ubicaciones gestionadas',
     'managed_users'         => 'Usuarios gestionados',

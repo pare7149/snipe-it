@@ -291,20 +291,6 @@ return [
     'zerofill_count'        => 'Comprimento de etiquetas de ativos, incluindo zerofill',
     'username_format_help'   => 'Esta configuração será usada somente pelo processo de importação, se um nome de usuário não for fornecido nós iremos gerar um nome de usuário para você.',
     'oauth_title' => 'Configurações da API OAuth',
-<<<<<<< HEAD
-    'oauth_clients' => 'OAuth Clients',
-    'oauth' => 'OAuth',
-    'oauth_help' => 'Configurações de Endpoint Oauth',
-    'oauth_no_clients' => 'You have not created any OAuth clients yet.',
-    'oauth_secret' => 'Secret',
-    'oauth_authorized_apps' => 'Authorized Applications',
-    'oauth_redirect_url' => 'Redirect URL',
-    'oauth_name_help' => ' Something your users will recognize and trust.',
-    'oauth_scopes' => 'Scopes',
-    'oauth_callback_url' => 'Your application authorization callback URL.',
-    'create_client' => 'Create Client',
-    'no_scopes' => 'No scopes',
-=======
     'oauth_clients' => 'Clientes OAuth',
     'oauth' => 'OAuth',
     'oauth_help' => 'Configurações de Endpoint Oauth',
@@ -317,7 +303,6 @@ return [
     'oauth_callback_url' => 'URL de callback de autorização do seu aplicativo.',
     'create_client' => 'Criar Cliente',
     'no_scopes' => 'Sem escopos',
->>>>>>> origin/upstream
     'asset_tag_title' => 'Atualizar configurações de Tag do Ativo',
     'barcode_title' => 'Atualizar Configurações de Código de Barras',
     'barcodes' => 'Códigos de barras',

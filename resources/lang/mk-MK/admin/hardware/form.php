@@ -39,15 +39,9 @@ return [
     'order'				=> 'Број на нарачка',
     'qr'				=> 'QR Код',
     'requestable'		=> 'Корисниците може да го побараат ова средство',
-<<<<<<< HEAD
-    'redirect_to_all'   => 'Return to all :type',
-    'redirect_to_type'   => 'Go to :type',
-    'redirect_to_checked_out_to'   => 'Go to Checked Out to',
-=======
     'redirect_to_all'   => 'Врати се на сите :type',
     'redirect_to_type'   => 'Оди на :type',
     'redirect_to_checked_out_to'   => 'Оди на задолжени',
->>>>>>> origin/upstream
     'select_statustype'	=> 'Изберете статус',
     'serial'			=> 'Сериски број',
     'status'			=> 'Статус',

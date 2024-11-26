@@ -23,10 +23,7 @@ return [
     'Item_Requested' => 'Item Requested',
     'License_Checkin_Notification' => 'License checked in',
     'License_Checkout_Notification' => 'Hugbúnaðarleyfi skráð út',
-<<<<<<< HEAD
-=======
     'license_for'   => 'License for',
->>>>>>> origin/upstream
     'Low_Inventory_Report' => 'Skýrsla um lága birgðastöðu',
     'a_user_canceled' => 'A user has canceled an item request on the website',
     'a_user_requested' => 'A user has requested an item on the website',
@@ -42,15 +39,9 @@ return [
     'assets_warrantee_alert' => 'There is :count asset with a warranty expiring in the next :threshold days.|There are :count assets with warranties expiring in the next :threshold days.',
     'assigned_to' => 'Skráð á',
     'best_regards' => 'Með kveðju,',
-<<<<<<< HEAD
-    'canceled' => 'Canceled:',
-    'checkin_date' => 'Checkin Date:',
-    'checkout_date' => 'Checkout Date:',
-=======
     'canceled' => 'Canceled',
     'checkin_date' => 'Skiladagsetning',
     'checkout_date' => 'Ráðstöfunardagsetning',
->>>>>>> origin/upstream
     'checkedout_from' => 'Skráð út frá',
     'checkedin_from'  => 'Skráð inn frá',
     'checked_into' => 'Skráð inní',

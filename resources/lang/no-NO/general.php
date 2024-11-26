@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Etternavn Fornavn Initialer (smith_j@example.com)',
     'firstinitial.lastname' => 'Fornavn Initialer Etternavn (j.smith@example.com)',
     'firstnamelastinitial'  => 'Fornavn Etternavn Initialer (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Fornavn',
     'first_name_format'		=> 'Fornavn (oladunk@example.com)',
     'files'                 => 'Filer',

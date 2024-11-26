@@ -10,11 +10,7 @@ return [
     'action'                => 'Acción',
     'activity_report'		=> 'Informe de actividad',
     'address'				=> 'Dirección',
-<<<<<<< HEAD
-    'admin'					=> 'Admin',
-=======
     'admin'					=> 'Administrador',
->>>>>>> origin/upstream
     'admin_tooltip'			=> 'Este usuario tiene privilegios de superadministrador',
     'superuser'				=> 'Superusuario',
     'superuser_tooltip'		=> 'Este usuario es superadministrador',
@@ -26,16 +22,6 @@ return [
     'archived'              => 'Archivado',
     'asset_models'			=> 'Modelos de activos',
     'asset_model'			=> 'Modelo',
-<<<<<<< HEAD
-    'asset'					=> 'Equipo',
-    'asset_report'          => 'Reporte de Equipos',
-    'asset_tag'				=> 'Etiqueta',
-    'asset_tags'            => 'Nombre Activo',
-    'assets_available'		=> 'Equipos disponibles',
-    'accept_assets'         => 'Aceptar activos :name',
-    'accept_assets_menu'    => 'Aceptar activos',
-    'audit'				    => 'Auditoría',
-=======
     'asset'					=> 'Activo',
     'asset_report'          => 'Informe de activos',
     'asset_tag'				=> 'Placa del activo',
@@ -44,7 +30,6 @@ return [
     'accept_assets'         => 'Aceptar activos :name',
     'accept_assets_menu'    => 'Aceptar activos',
     'audit'				    => 'Auditar',
->>>>>>> origin/upstream
     'audit_report'			=> 'Registro de auditoría',
     'assets'				=> 'Activos',
     'assets_audited'        => 'activos auditados',
@@ -56,15 +41,6 @@ return [
     'assignee'              => 'Asignado a',
     'avatar_delete'         => 'Eliminar Avatar',
     'avatar_upload'         => 'Cargar Avatar',
-<<<<<<< HEAD
-    'back'      			=> 'Atras',
-    'bad_data'      		=> 'Ningún resultado. ¿Quizá un dato incorrecto?',
-    'bulkaudit'             => 'Auditoría masiva',
-    'bulkaudit_status'      => 'Estado de auditoría',
-    'bulk_checkout'  		=> 'Asignación masiva',
-    'bulk_edit'             => 'Editar en grupo',
-    'bulk_delete'           => 'Eliminar en grupo',
-=======
     'back'      			=> 'Atrás',
     'bad_data'      		=> 'No se ha encontrado nada. ¿Tal vez datos erróneos?',
     'bulkaudit'             => 'Auditoría masiva',
@@ -72,31 +48,10 @@ return [
     'bulk_checkout'  		=> 'Asignación masiva',
     'bulk_edit'             => 'Edición masiva',
     'bulk_delete'           => 'Borrado masivo',
->>>>>>> origin/upstream
     'bulk_actions'          => 'Acciones masivas',
     'bulk_checkin_delete'   => 'Ingresar elementos / Borrar usuarios',
     'byod'                  => 'BYOD',
     'byod_help'             => 'Este dispositivo es propiedad del usuario',
-<<<<<<< HEAD
-    'bystatus'              => 'por Estado',
-    'cancel'  				=> 'Cancelar',
-    'categories'			=> 'Categorías',
-    'category'				=> 'Categoría',
-    'change' 		        => 'Entrada / salida',
-    'changeemail'  			=> 'Cambiar Email',
-    'changepassword'  		=> 'Cambiar Password',
-    'checkin'  				=> 'Devolver',
-    'checkin_from'  		=> 'Devolución de',
-    'checkout'  			=> 'Asignar',
-    'checkouts_count'       => 'Asignaciones',
-    'checkins_count'        => 'Devoluciones',
-    'user_requests_count'   => 'Requests',
-    'city'  				=> 'Ciudad',
-    'click_here'			=> 'Pulsa aquí',
-    'clear_selection'		=> 'Borrar selección',
-    'companies'			    => 'Empresas',
-    'company'				=> 'Empresa',
-=======
     'bystatus'              => 'por estado',
     'cancel'  				=> 'Cancelar',
     'categories'			=> 'Categorías',
@@ -116,7 +71,6 @@ return [
     'clear_selection'		=> 'Borrar selección',
     'companies'			    => 'Compañías',
     'company'				=> 'Compañía',
->>>>>>> origin/upstream
     'component'			    => 'Componente',
     'components'			=> 'Componentes',
     'complete'				=> 'Completo',
@@ -124,11 +78,7 @@ return [
     'consumables'			=> 'Consumibles',
     'country'  				=> 'País',
     'could_not_restore'     => 'Error al restaurar :item_type: :error',
-<<<<<<< HEAD
-    'not_deleted'           => 'El :item_type no está borrado por lo que no puede ser restaurado',
-=======
     'not_deleted'           => 'El tipo :item_type no se ha borrado y, por lo tanto, no se puede restaurar',
->>>>>>> origin/upstream
     'create'				=> 'Crear nuevo',
     'created'               => 'Artículo creado',
     'created_asset'			=> 'activo creado',
@@ -163,11 +113,7 @@ return [
     'download'				=> 'Descargar',
     'download_all'		    => 'Descargar todo',
     'editprofile'  			=> 'Editar perfil',
-<<<<<<< HEAD
-    'eol'					=> 'EOL',
-=======
     'eol'					=> 'Fin de soporte (EOL)',
->>>>>>> origin/upstream
     'email_domain'			=> 'Dominio de correo electrónico',
     'email_format'			=> 'Formato de correo electrónico',
     'employee_number'       => 'Número de empleado',
@@ -185,19 +131,11 @@ return [
     'lastname_firstname_display'	=> 'Apellido y nombre (Smith Jane)',
     'name_display_format'	=> 'Formato para mostrar el nombre',
     'first'					=> 'Primero',
-<<<<<<< HEAD
-    'firstnamelastname'     => 'Primer Nombre Apellido (janesmith@ejemplo.com)',
-    'lastname_firstinitial' => 'Apellido Primera Inicial Nombre (smith_j@ejemplo.com)',
-    'firstinitial.lastname' => 'Primera inicial Nombre Apellido (j.smith@ejemplo.com)',
-    'firstnamelastinitial'  => 'Nombre Primera Inicial Apellido (janes@ejemplo.com)',
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'firstnamelastname'     => 'Nombre y apellido (janesmith@example.com)',
     'lastname_firstinitial' => 'Apellido e inicial del nombre (smith_j@ejemplo.com)',
     'firstinitial.lastname' => 'Inicial del nombre y apellido (j.smith@ejemplo.com)',
     'firstnamelastinitial'  => 'Nombre e inicial del apellido(janes@example.com)',
     'lastnamefirstname'      => 'Apellido.Nombre (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Nombre',
     'first_name_format'		=> 'Nombre (jane@ejemplo.com)',
     'files'                 => 'Archivos',
@@ -219,21 +157,6 @@ return [
     'image_delete'         	=> 'Borrar imagen',
     'include_deleted'       => 'Incluir activos eliminados',
     'image_upload'         	=> 'Cargar imagen',
-<<<<<<< HEAD
-    'filetypes_accepted_help'    => 'El tipo de archivo aceptado es :types. El tamaño máximo permitido es :size.|Los tipos de archivo aceptados son :types. El tamaño máximo permitido es :size.',
-    'filetypes_size_help'   => 'El tamaño máximo de carga permitido es :size.',
-    'image_filetypes_help'  => 'Los tipos de archivo aceptados son jpg, webp, png, gif y svg. El tamaño máximo permitido es :size.',
-    'unaccepted_image_type'  => 'No fue posible leer este archivo de imagen. Tipos de archivo aceptados son jpg, webp, png, gif y svg. El mimetype de este archivo es: :mimetype.',
-    'import'         	    => 'Importar',
-    'import_this_file'      => 'Mapear campos y procesar este archivo',
-    'importing'         	=> 'Importando',
-    'importing_help'        => 'Puede importar activos, accesorios, licencias, componentes, consumibles y usuarios a través de un archivo CSV. <br><br>El CSV debe estar delimitado por comas y con formato de encabezados que coincidan con el archivo <a href="https://snipe-it.readme.io/docs/importing" target="_new">CSV de muestra en la documentación</a>.',
-    'import-history'        => 'Importar historial',
-    'asset_maintenance'        => 'Mantenimiento de Equipo',
-    'asset_maintenance_report' => 'Informe mantenimiento de activos',
-    'asset_maintenances'       => 'Mantenimiento de activos',
-    'item'  				=> 'Item',
-=======
     'filetypes_accepted_help'    => 'El tipo de archivo aceptado es :types. El tamaño máximo permitido es :size.|Los tipos de archivo aceptados son :types. El tamaño máximo permitido para cargar es :size.',
     'filetypes_size_help'   => 'El tamaño máximo permitido para cargar es :size.',
     'image_filetypes_help'  => 'Los tipos de archivo aceptados son jpg, webp, png, gif, svg y avif. El tamaño máximo permitido es :size.',
@@ -247,7 +170,6 @@ return [
     'asset_maintenance_report' => 'Informe mantenimiento de activos',
     'asset_maintenances'       => 'Mantenimiento de activos',
     'item'  				=> 'Elemento',
->>>>>>> origin/upstream
     'item_name'             => 'Nombre del elemento',
     'import_file'  			=> 'importar archivo CSV',
     'import_type'  			=> 'Tipo de importación CSV',
@@ -267,17 +189,10 @@ return [
     'feature_disabled'      => 'Esta característica se ha desactivado para la instalación de demostración.',
     'location'              => 'Ubicación',
     'location_plural'        => 'Ubicación|Ubicaciones',
-<<<<<<< HEAD
-    'locations'				=> 'Localizaciones',
-    'logo_size'				=> 'Los logotipos cuadrados se ven mejor con Logo + Texto. El tamaño máximo del Logo es 50px de alto x 500px de ancho.  ',
-    'logout'				=> 'Desconexión',
-    'lookup_by_tag'     => 'Buscar etiqueta de activo',
-=======
     'locations'				=> 'Ubicaciones',
     'logo_size'				=> 'Los logotipos cuadrados se ven mejor con Logo + Texto. El tamaño máximo del logo es 50px de alto x 500px de ancho.  ',
     'logout'				=> 'Cerrar sesión',
     'lookup_by_tag'     => 'Buscar placa del activo',
->>>>>>> origin/upstream
     'maintenances'          => 'Mantenimientos',
     'manage_api_keys'       => 'Administrar las claves del API',
     'manufacturer'			=> 'Fabricante',
@@ -304,17 +219,10 @@ return [
     'order_number'          => 'Número de orden',
     'only_deleted'          => 'Solo activos eliminados',
     'page_menu'				=> 'Mostrando elementos de _MENU_',
-<<<<<<< HEAD
-    'pagination_info'		=> 'Mostrando _START_ de _END_ de elementos _TOTAL_',
-    'pending'				=> 'Pendientes',
-    'people'				=> 'Usuarios',
-    'per_page'				=> 'Resultados Por Pag',
-=======
     'pagination_info'		=> 'Mostrando _START_ a _END_ de _TOTAL_ elementos',
     'pending'				=> 'Pendientes',
     'people'				=> 'Personas',
     'per_page'				=> 'Resultados por página',
->>>>>>> origin/upstream
     'previous'				=> 'Previo',
     'processing'			=> 'Procesando',
     'profile'				=> 'Perfil',
@@ -322,19 +230,11 @@ return [
     'purchase_date'         => 'Fecha de compra',
     'qty'		            => 'Cantidad',
     'quantity'		        => 'Cantidad',
-<<<<<<< HEAD
-    'quantity_minimum'      => 'Tiene :count artículos por debajo o casi por debajo de los niveles mínimos de cantidad',
-    'quickscan_checkin'  	=> 'Escaneo rápido de entrada',
-    'quickscan_checkin_status'  	=> 'Estado de registro',
-    'ready_to_deploy'		=> 'Listo para asignar',
-    'recent_activity'		=> 'Actividad Reciente',
-=======
     'quantity_minimum'      => 'Tiene un artículo por debajo o casi por debajo de los niveles de cantidad mínima|Tiene :count artículos por debajo o casi por debajo de los niveles de cantidad mínima',
     'quickscan_checkin'  	=> 'Ingreso rápido con escaneo',
     'quickscan_checkin_status'  	=> 'Resultado del ingreso',
     'ready_to_deploy'		=> 'Listo para asignar',
     'recent_activity'		=> 'Actividad reciente',
->>>>>>> origin/upstream
     'remaining'             => 'Restante',
     'remove_company'        => 'Eliminar la asociación de la compañía',
     'reports'				=> 'Informes',
@@ -343,17 +243,10 @@ return [
     'requestable_models'    => 'Modelos disponibles para solicitar',
     'requestable_items'     => 'Artículos que se pueden solicitar',
     'requested'				=> 'Solicitado',
-<<<<<<< HEAD
-    'requested_date'        => 'Fecha solicitada',
-    'requested_assets'      => 'Elementos solicitados',
-    'requested_assets_menu' => 'Elementos solicitados',
-    'request_canceled'      => 'Solicitud Cancelada',
-=======
     'requested_date'        => 'Fecha de solicitud',
     'requested_assets'      => 'Activos solicitados',
     'requested_assets_menu' => 'Activos solicitados',
     'request_canceled'      => 'Solicitud cancelada',
->>>>>>> origin/upstream
     'request_item'          => 'Solicitar este elemento',
     'external_link_tooltip' => 'Enlace externo a',
     'save'  				=> 'Guardar',
@@ -361,23 +254,6 @@ return [
     'select'				=> 'Seleccionar',
     'select_all'            => 'Seleccionar todo',
     'search'				=> 'Buscar',
-<<<<<<< HEAD
-    'select_category'       => 'Seleccione una categoría',
-    'select_datasource' => 'Seleccione un datoscópico',
-    'select_department'     => 'Seleccione un departamento',
-    'select_depreciation'	=> 'Seleccionar un tipo de amortización',
-    'select_location'		=> 'Seleccione una ubicación',
-    'select_manufacturer'	=> 'Seleccione un fabricante',
-    'select_model'			=> 'Seleccione un modelo',
-    'select_supplier'		=> 'Seleccione un proveedor',
-    'select_user'			=> 'Seleccione un usuario',
-    'select_date'			=> 'Seleccione fecha (AAAA-MM-DD)',
-    'select_statuslabel'	=> 'Seleccione un estado',
-    'select_company'    	=> 'Seleccione una empresa',
-    'select_asset'    		=> 'Seleccionar activo',
-    'settings'				=> 'Opciones',
-    'show_deleted'  		=> 'Mostrar Eliminado',
-=======
     'select_category'       => 'Seleccionar una categoría',
     'select_datasource' => 'Seleccione un origen de datos',
     'select_department'     => 'Seleccionar un departamento',
@@ -393,7 +269,6 @@ return [
     'select_asset'    		=> 'Seleccionar activo',
     'settings'				=> 'Configuraciones',
     'show_deleted'  		=> 'Mostrar eliminados',
->>>>>>> origin/upstream
     'show_current'  		=> 'Mostrar actual',
     'sign_in'				=> 'Iniciar sesión',
     'signature'             => 'Firma',
@@ -405,15 +280,10 @@ return [
     'site_name'				=> 'Nombre del sitio',
     'state'  				=> 'Provincia',
     'status_labels'			=> 'Etiquetas de estado',
-<<<<<<< HEAD
-    'status'    			=> 'Estados',
-    'accept_eula'           => 'Acuerdo de aceptación',
-=======
     'status_label'			=> 'Etiqueta de estado',
     'status'    			=> 'Estado',
     'accept_eula'           => 'Acuerdo de aceptación',
     'show_or_hide_eulas' => 'Mostrar/ocultar acuerdos de uso (EULAs)',
->>>>>>> origin/upstream
     'supplier'              => 'Proveedor',
     'suppliers'  			=> 'Proveedores',
     'sure_to_delete'        => '¿Está seguro de que desea eliminar',
@@ -428,11 +298,7 @@ return [
     'total_consumables'		=> 'consumibles totales',
     'type'  				=> 'Tipo',
     'undeployable'			=> 'No utilizable',
-<<<<<<< HEAD
-    'unknown_admin'			=> 'Admin Desconocido',
-=======
     'unknown_admin'			=> 'Administrador desconocido',
->>>>>>> origin/upstream
     'username_format'		=> 'Formato del nombre de usuario',
     'username'              => 'Nombre de usuario',
     'update'                => 'Actualizar',
@@ -440,52 +306,31 @@ return [
     'uploaded'              => 'Cargado',
     'user'					=> 'Usuario',
     'accepted'			    => 'aceptado',
-<<<<<<< HEAD
-    'declined'			    => 'declinado',
-=======
     'declined'			    => 'rechazado',
->>>>>>> origin/upstream
     'declined_note'         => 'Notas de rechazo',
     'unassigned'            => 'Sin asignar',
     'unaccepted_asset_report' => 'Activos no aceptados',
     'users'                 => 'Usuarios',
     'viewall'				=> 'Ver todos',
-<<<<<<< HEAD
-    'viewassets'  			=> 'Ver elementos asignados',
-=======
     'viewassets'  			=> 'Ver activos asignados',
->>>>>>> origin/upstream
     'viewassetsfor'         => 'Ver activos para :name',
     'website'               => 'Sitio web',
     'welcome'				=> 'Bienvenido, :name',
     'years'					=> 'años',
     'yes' 					=> 'Si',
     'zip'  					=> 'Código postal',
-<<<<<<< HEAD
-    'noimage'				=> 'Imagen no subida o imagen no encontrada.',
-=======
     'noimage'				=> 'No se cargó la imagen o no fue encontrada.',
->>>>>>> origin/upstream
     'file_does_not_exist'   => 'El archivo solicitado no existe en el servidor.',
     'file_upload_success'   => '¡Archivo cargado exitosamente!',
     'no_files_uploaded'     => '¡Archivo cargado exitosamente!',
     'token_expired'         => 'Su sesión ha caducado. Por favor, inténtelo de nuevo.',
     'login_enabled'         => 'Inicio de sesión activado',
-<<<<<<< HEAD
-    'audit_due'             => 'Vence la auditoría',
-    'audit_due_days'        => 'Activos pendientes para auditoría dentro de :days día|Activos pendientes para auditoría dentro de :days días',
-    'checkin_due'           => 'Pendiente por devolver',
-    'checkin_overdue'       => 'Atrasado por devolver',
-    'checkin_due_days'      => 'Activos que deben ser devueltos dentro de :days día|Activos que deben ser devueltos dentro de :days días',
-    'audit_overdue'         => 'Atrasado para la auditoría',
-=======
     'audit_due'             => 'Próximas auditorías',
     'audit_due_days'        => 'Activos pendientes de auditoría dentro de :days día|Activos pendientes de auditoría dentro de :days días',
     'checkin_due'           => 'Próximos a ingresar',
     'checkin_overdue'       => 'Devolución atrasada',
     'checkin_due_days'      => 'Activos próximos a ingresar dentro de :days día|Activos próximos a ingresar dentro de :days días',
     'audit_overdue'         => 'Auditoría atrasada',
->>>>>>> origin/upstream
     'accept'                => 'Aceptar :asset',
     'i_accept'              => 'Acepto',
     'i_decline'             => 'Rechazo',
@@ -517,13 +362,8 @@ return [
     'expected_checkin'      => 'Fecha esperada de devolución',
     'reminder_checked_out_items' => 'Este es un recordatorio de los elementos que se le han asignado actualmente. Si usted cree que esta lista es incorrecta (falta algo o aparece algo que usted cree que nunca ha recibido), por favor envíe un correo electrónico a :reply_to_name a :reply_to_address.',
     'changed'               => 'Cambiado',
-<<<<<<< HEAD
-    'to'                    => 'Para',
-    'report_fields_info'    => '<p>Seleccione los campos que desea incluir en su informe personalizado y haga clic en Generar. El archivo (custom-asset-report-YYYY-mm-dd.csv) se descargará automáticamente y puede abrirlo en Excel.</p>
-=======
     'to'                    => 'A',
     'report_fields_info'    => '<p>Seleccione los campos que desea incluir en su informe personalizado y haga clic en Generar. El archivo (custom-asset-report-YYYY-mm-dd.csv) se descargará automáticamente y podrá abrirlo en Excel.</p>
->>>>>>> origin/upstream
             <p>Si desea exportar sólo ciertos activos, utilice las siguientes opciones para afinar sus resultados.</p>',
     'range'                 => 'Rango',
     'bom_remark'            => 'Añadir un BOM (marca de orden de bytes) a este CSV',
@@ -536,15 +376,9 @@ return [
     'ldap_user_sync'        => 'Sincronización de usuario LDAP',
     'synchronize'           => 'Sincronizar',
     'sync_results'          => 'Resultados de sincronización',
-<<<<<<< HEAD
-    'license_serial'        => 'Número de Serie/Clave de Producto',
-    'invalid_category'      => 'Categoría no válida o ausente',
-    'invalid_item_category_single' => 'Falta o no válida :type categoría. Por favor actualiza la categoría de este :type para incluir una categoría válida antes de salir.',
-=======
     'license_serial'        => 'Número de serie/clave de producto',
     'invalid_category'      => 'Categoría no válida o inexistente',
     'invalid_item_category_single' => 'Falta o no es válida una categoría de tipo :type. Por favor, actualice la categoría de tipo :type para incluir una categoría válida antes de asignar.',
->>>>>>> origin/upstream
     'dashboard_info'        => 'Este es su panel de control. Hay muchos similares, pero este es suyo.',
     '60_percent_warning'    => '60% completo (advertencia)',
     'dashboard_empty'       => 'Parece que aún no ha añadido nada, así que no tenemos nada impresionante que mostrar. ¡Comience añadiendo algunos activos, accesorios, consumibles o licencias ahora!',
@@ -574,35 +408,20 @@ return [
     'accessory_name'       => 'Nombre del accesorio:',
     'clone_item'            => 'Clonar objeto',
     'checkout_tooltip' => 'Asignar este elemento',
-<<<<<<< HEAD
-    'checkin_tooltip' => 'Devuelva este elemento para que esté disponible para resignar, borrar, etc.',
-    'checkout_user_tooltip' => 'Asignar este elemento a un usuario',
-    'checkin_to_diff_location' => 'Puede optar por registrar este activo en una ubicación distinta a la predeterminada :default_location, si es que existe una configurada',
-    'maintenance_mode'      => 'El servicio no está disponible temporalmente debido a actualizaciones del sistema. Por favor, vuelva más tarde.',
-    'maintenance_mode_title' => 'Sistema temporalmente no disponible',
-=======
     'checkin_tooltip' => 'Ingrese este elemento para que esté disponible para reasignar, borrar, etc.',
     'checkout_user_tooltip' => 'Asignar este elemento a un usuario',
     'checkin_to_diff_location' => 'Puede elegir ingresar este activo a una ubicación distinta de la predeterminada :default_location, si es que se ha definido una',
     'maintenance_mode'      => 'El servicio no está disponible temporalmente debido a actualizaciones del sistema. Por favor, verifique más tarde.',
     'maintenance_mode_title' => 'El sistema no está disponible temporalmente',
->>>>>>> origin/upstream
     'ldap_import'           => 'La contraseña de usuario no debe ser administrada por LDAP. (Esto le permite enviar solicitudes de contraseña olvidada.)',
     'purge_not_allowed'     => 'La purga de datos eliminados ha sido deshabilitada en el archivo .env. Contacte con el soporte técnico o con el administrador de su sistema.',
     'backup_delete_not_allowed'     => 'La eliminación de copias de seguridad se ha desactivado en el archivo .env. Contacte con el soporte técnico o con el administrador de su sistema.',
     'additional_files'           => 'Archivos adicionales',
     'shitty_browser'        => 'No se ha detectado ninguna firma. Si está utilizando un navegador más antiguo, por favor utilice un navegador más moderno para completar la aceptación del elemento.',
-<<<<<<< HEAD
-    'bulk_soft_delete'      =>'También eliminar parcialmente estos usuarios. Su historial de activos permanecerá intacto a menos/hasta que purgue los registros borrados en los Ajustes de Administración.',
-    'bulk_checkin_delete_success' => 'Los usuarios seleccionados han sido eliminados y su artículos han sido reingresados.',
-    'bulk_checkin_success' => 'Los artículos para los usuarios seleccionados han sido reingresados.',
-    'set_to_null'           => 'Eliminar valores para este activo|Eliminar valores para los :asset_count activos ',
-=======
     'bulk_soft_delete'      =>'También eliminar parcialmente estos usuarios. Su historial de activos permanecerá intacto a menos/hasta que purgue los registros borrados en los Configuración de administración.',
     'bulk_checkin_delete_success' => 'Los usuarios seleccionados han sido eliminados y sus activos han sido ingresados.',
     'bulk_checkin_success' => 'Los elementos para los usuarios seleccionados han sido ingresados.',
     'set_to_null'           => 'Eliminar los valores del elemento seleccionado|Eliminar los valores de los :selection_count elementos seleccionados ',
->>>>>>> origin/upstream
     'set_users_field_to_null'  => 'Eliminar valores de :field para este usuario|Eliminar valores de :field para todos los :user_count usuarios ',
     'na_no_purchase_date'   => 'N/A - No se proporcionó fecha de compra',
     'assets_by_status'      => 'Activos por estado',
@@ -669,13 +488,8 @@ return [
     'serial_number'        => 'Número de serie',
     'item_notes' => ':item Notas',
     'item_name_var' => ':item Nombre',
-<<<<<<< HEAD
-    'error_user_company' => 'La empresa destino de la asignación y la empresa del activo no coinciden',
-    'error_user_company_accept_view' => 'Un activo asignado a usted pertenece a una empresa diferente por lo que no puede aceptarlo ni negarlo, por favor compruebe con su gerente',
-=======
     'error_user_company' => 'La compañía destino de la asignación y la compañía del activo no coinciden',
     'error_user_company_accept_view' => 'Un activo asignado a usted pertenece a una compañía diferente por lo que no puede aceptarlo ni rechazarlo, por favor verifique con su supervisor',
->>>>>>> origin/upstream
     'importer' => [
         'checked_out_to_fullname' => 'Asignado a: Nombre completo',
         'checked_out_to_first_name' => 'Asignado a: Nombre',
@@ -699,22 +513,14 @@ return [
         'import_note' => 'Importado usando el importador de csv',
     ],
     'remove_customfield_association' => 'Elimine este campo del grupo de campos. Esto no eliminará el campo personalizado, solo la asociación de este campo con este grupo de campos.',
-<<<<<<< HEAD
-    'checked_out_to_fields' => 'Campos sobre quién tiene asignado el elemento',
-=======
     'checked_out_to_fields' => 'Campos de la persona que tiene asignado el elemento',
->>>>>>> origin/upstream
     'percent_complete' => '% completo',
     'uploading' => 'Subiendo... ',
     'upload_error' => 'Error al cargar el archivo. Por favor, compruebe que no hay filas vacías y que no hay nombres de columna duplicados.',
     'copy_to_clipboard' => 'Copiar al portapapeles',
     'copied' => '¡Copiado!',
     'status_compatibility' => 'Si los activos ya están asignados, no se pueden cambiar a un tipo de estado no utilizable y este cambio de valor se omitirá.',
-<<<<<<< HEAD
-    'rtd_location_help' => 'Esta es la ubicación del recurso cuando no está seleccionado',
-=======
     'rtd_location_help' => 'Esta es la ubicación del activo cuando no está asignado',
->>>>>>> origin/upstream
     'item_not_found' => ':item_type ID :id no existe o ha sido eliminado',
     'action_permission_denied' => 'No tiene permiso para :action :item_type ID :id',
     'action_permission_generic' => 'No tiene permiso para :action este :item_type',

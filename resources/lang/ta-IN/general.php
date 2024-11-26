@@ -11,15 +11,9 @@ return [
     'activity_report'		=> 'செயல்பாட்டு அறிக்கை',
     'address'				=> 'முகவரி',
     'admin'					=> 'நிர்வாகம்',
-<<<<<<< HEAD
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin_tooltip'			=> 'இந்தப் பயனருக்கு நிர்வாகச் சிறப்புரிமைகள் உள்ளன',
     'superuser'				=> 'சூப்பர் யூசர்',
     'superuser_tooltip'		=> 'இந்தப் பயனருக்கு சூப்பர் யூசர் சிறப்புரிமைகள் உள்ளன',
->>>>>>> origin/upstream
     'administrator'			=> 'நிர்வாகி',
     'add_seats'             => 'சேர்க்கப்பட்டது இடங்கள்',
     'age'                   => "வயது",
@@ -141,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Last Name First Initial (smith_j@example.com)',
     'firstinitial.lastname' => 'First Initial Last Name (j.smith@example.com)',
     'firstnamelastinitial'  => 'First Name Last Initial (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'முதல் பெயர்',
     'first_name_format'		=> 'முதல் பெயர் (jane@example.com)',
     'files'                 => 'Files',

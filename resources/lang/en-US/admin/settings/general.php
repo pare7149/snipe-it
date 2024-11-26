@@ -379,8 +379,6 @@ return [
     'timezone' => 'Timezone',
     'profile_edit'          => 'Edit Profile',
     'profile_edit_help'          => 'Allow users to edit their own profiles.',
-<<<<<<< HEAD
-=======
     'default_avatar' => 'Upload custom default avatar',
     'default_avatar_help' => 'This image will be displayed as a profile if a user does not have a profile photo.',
     'restore_default_avatar' => 'Restore <a href=":default_avatar" data-toggle="lightbox" data-type="image">original system default avatar</a>',
@@ -388,6 +386,5 @@ return [
     'due_checkin_days' => 'Due For Checkin Warning',
     'due_checkin_days_help' => 'How many days before the expected checkin of an asset should it be listed in the "Due for checkin" page?',
     'no_groups' => 'No groups have been created yet. Visit <code>Admin Settings > Permission Groups</code> to add one.',
->>>>>>> origin/upstream
 
 ];

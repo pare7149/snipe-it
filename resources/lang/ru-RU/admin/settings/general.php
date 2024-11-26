@@ -291,30 +291,18 @@ return [
     'zerofill_count'        => 'Длина инвентарного номера, включая заполнение нулями',
     'username_format_help'   => 'Этот параметр используется только в процессе импорта, если имя пользователя не предоставляется и мы должны сгенерировать его для Вас.',
     'oauth_title' => 'Настройки OAuth API',
-<<<<<<< HEAD
-    'oauth_clients' => 'OAuth Clients',
-=======
     'oauth_clients' => 'Клиенты OAuth',
->>>>>>> origin/upstream
     'oauth' => 'OAuth',
     'oauth_help' => 'Настройки Oauth Endpoint',
     'oauth_no_clients' => 'У вас ещё нет клиентов OAuth.',
     'oauth_secret' => 'Секретный ключ',
     'oauth_authorized_apps' => 'Авторизированные приложения',
     'oauth_redirect_url' => 'Ссылка переадресации',
-<<<<<<< HEAD
-    'oauth_name_help' => ' Something your users will recognize and trust.',
-    'oauth_scopes' => 'Области видимости',
-    'oauth_callback_url' => 'Your application authorization callback URL.',
-    'create_client' => 'Create Client',
-    'no_scopes' => 'No scopes',
-=======
     'oauth_name_help' => ' То, что ваши пользователи распознают и чему доверяют.',
     'oauth_scopes' => 'Области видимости',
     'oauth_callback_url' => 'URL обратного вызова авторизации вашего приложения.',
     'create_client' => 'Создать клиента',
     'no_scopes' => 'Нет областей действия',
->>>>>>> origin/upstream
     'asset_tag_title' => 'Обновить Настройки Тега Актива',
     'barcode_title' => 'Обновить Настройки Штрих-кода',
     'barcodes' => 'Штрихкоды',

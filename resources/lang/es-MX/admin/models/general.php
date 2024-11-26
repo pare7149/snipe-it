@@ -9,17 +9,10 @@ return array(
     'bulk_delete_warn'          => 'Está a punto de eliminar un modelo de activo.|Está a punto de eliminar :model_count modelos de activos.',
     'restore'                   => 'Restaurar modelo',
     'requestable'               => 'Los usuarios pueden solicitar este modelo',
-<<<<<<< HEAD
-	'show_mac_address'			      => 'Mostrar el campo de la dirección MAC en los equipos de este modelo',
-    'view_deleted'              => 'Ver Borrados',
-    'view_models'               => 'Ver modelos',
-    'fieldset'                  => 'Grupos de campo',
-=======
 	'show_mac_address'			      => 'Mostrar el campo de dirección MAC en los activos de este modelo',
     'view_deleted'              => 'Ver borrados',
     'view_models'               => 'Ver modelos',
     'fieldset'                  => 'Grupo de campos',
->>>>>>> origin/upstream
     'no_custom_field'           => 'No hay campos personalizados',
     'add_default_values'        => 'Agregar valores predeterminados',
 );

@@ -39,15 +39,9 @@ return [
     'order'				=> 'Ordernummer',
     'qr'				=> 'QR-code',
     'requestable'		=> 'Gebruikers mogen dit asset aanvragen',
-<<<<<<< HEAD
-    'redirect_to_all'   => 'Return to all :type',
-    'redirect_to_type'   => 'Go to :type',
-    'redirect_to_checked_out_to'   => 'Go to Checked Out to',
-=======
     'redirect_to_all'   => 'Terug naar alle :type',
     'redirect_to_type'   => 'Ga naar :type',
     'redirect_to_checked_out_to'   => 'Ga naar uitcheckt naar',
->>>>>>> origin/upstream
     'select_statustype'	=> 'Selecteer status type',
     'serial'			=> 'Serienummer',
     'status'			=> 'Status',

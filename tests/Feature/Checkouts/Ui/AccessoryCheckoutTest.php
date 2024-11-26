@@ -2,12 +2,6 @@
 
 namespace Tests\Feature\Checkouts\Ui;
 
-<<<<<<< HEAD
-use App\Models\Accessory;
-use App\Models\Actionlog;
-use App\Models\User;
-use App\Notifications\CheckoutAccessoryNotification;
-=======
 use App\Mail\CheckoutAccessoryMail;
 use App\Models\Accessory;
 use App\Models\Actionlog;
@@ -16,7 +10,6 @@ use App\Models\Location;
 use App\Models\User;
 use App\Notifications\CheckoutAccessoryNotification;
 use Illuminate\Support\Facades\Mail;
->>>>>>> origin/upstream
 use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 
@@ -31,25 +24,6 @@ class AccessoryCheckoutTest extends TestCase
 
     public function testValidationWhenCheckingOutAccessory()
     {
-<<<<<<< HEAD
-        $this->actingAs(User::factory()->checkoutAccessories()->create())
-            ->post(route('accessories.checkout.store', Accessory::factory()->create()), [
-                // missing assigned_to
-            ])
-            ->assertSessionHas('error');
-    }
-
-    public function testAccessoryMustBeAvailableWhenCheckingOut()
-    {
-        $this->actingAs(User::factory()->checkoutAccessories()->create())
-            ->post(route('accessories.checkout.store', Accessory::factory()->withoutItemsRemaining()->create()), [
-                'assigned_to' => User::factory()->create()->id,
-            ])
-            ->assertSessionHas('error');
-    }
-
-    public function testAccessoryCanBeCheckedOut()
-=======
         $accessory = Accessory::factory()->create();
         $response = $this->actingAs(User::factory()->superuser()->create())
             ->from(route('accessories.checkout.show', $accessory))
@@ -81,19 +55,12 @@ class AccessoryCheckoutTest extends TestCase
     }
 
     public function testAccessoryCanBeCheckedOutWithoutQuantity()
->>>>>>> origin/upstream
     {
         $accessory = Accessory::factory()->create();
         $user = User::factory()->create();
 
         $this->actingAs(User::factory()->checkoutAccessories()->create())
             ->post(route('accessories.checkout.store', $accessory), [
-<<<<<<< HEAD
-                'assigned_to' => $user->id,
-            ]);
-
-        $this->assertTrue($accessory->users->contains($user));
-=======
                 'assigned_user' => $user->id,
                 'checkout_to_type' => 'user',
                 'note' => 'oh hi there',
@@ -187,28 +154,16 @@ class AccessoryCheckoutTest extends TestCase
             'item_type' => Accessory::class,
             'note' => 'oh hi there',
         ]);
->>>>>>> origin/upstream
     }
 
     public function testUserSentNotificationUponCheckout()
     {
-<<<<<<< HEAD
-        Notification::fake();
-=======
         Mail::fake();
->>>>>>> origin/upstream
 
         $accessory = Accessory::factory()->requiringAcceptance()->create();
         $user = User::factory()->create();
 
         $this->actingAs(User::factory()->checkoutAccessories()->create())
-<<<<<<< HEAD
-            ->post(route('accessories.checkout.store', $accessory), [
-                'assigned_to' => $user->id,
-            ]);
-
-        Notification::assertSentTo($user, CheckoutAccessoryNotification::class);
-=======
             ->from(route('accessories.checkout.show', $accessory))
             ->post(route('accessories.checkout.store', $accessory), [
                 'assigned_user' => $user->id,
@@ -218,7 +173,6 @@ class AccessoryCheckoutTest extends TestCase
         Mail::assertSent(CheckoutAccessoryMail::class, function ($mail) use ($user) {
             return $mail->hasTo($user->email);
         });
->>>>>>> origin/upstream
     }
 
     public function testActionLogCreatedUponCheckout()
@@ -228,15 +182,10 @@ class AccessoryCheckoutTest extends TestCase
         $user = User::factory()->create();
 
         $this->actingAs($actor)
-<<<<<<< HEAD
-            ->post(route('accessories.checkout.store', $accessory), [
-                'assigned_to' => $user->id,
-=======
             ->from(route('accessories.checkout.show', $accessory))
             ->post(route('accessories.checkout.store', $accessory), [
                 'assigned_user' => $user->id,
                 'checkout_to_type' => 'user',
->>>>>>> origin/upstream
                 'note' => 'oh hi there',
             ]);
 
@@ -248,18 +197,12 @@ class AccessoryCheckoutTest extends TestCase
                 'target_type' => User::class,
                 'item_id' => $accessory->id,
                 'item_type' => Accessory::class,
-<<<<<<< HEAD
-                'user_id' => $actor->id,
-=======
                 'created_by' => $actor->id,
->>>>>>> origin/upstream
                 'note' => 'oh hi there',
             ])->count(),
             'Log entry either does not exist or there are more than expected'
         );
     }
-<<<<<<< HEAD
-=======
 
     public function testAccessoryCheckoutPagePostIsRedirectedIfRedirectSelectionIsIndex()
     {
@@ -310,5 +253,4 @@ class AccessoryCheckoutTest extends TestCase
             ->assertStatus(302)
             ->assertRedirect(route('users.show', ['user' => $user]));
     }
->>>>>>> origin/upstream
 }

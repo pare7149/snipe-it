@@ -3,27 +3,16 @@
 return array(
 
     'accepted'                  => 'Ha aceptado este artículo exitosamente.',
-<<<<<<< HEAD
-    'declined'                  => 'Has rechazado este activo con éxito.',
-    'bulk_manager_warn'	        => 'Sus usuarios han sido actualizados con éxito, sin embargo, la entrada de administrador no fue guardada porque el gerente seleccionado también estaba en la lista de usuarios a ser editada, y los usuarios no pueden ser sus propios gerentes. Vuelva a seleccionar los usuarios, excluyendo al gerente.',
-    'user_exists'               => '¡El usuario ya existe!',
-    'user_not_found'            => 'El usuario no existe.',
-=======
     'declined'                  => 'Ha rechazado correctamente este activo.',
     'bulk_manager_warn'	        => 'Sus usuarios han sido actualizados con éxito, sin embargo, la entrada supervisor (manager) no fue guardada porque el supervisor seleccionado también estaba en la lista de usuarios a editar, y los usuarios no pueden ser su propio supervisor. Vuelva a seleccionar los usuarios, excluyendo al supervisor.',
     'user_exists'               => '¡El usuario ya existe!',
     'user_not_found'            => 'El usuario no existe o usted no tiene permisos para verlo.',
->>>>>>> origin/upstream
     'user_login_required'       => 'El campo usuario es obligatorio',
     'user_has_no_assets_assigned' => 'No hay activos asignados al usuario.',
     'user_password_required'    => 'La contraseña es obligatoria.',
     'insufficient_permissions'  => 'Permisos insuficientes.',
     'user_deleted_warning'      => 'Este usuario ha sido eliminado. Tendrá que restaurar este usuario para editarlo o para asignarle nuevos activos.',
-<<<<<<< HEAD
-    'ldap_not_configured'        => 'La integración LDAP no ha sido configurada para esta instalación.',
-=======
     'ldap_not_configured'        => 'La integración con LDAP no ha sido configurada para esta instalación.',
->>>>>>> origin/upstream
     'password_resets_sent'      => 'Los usuarios seleccionados que están activados y tienen una dirección de correo electrónico válida han sido enviados un enlace de restablecimiento de contraseña.',
     'password_reset_sent'       => 'Un enlace para restablecer la contraseña ha sido enviado a :email!',
     'user_has_no_email'         => 'Este usuario no tiene una dirección de correo electrónico en su perfil.',
@@ -44,28 +33,6 @@ return array(
     ),
 
     'error' => array(
-<<<<<<< HEAD
-        'create' => 'Hubo un problema creando el usuario. Por favor, inténtalo de nuevo.',
-        'update' => 'Hubo un problema actualizando al usuario. Por favor, inténtalo de nuevo.',
-        'delete' => 'Hubo un problema borrando el usuario. Por favor, inténtalo de nuevo.',
-        'delete_has_assets' => 'Este usuario tiene elementos asignados y no pudo ser borrado.',
-        'delete_has_assets_var' => 'This user still has an asset assigned. Please check it in first.|This user still has :count assets assigned. Please check their assets in first.',
-        'delete_has_licenses_var' => 'This user still has a license seats assigned. Please check it in first.|This user still has :count license seats assigned. Please check them in first.',
-        'delete_has_accessories_var' => 'This user still has an accessory assigned. Please check it in first.|This user still has :count accessories assigned. Please check their assets in first.',
-        'delete_has_locations_var' => 'This user still manages a location. Please select another manager first.|This user still manages :count locations. Please select another manager first.',
-        'delete_has_users_var' => 'This user still manages another user. Please select another manager for that user first.|This user still manages :count users. Please select another manager for them first.',
-        'unsuspend' => 'Hubo un problema des-suspendiendo al usuario. Por favor inténtelo de nuevo.',
-        'import'    => 'Hubo un problema importando usuarios. Por favor inténtelo de nuevo.',
-        'asset_already_accepted' => 'Este activo ya ha sido aceptado.',
-        'accept_or_decline' => 'Debes aceptar o rechazar este activo.',
-        'cannot_delete_yourself' => 'We would feel really bad if you deleted yourself, please reconsider.',
-        'incorrect_user_accepted' => 'El elemento que ha intentado aceptar no fue asignado a usted.',
-        'ldap_could_not_connect' => 'No se pudo conectar al servidor LDAP. Por favor verifica la configuración LDAP de tu servidor en el archivo de configuración LDAP. <br>Error del servidor LDAP:',
-        'ldap_could_not_bind' => 'No se pudo enlazar al servidor LDAP. Por favor verifica la configuración LDAP de tu servidor en el archivo de configuración LDAP. <br>Error del servidor LDAP: ',
-        'ldap_could_not_search' => 'No se pudo buscar el servidor LDAP. Por favor verifica la configuración LDAP de tu servidor en el archivo de configuración LDAP. <br>Error del servidor LDAP:',
-        'ldap_could_not_get_entries' => 'No se pudieron obtener las entradas del servidor LDAP. Por favor verifica la configuración LDAP de tu servidor en el archivo de configuración LDAP. <br>Error del servidor LDAP:',
-        'password_ldap' => 'La contraseña para esta cuenta es manejada por LDAP/Active Directory. Por favor contacta a tu departamento de IT para cambiar tu contraseña. ',
-=======
         'create' => 'Hubo un problema al crear el usuario. Por favor, inténtelo de nuevo.',
         'update' => 'Hubo un problema al actualizar el usuario. Por favor, inténtelo de nuevo.',
         'delete' => 'Hubo un problema al eliminar el usuario. Por favor, inténtelo de nuevo.',
@@ -87,7 +54,6 @@ return array(
         'ldap_could_not_get_entries' => 'No se han podido obtener entradas del servidor LDAP. Por favor verifique la configuración de su servidor LDAP en su archivo de configuración.<br> Error del servidor LDAP:',
         'password_ldap' => 'La contraseña para esta cuenta es administrada por LDAP / Active Directory. Póngase en contacto con su departamento de TI para cambiar su contraseña. ',
         'multi_company_items_assigned' => 'Este usuario tiene elementos asignados que pertenecen a una empresa diferente. Por favor, ingréselos o edite su empresa.'
->>>>>>> origin/upstream
     ),
 
     'deletefile' => array(

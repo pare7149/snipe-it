@@ -4,11 +4,7 @@ return [
     'actions' 	                => 'Acciones',
     'add'    	                => 'Agregar nuevo',
     'cancel'                    => 'Cancelar',
-<<<<<<< HEAD
-    'checkin_and_delete'  	    => 'Devolver todo / Eliminar usuario',
-=======
     'checkin_and_delete'  	    => 'Ingresar todo / Eliminar usuario',
->>>>>>> origin/upstream
     'delete'  	                => 'Borrar',
     'edit'    	                => 'Editar',
     'clone'    	                => 'Clonar',
@@ -17,17 +13,10 @@ return [
     'request'                   => 'Solicitud',
     'submit'  	                => 'Enviar',
     'upload'                    => 'Cargar',
-<<<<<<< HEAD
-    'select_file'				=> 'Seleccione un archivo...',
-    'select_files'				=> 'Seleccionar archivos...',
-    'generate_labels'           => '{1} Generar Etiqueta|[2,*] Generar Etiquetas',
-    'send_password_link'        => 'Enviar enlace de restablecimiento de contraseña',
-=======
     'select_file'				=> 'Seleccionar un archivo...',
     'select_files'				=> 'Seleccionar archivos...',
     'generate_labels'           => '{1} Generar etiqueta|[2,*] Generar etiquetas',
     'send_password_link'        => 'Enviar enlace para restablecer la contraseña',
->>>>>>> origin/upstream
     'go'                        => 'Ir',
     'bulk_actions'              => 'Acciones masivas',
     'add_maintenance'           => 'Añadir mantenimiento',

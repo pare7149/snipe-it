@@ -37,28 +37,16 @@ return array(
         'update' => 'Det gick inte att uppdatera användaren. Var god försök igen.',
         'delete' => 'Det gick inte att ta bort användaren. Var god försök igen.',
         'delete_has_assets' => 'Den här användaren har objekt tilldelade och kunde inte raderas.',
-<<<<<<< HEAD
-        'delete_has_assets_var' => 'This user still has an asset assigned. Please check it in first.|This user still has :count assets assigned. Please check their assets in first.',
-        'delete_has_licenses_var' => 'This user still has a license seats assigned. Please check it in first.|This user still has :count license seats assigned. Please check them in first.',
-        'delete_has_accessories_var' => 'This user still has an accessory assigned. Please check it in first.|This user still has :count accessories assigned. Please check their assets in first.',
-        'delete_has_locations_var' => 'This user still manages a location. Please select another manager first.|This user still manages :count locations. Please select another manager first.',
-        'delete_has_users_var' => 'This user still manages another user. Please select another manager for that user first.|This user still manages :count users. Please select another manager for them first.',
-=======
         'delete_has_assets_var' => 'Den här användaren har fortfarande en tilldelad tillgång. Vänligen checka in den först.|Den här användaren har fortfarande :count tillgångar tilldelade. Vänligen check in dem först.',
         'delete_has_licenses_var' => 'Den här användaren har en licensplats tilldelad. Vänligen checka in den först.|Den här användaren har fortfarande :count licensplatser tilldelade. Vänligen checka in dem först.',
         'delete_has_accessories_var' => 'Den här användaren har fortfarande ett tillbehör tilldelat. Vänligen checka in det först.|Den här användaren har fortfarande :count tillbehör tilldelade. Vänligen checka in dem först.',
         'delete_has_locations_var' => 'Den här användaren hanterar fortfarande en plats. Välj en annan ansvarig först.|Den här användaren hanterar fortfarande :count platser. Välj en annan ansvarig först.',
         'delete_has_users_var' => 'Den här användaren hanterar fortfarande en annan användare. Välj en annan ansvarig för den användaren först. Den här användaren hanterar fortfarande :count användare. Välj en annan ansvarig för dem först.',
->>>>>>> origin/upstream
         'unsuspend' => 'Det uppstod ett problem som avbröt användaren. Var god försök igen.',
         'import'    => 'Det gick inte att importera användare. Var god försök igen.',
         'asset_already_accepted' => 'Denna tillgång har redan godkänts.',
         'accept_or_decline' => 'Du måste antingen godkänna eller neka den här tillgången.',
-<<<<<<< HEAD
-        'cannot_delete_yourself' => 'We would feel really bad if you deleted yourself, please reconsider.',
-=======
         'cannot_delete_yourself' => 'Vi skulle må riktigt dåligt om du raderade dig själv, ta dig en funderare igen.',
->>>>>>> origin/upstream
         'incorrect_user_accepted' => 'Den tillgång du försökte acceptera har inte checkats ut till dig.',
         'ldap_could_not_connect' => 'Det gick inte att ansluta till LDAP-servern. Kontrollera din LDAP-serverkonfiguration i LDAP-konfigurationsfilen. <br>Fel från LDAP-servern:',
         'ldap_could_not_bind' => 'Kunde inte binda till LDAP-servern. Kontrollera din LDAP-serverkonfiguration i LDAP-konfigurationsfilen. <br>Fel från LDAP-servern:',

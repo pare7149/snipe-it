@@ -25,10 +25,6 @@ return [
     'image'		    => 'Device Image',
     'days_without_acceptance' => 'Days Without Acceptance',
     'monthly_depreciation' => 'Monthly Depreciation',
-<<<<<<< HEAD
-    'assigned_to'    => 'ចាត់តាំងទៅ',
-=======
->>>>>>> origin/upstream
     'requesting_user' => 'Requesting User',
     'requested_date' => 'កាលបរិច្ឆេទដែលបានស្នើសុំ',
     'changed'       => 'បានផ្លាស់ប្តូរ',

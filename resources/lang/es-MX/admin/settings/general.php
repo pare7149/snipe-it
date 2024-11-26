@@ -31,14 +31,6 @@ return [
     'backups'					=> 'Copias de seguridad',
     'backups_help'              => 'Crear, descargar y restaurar copias de seguridad ',
     'backups_restoring'         => 'Restaurando desde la copia de seguridad',
-<<<<<<< HEAD
-    'backups_upload'            => 'Cargar copia de seguridad',
-    'backups_path'              => 'Las copias de seguridad en el servidor se almacenan en <code>:path</code>',
-    'backups_restore_warning'   => 'Utilice el botón de restauración <small><span class="btn btn-xs btn-warning"><i class="text-white fas fa-retweet" aria-hidden="true"></i></span></small> para restaurar desde una copia de seguridad anterior. (Actualmente esto no funciona con almacenamiento de archivos S3 o Docker.)<br><br>Su <strong>base de datos completa :app_name y cualquier archivo subido será completamente reemplazado</strong> por lo que hay en el archivo de copia de seguridad.  ',
-    'backups_logged_out'         => 'A todos los usuarios existentes, incluido usted, se le cerrará la sesión una vez que la restauración haya finalizado.',
-    'backups_large'             => 'Las copias de seguridad muy grandes pueden agotar el tiempo de espera en el intento de restauración y todavía pueden necesitar ser ejecutadas a través de la línea de comandos. ',
-    'barcode_settings'			=> 'Configuración de Código de Barras',
-=======
     'backups_clean' => 'Depure la base de datos de la copia de seguridad antes de restaurarla',
     'backups_clean_helptext' => "Esto puede ser útil si está cambiando entre versiones de bases de datos",
     'backups_upload'            => 'Cargar copia de seguridad',
@@ -47,7 +39,6 @@ return [
     'backups_logged_out'         => 'A todos los usuarios existentes, incluido usted, se le cerrará la sesión una vez que la restauración haya finalizado.',
     'backups_large'             => 'Las copias de seguridad muy grandes pueden agotar el tiempo de espera en el intento de restauración y todavía pueden necesitar ser ejecutadas a través de la línea de comandos. ',
     'barcode_settings'			=> 'Configuración del código de barras',
->>>>>>> origin/upstream
     'confirm_purge'			    => 'Confirmar la purga',
     'confirm_purge_help'		=> 'Introduzca el texto "DELETE" en la casilla de abajo para purgar sus registros borrados. Esta acción no se puede deshacer y borrará PERMANENTAMENTE todos los elementos y usuarios eliminados. Debería hacer primero una copia de seguridad, para estar seguro.',
     'custom_css'				=> 'CSS Personalizado',
@@ -56,22 +47,14 @@ return [
     'custom_forgot_pass_url_help'	=> 'Esto reemplaza la URL de contraseña olvidada incorporada en la pantalla de inicio de sesión, es útil para dirigir a las personas a la funcionalidad de restablecimiento de contraseña LDAP interna o alojada. Deshabilitará efectivamente la funcionalidad de olvido de contraseña del usuario local.',
     'dashboard_message'			=> 'Mensaje en el tablero',
     'dashboard_message_help'	=> 'Este texto aparecerá en el panel para cualquiera que tenga permiso de ver el Panel.',
-<<<<<<< HEAD
-    'default_currency'  		=> 'Moneda Predeterminada',
-=======
     'default_currency'  		=> 'Divisa predeterminada',
->>>>>>> origin/upstream
     'default_eula_text'			=> 'Acuerdo de uso predeterminado',
     'default_language'			=> 'Idioma predeterminado',
     'default_eula_help_text'	=> 'También puede asociar acuerdos de uso personalizados a categorías específicas.',
     'acceptance_note'           => 'Añada una nota para su decisión (opcional)',
     'display_asset_name'        => 'Mostrar nombre del activo',
     'display_checkout_date'     => 'Mostrar fecha de asignación',
-<<<<<<< HEAD
-    'display_eol'               => 'Mostrar EOL',
-=======
     'display_eol'               => 'Mostrar fin de soporte (EOL) en la vista de tabla',
->>>>>>> origin/upstream
     'display_qr'                => 'Mostrar Códigos QR',
     'display_alt_barcode'		=> 'Mostrar códigos de barras de 1D',
     'email_logo'                => 'Logo de correo electrónico',
@@ -82,19 +65,6 @@ return [
     'eula_settings'				=> 'Configuración de los acuerdos de uso',
     'eula_markdown'				=> 'Estos acuerdos de uso permiten <a href="https://help.github.com/articles/github-flavored-markdown/">markdown estilo Github</a>.',
     'favicon'                   => 'Favicon',
-<<<<<<< HEAD
-    'favicon_format'            => 'Los tipos de archivo aceptados son ico, png y gif. Otros formatos de imagen pueden no funcionar en todos los navegadores.',
-    'favicon_size'          => 'Los favicons deben ser imágenes cuadradas, de 16x16 píxeles.',
-    'footer_text'               => 'Texto Adicional de Pie de Página ',
-    'footer_text_help'          => 'Este texto aparecerá en el lado derecho del pie de página. Los enlaces son permitidos usando <a href="https://help.github.com/articles/github-flavored-markdown/">el formato flavored de GitHub</a>. Saltos de línea, cabeceras, imágenes, etc, pueden resultar impredecibles.',
-    'general_settings'			=> 'Configuración General',
-    'general_settings_keywords' => 'soporte de la empresa, firma, aceptación, formato de correo electrónico, formato de nombre de usuario, imágenes, por página, miniatura, eula, acuerdo de licencia de usuario final, términos y condiciones, gravatar, términos de servicio, tablero de indicadores, privacidad',
-    'general_settings_help'     => 'Acuerdo de uso predeterminado y más',
-    'generate_backup'			=> 'Generar Respaldo',
-    'google_workspaces'         => 'Espacios de trabajo de Google',
-    'header_color'              => 'Color de encabezado',
-    'info'                      => 'Estos parámetros permirten personalizar ciertos aspectos de la aplicación.',
-=======
     'favicon_format'            => 'Los tipos de archivo aceptados son ico, png y gif. Es posible que otros formatos de imagen no funcionen en todos los navegadores.',
     'favicon_size'          => 'Los Favicons deben ser imágenes cuadradas, de 16x16 píxeles.',
     'footer_text'               => 'Texto adicional en el pie de página ',
@@ -106,7 +76,6 @@ return [
     'google_workspaces'         => 'Google Workspace',
     'header_color'              => 'Color del encabezado',
     'info'                      => 'Estos ajustes le permiten personalizar ciertos aspectos de su instalación.',
->>>>>>> origin/upstream
     'label_logo'                => 'Logo de etiqueta',
     'label_logo_size'           => 'Los logos cuadrados se ven mejor - se mostrarán en la parte superior derecha de cada etiqueta de activo. ',
     'laravel'                   => 'Versión de Laravel',
@@ -127,30 +96,18 @@ return [
     'ldap_login_sync_help'      => 'Esto solo comprueba que el LDAP puede sincronizarse correctamente. Si su solicitud de autenticación LDAP no es correcta, los usuarios aún no podrían iniciar sesión. PRIMERO DEBE GUARDAR LA CONFIGURACIÓN LDAP ACTUALIZADA.',
     'ldap_manager'              => 'Gestor LDAP',
     'ldap_server'               => 'Servidor LDAP',
-<<<<<<< HEAD
-    'ldap_server_help'          => 'Esto debería empezar con ldap:// (sin codificar o TLS) o ldaps:// (para SSL)',
-    'ldap_server_cert'			=> 'Certificado de validación SSL LDAP',
-    'ldap_server_cert_ignore'	=> 'Permitir certificados SSL inválidos',
-=======
     'ldap_server_help'          => 'Esto debería comenzar con ldap:// (sin cifrado) o con ldaps:// (para TLS o SSL)',
     'ldap_server_cert'			=> 'Validación del certificado LDAP SSL',
     'ldap_server_cert_ignore'	=> 'Permitir certificado SSL inválido',
->>>>>>> origin/upstream
     'ldap_server_cert_help'		=> 'Seleccione esta casilla si está utilizando un certificado SSL autofirmado y desea aceptar un certificado SSL inválido.',
     'ldap_tls'                  => 'Usar TLS',
     'ldap_tls_help'             => 'Esto se debe seleccionar si se está ejecutando STARTTLS en el servidor LDAP. ',
     'ldap_uname'                => 'Nombre de usuario de enlace LDAP (LDAP Bind Username)',
     'ldap_dept'                 => 'Departamento LDAP',
     'ldap_phone'                => 'Número Telefónico LDAP',
-<<<<<<< HEAD
-    'ldap_jobtitle'             => 'LDAP Titulo Laboral',
-    'ldap_country'              => 'País LDAP',
-    'ldap_pword'                => 'Enlazar contraseña LDAP',
-=======
     'ldap_jobtitle'             => 'Cargo LDAP',
     'ldap_country'              => 'País LDAP',
     'ldap_pword'                => 'Contraseña de enlace LDAP',
->>>>>>> origin/upstream
     'ldap_basedn'               => 'Enlazar base DN',
     'ldap_filter'               => 'Filtro LDAP',
     'ldap_pw_sync'              => 'Sincronizar contraseña del LDAP',
@@ -187,19 +144,11 @@ return [
     'login_remote_user_header_name_text' => 'Cabecera de nombre de usuario personalizado',
     'login_remote_user_header_name_help' => 'Usar la cabecera especificada en lugar de REMOTE_USER',
     'logo'                    	=> 'Logo',
-<<<<<<< HEAD
-    'logo_print_assets'         => 'Usar en Impresión',
-    'logo_print_assets_help'    => 'Usar marca en la lista imprimible de equipos',
-    'full_multiple_companies_support_help_text' => 'Limitar los usuarios asignados a empresas (incluyendo administradores) solo a los activos de esa empresa.',
-    'full_multiple_companies_support_text' => 'Soporte completo a varias empresas',
-    'show_in_model_list'   => 'Mostrar en Desplegado de Modelos',
-=======
     'logo_print_assets'         => 'Usar en la impresión',
     'logo_print_assets_help'    => 'Utilice la marca de la empresa en las listas de activos imprimibles ',
     'full_multiple_companies_support_help_text' => 'Limitar los usuarios asignados a compañías (incluyendo administradores) solo a los activos de esa compañía.',
     'full_multiple_companies_support_text' => 'Soporte completo a múltiples compañías',
     'show_in_model_list'   => 'Mostrar en menús desplegables de modelos',
->>>>>>> origin/upstream
     'optional'					=> 'opcional',
     'per_page'                  => 'Resultados por página',
     'php'                       => 'Versión de PHP',
@@ -311,20 +260,6 @@ return [
     'show_url_in_emails_help_text'      => 'Desmarque esta casilla si no desea vincular su instalación de Snipe-IT en el pie de página de correo electrónico. Útil si la mayoría de sus usuarios nunca se conectan. ',
     'text_pt'        => 'puntos',
     'thumbnail_max_h'   => 'Altura máxima de la miniatura',
-<<<<<<< HEAD
-    'thumbnail_max_h_help'   => 'Altura máxima en píxeles que las miniaturas pueden mostrar en la vista de listado. Mín. 25, máximo 500.',
-    'two_factor'        => 'Autenticación de dos factores',
-    'two_factor_secret'        => 'Código de verificación en dos factores',
-    'two_factor_enrollment'        => 'Inscripción en verificación de dos factores',
-    'two_factor_enabled_text'        => 'Activar la verificación de dos factores',
-    'two_factor_reset'        => 'Restablecer el secreto en verificación de dos factores',
-    'two_factor_reset_help'        => 'Esto obligará al usuario a volver a inscribir su dispositivo en su aplicación de autenticación. Esto puede ser útil si su dispositivo actualmente inscrito es perdido o robado. ',
-    'two_factor_reset_success'          => 'Verificación en dos pasos de dispositivo reiniciado exitosamente',
-    'two_factor_reset_error'          => 'Falló la Verificación en dos pasos del dispositivo',
-    'two_factor_enabled_warning'        => 'Habilitar el doble factor si no está habilitado actualmente lo obligará inmediatamente a autenticarse con un dispositivo inscrito en Google Auth. Tendrá la posibilidad de inscribir su dispositivo si uno no está inscrito actualmente.',
-    'two_factor_enabled_help'        => 'Esto activará la autenticación de dos factores usando Google Authenticator.',
-    'two_factor_optional'        => 'Selectiva (los usuarios pueden activar o desactivar si está permitido)',
-=======
     'thumbnail_max_h_help'   => 'Altura máxima en píxeles para mostrar las miniaturas en la vista de listado. Mín 25, máx 500.',
     'two_factor'        => 'Autenticación de dos factores',
     'two_factor_secret'        => 'Código de verificación de dos factores',
@@ -337,22 +272,14 @@ return [
     'two_factor_enabled_warning'        => 'Al activar el doble factor si no está activado, se le obligará inmediatamente a autenticarse con un dispositivo registrado en Google Auth. Tendrá la posibilidad de inscribir su dispositivo si uno no está inscrito actualmente.',
     'two_factor_enabled_help'        => 'Esto activará la autenticación de dos factores mediante Google Authenticator.',
     'two_factor_optional'        => 'Selectivo (los usuarios pueden activar o desactivar si está permitido)',
->>>>>>> origin/upstream
     'two_factor_required'        => 'Requerido para todos los usuarios',
     'two_factor_disabled'        => 'Desactivado',
     'two_factor_enter_code'	=> 'Ingrese el código de verificación de dos factores',
     'two_factor_config_complete'	=> 'Enviar código',
-<<<<<<< HEAD
-    'two_factor_enabled_edit_not_allowed' => 'El administrador no permite modificar esta configuración.',
-    'two_factor_enrollment_text'	=> "Se requiere autenticación de dos factores, sin embargo su dispositivo aún no ha sido inscrito. Abra su aplicación Google Authenticator y escanee el código QR de abajo para inscribir su dispositivo. Una vez que lo haya inscrito, introduzca el código en la parte inferior",
-    'require_accept_signature'      => 'Solicitar firma',
-    'require_accept_signature_help_text'      => 'Activar esta función requiere que los usuarios firmen físicamente aceptando un elemento.',
-=======
     'two_factor_enabled_edit_not_allowed' => 'El administrador no le permite modificar esta configuración.',
     'two_factor_enrollment_text'	=> "Se requiere autenticación de dos factores, sin embargo su dispositivo aún no ha sido inscrito. Abra la aplicación Google Authenticator y escanee el código QR que aparece a continuación para registrar su dispositivo. Una vez que haya registrado su dispositivo, introduzca el código en la parte inferior",
     'require_accept_signature'      => 'Solicitar firma',
     'require_accept_signature_help_text'      => 'Al activar esta función, los usuarios tendrán que firmar físicamente la aceptación de un activo.',
->>>>>>> origin/upstream
     'left'        => 'izquierda',
     'right'        => 'derecha',
     'top'        => 'arriba',
@@ -364,22 +291,6 @@ return [
     'zerofill_count'        => 'Longitud de los números en las placas de los activos, incluyendo los ceros de relleno',
     'username_format_help'   => 'Esta configuración solo será utilizada por el proceso de importación si no se proporciona un nombre de usuario y tenemos que generar un nombre de usuario por usted.',
     'oauth_title' => 'Configuración de la API de OAuth',
-<<<<<<< HEAD
-    'oauth_clients' => 'OAuth Clients',
-    'oauth' => 'OAuth',
-    'oauth_help' => 'Configuración de Endpoint para Oauth',
-    'oauth_no_clients' => 'You have not created any OAuth clients yet.',
-    'oauth_secret' => 'Secret',
-    'oauth_authorized_apps' => 'Authorized Applications',
-    'oauth_redirect_url' => 'Redirect URL',
-    'oauth_name_help' => ' Something your users will recognize and trust.',
-    'oauth_scopes' => 'Scopes',
-    'oauth_callback_url' => 'Your application authorization callback URL.',
-    'create_client' => 'Create Client',
-    'no_scopes' => 'No scopes',
-    'asset_tag_title' => 'Actualizar ajustes de etiqueta de activos',
-    'barcode_title' => 'Actualizar ajustes de código de barras',
-=======
     'oauth_clients' => 'Clientes OAuth',
     'oauth' => 'OAuth',
     'oauth_help' => 'Configuración del punto final (endpoint) OAuth',
@@ -394,7 +305,6 @@ return [
     'no_scopes' => 'Sin scopes',
     'asset_tag_title' => 'Actualizar la configuración de las placas de activos',
     'barcode_title' => 'Actualizar la configuración de los códigos de barras',
->>>>>>> origin/upstream
     'barcodes' => 'Códigos de barras',
     'barcodes_help_overview' => 'Configuración del código de barras &amp; QR',
     'barcodes_help' => 'Esto intentará eliminar códigos de barras almacenados en caché. Normalmente solo se usa si la configuración del código de barras ha cambiado o si ha cambiado la URL de Snipe-IT. Los códigos de barras se volverán a generar la próxima vez que se acceda a ellos.',
@@ -466,9 +376,6 @@ return [
     'mail_from' => 'Correo desde la dirección',
     'database_driver' => 'Controlador de base de datos',
     'bs_table_storage' => 'Almacenamiento de tabla',
-<<<<<<< HEAD
-    'timezone' => 'Timezone',
-=======
     'timezone' => 'Zona horaria',
     'profile_edit'          => 'Editar perfil',
     'profile_edit_help'          => 'Permitir que los usuarios editen sus propios perfiles.',
@@ -479,6 +386,5 @@ return [
     'due_checkin_days' => 'Advertencia para próximos ingresos',
     'due_checkin_days_help' => '¿Cuántos días antes de la fecha prevista de ingreso de un activo debe figurar en la página «Próximos a ingresar»?',
     'no_groups' => 'Todavía no se han creado grupos. Para agregar uno, visite<code>Configuración de administración > Grupos de permisos</code>.',
->>>>>>> origin/upstream
 
 ];

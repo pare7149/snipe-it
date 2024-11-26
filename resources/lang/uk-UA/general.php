@@ -11,15 +11,9 @@ return [
     'activity_report'		=> 'Звіт про діяльність',
     'address'				=> 'Адреса',
     'admin'					=> 'Адміністратор',
-<<<<<<< HEAD
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin_tooltip'			=> 'Цей користувач має права адміністратора',
     'superuser'				=> 'Суперкористувач',
     'superuser_tooltip'		=> 'Цей користувач має права суперкористувача',
->>>>>>> origin/upstream
     'administrator'			=> 'Адміністратор',
     'add_seats'             => 'Додано місць',
     'age'                   => "Вік",
@@ -141,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Прізвище Першою початковою (smith_j@example.com)',
     'firstinitial.lastname' => 'Перше початкове ім\'я (j.smith@example.com)',
     'firstnamelastinitial'  => 'Останнє ім\'я (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Ім\'я',
     'first_name_format'		=> 'Ім\'я (jane@example.com)',
     'files'                 => 'Файли',

@@ -301,11 +301,7 @@ return [
     'oauth_name_help' => ' Something your users will recognize and trust.',
     'oauth_scopes' => 'Scopes',
     'oauth_callback_url' => 'Your application authorization callback URL.',
-<<<<<<< HEAD
-    'create_client' => 'Create Client',
-=======
     'create_client' => 'Naredi klienta',
->>>>>>> origin/upstream
     'no_scopes' => 'No scopes',
     'asset_tag_title' => 'Update Asset Tag Settings',
     'barcode_title' => 'Update Barcode Settings',

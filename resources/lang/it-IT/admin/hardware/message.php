@@ -2,16 +2,6 @@
 
 return [
 
-<<<<<<< HEAD
-    'undeployable' 		=> '<strong>Attenzione: </strong> Questo asset è stato marcato come non distribuibile.
-                       Se lo stato è cambiato,aggiorna lo stato dell\'asset.',
-    'does_not_exist' 	=> 'Questo Asset non esiste.',
-    'does_not_exist_var'=> 'Bene con tag :asset_tag non trovato.',
-    'no_tag' 	        => 'Nessun tag del Bene è stato fornito.',
-    'does_not_exist_or_not_requestable' => 'Questo bene non esiste o non è disponibile.',
-    'assoc_users'	 	=> 'Questo asset è stato assegnato ad un Utente e non può essere cancellato. Per favore Riassegnalo in magazzino,e dopo riprova a cancellarlo.',
-    'warning_audit_date_mismatch' 	=> 'La prossima data d\'inventario di questo Bene (:next_audit_date) precede l\'ultima data d\'inventario (:last_audit_date). Si prega di aggiornare la prossima data d\'inventario.',
-=======
     'undeployable' 		 => '<strong>Attenzione: </strong> Questo Bene è stato marcato come non distribuibile. Se lo stato del Bene è cambiato si prega di aggiornarlo.',
     'does_not_exist' 	 => 'Questo Asset non esiste.',
     'does_not_exist_var' => 'Bene con tag :asset_tag non trovato.',
@@ -22,7 +12,6 @@ return [
     'labels_generated'   => 'Etichette generate con successo.',
     'error_generating_labels' => 'Errore durante la generazione delle etichette.',
     'no_assets_selected' => 'Nessun Bene selezionato.',
->>>>>>> origin/upstream
 
     'create' => [
         'error'   		=> 'L\'asset non è stato creato, riprova per favore. :(',

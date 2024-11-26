@@ -15,11 +15,7 @@ return [
     'delete_confirm'            => 'Czy na pewno chcesz usunąć?',
     'edit'  					=> 'Edytuj zasób',
     'model_deleted'  			=> 'Ten model zasobów został usunięty. Musisz przywrócić model zanim będziesz mógł przywrócić zasób.',
-<<<<<<< HEAD
-    'model_invalid'             => 'This model for this asset is invalid.',
-=======
     'model_invalid'             => 'Nieprawidłowy model dla tego zasobu.',
->>>>>>> origin/upstream
     'model_invalid_fix'         => 'The asset must be updated use a valid asset model before attempting to check it in or out, or to audit it.',
     'requestable'               => 'Żądane',
     'requested'				    => 'Zamówione',

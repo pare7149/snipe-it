@@ -39,15 +39,9 @@ return [
     'order'				=> 'Order Nummer',
     'qr'				=> 'QR-kod',
     'requestable'		=> 'Användare kan begära denna tillgång',
-<<<<<<< HEAD
-    'redirect_to_all'   => 'Return to all :type',
-    'redirect_to_type'   => 'Go to :type',
-    'redirect_to_checked_out_to'   => 'Go to Checked Out to',
-=======
     'redirect_to_all'   => 'Tillbaka till alla :type',
     'redirect_to_type'   => 'Gå till :type',
     'redirect_to_checked_out_to'   => 'Gå till utcheckade till',
->>>>>>> origin/upstream
     'select_statustype'	=> 'Välj Statustyp',
     'serial'			=> 'Serienummer',
     'status'			=> 'Status',

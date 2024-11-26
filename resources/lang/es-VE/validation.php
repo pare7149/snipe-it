@@ -127,26 +127,6 @@ return [
     ],
     'percent'       => 'El mínimo de amortización debe estar entre 0 y 100 cuando el tipo de amortización es porcentual.',
 
-<<<<<<< HEAD
-    'not_in'               => 'El :attribute seleccionado es inválido.',
-    'numeric'              => 'El :attribute debe ser un número entero.',
-    'present'              => 'El campo :attribute debe tener un valor.',
-    'valid_regex'          => 'Este no es un regex válido. ',
-    'regex'                => 'El formato :attribute es inválido.',
-    'required'             => 'El campo :attribute es obligatorio.',
-    'required_if'          => 'El campo :attribute es obligatorio cuando :other es :value.',
-    'required_unless'      => 'El campo :attribute es obligatorio a menos que :other esté en :values.',
-    'required_with'        => 'El :attribute es obligatrio cuando :values está presente.',
-    'required_with_all'    => 'El campo :attribute es obligatrio cuando :values está presente.',
-    'required_without'     => 'El :attribute es obligatrio cuando :values está presente.',
-    'required_without_all' => 'El campo :attribute es obligatrio cuando :values es present.',
-    'same'                 => 'Los :attribute y :other deben ser diferentes.',
-    'size'                 => [
-        'numeric' => 'Estte :attribute debe ser :size.',
-        'file'    => 'El :attribute debe tener :size kilobytes.',
-        'string'  => 'El :attribute debe tener :size kilobytes.',
-        'array'   => 'El :attribute debe contener :size elementos.',
-=======
     'present' => 'El campo :attribute debe tener un valor.',
     'present_if' => 'El campo :attribute debe estar presente cuando :other sea :value.',
     'present_unless' => 'El campo :attribute debe estar presente a menos que :other sea :value.',
@@ -173,7 +153,6 @@ return [
         'file' => 'El campo :attribute debe ser de :size kilobytes.',
         'numeric' => 'El campo :attribute debe ser :size.',
         'string' => 'El campo :attribute debe ser de :size caracteres.',
->>>>>>> origin/upstream
     ],
     'starts_with' => 'El campo :attribute debe iniciar con uno de los siguientes: :values.',
     'string'               => 'Este :attribute debe ser una cadena.',

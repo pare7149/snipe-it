@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Perenimi Eesnimi algustäht (smith_j@example.com)',
     'firstinitial.lastname' => 'Eesnime algustäht Perekonnanimi (j.smith@example.com)',
     'firstnamelastinitial'  => 'Eesnimi Perekonnanime algustäht (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Eesnimi',
     'first_name_format'		=> 'Eesnimi (jane@example.com)',
     'files'                 => 'Failid',
@@ -432,11 +428,7 @@ return [
     'assets_by_status_type'      => 'Assets by Status Type',
     'pie_chart_type'        => 'Dashboard Pie Chart Type',
     'hello_name'            => 'Hello, :name!',
-<<<<<<< HEAD
-    'unaccepted_profile_warning'   => 'You have :count items requiring acceptance. Click here to accept or decline them',
-=======
     'unaccepted_profile_warning'   => 'You have one item requiring acceptance. Click here to accept or decline it | You have :count items requiring acceptance. Click here to accept or decline them',
->>>>>>> origin/upstream
     'start_date'            => 'Alguskuupäev',
     'end_date'            => 'End Date',
     'alt_uploaded_image_thumbnail' => 'Uploaded thumbnail',

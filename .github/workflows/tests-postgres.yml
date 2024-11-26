@@ -21,13 +21,9 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-<<<<<<< HEAD
-          - "8.2"
-=======
           - "8.1"
           - "8.2"
           - "8.3"
->>>>>>> origin/upstream
 
     name: PHP ${{ matrix.php-version }}
 
@@ -78,8 +74,4 @@ jobs:
           DB_PORT: ${{ job.services.postgresql.ports[5432] }}
           DB_USERNAME: snipeit
           DB_PASSWORD: password
-<<<<<<< HEAD
-        run: php artisan test --parallel
-=======
         run: php artisan test
->>>>>>> origin/upstream

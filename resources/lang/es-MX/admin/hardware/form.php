@@ -17,30 +17,17 @@ return [
     'checkout_date'		=> 'Fecha de asignación',
     'checkin_date'		=> 'Fecha de ingreso',
     'checkout_to'		=> 'Asignar a',
-<<<<<<< HEAD
-    'cost'				=> 'Precio Compra',
-    'create'			=> 'Crear Equipo',
-=======
     'cost'				=> 'Precio de compra',
     'create'			=> 'Crear activo',
->>>>>>> origin/upstream
     'date'				=> 'Fecha de compra',
     'depreciation'	    => 'Depreciación',
     'depreciates_on'	=> 'Se deprecia en',
     'default_location'	=> 'Ubicación predeterminada',
-<<<<<<< HEAD
-    'default_location_phone' => 'Teléfono de ubicación por defecto',
-    'eol_date'			=> 'Fecha fin de soporte (EOL)',
-    'eol_rate'			=> 'Tasa de EOL',
-    'expected_checkin'  => 'Fecha esperada de devolución',
-    'expires'			=> 'Expira',
-=======
     'default_location_phone' => 'Teléfono de ubicación predeterminada',
     'eol_date'			=> 'Fecha fin de soporte (EOL)',
     'eol_rate'			=> 'Tasa fin de soporte (EOL)',
     'expected_checkin'  => 'Fecha esperada de devolución',
     'expires'			=> 'Vence',
->>>>>>> origin/upstream
     'fully_depreciated'	=> 'Totalmente amortizado',
     'help_checkout'		=> 'Si desea asignar este equipo inmediatamente, seleccione "Listo para asignar" de la lista de estados de arriba. ',
     'mac_address'		=> 'Dirección MAC',
@@ -52,19 +39,11 @@ return [
     'order'				=> 'Número de orden',
     'qr'				=> 'Código QR',
     'requestable'		=> 'Los usuarios pueden solicitar este elemento',
-<<<<<<< HEAD
-    'redirect_to_all'   => 'Return to all :type',
-    'redirect_to_type'   => 'Ir a :type',
-    'redirect_to_checked_out_to'   => 'Go to Checked Out to',
-    'select_statustype'	=> 'Seleccione un tipo de estado',
-    'serial'			=> 'N. Serie',
-=======
     'redirect_to_all'   => 'Regresar a :type',
     'redirect_to_type'   => 'Ir a :type',
     'redirect_to_checked_out_to'   => 'Ir a elementos asignados',
     'select_statustype'	=> 'Seleccione un tipo de estado',
     'serial'			=> 'Número de serie',
->>>>>>> origin/upstream
     'status'			=> 'Estado',
     'tag'				=> 'Placa del activo',
     'update'			=> 'Actualizar activo',
@@ -76,10 +55,7 @@ return [
     'asset_location_update_default' => 'Actualizar sólo la ubicación predeterminada',
     'asset_location_update_actual' => 'Actualizar sólo la ubicación actual',
     'asset_not_deployable' => 'Ese estado de activos es no utilizable. Este activo no puede ser asignado.',
-<<<<<<< HEAD
-=======
     'asset_not_deployable_checkin' => 'Ese estado del activo no es utilizable. El uso de esta etiqueta de estado ingresará el activo.',
->>>>>>> origin/upstream
     'asset_deployable' => 'El estado indica que es utilizable. Este activo puede ser asignado.',
     'processing_spinner' => 'Procesando... (Esto puede tomar un poco de tiempo en archivos grandes)',
     'optional_infos'  => 'Información opcional',

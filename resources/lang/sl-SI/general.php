@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Priimek s prvo črko imena (smith_j@example.com)',
     'firstinitial.lastname' => 'Prva črka imena s priimkom (j.smith@example.com)',
     'firstnamelastinitial'  => 'Ime s prvo črko priimka (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Ime',
     'first_name_format'		=> 'Ime (jane@example.com)',
     'files'                 => 'Datoteke',

@@ -7,18 +7,10 @@ return array(
     'create'				=> 'Crear fabricante',
     'id'   					=> 'ID',
     'name'      			=> 'Nombre',
-<<<<<<< HEAD
-    'support_email'   		=> 'Email de soporte',
-    'support_phone'   		=> 'Teléfono de soporte',
-    'support_url'   		=> 'URL de soporte',
-    'warranty_lookup_url'   => 'URL de búsqueda de garantía',
-    'update'				=> 'Actualizar Manufacturer',
-=======
     'support_email'   		=> 'Correo electrónico de soporte',
     'support_phone'   		=> 'Teléfono de soporte',
     'support_url'   		=> 'URL de soporte',
     'warranty_lookup_url'   => 'URL de búsqueda de garantía',
     'update'				=> 'Actualizar fabricante',
->>>>>>> origin/upstream
 
 );

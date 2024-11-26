@@ -31,14 +31,6 @@ return [
     'backups'					=> 'Copias de seguridad',
     'backups_help'              => 'Crear, descargar y restaurar copias de seguridad ',
     'backups_restoring'         => 'Restaurando desde la copia de seguridad',
-<<<<<<< HEAD
-    'backups_upload'            => 'Cargar copia de seguridad',
-    'backups_path'              => 'Las copias de seguridad en el servidor se almacenan en <code>:path</code>',
-    'backups_restore_warning'   => 'Utilice el botón de restauración <small><span class="btn btn-xs btn-warning"><i class="text-white fas fa-retweet" aria-hidden="true"></i></span></small> para restaurar desde una copia de seguridad anterior. (Actualmente esto no funciona con almacenamiento de archivos S3 o Docker.)<br><br>Su <strong>base de datos completa de :app_name y cualquier archivo subido será completamente reemplazado</strong> por lo que hay en el archivo de copia de seguridad.  ',
-    'backups_logged_out'         => 'A todos los usuarios existentes, incluido usted, se le cerrará la sesión una vez que la restauración haya finalizado.',
-    'backups_large'             => 'Las copias de seguridad muy grandes pueden agotar el tiempo de espera en el intento de restauración y todavía pueden necesitar ser ejecutadas a través de la línea de comandos. ',
-    'barcode_settings'			=> 'Ajustes de código de barras',
-=======
     'backups_clean' => 'Depure la base de datos de la copia de seguridad antes de restaurarla',
     'backups_clean_helptext' => "Esto puede ser útil si está cambiando entre versiones de bases de datos",
     'backups_upload'            => 'Cargar copia de seguridad',
@@ -47,7 +39,6 @@ return [
     'backups_logged_out'         => 'A todos los usuarios existentes, incluido usted, se le cerrará la sesión una vez que la restauración haya finalizado.',
     'backups_large'             => 'Las copias de seguridad muy grandes pueden agotar el tiempo de espera en el intento de restauración y todavía pueden necesitar ser ejecutadas a través de la línea de comandos. ',
     'barcode_settings'			=> 'Configuración del código de barras',
->>>>>>> origin/upstream
     'confirm_purge'			    => 'Confirmar purga',
     'confirm_purge_help'		=> 'Introduzca el texto "DELETE" en la casilla de abajo para purgar sus registros borrados. Esta acción no se puede deshacer y borrará PERMANENTAMENTE todos los elementos y usuarios eliminados. Debería hacer primero una copia de seguridad, para estar seguro.',
     'custom_css'				=> 'Custom CSS',
@@ -56,24 +47,14 @@ return [
     'custom_forgot_pass_url_help'	=> 'Esto reemplaza la URL de contraseña olvidada incorporada en la pantalla de inicio de sesión, es útil para dirigir a las personas a la funcionalidad de restablecimiento de contraseña LDAP interna o alojada. Deshabilitará efectivamente la funcionalidad de olvido de contraseña del usuario local.',
     'dashboard_message'			=> 'Mensaje en el tablero',
     'dashboard_message_help'	=> 'Este texto aparecerá en el panel de control para cualquiera con permiso para ver el tablero.',
-<<<<<<< HEAD
-    'default_currency'  		=> 'Moneda por defecto',
-    'default_eula_text'			=> 'Acuerdo de uso predeterrminado',
-    'default_language'			=> 'Idioma por defecto',
-=======
     'default_currency'  		=> 'Divisa predeterminada',
     'default_eula_text'			=> 'Acuerdo de uso predeterminado',
     'default_language'			=> 'Idioma predeterminado',
->>>>>>> origin/upstream
     'default_eula_help_text'	=> 'También puede asociar acuerdos de uso personalizados a categorías específicas.',
     'acceptance_note'           => 'Añada una nota para su decisión (opcional)',
     'display_asset_name'        => 'Mostrar nombre del activo',
     'display_checkout_date'     => 'Mostrar fecha de asignación',
-<<<<<<< HEAD
-    'display_eol'               => 'Mostrar EOL en vista de tabla',
-=======
     'display_eol'               => 'Mostrar fin de soporte (EOL) en la vista de tabla',
->>>>>>> origin/upstream
     'display_qr'                => 'Mostrar códigos cuadrados',
     'display_alt_barcode'		=> 'Mostrar códigos de barras de 1D',
     'email_logo'                => 'Logo de correo electrónico',
@@ -84,21 +65,12 @@ return [
     'eula_settings'				=> 'Configuración de los acuerdos de uso',
     'eula_markdown'				=> 'Estos acuerdos de uso permiten <a href="https://help.github.com/articles/github-flavored-markdown/">markdown estilo Github</a>.',
     'favicon'                   => 'Favicon',
-<<<<<<< HEAD
-    'favicon_format'            => 'Los tipos de archivo aceptados son ico, png y gif. Otros formatos de imagen pueden no funcionar en todos los navegadores.',
-    'favicon_size'          => 'Favicons deben ser imágenes cuadradas, 16x16 píxeles.',
-    'footer_text'               => 'Texto adicional del pie de página ',
-    'footer_text_help'          => 'Este texto aparecerá en el lado derecho del pie de página. Se permiten enlaces usando <a href="https://help.github.com/articles/github-flavored-markdown/">Github con sabor a markdown</a>. Saltos de línea, cabeceras, imágenes, etc. pueden resultar impredecibles.',
-    'general_settings'			=> 'Configuración General',
-    'general_settings_keywords' => 'soporte de la empresa, firma, aceptación, formato de correo electrónico, formato de nombre de usuario, imágenes, por página, miniatura, eula, acuerdo de licencia de usuario final, términos y condiciones, gravatar, términos de servicio, tablero de indicadores, privacidad',
-=======
     'favicon_format'            => 'Los tipos de archivo aceptados son ico, png y gif. Es posible que otros formatos de imagen no funcionen en todos los navegadores.',
     'favicon_size'          => 'Los Favicons deben ser imágenes cuadradas, de 16x16 píxeles.',
     'footer_text'               => 'Texto adicional en el pie de página ',
     'footer_text_help'          => 'Este texto aparecerá en el lado derecho del pie de página. Los enlaces son permitidos usando <a href="https://help.github.com/articles/github-flavored-markdown/">markdown estilo Github</a>. Los saltos de línea, encabezados, imágenes, etc. pueden dar lugar a resultados impredecibles.',
     'general_settings'			=> 'Configuración general',
     'general_settings_keywords' => 'soporte de la compañía, firma, aceptación, formato de correo electrónico, formato de nombre de usuario, imágenes, por página, miniatura, acuerdo de uso, términos y condiciones, gravatar, términos de servicio, tablero de indicadores, privacidad',
->>>>>>> origin/upstream
     'general_settings_help'     => 'Acuerdo de uso predeterminado y más',
     'generate_backup'			=> 'Generar copia de seguridad',
     'google_workspaces'         => 'Google Workspace',
@@ -120,13 +92,8 @@ return [
     'ldap_client_tls_cert_help' => 'El certificado TLS del lado del cliente y la clave para las conexiones LDAP normalmente solo son útiles en las configuraciones de Google Workspace con "LDAP Seguro". Ambas son requeridas.',
     'ldap_location'             => 'Ubicación LDAP',
 'ldap_location_help'             => 'El campo Location (ubicación) de Ldap debe utilizarse si <strong>una OU no está siendo utilizada en el Base Bind DN (DN del enlace base).</strong> Deje este espacio en blanco si se utiliza una búsqueda OU.',
-<<<<<<< HEAD
-    'ldap_login_test_help'      => 'Introduzca un nombre de usuario y contraseña LDAP válidos del DN base que especificó anteriormente para comprobar si su inicio de sesión LDAP está configurado correctamente. DEBES GUARDAR SUS SETTINGS LDAP ACTUALIZADOS.',
-    'ldap_login_sync_help'      => 'Esto sólo prueba que LDAP puede sincronizar correctamente. Si su consulta de autenticación LDAP no es correcta, es posible que los usuarios todavía no puedan iniciar sesión. DEBES GUARDAR SUS SETTINGS LDAP ACTUALIZADOS.',
-=======
     'ldap_login_test_help'      => 'Introduzca un nombre de usuario y una contraseña LDAP válidos del DN base que especificó anteriormente para comprobar si el inicio de sesión LDAP está configurado correctamente. PRIMERO DEBE GUARDAR LA CONFIGURACIÓN LDAP ACTUALIZADA.',
     'ldap_login_sync_help'      => 'Esto solo comprueba que el LDAP puede sincronizarse correctamente. Si su solicitud de autenticación LDAP no es correcta, los usuarios aún no podrían iniciar sesión. PRIMERO DEBE GUARDAR LA CONFIGURACIÓN LDAP ACTUALIZADA.',
->>>>>>> origin/upstream
     'ldap_manager'              => 'Gestor LDAP',
     'ldap_server'               => 'Servidor LDAP',
     'ldap_server_help'          => 'Esto debería comenzar con ldap:// (sin cifrado) o con ldaps:// (para TLS o SSL)',
@@ -151,11 +118,7 @@ return [
     'ldap_auth_filter_query'    => 'Consulta de autenticación LDAP',
     'ldap_version'              => 'Versión LDAP',
     'ldap_active_flag'          => 'Bandera activa LDAP',
-<<<<<<< HEAD
-    'ldap_activated_flag_help'  => 'Este valor se utiliza para determinar si un usuario sincronizado puede iniciar sesión en Snipe-IT. <strong>No afecta a la capacidad de asignarles o retirarles items</strong>, y debería ser el <strong>nombre de atributo</strong> dentro de su AD/LDAP, <strong>no el valor</strong>. <br><br>Si este campo está configurado a un nombre de campo que no existe en su AD/LDAP, o el valor en el campo AD/LDAP se establece en <code>0</code> o <code>falso</code>, <strong>el inicio de sesión de usuario será deshabilitado</strong>. Si el valor en el campo AD/LDAP está establecido en <code>1</code> o <code>true</code> o <em>cualquier otro texto</em> significa que el usuario puede iniciar sesión. Cuando el campo está en blanco en su AD, respetamos el atributo <code>userAccountControl</code>, que generalmente permite a los usuarios no suspendidos iniciar sesión.',
-=======
     'ldap_activated_flag_help'  => 'Este valor se utiliza para determinar si un usuario sincronizado puede iniciar sesión en Snipe-IT. <strong>No afecta a la capacidad de asignarles o retirarles elementos</strong>, y debería ser el <strong>nombre de atributo</strong> dentro de su AD/LDAP, <strong>no el valor</strong>. <br><br>Si este campo está configurado a un nombre de campo que no existe en su AD/LDAP, o el valor en el campo AD/LDAP se establece en <code>0</code> o <code>falso</code>, <strong>el inicio de sesión de usuario será deshabilitado</strong>. Si el valor en el campo AD/LDAP está establecido en <code>1</code> o <code>true</code> o <em>cualquier otro texto</em> significa que el usuario puede iniciar sesión. Cuando el campo está en blanco en su AD, respetamos el atributo <code>userAccountControl</code>, que generalmente permite a los usuarios no suspendidos iniciar sesión.',
->>>>>>> origin/upstream
     'ldap_emp_num'              => 'Número de empleado LDAP',
     'ldap_email'                => 'Correo electrónico LDAP',
     'ldap_test'                 => 'Probar LDAP',
@@ -182,17 +145,10 @@ return [
     'login_remote_user_header_name_help' => 'Usar la cabecera especificada en lugar de REMOTE_USER',
     'logo'                    	=> 'Logo',
     'logo_print_assets'         => 'Usar en la impresión',
-<<<<<<< HEAD
-    'logo_print_assets_help'    => 'Usar marca en listas de activos imprimibles ',
-    'full_multiple_companies_support_help_text' => 'Limitar los usuarios asignados a empresas (incluyendo administradores) solo a los activos de esa empresa.',
-    'full_multiple_companies_support_text' => 'Soporte completo a varias empresas',
-    'show_in_model_list'   => 'Mostrar en el modelo de destrucción',
-=======
     'logo_print_assets_help'    => 'Utilice la marca de la empresa en las listas de activos imprimibles ',
     'full_multiple_companies_support_help_text' => 'Limitar los usuarios asignados a compañías (incluyendo administradores) solo a los activos de esa compañía.',
     'full_multiple_companies_support_text' => 'Soporte completo a múltiples compañías',
     'show_in_model_list'   => 'Mostrar en menús desplegables de modelos',
->>>>>>> origin/upstream
     'optional'					=> 'opcional',
     'per_page'                  => 'Resultados por página',
     'php'                       => 'Versión de PHP',
@@ -242,19 +198,11 @@ return [
     'settings'                  => 'Configuraciones',
     'show_alerts_in_menu'       => 'Mostrar alertas en el menú superior',
     'show_archived_in_list'     => 'Activos archivados',
-<<<<<<< HEAD
-    'show_archived_in_list_text'     => 'Mostrar recursos archivados en el listado de "todos los activos"',
-    'show_assigned_assets'      => 'Mostrar recursos asignados a recursos',
-    'show_assigned_assets_help' => 'Mostrar los recursos asignados a los otros activos en Ver Usuario -> Activos, Ver Usuario -> Información -> Imprimir Todos Asignados y en Cuenta -> Ver Recursos Asignados.',
-    'show_images_in_email'     => 'Mostrar imágenes en emails',
-    'show_images_in_email_help'   => 'Desmarque esta casilla si su instalación de Snipe-IT está detrás de una VPN o red cerrada y los usuarios fuera de la red no podrán cargar imágenes servidas desde esta instalación en sus correos electrónicos.',
-=======
     'show_archived_in_list_text'     => 'Mostrar activos archivados en el listado de "todos los activos"',
     'show_assigned_assets'      => 'Mostrar activos asignados a activos',
     'show_assigned_assets_help' => 'Mostrar activos que fueron asignados a otros activos en Ver usuario -> Activos, Ver usuario -> Información -> Imprimir todos los asignados y en Cuenta -> Ver elementos asignados.',
     'show_images_in_email'     => 'Mostrar imágenes en correos electrónicos',
     'show_images_in_email_help'   => 'Desmarque esta casilla si su instalación de Snipe-IT está detrás de una red privada o VPN y los usuarios fuera de la red no pueden cargar las imágenes publicadas desde este servidor de Snipe-IT en sus correos electrónicos.',
->>>>>>> origin/upstream
     'site_name'                 => 'Nombre del sitio',
     'integrations'               => 'Integraciones',
     'slack'                     => 'Slack',
@@ -318,23 +266,6 @@ return [
     'two_factor_enrollment'        => 'Inscripción en verificación de dos factores',
     'two_factor_enabled_text'        => 'Activar la verificación de dos factores',
     'two_factor_reset'        => 'Restablecer el secreto en verificación de dos factores',
-<<<<<<< HEAD
-    'two_factor_reset_help'        => 'Esto obligará al usuario a volver a inscribir su dispositivo en su aplicación de autenticación. Esto puede ser útil si su dispositivo actualmente inscrito es perdido o robado. ',
-    'two_factor_reset_success'          => 'Dispositivo de doble factor restablecido con éxito',
-    'two_factor_reset_error'          => 'Error al restablecer el dispositivo de doble factor',
-    'two_factor_enabled_warning'        => 'Habilitar el doble factor si no está habilitado actualmente lo obligará inmediatamente a autenticarse con un dispositivo inscrito en Google Auth. Tendrá la posibilidad de inscribir su dispositivo si uno no está inscrito actualmente.',
-    'two_factor_enabled_help'        => 'Esto activará la autenticación de dos factores usando Google Authenticator.',
-    'two_factor_optional'        => 'Selectivo (los usuarios pueden activar o desactivar si está permitido)',
-    'two_factor_required'        => 'Requerido para todos los usuarios',
-    'two_factor_disabled'        => 'Deshabilitado',
-    'two_factor_enter_code'	=> 'Ingrese el código de verificación de dos factores',
-    'two_factor_config_complete'	=> 'Enviar código',
-    'two_factor_enabled_edit_not_allowed' => 'Su administrador no le permite editar esta configuración.',
-    'two_factor_enrollment_text'	=> "Se requiere autenticación de dos factores, sin embargo su dispositivo aún no ha sido inscrito. Abra su aplicación Google Authenticator y escanee el código QR de abajo para inscribir su dispositivo. Una vez que lo haya inscrito, introduzca el código en la parte inferior",
-    'require_accept_signature'      => 'Solicitar firma',
-    'require_accept_signature_help_text'      => 'Activar esta función requiere que los usuarios firmen físicamente aceptando un elemento.',
-    'left'        => 'restante',
-=======
     'two_factor_reset_help'        => 'Esto obligará al usuario a inscribir de nuevo su dispositivo en su aplicación de autenticación. Esto puede ser útil en caso de pérdida o robo del dispositivo actualmente registrado. ',
     'two_factor_reset_success'          => 'Dispositivo de verificación de dos factores restablecido correctamente',
     'two_factor_reset_error'          => 'Error al restablecer el dispositivo de verificación de doble factor',
@@ -350,7 +281,6 @@ return [
     'require_accept_signature'      => 'Solicitar firma',
     'require_accept_signature_help_text'      => 'Al activar esta función, los usuarios tendrán que firmar físicamente la aceptación de un activo.',
     'left'        => 'izquierda',
->>>>>>> origin/upstream
     'right'        => 'derecha',
     'top'        => 'arriba',
     'bottom'        => 'abajo',
@@ -361,23 +291,6 @@ return [
     'zerofill_count'        => 'Longitud de los números en las placas de los activos, incluyendo los ceros de relleno',
     'username_format_help'   => 'Esta configuración solo será utilizada por el proceso de importación si no se proporciona un nombre de usuario y tenemos que generar un nombre de usuario por usted.',
     'oauth_title' => 'Configuración de la API de OAuth',
-<<<<<<< HEAD
-    'oauth_clients' => 'OAuth Clients',
-    'oauth' => 'OAuth',
-    'oauth_help' => 'Configuración de Oauth Endpoint',
-    'oauth_no_clients' => 'You have not created any OAuth clients yet.',
-    'oauth_secret' => 'Secret',
-    'oauth_authorized_apps' => 'Authorized Applications',
-    'oauth_redirect_url' => 'Redirect URL',
-    'oauth_name_help' => ' Something your users will recognize and trust.',
-    'oauth_scopes' => 'Scopes',
-    'oauth_callback_url' => 'Your application authorization callback URL.',
-    'create_client' => 'Create Client',
-    'no_scopes' => 'No scopes',
-    'asset_tag_title' => 'Actualizar ajustes de etiqueta de activos',
-    'barcode_title' => 'Actualizar ajustes de código de barras',
-    'barcodes' => 'Barcodes',
-=======
     'oauth_clients' => 'Clientes OAuth',
     'oauth' => 'OAuth',
     'oauth_help' => 'Configuración del punto final (endpoint) OAuth',
@@ -393,7 +306,6 @@ return [
     'asset_tag_title' => 'Actualizar la configuración de las placas de activos',
     'barcode_title' => 'Actualizar la configuración de los códigos de barras',
     'barcodes' => 'Códigos de barras',
->>>>>>> origin/upstream
     'barcodes_help_overview' => 'Configuración de código de barras &amp; QR',
     'barcodes_help' => 'Esto intentará eliminar códigos de barras almacenados en caché. Normalmente solo se usa si la configuración del código de barras ha cambiado o si ha cambiado la URL de Snipe-IT. Los códigos de barras se volverán a generar la próxima vez que se acceda a ellos.',
     'barcodes_spinner' => 'Intentando eliminar archivos...',
@@ -464,9 +376,6 @@ return [
     'mail_from' => 'Correo desde la dirección',
     'database_driver' => 'Controlador de base de datos',
     'bs_table_storage' => 'Almacenamiento de tabla',
-<<<<<<< HEAD
-    'timezone' => 'Timezone',
-=======
     'timezone' => 'Zona horaria',
     'profile_edit'          => 'Editar perfil',
     'profile_edit_help'          => 'Permitir que los usuarios editen sus propios perfiles.',
@@ -477,6 +386,5 @@ return [
     'due_checkin_days' => 'Advertencia para próximos ingresos',
     'due_checkin_days_help' => '¿Cuántos días antes de la fecha prevista de ingreso de un activo debe figurar en la página «Próximos a ingresar»?',
     'no_groups' => 'Todavía no se han creado grupos. Para agregar uno, visite<code>Configuración de administración > Grupos de permisos</code>.',
->>>>>>> origin/upstream
 
 ];

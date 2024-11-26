@@ -2,13 +2,8 @@
 
 return [
     'about_asset_depreciations'  			=> 'Sobre amortización de activos',
-<<<<<<< HEAD
-    'about_depreciations'  					=> 'Puede configurar la amortización de activos usando un método de línea recta.',
-    'asset_depreciations'  					=> 'Amortizaciones',
-=======
     'about_depreciations'  					=> 'Puede configurar la depreciación de activos usando un método de línea recta.',
     'asset_depreciations'  					=> 'Depreciación de activos',
->>>>>>> origin/upstream
     'create'  					            => 'Crear amortización',
     'depreciation_name'  					=> 'Nombre amortización',
     'depreciation_min'                      => 'Valor mínimo de depreciación',

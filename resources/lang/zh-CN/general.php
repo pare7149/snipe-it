@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => '姓 缩写名, 例如 (smith_j@example.com)',
     'firstinitial.lastname' => '缩写名 姓，例如(jsmith@example.com)',
     'firstnamelastinitial'  => '名 姓，例如 (jane.smith@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => '姓 名，例如(smith.jane@example.com)',
-=======
     'lastnamefirstname'      => '姓氏.名字 (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> '名字',
     'first_name_format'		=> '名，例如 (jane@example.com)',
     'files'                 => '文件',

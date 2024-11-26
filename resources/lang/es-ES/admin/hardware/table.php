@@ -15,13 +15,8 @@ return [
     'dl_csv' 		=> 'Descargar CSV',
     'eol' 			=> 'Fin de soporte (EOL)',
     'id'      		=> 'ID',
-<<<<<<< HEAD
-    'last_checkin_date' => 'Última fecha de devolución',
-    'location' 		=> 'Localización',
-=======
     'last_checkin_date' => 'Última fecha de ingreso',
     'location' 		=> 'Ubicación',
->>>>>>> origin/upstream
     'purchase_cost'	=> 'Costo',
     'purchase_date'	=> 'Comprado',
     'serial'   		=> 'Número de serie',

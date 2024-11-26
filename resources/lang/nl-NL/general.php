@@ -11,15 +11,9 @@ return [
     'activity_report'		=> 'Activiteitenrapportage',
     'address'				=> 'Adres',
     'admin'					=> 'Beheerder',
-<<<<<<< HEAD
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin_tooltip'			=> 'Deze gebruiker heeft beheerdersrechten',
     'superuser'				=> 'Superuser',
     'superuser_tooltip'		=> 'Deze gebruiker heeft superuser rechten',
->>>>>>> origin/upstream
     'administrator'			=> 'Beheerder',
     'add_seats'             => 'Toegevoegde plekken',
     'age'                   => "Leeftijd",
@@ -141,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Achternaam eerste initiaal (smith_j@example.com)',
     'firstinitial.lastname' => 'Eerste initiaal achternaam (j.smith@example.com)',
     'firstnamelastinitial'  => 'Voornaam Initiaal Achternaam (janes@voorbeeld.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Achternaam.Voornaam (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Voornaam',
     'first_name_format'		=> 'Voornaam (jane@example.com)',
     'files'                 => 'Bestanden',
@@ -257,13 +247,8 @@ return [
     'requested_assets'      => 'Aangevraagd activa',
     'requested_assets_menu' => 'Aangevraagde activa',
     'request_canceled'      => 'Aanvraag geannuleerd',
-<<<<<<< HEAD
-    'request_item'          => 'Request this item',
-    'external_link_tooltip' => 'External link to',
-=======
     'request_item'          => 'Dit item aanvragen',
     'external_link_tooltip' => 'Externe link naar',
->>>>>>> origin/upstream
     'save'  				=> 'Opslaan',
     'select_var'            => 'Selecteer :thing... ', // this will eventually replace all of our other selects
     'select'				=> 'Selecteer',
@@ -423,15 +408,9 @@ return [
     'accessory_name'       => 'Accessoire naam:',
     'clone_item'            => 'Item dupliceren',
     'checkout_tooltip' => 'Check dit item uit',
-<<<<<<< HEAD
-    'checkin_tooltip' => 'Check this item in so that it is available for re-issue, re-imaging, etc',
-    'checkout_user_tooltip' => 'Check dit item uit aan een gebruiker',
-    'checkin_to_diff_location' => 'You can choose to check this asset in to a location other than this asset\'s default location of :default_location if one is set',
-=======
     'checkin_tooltip' => 'Check dit item in zodat het beschikbaar is om opnieuw uit te checken, opnieuw te imagen, etc',
     'checkout_user_tooltip' => 'Check dit item uit aan een gebruiker',
     'checkin_to_diff_location' => 'U kunt dit product inchecken op een andere locatie dan de standaard locatie van :default_location in dit asset als deze is ingesteld',
->>>>>>> origin/upstream
     'maintenance_mode'      => 'De service is tijdelijk niet beschikbaar voor systeemupdates. Probeer het later nog eens.',
     'maintenance_mode_title' => 'Dienst tijdelijk niet beschikbaar',
     'ldap_import'           => 'Het gebruikerswachtwoord mag niet worden beheerd door LDAP. (Hiermee kun je vergeten wachtwoord aanvragen verzenden.)',
@@ -533,13 +512,8 @@ return [
         'address2' => 'Adresregel 2',
         'import_note' => 'Geïmporteerd met csv-bestand',
     ],
-<<<<<<< HEAD
-    'remove_customfield_association' => 'Remove this field from the fieldset. This will not delete the custom field, only this field\'s association with this fieldset.',
-    'checked_out_to_fields' => 'Checked Out To Fields',
-=======
     'remove_customfield_association' => 'Verwijder dit veld uit de veldenset. Dit zal niet verwijderen van het aangepaste veld, alleen dit veld associatie met deze veldset.',
     'checked_out_to_fields' => 'Uitgecheckt aan velden',
->>>>>>> origin/upstream
     'percent_complete' => '% voltooid',
     'uploading' => 'Uploaden... ',
     'upload_error' => 'Fout bij het uploaden. Controleer of er geen lege rijen zijn en dat er geen kolomnamen zijn gedupliceerd.',

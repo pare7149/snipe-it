@@ -47,8 +47,5 @@ return [
     'kit_deleted'                       => 'Kit was successfully deleted',
     'kit_model_updated'                 => 'Model was successfully updated',
     'kit_model_detached'                => 'Model was successfully detached',
-<<<<<<< HEAD
-=======
     'model_already_attached'            => 'Model already attached to kit',
->>>>>>> origin/upstream
 ];

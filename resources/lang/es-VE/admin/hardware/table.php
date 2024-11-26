@@ -13,17 +13,10 @@ return [
     'current_value' => 'Valor actual',
     'diff' 			=> 'Diferencia',
     'dl_csv' 		=> 'Descargar CSV',
-<<<<<<< HEAD
-    'eol' 			=> 'Fin de Vida',
-    'id'      		=> 'Identificación',
-    'last_checkin_date' => 'Última fecha de devolución',
-    'location' 		=> 'Localización',
-=======
     'eol' 			=> 'Fin de soporte (EOL)',
     'id'      		=> 'ID',
     'last_checkin_date' => 'Última fecha de ingreso',
     'location' 		=> 'Ubicación',
->>>>>>> origin/upstream
     'purchase_cost'	=> 'Costo',
     'purchase_date'	=> 'Comprado',
     'serial'   		=> 'Número de serie',

@@ -3,11 +3,7 @@
 return array(
 
     'does_not_exist' => 'crwdns650:0crwdne650:0',
-<<<<<<< HEAD
-    'assoc_users'    => 'crwdns12272:0crwdne12272:0',
-=======
     'assoc_users'    => 'crwdns12740:0crwdne12740:0',
->>>>>>> origin/upstream
     'assoc_assets'	 => 'crwdns1404:0crwdne1404:0',
     'assoc_child_loc'	 => 'crwdns1405:0crwdne1405:0',
     'assigned_assets' => 'crwdns11179:0crwdne11179:0',

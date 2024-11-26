@@ -2,11 +2,8 @@
 
 namespace Tests\Feature\Users\Ui;
 
-<<<<<<< HEAD
-=======
 use App\Models\Asset;
 use App\Models\Company;
->>>>>>> origin/upstream
 use App\Models\User;
 use Tests\TestCase;
 
@@ -84,8 +81,6 @@ class UpdateUserTest extends TestCase
 
         $this->assertEquals(1, $admin->refresh()->activated);
     }
-<<<<<<< HEAD
-=======
 
     public function testMultiCompanyUserCannotBeMovedIfHasAssetInDifferentCompany()
     {
@@ -159,5 +154,4 @@ class UpdateUserTest extends TestCase
 
         $this->followRedirects($response)->assertSee('success');
     }
->>>>>>> origin/upstream
 }

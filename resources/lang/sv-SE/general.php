@@ -10,17 +10,10 @@ return [
     'action'                => 'Åtgärd',
     'activity_report'		=> 'Aktivitetsrapport',
     'address'				=> 'Adress',
-<<<<<<< HEAD
-    'admin'					=> 'Administratör',
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin'					=> 'Admin',
     'admin_tooltip'			=> 'Den här användaren har administratörsrättigheter',
     'superuser'				=> 'Superanvändare',
     'superuser_tooltip'		=> 'Den här användaren har superanvändarrättigheter',
->>>>>>> origin/upstream
     'administrator'			=> 'Administratör',
     'add_seats'             => 'Tillagda platser',
     'age'                   => "Ålder",
@@ -142,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Efternamn Första Initialen (smith_j@example.com)',
     'firstinitial.lastname' => 'Första Initialen Efternamn (j.smith@example.com)',
     'firstnamelastinitial'  => 'Efternamn Första Initialen (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Efternamn.Förnamn (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Förnamn',
     'first_name_format'		=> 'Förnamn (jane@example.com)',
     'files'                 => 'Filer',
@@ -258,13 +247,8 @@ return [
     'requested_assets'      => 'Begärda tillgångar',
     'requested_assets_menu' => 'Begärda tillgångar',
     'request_canceled'      => 'Förfrågan annulleras',
-<<<<<<< HEAD
-    'request_item'          => 'Request this item',
-    'external_link_tooltip' => 'External link to',
-=======
     'request_item'          => 'Begär detta objekt',
     'external_link_tooltip' => 'Extern länk till',
->>>>>>> origin/upstream
     'save'  				=> 'Spara',
     'select_var'            => 'Välj :thing... ', // this will eventually replace all of our other selects
     'select'				=> 'Välj',
@@ -422,19 +406,11 @@ return [
     'consumable_name'       => 'Namn på förbrukningsvara:',
     'accessory_information' => 'Information om tillgång:',
     'accessory_name'       => 'Tillbehörsnamn:',
-<<<<<<< HEAD
-    'clone_item'            => 'Klona objekt',
-    'checkout_tooltip' => 'Låna utdetta objekt',
-    'checkin_tooltip' => 'Check this item in so that it is available for re-issue, re-imaging, etc',
-    'checkout_user_tooltip' => 'Låna utdetta objekt till en användare',
-    'checkin_to_diff_location' => 'You can choose to check this asset in to a location other than this asset\'s default location of :default_location if one is set',
-=======
     'clone_item'            => 'Kopiera objekt',
     'checkout_tooltip' => 'Checka ut detta objekt',
     'checkin_tooltip' => 'Checka in detta objekt så den blir tillgänglig för återanvändning, återskapning, osv',
     'checkout_user_tooltip' => 'Låna utdetta objekt till en användare',
     'checkin_to_diff_location' => 'Du kan välja att checka in denna tillgång till en annan plats än tillgångens standardplats :default_location om en sådan är satt',
->>>>>>> origin/upstream
     'maintenance_mode'      => 'Tjänsten är för tillfället inte tillgänglig för systemuppdateringar. Kontrollera igen senare.',
     'maintenance_mode_title' => 'Systemet är tillfälligt otillgängligt',
     'ldap_import'           => 'Användarlösenord bör inte hanteras av LDAP. (Detta gör att du kan skicka bortglömda lösenordsförfrågningar.)',
@@ -536,13 +512,8 @@ return [
         'address2' => 'Adressrad 2',
         'import_note' => 'Importerad med csv importerare',
     ],
-<<<<<<< HEAD
-    'remove_customfield_association' => 'Remove this field from the fieldset. This will not delete the custom field, only this field\'s association with this fieldset.',
-    'checked_out_to_fields' => 'Checked Out To Fields',
-=======
     'remove_customfield_association' => 'Ta bort detta fält från fältsamlingen. Detta kommer inte att ta bort det anpassade fältet, bara fältets association med denna fältsamling.',
     'checked_out_to_fields' => 'Utcheckade till fält',
->>>>>>> origin/upstream
     'percent_complete' => '% slutförd',
     'uploading' => 'Uppladdar... ',
     'upload_error' => 'Fel vid uppladdning av fil. Kontrollera att det inte finns några tomma rader och att inga kolumnnamn dupliceras.',

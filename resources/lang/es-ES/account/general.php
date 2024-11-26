@@ -2,14 +2,6 @@
 
 return array(
     'personal_api_keys' => 'Claves API personales',
-<<<<<<< HEAD
-    'api_key_warning' => 'When generating an API token, be sure to copy it down immediately as they will not be visible to you again.',
-    'api_base_url' => 'La url base de tu API es:',
-    'api_base_url_endpoint' => '/&lt;endpoint&gt;',
-    'api_token_expiration_time' => 'Los tokens de la API están establecidos para expirar en:',
-    'api_reference' => 'Please check the <a href="https://snipe-it.readme.io/reference" target="_blank">API reference</a> to find specific API endpoints and additional API documentation.',
-    'profile_updated' => 'Cuenta actualizada exitosamente',
-=======
     'personal_access_token' => 'Credencial de acceso personal',
     'personal_api_keys_success' => 'Clave API personal :key creada correctamente',
     'here_is_api_key' => 'Aquí tiene su nueva credencial de acceso personal. Esta es la única vez que se mostrará, así que no la pierda. Ahora puede utilizar esta credencial para realizar solicitudes a la API.',
@@ -22,5 +14,4 @@ return array(
     'no_tokens' => 'No ha creado ninguna credencial de acceso personal.',
     'enable_sounds' => 'Habilitar efectos de sonido',
     'enable_confetti' => 'Activar los efectos confeti',
->>>>>>> origin/upstream
 );

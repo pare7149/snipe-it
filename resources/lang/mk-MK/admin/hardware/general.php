@@ -14,15 +14,9 @@ return [
     'deleted'  					=> 'Ова основно средство е избришано.',
     'delete_confirm'            => 'Дали сте сигурни дека сакате да го избришете ова основно средство?',
     'edit'  					=> 'Уредување на основно средство',
-<<<<<<< HEAD
-    'model_deleted'  			=> 'This Assets model has been deleted. You must restore the model before you can restore the Asset.',
-    'model_invalid'             => 'This model for this asset is invalid.',
-    'model_invalid_fix'         => 'The asset must be updated use a valid asset model before attempting to check it in or out, or to audit it.',
-=======
     'model_deleted'  			=> 'Моделот на ова основно средство е избришан. Мора да го вратите моделот пред да го вратите основното средство.',
     'model_invalid'             => 'Моделот за ова основно средство е невалиден.',
     'model_invalid_fix'         => 'Средството мора да се ажурира користете валиден модел на средства пред да се обидете да го задолжите или раздолжите, или да го попишите.',
->>>>>>> origin/upstream
     'requestable'               => 'Може да се побара',
     'requested'				    => 'Побарано',
     'not_requestable'           => 'Не е побарливо',

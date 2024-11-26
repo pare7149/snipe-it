@@ -51,11 +51,7 @@ return [
     'default_eula_text'			=> 'Standard EULA',
     'default_language'			=> 'Standardsprache',
     'default_eula_help_text'	=> 'Du kannst ebenso benutzerdefinierte EULAs bestimmten Asset-Kategorien zuordnen.',
-<<<<<<< HEAD
-    'acceptance_note'           => 'Notiz für Ihre Entscheidung hinzufügen (Optional)',
-=======
     'acceptance_note'           => 'Füge eine Notiz zu deiner Entscheidung hinzu (optional)',
->>>>>>> origin/upstream
     'display_asset_name'        => 'Asset-Name anzeigen',
     'display_checkout_date'     => 'Checkout-Datum anzeigen',
     'display_eol'               => 'EOL in Tabellenansicht anzeigen',
@@ -298,17 +294,6 @@ return [
     'oauth_clients' => 'OAuth Clients',
     'oauth' => 'OAuth',
     'oauth_help' => 'Oauth Endpunkt Einstellungen',
-<<<<<<< HEAD
-    'oauth_no_clients' => 'You have not created any OAuth clients yet.',
-    'oauth_secret' => 'Secret',
-    'oauth_authorized_apps' => 'Authorized Applications',
-    'oauth_redirect_url' => 'Redirect URL',
-    'oauth_name_help' => ' Something your users will recognize and trust.',
-    'oauth_scopes' => 'Scopes',
-    'oauth_callback_url' => 'Your application authorization callback URL.',
-    'create_client' => 'Create Client',
-    'no_scopes' => 'No scopes',
-=======
     'oauth_no_clients' => 'Du hast noch keine OAuth-Clients erstellt.',
     'oauth_secret' => 'Secret',
     'oauth_authorized_apps' => 'Autorisierte Anwendungen',
@@ -318,7 +303,6 @@ return [
     'oauth_callback_url' => 'Dein App-Autorisierungs-Callback-URL.',
     'create_client' => 'Client erstellen',
     'no_scopes' => 'Keine Bereiche',
->>>>>>> origin/upstream
     'asset_tag_title' => 'Asset Tag Einstellungen aktualisieren',
     'barcode_title' => 'Barcode Einstellungen aktualisieren',
     'barcodes' => 'Barcodes',

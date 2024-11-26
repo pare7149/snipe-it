@@ -2,29 +2,6 @@
 
 return [
 
-<<<<<<< HEAD
-    'undeployable' 		=> '<strong>Atención:</strong> Este elemento ha sido marcado como no utilizable.
-                        Si no es correcto, actualice el estado.',
-    'does_not_exist' 	=> 'Equipo inexistente.',
-    'does_not_exist_var'=> 'Activo con etiqueta :asset_tag no encontrado.',
-    'no_tag' 	        => 'No se ha proporcionado ninguna etiqueta de activo.',
-    'does_not_exist_or_not_requestable' => 'Ese activo no existe o no puede ser solicitado.',
-    'assoc_users'	 	=> 'Equipo asignado a un usuario, no se puede eliminar.',
-    'warning_audit_date_mismatch' 	=> 'La próxima fecha de auditoría de este activo (:next_audit_date) es anterior a la última fecha de auditoría (:last_audit_date). Por favor, actualice la próxima fecha de auditoría.',
-
-    'create' => [
-        'error'   		=> 'El activo no fue creado, por favor, inténtelo de nuevo. :(',
-        'success' 		=> 'Equipo creado. :)',
-        'success_linked' => 'Activo con etiqueta :tag creado con éxito. <strong><a href=":link" style="color: white;">Haga clic aquí para ver</a></strong>.',
-    ],
-
-    'update' => [
-        'error'   			=> 'Equipo no actualizado, intentalo de nuevo',
-        'success' 			=> 'Equipo actualizado.',
-        'encrypted_warning' => 'Activo actualizado con éxito, pero los campos personalizados cifrados no se actualizaron debido a permisos',
-        'nothing_updated'	=>  'Ningún campo fue seleccionado, por lo que nada ha sido actualizado.',
-        'no_assets_selected'  =>  'Ningún recurso fue seleccionado, por lo que no se actualizó nada.',
-=======
     'undeployable' 		 => '<strong>Advertencia:</strong> Este activo actualmente está marcado como no utilizable. Si este estado ha cambiado, por favor, actualice el estado del activo.',
     'does_not_exist' 	 => 'Equipo inexistente.',
     'does_not_exist_var' => 'Activo con placa :asset_tag no encontrado.',
@@ -50,7 +27,6 @@ return [
         'encrypted_warning' => 'El activo se actualizó correctamente, pero los campos personalizados cifrados no lo hicieron debido a los permisos',
         'nothing_updated'	=>  'Ningún campo fue seleccionado, por lo que no se actualizó nada.',
         'no_assets_selected'  =>  'Ningún activo fue seleccionado, por lo que no se actualizó nada.',
->>>>>>> origin/upstream
         'assets_do_not_exist_or_are_invalid' => 'Los activos seleccionados no se pueden actualizar.',
     ],
 
@@ -76,11 +52,7 @@ return [
         'error'   => 'Archivo(s) no cargado(s). Por favor, inténtelo nuevamente.',
         'success' => 'Archivo(s) cargado(s) exitosamente.',
         'nofiles' => 'No seleccionó ningún archivo para ser cargado, o el archivo que está tratando de cargar es demasiado grande',
-<<<<<<< HEAD
-        'invalidfiles' => 'Uno o más sus archivos es demasiado grande o es de un tipo no permitido. Los tipos de archivo permitidos son png, gif, jpg, doc, docx, pdf y txt.',
-=======
         'invalidfiles' => 'Uno o más de sus archivos son demasiado grandes o son de un tipo de archivo que no está permitido. Los tipos de archivo permitidos son png, gif, jpg, doc, docx, pdf y txt.',
->>>>>>> origin/upstream
     ],
 
     'import' => [
@@ -106,19 +78,6 @@ return [
 
     'checkout' => [
         'error'   		=> 'El activo no fue asignado, por favor inténtelo de nuevo',
-<<<<<<< HEAD
-        'success' 		=> 'Equipo asignado.',
-        'user_does_not_exist' => 'Este usuario no es correcto. Intentalo de nuevo.',
-        'not_available' => '¡Ese artículo no está disponible para retirada!',
-        'no_assets_selected' => 'Debes seleccionar al menos un elemento de la lista',
-    ],
-
-    'checkin' => [
-        'error'   		=> 'El equipo no se pudo devolver, por favor inténtelo de nuevo',
-        'success' 		=> 'El activo fue devuelto exitosamente.',
-        'user_does_not_exist' => 'Es usuario no es correcto, por favor inténtelo de nuevo.',
-        'already_checked_in'  => 'El equipo ya ha sido devuelto.',
-=======
         'success' 		=> 'Equipo asignado correctamente.',
         'user_does_not_exist' => 'Este usuario no es correcto. Por favor, inténtelo de nuevo.',
         'not_available' => '¡Ese equipo no está disponible para ser asignado!',
@@ -135,7 +94,6 @@ return [
         'success' 		=> 'El activo fue ingresado exitosamente.',
         'user_does_not_exist' => 'Este usuario no es correcto. Por favor, inténtelo de nuevo.',
         'already_checked_in'  => 'El equipo ya ha sido recibido.',
->>>>>>> origin/upstream
 
     ],
 

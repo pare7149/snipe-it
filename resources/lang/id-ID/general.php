@@ -135,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Nama Belakang Inisial Depan (smith_j@example.com)',
     'firstinitial.lastname' => 'Nama Belakang Inisial Pertama (j.smith@example.com)',
     'firstnamelastinitial'  => 'Nama Depan Inisial Belakang (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Nama Depan',
     'first_name_format'		=> 'Nama Depan (jane@example.com)',
     'files'                 => 'File',
@@ -251,11 +247,7 @@ return [
     'requested_assets'      => 'Aset yang Diminta',
     'requested_assets_menu' => 'Aset yang Diminta',
     'request_canceled'      => 'Permintaan Dibatalkan',
-<<<<<<< HEAD
-    'request_item'          => 'Request this item',
-=======
     'request_item'          => 'Perminta barang ini',
->>>>>>> origin/upstream
     'external_link_tooltip' => 'External link to',
     'save'  				=> 'Simpan',
     'select_var'            => 'Pilih :thing... ', // this will eventually replace all of our other selects
@@ -416,11 +408,7 @@ return [
     'accessory_name'       => 'Nama Aksesoris:',
     'clone_item'            => 'Duplikasi',
     'checkout_tooltip' => 'Keluar-kan barang ini',
-<<<<<<< HEAD
-    'checkin_tooltip' => 'Check this item in so that it is available for re-issue, re-imaging, etc',
-=======
     'checkin_tooltip' => 'Simpan barang ini agar tersedia untuk terbit ulang, citra ulang, dll',
->>>>>>> origin/upstream
     'checkout_user_tooltip' => 'Keluar-kan barang ini untuk pengguna',
     'checkin_to_diff_location' => 'You can choose to check this asset in to a location other than this asset\'s default location of :default_location if one is set',
     'maintenance_mode'      => 'Layanan sedang dalam proses pembaharuan. Mohon kunjungi di lain waktu.',

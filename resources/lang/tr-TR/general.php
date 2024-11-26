@@ -11,15 +11,9 @@ return [
     'activity_report'		=> 'Aktivite Raporu',
     'address'				=> 'Adres',
     'admin'					=> 'Yönetici',
-<<<<<<< HEAD
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin_tooltip'			=> 'Kullanici admin yetkisine sahiptir',
     'superuser'				=> 'Super Kullanici',
     'superuser_tooltip'		=> 'Super Kullanici yetkisine sahiptir',
->>>>>>> origin/upstream
     'administrator'			=> 'Yönetici',
     'add_seats'             => 'Eklenen kişi sayısı',
     'age'                   => "Yaş",
@@ -144,11 +138,7 @@ Context | Request Context
     'lastname_firstinitial' => 'Soyad ve Adın İlk Harfi (smith_j@example.com)',
     'firstinitial.lastname' => 'Adın İlk Harfi ve Soyad (j.smith@example.com)',
     'firstnamelastinitial'  => 'Ad ve Soyadın İlk Harfi (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Soyisim.isim',
->>>>>>> origin/upstream
     'first_name'			=> 'Ad',
     'first_name_format'		=> 'Ad (jane@example.com)',
     'files'                 => 'Dosyalar',

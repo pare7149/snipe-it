@@ -2,11 +2,7 @@
 
 return [
 
-<<<<<<< HEAD
-    'select_language' => 'Lựa chọn ngôn ngữ',
-=======
     'select_language' => 'Select a Language',
->>>>>>> origin/upstream
     'languages' => [
         'en-US'=> 'English, US',
         'en-GB'=> 'English, UK',

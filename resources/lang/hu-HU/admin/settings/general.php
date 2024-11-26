@@ -299,11 +299,7 @@ return [
     'oauth_authorized_apps' => 'Authorized Applications',
     'oauth_redirect_url' => 'Redirect URL',
     'oauth_name_help' => ' Something your users will recognize and trust.',
-<<<<<<< HEAD
-    'oauth_scopes' => 'Scopes',
-=======
     'oauth_scopes' => 'Hatókörök',
->>>>>>> origin/upstream
     'oauth_callback_url' => 'Your application authorization callback URL.',
     'create_client' => 'Create Client',
     'no_scopes' => 'No scopes',

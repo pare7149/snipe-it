@@ -31,11 +31,8 @@ return [
     'backups'					=> 'Backups',
     'backups_help'              => 'Create, download, and restore backups ',
     'backups_restoring'         => 'Restoring from Backup',
-<<<<<<< HEAD
-=======
     'backups_clean' => 'Clean the backed-up database before restore',
     'backups_clean_helptext' => "This can be useful if you're changing between database versions",
->>>>>>> origin/upstream
     'backups_upload'            => 'Upload Backup',
     'backups_path'              => 'Backups on the server are stored in <code>:path</code>',
     'backups_restore_warning'   => 'Use the restore button <small><span class="btn btn-xs btn-warning"><i class="text-white fas fa-retweet" aria-hidden="true"></i></span></small> to restore from a previous backup. (This does not currently work with S3 file storage or Docker.)<br><br>Your <strong>entire :app_name database and any uploaded files will be completely replaced</strong> by what\'s in the backup file.  ',
@@ -99,11 +96,7 @@ return [
     'ldap_login_sync_help'      => 'This only tests that LDAP can sync correctly. If your LDAP Authentication query is not correct, users may still not be able to login. YOU MUST SAVE YOUR UPDATED LDAP SETTINGS FIRST.',
     'ldap_manager'              => 'LDAP Manager',
     'ldap_server'               => 'LDAP Server',
-<<<<<<< HEAD
-    'ldap_server_help'          => 'This should start with ldap:// (for unencrypted or TLS) or ldaps:// (for SSL)',
-=======
     'ldap_server_help'          => 'This should start with ldap:// (for unencrypted) or ldaps:// (for TLS or SSL)',
->>>>>>> origin/upstream
     'ldap_server_cert'			=> 'LDAP SSL certificate validation',
     'ldap_server_cert_ignore'	=> 'Allow invalid SSL Certificate',
     'ldap_server_cert_help'		=> 'Select this checkbox if you are using a self signed SSL cert and would like to accept an invalid SSL certificate.',
@@ -131,13 +124,8 @@ return [
     'ldap_test'                 => 'Test LDAP',
     'ldap_test_sync'            => 'Test LDAP Synchronization',
     'license'                   => 'Software License',
-<<<<<<< HEAD
-    'load_remote'               => 'Use Gravatar',
-    'load_remote_help_text'		=> 'Uncheck this box if your install cannot load scripts from the outside internet. This will prevent Snipe-IT from trying load images from Gravatar.',
-=======
     'load_remote'               => 'Load Remote Avatars',
     'load_remote_help_text'		=> 'Uncheck this box if your install cannot load scripts from the outside internet. This will prevent Snipe-IT from trying load avatars from Gravatar or other outside sources.',
->>>>>>> origin/upstream
     'login'                     => 'Login Attempts',
     'login_attempt'             => 'Login Attempt',
     'login_ip'                  => 'IP Address',
@@ -164,11 +152,7 @@ return [
     'optional'					=> 'optional',
     'per_page'                  => 'Results Per Page',
     'php'                       => 'PHP Version',
-<<<<<<< HEAD
-    'php_info'                  => 'PHP Info',
-=======
     'php_info'                  => 'PHP info',
->>>>>>> origin/upstream
     'php_overview'              => 'PHP',
     'php_overview_keywords'     => 'phpinfo, system, info',
     'php_overview_help'         => 'PHP System info',
@@ -236,11 +220,8 @@ return [
     'webhook_integration_help'    => ':app integration is optional, however the endpoint and channel are required if you wish to use it. To configure :app integration, you must first <a href=":webhook_link" target="_new" rel="noopener">create an incoming webhook</a> on your :app account. Click on the <strong>Test :app Integration</strong> button to confirm your settings are correct before saving. ',
     'webhook_integration_help_button'    => 'Once you have saved your :app information, a test button will appear.',
     'webhook_test_help'           => 'Test whether your :app integration is configured correctly. YOU MUST SAVE YOUR UPDATED :app SETTINGS FIRST.',
-<<<<<<< HEAD
-=======
     'shortcuts_enabled'         => 'Enable Shortcuts',
     'shortcuts_help_text'       => '<strong>Windows</strong>: Alt + Access key, <strong>Mac</strong>: Control + Option + Access key',
->>>>>>> origin/upstream
     'snipe_version'  			=> 'Snipe-IT version',
     'support_footer'            => 'Support Footer Links ',
     'support_footer_help'       => 'Specify who sees the links to the Snipe-IT Support info and Users Manual',
@@ -350,10 +331,6 @@ return [
     'labels' => 'Labels',
     'labels_title' => 'Update Label Settings',
     'labels_help' => 'Label sizes &amp; settings',
-<<<<<<< HEAD
-    'purge' => 'Purge',
-=======
->>>>>>> origin/upstream
     'purge_keywords' => 'permanently delete',
     'purge_help' => 'Purge Deleted Records',
     'ldap_extension_warning' => 'It does not look like the LDAP extension is installed or enabled on this server. You can still save your settings, but you will need to enable the LDAP extension for PHP before LDAP syncing or login will work.',
@@ -400,8 +377,6 @@ return [
     'database_driver' => 'Database Driver',
     'bs_table_storage' => 'Table Storage',
     'timezone' => 'Timezone',
-<<<<<<< HEAD
-=======
     'profile_edit'          => 'Edit Profile',
     'profile_edit_help'          => 'Allow users to edit their own profiles.',
     'default_avatar' => 'Upload custom default avatar',
@@ -411,6 +386,5 @@ return [
     'due_checkin_days' => 'Due For Checkin Warning',
     'due_checkin_days_help' => 'How many days before the expected checkin of an asset should it be listed in the "Due for checkin" page?',
     'no_groups' => 'No groups have been created yet. Visit <code>Admin Settings > Permission Groups</code> to add one.',
->>>>>>> origin/upstream
 
 ];

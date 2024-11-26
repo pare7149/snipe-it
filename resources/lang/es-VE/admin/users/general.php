@@ -15,20 +15,6 @@ return [
     'info'				=> 'Información',
     'restore_user'		=> 'Haga clic aquí para restaurarlos.',
     'last_login'        => 'Último Inicio de Sesión',
-<<<<<<< HEAD
-    'ldap_config_text'  => 'Los parámetros de configuración LDAP pueden ser encontrados en Admin > Settings. La ubicación (opcional) seleccionada será establecida para todos los usuarios importados.',
-    'print_assigned'    => 'Imprimir todos los asignados',
-    'email_assigned'    => 'Enviar correo con todos los asignados',
-    'user_notified'     => 'El usuario ha sido enviado por correo electrónico a una lista de sus elementos asignados actualmente.',
-    'auto_assign_label' => 'Incluye a este usuario al asignar automáticamente licencias elegibles',
-    'auto_assign_help'  => 'Omitir este usuario en la asignación automática de licencias',
-    'software_user'     => 'Software Asignado a :name',
-    'send_email_help'   => 'Debe proporcionar una dirección de correo electrónico para este usuario para poder enviarle las credenciales. Únicamente pueden enviarse las credenciales por correo eléctronico durante la creación del usuario. Las contraseñas se almacenan en un hash de un solo sentido y no se pueden recuperar una vez guardadas.',
-    'view_user'         => 'Ver Usuario :name',
-    'usercsv'           => 'Archivo CSV',
-    'two_factor_admin_optin_help' => 'La configuración actual permite la aplicación selectiva de la autenticación de dos factores.  ',
-    'two_factor_enrolled' => 'Dispositivo 2FA inscrito ',
-=======
     'ldap_config_text'  => 'Los ajustes de configuración para LDAP se pueden encontrar en Administrador> LDAP. La ubicación (opcional) seleccionada se establecerá para todos los usuarios importados.',
     'print_assigned'    => 'Imprimir todos los asignados',
     'email_assigned'    => 'Enviar correo con todos los asignados',
@@ -41,7 +27,6 @@ return [
     'usercsv'           => 'Archivo CSV',
     'two_factor_admin_optin_help' => 'La configuración actual permite la aplicación selectiva de la autenticación de dos factores.  ',
     'two_factor_enrolled' => 'Dispositivo con 2FA inscrito ',
->>>>>>> origin/upstream
     'two_factor_active'   => '2FA activo ',
     'user_deactivated'  => 'El usuario no puede iniciar sesión',
     'user_activated'  => 'El usuario puede iniciar sesión',

@@ -11,15 +11,9 @@ return [
     'activity_report'		=> 'Tevékenység riport',
     'address'				=> 'Cím',
     'admin'					=> 'Admin',
-<<<<<<< HEAD
-    'admin_tooltip'			=> 'This user has admin privileges',
-    'superuser'				=> 'Superuser',
-    'superuser_tooltip'		=> 'This user has superuser privileges',
-=======
     'admin_tooltip'			=> 'Ez a felhasználó adminisztrátor jogosultsággal rendelkezik',
     'superuser'				=> 'Superuser',
     'superuser_tooltip'		=> 'Ez a felhasználó superuser jogosultsággal rendelkezik',
->>>>>>> origin/upstream
     'administrator'			=> 'Adminisztrátor',
     'add_seats'             => 'Hozzáadott ülések',
     'age'                   => "Életkor",
@@ -141,11 +135,7 @@ return [
     'lastname_firstinitial' => 'Vezetéknév majd keresztnév kezdőbetűje (smith_j@example.com)',
     'firstinitial.lastname' => 'Keresztnév kezdőbetűje majd vezetéknév (j.smith@example.com)',
     'firstnamelastinitial'  => 'Keresztnév majd vezetéknév kezdőbetűje (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> 'Keresztnév',
     'first_name_format'		=> 'Keresztnév (jane@example.com)',
     'files'                 => 'Fájlok',

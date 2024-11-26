@@ -40,11 +40,7 @@ class ViewUserTest extends TestCase
 
         $this->actingAs(User::factory()->viewUsers()->for($companyA)->create())
             ->get(route('users.print', ['userId' => $user->id]))
-<<<<<<< HEAD
-            ->assertStatus(403);
-=======
             ->assertStatus(302);
->>>>>>> origin/upstream
 
         $this->actingAs(User::factory()->viewUsers()->for($companyB)->create())
             ->get(route('users.print', ['userId' => $user->id]))

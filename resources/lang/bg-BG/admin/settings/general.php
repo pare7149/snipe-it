@@ -291,20 +291,6 @@ return [
     'zerofill_count'        => 'Дължина на етикети на актив, включително zerofill',
     'username_format_help'   => 'Тази настройка се изпозлва само при импортиране, ако потребителя не е въведен и ние трябва да му генерираме потребителско име.',
     'oauth_title' => 'OAuth API Настройки',
-<<<<<<< HEAD
-    'oauth_clients' => 'OAuth Clients',
-    'oauth' => 'OAuth',
-    'oauth_help' => 'Oauth Endpoint настройки',
-    'oauth_no_clients' => 'You have not created any OAuth clients yet.',
-    'oauth_secret' => 'Secret',
-    'oauth_authorized_apps' => 'Authorized Applications',
-    'oauth_redirect_url' => 'Redirect URL',
-    'oauth_name_help' => ' Something your users will recognize and trust.',
-    'oauth_scopes' => 'Scopes',
-    'oauth_callback_url' => 'Your application authorization callback URL.',
-    'create_client' => 'Create Client',
-    'no_scopes' => 'No scopes',
-=======
     'oauth_clients' => 'OAuth Клиенти',
     'oauth' => 'OAuth',
     'oauth_help' => 'Oauth Endpoint настройки',
@@ -317,7 +303,6 @@ return [
     'oauth_callback_url' => 'Вашият URL адрес за обратно извикване за оторизация.',
     'create_client' => 'Създайте клиент',
     'no_scopes' => 'Без обхват',
->>>>>>> origin/upstream
     'asset_tag_title' => 'Обнови настроките на етикета на актива',
     'barcode_title' => 'Обнови настройките на баркод',
     'barcodes' => 'Баркоди',

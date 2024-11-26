@@ -2,21 +2,12 @@
 
 return [
     'send_password_link'	        => 'Enviar enlace de restablecimiento de contraseña',
-<<<<<<< HEAD
-    'email_reset_password'			=> 'Enviar correo',
-    'reset_password'			    => 'Restablecer Contraseña',
-    'saml_login'                    => 'Iniciar sesión a través de SAML',
-    'login'                         => 'Iniciar Sesión',
-    'login_prompt'                  => 'Por favor inicie sesión',
-    'forgot_password'               => 'He olvidado mi contraseña',
-=======
     'email_reset_password'			=> 'Enviar correo electrónico para restablecer la contraseña',
     'reset_password'			    => 'Restablecer contraseña',
     'saml_login'                    => 'Iniciar sesión a través de SAML',
     'login'                         => 'Iniciar sesión',
     'login_prompt'                  => 'Por favor inicie sesión',
     'forgot_password'               => 'Olvidé mi contraseña',
->>>>>>> origin/upstream
     'ldap_reset_password'           => 'Haga clic aquí para restablecer su contraseña LDAP',
     'remember_me'                   => 'Recordarme',
     'username_help_top'                 => 'Ingrese su <strong>nombre de usuario</strong> para enviar un enlace de restablecimiento de contraseña.',

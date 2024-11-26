@@ -40,11 +40,7 @@ return array(
         'delete_has_assets_var' => 'Questo utente ha ancora un Bene assegnato. Prima di procedere, si prega di farlo restituire.|Questo utente ha ancora :count Beni assegnati. Prima di procedere si prega di farglieli restituire.',
         'delete_has_licenses_var' => 'Questo utente ha ancora una licenza assegnata. Prima di procedere si prega di fargliela restituire|Questo utente ha ancora :count licenze assegnate. Prima di procedere si prega di fargliele restituire.',
         'delete_has_accessories_var' => 'Questo utente ha ancora un accessorio assegnato. Prima di procedere si prega di farglielo restituire|Questo utente ha ancora :count accessori assegnati. Prima di procedere si prega di farglieli restituire.',
-<<<<<<< HEAD
-        'delete_has_locations_var' => 'Questo utente è ancora responsabile di una sede. Si prega di scegliere un altro responsabile prima di procedere.|Questo utente è ancora responsabile di :count sedi. Si prega di scegliere un altro responsabile prima di procedere.',
-=======
         'delete_has_locations_var' => 'Questo utente è ancora responsabile di una Sede. Si prega di scegliere un altro responsabile prima di procedere.|Questo utente è ancora responsabile di :count Sedi. Si prega di scegliere un altro responsabile prima di procedere.',
->>>>>>> origin/upstream
         'delete_has_users_var' => 'Questo utente è ancora responsabile di un altro utente. Si prega di scegliere un altro responsabile prima di procedere.|Questo utente è ancora responsabile di :count utenti. Si prega di scegliere un altro responsabile prima di procedere.',
         'unsuspend' => 'C\'è stato un problema durante la riabilitazione dell\'utente. Riprova per favore.',
         'import'    => 'C\'è stato un problema durante l\'importazione degli utenti. Riprova per favore.',

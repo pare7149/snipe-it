@@ -12,11 +12,7 @@ return [
     'address'				=> '地址',
     'admin'					=> '管理員',
     'admin_tooltip'			=> 'This user has admin privileges',
-<<<<<<< HEAD
-    'superuser'				=> 'Superuser',
-=======
     'superuser'				=> '超級使用者',
->>>>>>> origin/upstream
     'superuser_tooltip'		=> 'This user has superuser privileges',
     'administrator'			=> '管理員',
     'add_seats'             => '新增授權',
@@ -139,11 +135,7 @@ return [
     'lastname_firstinitial' => '姓氏與名首字母 (smith_j@example.com)',
     'firstinitial.lastname' => '姓氏與名首子母 (j.smith@example.com)',
     'firstnamelastinitial'  => '名字與姓首字母 (janes@example.com)',
-<<<<<<< HEAD
-    'lastnamefirstname'      => 'Last Name First Name (smith.jane@example.com)',
-=======
     'lastnamefirstname'      => 'Last Name.First Name (smith.jane@example.com)',
->>>>>>> origin/upstream
     'first_name'			=> '名字',
     'first_name_format'		=> '名，例如 (jane@example.com)',
     'files'                 => '檔案',
