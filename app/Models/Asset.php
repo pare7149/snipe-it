@@ -1445,7 +1445,7 @@ class Asset extends Depreciable
                 $query->where('deployable', '=', 1)
                       ->where('archived', '=', 0); // you definitely can't request something that's archived
             })->orWhere('pending', '=', 1); // we've decided that even though an asset may be 'pending', you can still request it
-        });
+        })->orWhere("assets.company_id", "=", "*");
     }
 
 
