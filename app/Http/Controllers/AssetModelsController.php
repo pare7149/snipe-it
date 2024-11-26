@@ -12,22 +12,12 @@ use App\Models\SnipeModel;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Illuminate\Support\Facades\Log;
-=======
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 use \Illuminate\Contracts\View\View;
 use \Illuminate\Http\RedirectResponse;
-
->>>>>>> origin/upstream
 
 /**
  * This class controls all actions related to asset models for
@@ -73,11 +63,7 @@ class AssetModelsController extends Controller
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @since [v1.0]
      * @param ImageUploadRequest $request
-<<<<<<< HEAD
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-=======
->>>>>>> origin/upstream
+
      */
     public function store(StoreAssetModelRequest $request) : RedirectResponse
     {
@@ -92,11 +78,9 @@ class AssetModelsController extends Controller
         $model->manufacturer_id = $request->input('manufacturer_id');
         $model->category_id = $request->input('category_id');
         $model->notes = $request->input('notes');
-<<<<<<< HEAD
-        $model->user_id = Auth::id();
-=======
+
         $model->created_by = auth()->id();
->>>>>>> origin/upstream
+
         $model->requestable = $request->has('requestable');
 
         if ($request->input('fieldset_id') != '') {
@@ -203,11 +187,7 @@ class AssetModelsController extends Controller
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @since [v1.0]
      * @param int $modelId
-<<<<<<< HEAD
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-=======
->>>>>>> origin/upstream
+
      */
     public function destroy($modelId) : RedirectResponse
     {
@@ -244,11 +224,7 @@ class AssetModelsController extends Controller
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @since [v1.0]
      * @param int $id
-<<<<<<< HEAD
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
-=======
->>>>>>> origin/upstream
+
      */
     public function getRestore($id) : RedirectResponse
     {
@@ -433,10 +409,7 @@ class AssetModelsController extends Controller
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @since [v1.0]
      * @param int $modelId
-<<<<<<< HEAD
-     * @return \Illuminate\Http\RedirectResponse
-=======
->>>>>>> origin/upstream
+
      */
     public function postBulkDelete(Request $request) : RedirectResponse
     {
