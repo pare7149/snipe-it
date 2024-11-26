@@ -2,7 +2,11 @@
 
 return [
 
+<<<<<<< HEAD
     'select_language' => 'Select a language',
+=======
+    'select_language' => 'Select a Language',
+>>>>>>> origin/upstream
     'languages' => [
         'en-US'=> 'English, US',
         'en-GB'=> 'English, UK',
@@ -40,7 +44,13 @@ return [
         'ms-MY'=> 'Malay',
         'mi-NZ'=> 'Maori',
         'mn-MN'=> 'Mongolian',
+<<<<<<< HEAD
         'no-NO'=> 'Norwegian',
+=======
+        //'no-NO'=> 'Norwegian',
+        'nb-NO'=> 'Norwegian Bokmål',
+        //'nn-NO'=> 'Norwegian Nynorsk',
+>>>>>>> origin/upstream
         'fa-IR'=> 'Persian',
         'pl-PL'=> 'Polish',
         'pt-PT'=> 'Portuguese',
@@ -66,7 +76,11 @@ return [
         'zu-ZA'=> 'Zulu',
     ],
 
+<<<<<<< HEAD
     'select_country' => 'Select a country',
+=======
+    'select_country' => 'Select a Country',
+>>>>>>> origin/upstream
     
     'countries' => [
         'AC'=>'Ascension Island',
@@ -133,6 +147,10 @@ return [
         'EC'=>'Ecuador',
         'EE'=>'Estonia',
         'EG'=>'Egypt',
+<<<<<<< HEAD
+=======
+        'GB-ENG'=>'England',
+>>>>>>> origin/upstream
         'ER'=>'Eritrea',
         'ES'=>'Spain',
         'ET'=>'Ethiopia',
@@ -231,6 +249,10 @@ return [
         'NG'=>'Nigeria',
         'NI'=>'Nicaragua',
         'NL'=>'Netherlands',
+<<<<<<< HEAD
+=======
+        'GB-NIR' => 'Northern Ireland',
+>>>>>>> origin/upstream
         'NO'=>'Norway',
         'NP'=>'Nepal',
         'NR'=>'Nauru',
@@ -258,7 +280,11 @@ return [
         'RU'=>'Russian Federation',
         'RW'=>'Rwanda',
         'SA'=>'Saudi Arabia',
+<<<<<<< HEAD
         'UK'=>'Scotland',
+=======
+        'GB-SCT'=>'Scotland',
+>>>>>>> origin/upstream
         'SB'=>'Solomon Islands',
         'SC'=>'Seychelles',
         'SS'=>'South Sudan',
@@ -310,6 +336,10 @@ return [
         'VI'=>'Virgin Islands (U.S.)',
         'VN'=>'Viet Nam',
         'VU'=>'Vanuatu',
+<<<<<<< HEAD
+=======
+        'GB-WLS' =>'Wales',
+>>>>>>> origin/upstream
         'WF'=>'Wallis And Futuna Islands',
         'WS'=>'Samoa',
         'YE'=>'Yemen',

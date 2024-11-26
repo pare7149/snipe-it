@@ -1,8 +1,13 @@
 <?php
 
 return [
+<<<<<<< HEAD
     'about_locations_title'     => 'Acerca de Ubicaciones',
     'about_locations'           => 'Las ubicaciones son utilizadas para hacer seguimiento de la información sobre ubicación de usuarios, activos, y otros ítems',
+=======
+    'about_locations_title'     => 'Acerca de las ubicaciones',
+    'about_locations'           => 'Las ubicaciones se utilizan para hacer un seguimiento de la ubicación de usuarios, activos y otros elementos',
+>>>>>>> origin/upstream
     'assets_rtd'                => 'Activos', // This has NEVER meant Assets Retired. I don't know how it keeps getting reverted.
     'assets_checkedout'         => 'Activos asignados',
     'id'                        => 'ID',
@@ -19,12 +24,16 @@ return [
     'zip'                       => 'Código postal',
     'locations'                 => 'Ubicaciones',
     'parent'                    => 'Ubicación padre',
+<<<<<<< HEAD
     'currency'                  => 'Moneda de ubicación',
+=======
+    'currency'                  => 'Divisa de la ubicación',
+>>>>>>> origin/upstream
     'ldap_ou'                   => 'OU de búsqueda LDAP',
     'user_name'                 => 'Usuario',
     'department'                => 'Departamento',
     'location'                  => 'Ubicación',
-    'asset_tag'                 => 'Etiqueta de recursos',
+    'asset_tag'                 => 'Placa del activo',
     'asset_name'                => 'Nombre',
     'asset_category'            => 'Categoría',
     'asset_manufacturer'        => 'Fabricante',
@@ -35,8 +44,8 @@ return [
     'asset_expected_checkin'    => 'Fecha esperada de devolución',
     'date'                      => 'Fecha:',
     'phone'                     => 'Teléfono ubicación',
-    'signed_by_asset_auditor'   => 'Firmado por (Juego de Acciones):',
-    'signed_by_finance_auditor' => 'Firmado por (Monitor de Finanzas):',
-    'signed_by_location_manager' => 'Firmado por (Administrador de ubicación):',
+    'signed_by_asset_auditor'   => 'Firmado por (Auditor de Activos):',
+    'signed_by_finance_auditor' => 'Firmado por (Auditor de Finanzas):',
+    'signed_by_location_manager' => 'Firmado por (Supervisor de la ubicación):',
     'signed_by'                 => 'Firmado por:',
 ];

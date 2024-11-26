@@ -5,6 +5,10 @@ return array(
     'field' => array(
         'invalid'   => 'That field does not exist.',
         'already_added'   => 'Field already added',
+<<<<<<< HEAD
+=======
+        'none_selected'   => 'No field selected',
+>>>>>>> origin/upstream
 
         'create' => array(
             'error'   => 'Field was not created, please try again.',

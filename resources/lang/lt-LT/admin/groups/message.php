@@ -3,7 +3,11 @@
 return array(
 
     'group_exists'        => 'Tokia grupė jau yra!',
+<<<<<<< HEAD
     'group_not_found'     => 'Tokios grupės [:id] nėra.',
+=======
+    'group_not_found'     => 'Tokios grupės :id nėra.',
+>>>>>>> origin/upstream
     'group_name_required' => 'Pavadinimo laukas yra privalomas',
 
     'success' => array(

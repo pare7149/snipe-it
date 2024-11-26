@@ -2,6 +2,10 @@
 
 return array(
 
+<<<<<<< HEAD
+=======
+    'invalid_category_type' => 'The category must be a consumable category.',
+>>>>>>> origin/upstream
     'does_not_exist' => 'Consumable does not exist.',
 
     'create' => array(

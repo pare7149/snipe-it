@@ -8,8 +8,13 @@ return array(
     'create'  							=> 'Sukurti priedą',
     'edit'  							=> 'Redaguoti priedą',
     'eula_text'							=> 'Kategorijos licencinis sutikimas (EULA)',
+<<<<<<< HEAD
     'eula_text_help'					=> 'Šis laukas leidžia pritaikyti licencinius sutikimus (EULA) skirtingoms įrangos grupėms. Jei jūs turite vieną EULA visai įrangai, tuomet galite pažymėti žemiau esantį langelį, kad visuomet būtų naudojamas pirminis numatytasis.',
     'require_acceptance'				=> 'Reikalauti, kad naudotojai patvirtintų šios kategorijos įrangos gavimą.',
+=======
+    'eula_text_help'					=> 'Šis laukas leidžia pritaikyti licencinius sutikimus (EULA) skirtingoms turto grupėms. Jei jūs turite vieną EULA visam turtui, tuomet galite pažymėti žemiau esantį langelį, kad visuomet būtų naudojamas pirminis numatytasis.',
+    'require_acceptance'				=> 'Reikalauti, kad naudotojai patvirtintų šios kategorijos turto gavimą.',
+>>>>>>> origin/upstream
     'no_default_eula'					=> 'Nerastas pirminis numatytasis licencinis sutikimas (EULA). Pridėkite jį nustatymuose.',
     'total'  							=> 'Iš viso',
     'remaining'  						=> 'Laisva',

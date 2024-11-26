@@ -3,11 +3,19 @@
 return array(
 
     'does_not_exist' => 'Location does not exist.',
+<<<<<<< HEAD
     'assoc_users'    => 'This location is not currently deletable because it is the location of record for at least one asset or user, has assets assigned to it, or is the parent location of another location. Please update your models to no longer reference this company and try again. ',
+=======
+    'assoc_users'    => 'This location is not currently deletable because it is the location of record for at least one asset or user, has assets assigned to it, or is the parent location of another location. Please update your records to no longer reference this location and try again. ',
+>>>>>>> origin/upstream
     'assoc_assets'	 => 'This location is currently associated with at least one asset and cannot be deleted. Please update your assets to no longer reference this location and try again. ',
     'assoc_child_loc'	 => 'This location is currently the parent of at least one child location and cannot be deleted. Please update your locations to no longer reference this location and try again. ',
     'assigned_assets' => 'Assigned Assets',
     'current_location' => 'Current Location',
+<<<<<<< HEAD
+=======
+    'open_map' => 'Open in :map_provider_icon Maps',
+>>>>>>> origin/upstream
 
 
     'create' => array(
@@ -20,6 +28,14 @@ return array(
         'success' => 'Location updated successfully.'
     ),
 
+<<<<<<< HEAD
+=======
+    'restore' => array(
+        'error'   => 'Location was not restored, please try again',
+        'success' => 'Location restored successfully.'
+    ),
+
+>>>>>>> origin/upstream
     'delete' => array(
         'confirm'   	=> 'Are you sure you wish to delete this location?',
         'error'   => 'There was an issue deleting the location. Please try again.',

@@ -7,6 +7,10 @@ return [
     'checkin_and_delete'  	    => 'Checkin ទាំងអស់ / លុបអ្នកប្រើប្រាស់',
     'delete'  	                => 'លុប',
     'edit'    	                => 'កែសម្រួល',
+<<<<<<< HEAD
+=======
+    'clone'    	                => 'Clone',
+>>>>>>> origin/upstream
     'restore' 	                => 'ស្តារ',
     'remove'                    => 'ដកចេញ',
     'request'                   => 'ស្នើសុំ',
@@ -21,4 +25,16 @@ return [
     'add_maintenance'           => 'បន្ថែមការថែទាំ',
     'append'                    => 'បន្ថែម',
     'new'                       => 'ថ្មី',
+<<<<<<< HEAD
+=======
+    'var' => [
+        'clone'     => 'Clone :item_type',
+        'edit'      => 'Edit :item_type',
+        'delete'    => 'Delete :item_type',
+        'restore'   => 'Restore :item_type',
+        'create'    => 'Create New :item_type',
+        'checkout'  => 'Checkout :item_type',
+        'checkin'   => 'Checkin :item_type',
+    ]
+>>>>>>> origin/upstream
 ];

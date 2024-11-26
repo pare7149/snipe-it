@@ -2,6 +2,10 @@
 
 namespace Tests\Feature\Checkouts\Api;
 
+<<<<<<< HEAD
+=======
+use PHPUnit\Framework\Attributes\DataProvider;
+>>>>>>> origin/upstream
 use App\Events\CheckoutableCheckedOut;
 use App\Models\Asset;
 use App\Models\Location;
@@ -82,7 +86,11 @@ class AssetCheckoutTest extends TestCase
      * This data provider contains checkout targets along with the
      * asset's expected location after the checkout process.
      */
+<<<<<<< HEAD
     public function checkoutTargets(): array
+=======
+    public static function checkoutTargets(): array
+>>>>>>> origin/upstream
     {
         return [
             'Checkout to User' => [
@@ -148,7 +156,11 @@ class AssetCheckoutTest extends TestCase
         ];
     }
 
+<<<<<<< HEAD
     /** @dataProvider checkoutTargets */
+=======
+    #[DataProvider('checkoutTargets')]
+>>>>>>> origin/upstream
     public function testAssetCanBeCheckedOut($data)
     {
         ['checkout_type' => $type, 'target' => $target, 'expected_location' => $expectedLocation] = $data();

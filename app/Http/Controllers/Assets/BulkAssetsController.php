@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Assets;
 
-use App\Models\Actionlog;
 use App\Helpers\Helper;
 use App\Http\Controllers\CheckInOutRequest;
 use App\Http\Controllers\Controller;
@@ -11,15 +10,17 @@ use App\Models\AssetModel;
 use App\Models\Statuslabel;
 use App\Models\Setting;
 use App\View\Label;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Session;
 use App\Http\Requests\AssetCheckoutRequest;
 use App\Models\CustomField;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class BulkAssetsController extends Controller
 {
@@ -36,12 +37,10 @@ class BulkAssetsController extends Controller
      * action would make a lot more sense here and make things a lot more clear.
      *
      * @author [A. Gianotto] [<snipe@snipe.net>]
-     * @return View
      * @internal param int $assetId
      * @since [v2.0]
-     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function edit(Request $request)
+    public function edit(Request $request) : View | RedirectResponse
     {
         $this->authorize('view', Asset::class);
 
@@ -53,6 +52,10 @@ class BulkAssetsController extends Controller
         }
 
         $asset_ids = $request->input('ids');
+        if ($request->input('bulk_actions') === 'checkout') {
+            $request->session()->flashInput(['selected_assets' => $asset_ids]);
+            return redirect()->route('hardware.bulkcheckout.show');
+        }
 
         // Figure out where we need to send the user after the update is complete, and store that in the session
         $bulk_back_url = request()->headers->get('referer');
@@ -94,7 +97,9 @@ class BulkAssetsController extends Controller
         // This handles all of the pivot sorting below (versus the assets.* fields in the allowed_columns array)
         $column_sort = in_array($sort_override, $allowed_columns) ? $sort_override : 'assets.id';
 
-        $assets = Asset::with('assignedTo', 'location', 'model')->whereIn('assets.id', $asset_ids);
+        $assets = Asset::with('assignedTo', 'location', 'model')
+                ->whereIn('assets.id', $asset_ids)
+                ->withTrashed();
 
         $assets = $assets->get();
 
@@ -194,7 +199,7 @@ class BulkAssetsController extends Controller
      * @internal param array $assets
      * @since [v2.0]
      */
-    public function update(Request $request)
+    public function update(Request $request) : RedirectResponse
     {
         $this->authorize('update', Asset::class);
         $has_errors = 0;
@@ -227,7 +232,8 @@ class BulkAssetsController extends Controller
          * its checkout status.
          */
 
-        if (($request->filled('purchase_date'))
+        if (($request->filled('name'))
+            || ($request->filled('purchase_date'))
             || ($request->filled('expected_checkin'))
             || ($request->filled('purchase_cost'))
             || ($request->filled('supplier_id'))
@@ -239,9 +245,12 @@ class BulkAssetsController extends Controller
             || ($request->filled('status_id'))
             || ($request->filled('model_id'))
             || ($request->filled('next_audit_date'))
+            || ($request->filled('asset_eol_date'))
+            || ($request->filled('null_name'))
             || ($request->filled('null_purchase_date'))
             || ($request->filled('null_expected_checkin_date'))
             || ($request->filled('null_next_audit_date'))
+            || ($request->filled('null_asset_eol_date'))
             || ($request->anyFilled($custom_field_columns))
 
         ) {
@@ -251,28 +260,55 @@ class BulkAssetsController extends Controller
                 $this->update_array = [];
 
                 /**
-                 * Leave out model_id and status here because we do math on that later. We have to do some extra
-                 * validation and checks on those two.
+                 * Leave out model_id and status here because we do math on that later. We have to do some
+                 * extra validation and checks on those two.
                  *
                  * It's tempting to make these match the request check above, but some of these values require
                  * extra work to make sure the data makes sense.
                  */
-                $this->conditionallyAddItem('purchase_date')
+                $this->conditionallyAddItem('name')
+                    ->conditionallyAddItem('purchase_date')
                     ->conditionallyAddItem('expected_checkin')
                     ->conditionallyAddItem('order_number')
                     ->conditionallyAddItem('requestable')
                     ->conditionallyAddItem('supplier_id')
                     ->conditionallyAddItem('warranty_months')
-                    ->conditionallyAddItem('next_audit_date');
+                    ->conditionallyAddItem('next_audit_date')
+                    ->conditionallyAddItem('asset_eol_date');
                     foreach ($custom_field_columns as $key => $custom_field_column) {
                         $this->conditionallyAddItem($custom_field_column); 
                    }
 
+                if (!($asset->eol_explicit)) {
+					if ($request->filled('model_id')) {
+						$model = AssetModel::find($request->input('model_id'));
+						if ($model->eol > 0) {
+							if ($request->filled('purchase_date')) {
+								$this->update_array['asset_eol_date'] = Carbon::parse($request->input('purchase_date'))->addMonths($model->eol)->format('Y-m-d');
+							} else {
+								$this->update_array['asset_eol_date'] = Carbon::parse($asset->purchase_date)->addMonths($model->eol)->format('Y-m-d');
+							}
+						} else {
+							$this->update_array['asset_eol_date'] = null;
+						}
+					} elseif (($request->filled('purchase_date')) && ($asset->model->eol > 0)) {
+						$this->update_array['asset_eol_date'] = Carbon::parse($request->input('purchase_date'))->addMonths($asset->model->eol)->format('Y-m-d');
+					}
+				}                
+                
                 /**
                  * Blank out fields that were requested to be blanked out via checkbox
                  */
+                if ($request->input('null_name')=='1') {
+
+                    $this->update_array['name'] = null;
+                }
+
                 if ($request->input('null_purchase_date')=='1') {
                     $this->update_array['purchase_date'] = null;
+                    if (!($asset->eol_explicit)) {
+						$this->update_array['asset_eol_date'] = null;
+					}
                 }
 
                 if ($request->input('null_expected_checkin_date')=='1') {
@@ -282,6 +318,17 @@ class BulkAssetsController extends Controller
                 if ($request->input('null_next_audit_date')=='1') {
                     $this->update_array['next_audit_date'] = null;
                 }
+
+                if ($request->input('null_asset_eol_date')=='1') {
+                    $this->update_array['asset_eol_date'] = null;
+
+                    // If they are nulling the EOL date to allow it to calculate, set eol explicit to 0
+                    if ($request->input('calc_eol')=='1') {
+                        $this->update_array['eol_explicit'] = 0;
+                    }
+                }
+
+
 
                 if ($request->filled('purchase_cost')) {
                     $this->update_array['purchase_cost'] =  $request->input('purchase_cost');
@@ -455,9 +502,8 @@ class BulkAssetsController extends Controller
     /**
      * Adds parameter to update array for an item if it exists in request
      * @param  string $field field name
-     * @return BulkAssetsController Model for Chaining
      */
-    protected function conditionallyAddItem($field)
+    protected function conditionallyAddItem($field) : BulkAssetsController
     {
         if (request()->filled($field)) {
             $this->update_array[$field] = request()->input($field);
@@ -471,12 +517,10 @@ class BulkAssetsController extends Controller
      *
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @param Request $request
-     * @return View
-     * @throws \Illuminate\Auth\Access\AuthorizationException
      * @internal param array $assets
      * @since [v2.0]
      */
-    public function destroy(Request $request)
+    public function destroy(Request $request) : RedirectResponse
     {
         $this->authorize('delete', Asset::class);
 
@@ -488,12 +532,7 @@ class BulkAssetsController extends Controller
         if ($request->filled('ids')) {
             $assets = Asset::find($request->get('ids'));
             foreach ($assets as $asset) {
-                $update_array['deleted_at'] = date('Y-m-d H:i:s');
-                $update_array['assigned_to'] = null;
-
-                DB::table('assets')
-                    ->where('id', $asset->id)
-                    ->update($update_array);
+                $asset->delete();
             } // endforeach
 
             return redirect($bulk_back_url)->with('success', trans('admin/hardware/message.delete.success'));
@@ -505,27 +544,23 @@ class BulkAssetsController extends Controller
 
     /**
      * Show Bulk Checkout Page
-     * @return View View to checkout multiple assets
      */
-    public function showCheckout()
+    public function showCheckout() : View
     {
         $this->authorize('checkout', Asset::class);
-        // Filter out assets that are not deployable.
-
         return view('hardware/bulk-checkout');
     }
 
     /**
      * Process Multiple Checkout Request
-     * @return View
      */
-    public function storeCheckout(AssetCheckoutRequest $request)
+    public function storeCheckout(AssetCheckoutRequest $request) : RedirectResponse | ModelNotFoundException
     {
 
         $this->authorize('checkout', Asset::class);
 
         try {
-            $admin = Auth::user();
+            $admin = auth()->user();
 
             $target = $this->determineCheckoutTarget();
 
@@ -554,47 +589,52 @@ class BulkAssetsController extends Controller
             }
 
             $errors = [];
-            DB::transaction(function () use ($target, $admin, $checkout_at, $expected_checkin, $errors, $asset_ids, $request) {
+            DB::transaction(function () use ($target, $admin, $checkout_at, $expected_checkin, &$errors, $asset_ids, $request) { //NOTE: $errors is passsed by reference!
                 foreach ($asset_ids as $asset_id) {
                     $asset = Asset::findOrFail($asset_id);
                     $this->authorize('checkout', $asset);
 
-                    $error = $asset->checkOut($target, $admin, $checkout_at, $expected_checkin, e($request->get('note')), $asset->name, null);
+                    $checkout_success = $asset->checkOut($target, $admin, $checkout_at, $expected_checkin, e($request->get('note')), $asset->name, null);
 
+                    //TODO - I think this logic is duplicated in the checkOut method?
                     if ($target->location_id != '') {
                         $asset->location_id = $target->location_id;
-                        $asset->unsetEventDispatcher();
-                        $asset->save();
+                        // TODO - I don't know why this is being saved without events
+                        $asset::withoutEvents(function () use ($asset) {
+                            $asset->save();
+                        });
                     }
 
-                    if ($error) {
-                        array_merge_recursive($errors, $asset->getErrors()->toArray());
+                    if (!$checkout_success) {
+                        $errors = array_merge_recursive($errors, $asset->getErrors()->toArray());
                     }
                 }
             });
 
             if (! $errors) {
                 // Redirect to the new asset page
-                return redirect()->to('hardware')->with('success', trans('admin/hardware/message.checkout.success'));
+                return redirect()->to('hardware')->with('success', trans_choice('admin/hardware/message.multi-checkout.success', $asset_ids));
             }
             // Redirect to the asset management page with error
-            return redirect()->route('hardware.bulkcheckout.show')->with('error', trans('admin/hardware/message.checkout.error'))->withErrors($errors);
+            return redirect()->route('hardware.bulkcheckout.show')->withInput()->with('error', trans_choice('admin/hardware/message.multi-checkout.error', $asset_ids))->withErrors($errors);
         } catch (ModelNotFoundException $e) {
             return redirect()->route('hardware.bulkcheckout.show')->with('error', $e->getErrors());
         }
         
     }
-    public function restore(Request $request) {
+    public function restore(Request $request) : RedirectResponse
+    {
         $this->authorize('update', Asset::class);
-       $assetIds = $request->get('ids');
-      if (empty($assetIds)) {
-          return redirect()->route('hardware.index')->with('error', trans('admin/hardware/message.restore.nothing_updated'));
+        $assetIds = $request->get('ids');
+
+        if (empty($assetIds)) {
+            return redirect()->route('hardware.index')->with('error', trans('admin/hardware/message.restore.nothing_updated'));
         } else {
             foreach ($assetIds as $key => $assetId) {
-                    $asset = Asset::withTrashed()->find($assetId);
-                    $asset->restore(); 
+                $asset = Asset::withTrashed()->find($assetId);
+                $asset->restore();
             } 
-        return redirect()->route('hardware.index')->with('success', trans('admin/hardware/message.restore.success'));
+            return redirect()->route('hardware.index')->with('success', trans('admin/hardware/message.restore.success'));
         }
     }
 }

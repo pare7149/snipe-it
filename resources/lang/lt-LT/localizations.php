@@ -40,7 +40,13 @@ return [
         'ms-MY'=> 'Malajų',
         'mi-NZ'=> 'Maorių',
         'mn-MN'=> 'Mongolų',
+<<<<<<< HEAD
         'no-NO'=> 'Norvegų',
+=======
+        //'no-NO'=> 'Norwegian',
+        'nb-NO'=> 'Norvegų bukmolas',
+        //'nn-NO'=> 'Norwegian Nynorsk',
+>>>>>>> origin/upstream
         'fa-IR'=> 'Persų',
         'pl-PL'=> 'Lenkų',
         'pt-PT'=> 'Portugalų',
@@ -133,6 +139,10 @@ return [
         'EC'=>'Ekvadoras',
         'EE'=>'Estija',
         'EG'=>'Egiptas',
+<<<<<<< HEAD
+=======
+        'GB-ENG'=>'Anglija',
+>>>>>>> origin/upstream
         'ER'=>'Eritrėja',
         'ES'=>'Ispanija',
         'ET'=>'Etiopija',
@@ -231,6 +241,10 @@ return [
         'NG'=>'Nigerija',
         'NI'=>'Nikaragva',
         'NL'=>'Nyderlandai',
+<<<<<<< HEAD
+=======
+        'GB-NIR' => 'Šiaurės Airija',
+>>>>>>> origin/upstream
         'NO'=>'Norvegija',
         'NP'=>'Nepalas',
         'NR'=>'Nauru',
@@ -258,7 +272,11 @@ return [
         'RU'=>'Rusija',
         'RW'=>'Ruanda',
         'SA'=>'Saudo Arabija',
+<<<<<<< HEAD
         'UK'=>'Škotija',
+=======
+        'GB-SCT'=>'Škotija',
+>>>>>>> origin/upstream
         'SB'=>'Saliamono salos',
         'SC'=>'Seišeliai',
         'SS'=>'Pietų Sudanas',
@@ -310,6 +328,10 @@ return [
         'VI'=>'Mergelių salos (JAV)',
         'VN'=>'Vietnamas',
         'VU'=>'Vanuatu',
+<<<<<<< HEAD
+=======
+        'GB-WLS' =>'Velsas',
+>>>>>>> origin/upstream
         'WF'=>'Voliso ir Futūnos salos',
         'WS'=>'Samoa',
         'YE'=>'Jemenas',

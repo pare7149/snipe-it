@@ -2,13 +2,18 @@
 
 return [
     'about_asset_depreciations'  			=> 'Sobre amortización de activos',
+<<<<<<< HEAD
     'about_depreciations'  					=> 'Puede configurar la amortización de activos usando un método de línea recta.',
     'asset_depreciations'  					=> 'Amortizaciones',
+=======
+    'about_depreciations'  					=> 'Puede configurar la depreciación de activos usando un método de línea recta.',
+    'asset_depreciations'  					=> 'Depreciación de activos',
+>>>>>>> origin/upstream
     'create'  					            => 'Crear amortización',
     'depreciation_name'  					=> 'Nombre amortización',
     'depreciation_min'                      => 'Valor mínimo de depreciación',
-    'number_of_months'  					=> 'Meses',
-    'update'  					            => 'Actualizar Amortización',
+    'number_of_months'  					=> 'Número de meses',
+    'update'  					            => 'Actualizar amortización',
     'depreciation_min'                      => 'Valor mínimo después de depreciado',
     'no_depreciations_warning'               => '<strong>Advertencia: </strong>
                       No tiene ninguna depreciación configurada.

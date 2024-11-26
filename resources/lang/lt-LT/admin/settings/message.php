@@ -13,6 +13,12 @@ return [
         'file_not_found'        => 'Šio atsarginės kopijos failo serveryje rasti nepavyko.',
         'restore_warning'       => 'Taip, atkurti. Suprantu, kad tai perrašys visus šiuo metu duomenų bazėje esančius duomenis. Taip pat, kad bus atjungti visi esami naudotojai (įskaitant mane).',
         'restore_confirm'       => 'Ar tikrai norite atkurti savo duomenų bazę iš :filename?'
+<<<<<<< HEAD
+=======
+    ],
+    'restore' => [
+        'success'               => 'Jūsų sistemos atsarginė kopija buvo atkurta. Prisijunkite iš naujo.'
+>>>>>>> origin/upstream
     ],
     'purge' => [
         'error'     => 'Valymo metu įvyko klaida. ',
@@ -29,7 +35,11 @@ return [
         'testing' => 'Tikrinamas LDAP ryšys, susiejimas ir užklausos...',
         '500' => '500 serverio klaida. Norėdami gauti daugiau informacijos, patikrinkite savo serverio žurnalus.',
         'error' => 'Kažkas ne taip :(',
+<<<<<<< HEAD
         'sync_success' => 'Pavyzdys 10 vartotojų, grąžintų iš LDAP serverio, pagal jūsų nustatymus:',
+=======
+        'sync_success' => '10 naudotojų, gautų iš LDAP serverio, pagal jūsų nustatymus:',
+>>>>>>> origin/upstream
         'testing_authentication' => 'Tikrinamas LDAP autentifikavimas...',
         'authentication_success' => 'Naudotojas sėkmingai atpažintas naudojant LDAP!'
     ],

@@ -6,6 +6,9 @@ return array(
     'id'      					=> 'ID',
     'require_acceptance'      	=> 'Sutikimas',
     'title'      				=> 'Priedo pavadinimas',
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/upstream
 );

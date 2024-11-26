@@ -25,7 +25,10 @@ return [
     'image'		    => 'Slika uređaja',
     'days_without_acceptance' => 'Dani bez prihvaćanja',
     'monthly_depreciation' => 'Mjesečna amortizacija',
+<<<<<<< HEAD
     'assigned_to'    => 'Dodijeljena',
+=======
+>>>>>>> origin/upstream
     'requesting_user' => 'Requesting User',
     'requested_date' => 'Requested Date',
     'changed'       => 'Promijenjeno',

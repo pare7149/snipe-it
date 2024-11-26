@@ -1,7 +1,11 @@
 <?php
 
 return [
+<<<<<<< HEAD
     'info'   => 'Pasirinkite tai, ką norite matyti savo įrangos ataskaitoje.',
+=======
+    'info'   => 'Pasirinkite tai, ką norite matyti savo turto ataskaitoje.',
+>>>>>>> origin/upstream
     'deleted_user' => 'Panaikintas naudotojas',
     'send_reminder' => 'Siųsti priminimą',
     'reminder_sent' => 'Priminimas išsiųstas',

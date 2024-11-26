@@ -1,6 +1,7 @@
 <?php
 
 return [
+<<<<<<< HEAD
     'bulk_delete'		=> 'Patvirtinkite masinį įrangos panaikinimą',
     'bulk_restore'      => 'Patvirtinkite masinį įrangos atkūrimą', 
   'bulk_delete_help'	=> 'Peržiūrėkite įrangą, kurią norite panaikinti. Panaikintą įrangą galima atkurti, tačiau ji nebebus susieta su tais naudotojais, kuriems šiuo metu yra išduota.',
@@ -14,11 +15,26 @@ return [
     'bulk_update_model_prefix' => 'Modeliams', 
     'bulk_update_custom_field_unique' => 'Tai unikalus laukas, todėl jo negalima redaguoti masinio redagavimo būdu.',
     'checkedout_to'		=> 'Išduota',
+=======
+    'bulk_delete'		=> 'Patvirtinkite masinį turto panaikinimą',
+    'bulk_restore'      => 'Patvirtinkite masinį turto atkūrimą', 
+  'bulk_delete_help'	=> 'Peržiūrėkite turtą, kurį norite panaikinti. Panaikintą turtą galima atkurti, tačiau jis nebebus susietas su tais naudotojais, kuriems šiuo metu yra išduotas.',
+  'bulk_restore_help'	=> 'Peržiūrėkite turtą, kurį norite atkurti. Atkūrus turtą, jis nebus susietas su tais naudotojais, kuriems anksčiau buvo išduotas.',
+  'bulk_delete_warn'	=> 'Bus panaikinta turto vienetų: :asset_count.',
+  'bulk_restore_warn'	=> 'Bus atkurta turto vienetų: :asset_count.',
+    'bulk_update'		=> 'Masinis turto atnaujinimas',
+    'bulk_update_help'	=> 'Ši forma suteikia galimybę atnaujinti iškart kelis turto vienetus. Užpildykite tik tuos laukus, kuriuos norite pakeisti. Laukai, kuriuos paliksite tuščius, liks nepakeisti. ',
+    'bulk_update_warn'	=> 'Ketinate redaguoti vieno turto vieneto ypatybes.|Ketinate redaguoti :asset_count turto vienetų ypatybes.',
+    'bulk_update_with_custom_field' => 'Atminkite, kad turtas yra :asset_model_count skirtingų modelių tipų.',
+    'bulk_update_model_prefix' => 'Modeliams', 
+    'bulk_update_custom_field_unique' => 'Tai unikalus laukas, todėl jo negalima redaguoti masinio redagavimo būdu.',
+    'checkedout_to'		=> 'Kam išduota',
+>>>>>>> origin/upstream
     'checkout_date'		=> 'Išdavimo data',
     'checkin_date'		=> 'Paėmimo data',
     'checkout_to'		=> 'Išduoti',
     'cost'				=> 'Pirkimo kaina',
-    'create'			=> 'Sukurti įrangą',
+    'create'			=> 'Sukurti turtą',
     'date'				=> 'Pirkimo data',
     'depreciation'	    => 'Nusidėvėjimas',
     'depreciates_on'	=> 'Nusidėvėjimo data',
@@ -29,16 +45,24 @@ return [
     'expected_checkin'  => 'Numatoma paėmimo data',
     'expires'			=> 'Baigsis',
     'fully_depreciated'	=> 'Visiškai nusidėvėjo',
+<<<<<<< HEAD
     'help_checkout'		=> 'Jei norite nedelsiant išduoti šią įrangą, aukščiau esančiame būsenų sąraše pasirinkite „Paruošta naudojimui“. ',
+=======
+    'help_checkout'		=> 'Jei norite nedelsiant išduoti šį turtą, aukščiau esančiame būsenų sąraše pasirinkite „Paruoštas naudojimui“. ',
+>>>>>>> origin/upstream
     'mac_address'		=> 'MAC adresas',
     'manufacturer'		=> 'Gamintojas',
     'model'				=> 'Modelis',
     'months'			=> 'mėnesiai',
-    'name'				=> 'Įrangos pavadinimas',
+    'name'				=> 'Turto pavadinimas',
     'notes'				=> 'Pastabos',
     'order'				=> 'Užsakymo numeris',
     'qr'				=> 'QR kodas',
+<<<<<<< HEAD
     'requestable'		=> 'Naudotojai gali užsakyti šią įrangą',
+=======
+    'requestable'		=> 'Naudotojai gali užsakyti šį turtą',
+>>>>>>> origin/upstream
     'redirect_to_all'   => 'Grįžti prie visų :type',
     'redirect_to_type'   => 'Eiti į :type',
     'redirect_to_checked_out_to'   => 'Eiti į išduotus',
@@ -46,6 +70,7 @@ return [
     'serial'			=> 'Serijos numeris',
     'status'			=> 'Būsena',
     'tag'				=> 'Inventorinis numeris',
+<<<<<<< HEAD
     'update'			=> 'Įrangos atnaujinimas',
     'warranty'			=> 'Garantija',
         'warranty_expires'		=> 'Garantija baigiasi',
@@ -59,4 +84,21 @@ return [
     'processing_spinner' => 'Apdorojama... (Dideliems failams gali šiek tiek užtrukti)',
     'optional_infos'  => 'Papildoma informacija',
     'order_details'   => 'Su užsakymu susijusi informacija'
+=======
+    'update'			=> 'Turto atnaujinimas',
+    'warranty'			=> 'Garantija',
+        'warranty_expires'		=> 'Garantija baigiasi',
+    'years'				=> 'metai',
+    'asset_location' => 'Atnaujinti turto vietą',
+    'asset_location_update_default_current' => 'Atnaujinti numatytąją vietą IR faktinę vietą',
+    'asset_location_update_default' => 'Atnaujinti tik numatytąją vietą',
+    'asset_location_update_actual' => 'Atnaujinti tik faktinę vietą',
+    'asset_not_deployable' => 'Turto būsena netinkama išdavimui, todėl šis turtas negali būti išduotas.',
+    'asset_not_deployable_checkin' => 'Turto su šia būsenos žyma išduoti negalima. Nustačius šią būsenos žymą, turtas bus paimtas.',
+    'asset_deployable' => 'Turto būsena tinkama išdavimui, todėl šis turtas gali būti išduotas.',
+    'processing_spinner' => 'Apdorojama... (Dideliems failams gali šiek tiek užtrukti)',
+    'optional_infos'  => 'Papildoma informacija',
+    'order_details'   => 'Su užsakymu susijusi informacija',
+    'calc_eol'    => 'If nulling the EOL date, use automatic EOL calculation based on the purchase date and EOL rate.',
+>>>>>>> origin/upstream
 ];

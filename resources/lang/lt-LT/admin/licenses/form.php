@@ -2,7 +2,11 @@
 
 return array(
 
+<<<<<<< HEAD
     'asset'             => 'Įranga',
+=======
+    'asset'             => 'Turtas',
+>>>>>>> origin/upstream
     'checkin'           => 'Paimti',
     'create'            => 'Sukurti licenciją',
     'expiration'        => 'Galiojimo pabaiga',
@@ -18,5 +22,9 @@ return array(
     'to_email'          => 'Licencija priskirta el. paštui',
     'to_name'           => 'Licencija išduota šiuo vardu',
     'update'            => 'Atnaujinti licenciją',
+<<<<<<< HEAD
     'checkout_help'     => 'Licenciją galima priskirti įrangai arba asmeniui. Galima pasirinkti ir abu, tačiau įrangos ir licencijos naudotojas privalės būti tas pats asmuo.'
+=======
+    'checkout_help'     => 'Licenciją galima priskirti turtui arba asmeniui. Galima pasirinkti ir abu, tačiau turto ir licencijos naudotoju privalės būti tas pats asmuo.'
+>>>>>>> origin/upstream
 );

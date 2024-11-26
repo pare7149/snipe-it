@@ -6,6 +6,9 @@ return array(
     'id'      					=> 'ID',
     'require_acceptance'      	=> 'Acceptance',
     'title'      				=> 'Accessory Name',
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/upstream
 );

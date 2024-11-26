@@ -2,6 +2,11 @@
 
 namespace Tests\Feature\Settings;
 
+<<<<<<< HEAD
+=======
+use PHPUnit\Framework\Attributes\DataProvider;
+use App\Http\Controllers\SettingsController;
+>>>>>>> origin/upstream
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\Request;
@@ -162,9 +167,13 @@ class ShowSetUpPageTest extends TestCase
         });
     }
 
+<<<<<<< HEAD
     /**
      * @dataProvider willShowErrorWhenDotEnvFileIsAccessibleViaHttpData
      */
+=======
+    #[DataProvider('willShowErrorWhenDotEnvFileIsAccessibleViaHttpData')]
+>>>>>>> origin/upstream
     public function testWillShowErrorWhenDotEnvFileIsAccessibleViaHttp(int $statusCode): void
     {
         $this->preventStrayRequest = false;
@@ -301,4 +310,14 @@ class ShowSetUpPageTest extends TestCase
 
         $this->assertSeeDirectoryPermissionError(false);
     }
+<<<<<<< HEAD
+=======
+
+    public function testInvalidTLSCertsOkWhenCheckingForEnvFile()
+    {
+        //set the weird bad SSL cert place - https://self-signed.badssl.com
+        $this->markTestIncomplete("Not yet sure how to write this test, it requires messing with .env ...");
+        $this->assertTrue((new SettingsController())->dotEnvFileIsExposed());
+    }
+>>>>>>> origin/upstream
 }

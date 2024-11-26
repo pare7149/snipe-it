@@ -9,8 +9,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AssetCheckoutRequest;
 use App\Models\Asset;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use \Illuminate\Contracts\View\View;
+use \Illuminate\Http\RedirectResponse;
 
 class AssetCheckoutController extends Controller
 {
@@ -23,9 +24,9 @@ class AssetCheckoutController extends Controller
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @param int $assetId
      * @since [v1.0]
-     * @return View
+     * @return \Illuminate\Contracts\View\View
      */
-    public function create($assetId)
+    public function create($assetId) : View | RedirectResponse
     {
         // Check if the asset exists
         if (is_null($asset = Asset::with('company')->find(e($assetId)))) {
@@ -53,11 +54,9 @@ class AssetCheckoutController extends Controller
      *
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @param AssetCheckoutRequest $request
-     * @param int $assetId
-     * @return \Illuminate\Http\RedirectResponse
      * @since [v1.0]
      */
-    public function store(AssetCheckoutRequest $request, $assetId)
+    public function store(AssetCheckoutRequest $request, $assetId) : RedirectResponse
     {
         try {
             // Check if the asset exists
@@ -72,7 +71,7 @@ class AssetCheckoutController extends Controller
                 return redirect()->route('hardware.show', $asset->id)->with('error', trans('admin/hardware/general.model_invalid_fix'));
             }
 
-            $admin = Auth::user();
+            $admin = auth()->user();
 
             $target = $this->determineCheckoutTarget();
 
@@ -104,16 +103,17 @@ class AssetCheckoutController extends Controller
             $settings = \App\Models\Setting::getSettings();
 
             // We have to check whether $target->company_id is null here since locations don't have a company yet
-            /*if (($settings->full_multiple_companies_support) && ((!is_null($target->company_id)) &&  (!is_null($asset->company_id)))) {
+            if (($settings->full_multiple_companies_support) && ((!is_null($target->company_id)) &&  (!is_null($asset->company_id)))) {
                 if ($target->company_id != $asset->company_id){
                     return redirect()->to("hardware/$assetId/checkout")->with('error', trans('general.error_user_company'));
                 }
             }
-	   */
-                Session::put(['redirect_option' => $request->get('redirect_option'), 'checkout_to_type' => $request->get('checkout_to_type')]);
+
+                session()->put(['redirect_option' => $request->get('redirect_option'), 'checkout_to_type' => $request->get('checkout_to_type')]);
 
             if ($asset->checkOut($target, $admin, $checkout_at, $expected_checkin, $request->get('note'), $request->get('name'))) {
-                return Helper::getRedirectOption($request, $assetId, 'Assets');
+                return redirect()->to(Helper::getRedirectOption($request, $asset->id, 'Assets'))
+                    ->with('success', trans('admin/hardware/message.checkout.success'));
             }
             // Redirect to the asset management page with error
             return redirect()->to("hardware/$assetId/checkout")->with('error', trans('admin/hardware/message.checkout.error').$asset->getErrors());

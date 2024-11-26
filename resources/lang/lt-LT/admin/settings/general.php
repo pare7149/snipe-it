@@ -20,6 +20,7 @@ return [
     'alert_inv_threshold'		=> 'Įspėjimo apie atsargas slenkstis (vienetais)',
     'allow_user_skin'           => 'Įgalinti naudotojo temas',
     'allow_user_skin_help_text' => 'Pažymėjus šį langelį, naudotojas galės pasikeisti numatytąją sąsajos temą kita.',
+<<<<<<< HEAD
     'asset_ids'					=> 'Įrangos ID',
     'audit_interval'            => 'Audito intervalas',
     'audit_interval_help'       => 'Jei jums reikia reguliariai fiziškai tikrinti savo įrangą, nurodykite naudojamą intervalą mėnesiais. Atnaujinus šią reikšmę, bus atnaujintos visos „kito audito datos“ tai įrangai, kuriai yra nurodyta būsimo audito data.',
@@ -31,6 +32,21 @@ return [
     'backups'					=> 'Atsarginė kopija',
     'backups_help'              => 'Kurti, atsisiųsti ir atkurti atsargines kopijas ',
     'backups_restoring'         => 'Atkurti iš atsarginės kopijos',
+=======
+    'asset_ids'					=> 'Turto ID',
+    'audit_interval'            => 'Audito intervalas',
+    'audit_interval_help'       => 'Jei jums reikia reguliariai fiziškai audituoti savo turtą, nurodykite naudojamą intervalą mėnesiais. Atnaujinus šią reikšmę, bus atnaujintos visos „kito audito datos“ tam turtui, kuriam yra nurodyta būsimo audito data.',
+    'audit_warning_days'        => 'Išankstinis įspėjimas apie auditą',
+    'audit_warning_days_help'   => 'Prieš kiek dienų turėtume jus įspėti, kad turi būti atliktas turto auditas?',
+    'auto_increment_assets'		=> 'Generuoti automatiškai didėjančius inventorinius numerius',
+    'auto_increment_prefix'		=> 'Prefiksas (pasirinktinai)',
+    'auto_incrementing_help'    => 'Norėdami tai nustatyti, pirmiausia įjunkite automatiškai didėjančius inventorinius numerius',
+    'backups'					=> 'Atsarginės kopijos',
+    'backups_help'              => 'Kurti, atsisiųsti ir atkurti atsargines kopijas ',
+    'backups_restoring'         => 'Atkurti iš atsarginės kopijos',
+    'backups_clean' => 'Išvalyti išsaugotą duomenų bazę prieš atkūrimą',
+    'backups_clean_helptext' => "Tai gali būti naudinga, jei keičiate duomenų bazės versiją",
+>>>>>>> origin/upstream
     'backups_upload'            => 'Įkelti atsarginę kopiją',
     'backups_path'              => 'Atsarginės kopijos serveryje saugomos <code>:path</code>',
     'backups_restore_warning'   => 'Naudokite atkūrimo mygtuką <small><span class="btn btn-xs btn-warning"><i class="text-white fas fa-retweet" aria-hidden="true"></i></span> </small>, jei norite atkurti iš ankstesnės atsarginės kopijos. (Šiuo metu tai neveikia naudojant S3 failų saugyklą arba „Docker“.)<br><br>Jūsų <strong>visa :app_name duomenų bazė ir visi įkelti failai bus visiškai pakeisti</strong> tuo, kas yra atsarginės kopijos faile.  ',
@@ -48,11 +64,19 @@ return [
     'default_currency'  		=> 'Numatytoji valiuta',
     'default_eula_text'			=> 'Numatytasis licencinis sutikimas (EULA)',
     'default_language'			=> 'Numatytoji kalba',
+<<<<<<< HEAD
     'default_eula_help_text'	=> 'Taip pat galite susieti tinkintus licencinius sutikimus (EULA) su konkrečiomis įrangos grupėmis.',
     'acceptance_note'           => 'Pridėkite pastabą prie savo sprendimo (nebūtina)',
     'display_asset_name'        => 'Rodyti įrangos pavadinimą',
     'display_checkout_date'     => 'Rodyti išdavimo datą',
     'display_eol'               => 'Rodyti įrangos nurašymo datas lentelės rodinyje',
+=======
+    'default_eula_help_text'	=> 'Taip pat galite susieti tinkintus licencinius sutikimus (EULA) su konkrečiomis turto grupėmis.',
+    'acceptance_note'           => 'Pridėkite pastabą prie savo sprendimo (nebūtina)',
+    'display_asset_name'        => 'Rodyti turto pavadinimą',
+    'display_checkout_date'     => 'Rodyti išdavimo datą',
+    'display_eol'               => 'Rodyti nurašymo datas lentelės rodinyje',
+>>>>>>> origin/upstream
     'display_qr'                => 'Rodyti kvadratinius kodus',
     'display_alt_barcode'		=> 'Rodyti 1D brūkšninius kodus',
     'email_logo'                => 'El. pašto logotipas',
@@ -75,7 +99,11 @@ return [
     'header_color'              => 'Atraštės spalva',
     'info'                      => 'Šie nustatymai leidžia tinkinti tam tikrus diegimo aspektus.',
     'label_logo'                => 'Etiketės logotipas',
+<<<<<<< HEAD
     'label_logo_size'           => 'Kvadratiniai logotipai atrodo geriausiai – bus rodomi kiekvienos įrangos etiketės viršuje, dešinėje. ',
+=======
+    'label_logo_size'           => 'Kvadratiniai logotipai atrodo geriausiai – bus rodomi kiekvienos turto etiketės viršuje, dešinėje. ',
+>>>>>>> origin/upstream
     'laravel'                   => 'Laravel versija',
     'ldap'                      => 'LDAP',
     'ldap_default_group'        => 'Numatytoji teisių grupė',
@@ -94,7 +122,11 @@ return [
     'ldap_login_sync_help'      => 'Tai tik patikrina ar LDAP sinchronizuoja teisingai. Jei jūsų LDAP autentifikavimo užklausa neteisinga, naudotojai vis tiek negalės prisijungti. PIRMIAUSIA TURITE IŠSAUGOTI ATNAUJINTUS LDAP NUSTATYMUS.',
     'ldap_manager'              => 'LDAP vadovas',
     'ldap_server'               => 'LDAP serveris',
+<<<<<<< HEAD
     'ldap_server_help'          => 'Turėtų prasidėti su ldap:// (nešifruotas arba TLS) arba ldaps:// (jei tai SSL)',
+=======
+    'ldap_server_help'          => 'Turėtų prasidėti su ldap:// (nešifruotas) arba ldaps:// (jei tai TLS arba SSL)',
+>>>>>>> origin/upstream
     'ldap_server_cert'			=> 'LDAP SSL sertifikato tikrinimas',
     'ldap_server_cert_ignore'	=> 'Leisti negaliojantį SSL sertifikatą',
     'ldap_server_cert_help'		=> 'Pažymėkite šį laukelį, jei naudojate paties pasirašytą SSL sertifikatą ir norite leisti naudoti negaliojantį SSL sertifikatą.',
@@ -122,8 +154,13 @@ return [
     'ldap_test'                 => 'Testuoti LDAP',
     'ldap_test_sync'            => 'Testuoti LDAP sinchronizavimą',
     'license'                   => 'Programinės įrangos licencija',
+<<<<<<< HEAD
     'load_remote'               => 'Naudoti „Gravatar“',
     'load_remote_help_text'		=> 'Atžymėkite šį langelį, jei jūsų diegimas negali vykdyti skriptų iš interneto. Tai neleis „Snipe-IT“ bandyti įkelti vaizdų iš „Gravatar“.',
+=======
+    'load_remote'               => 'Įkelti nuotolinius avatarus',
+    'load_remote_help_text'		=> 'Atžymėkite šį langelį, jei jūsų diegimas negali vykdyti skriptų iš interneto. Tai neleis „Snipe-IT“ bandyti įkelti avatarų iš „Gravatar“ ar kitų išorinių šaltinių.',
+>>>>>>> origin/upstream
     'login'                     => 'Prisijungimo bandymai',
     'login_attempt'             => 'Prisijungimo bandymas',
     'login_ip'                  => 'IP adresas',
@@ -135,16 +172,26 @@ return [
     'login_remote_user_text'    => 'Nuotolinio naudotojo prisijungimo parinktys',
     'login_remote_user_enabled_text' => 'Įjungti nuotolinį prisijungimą naudojant „Remote User Header“',
     'login_remote_user_enabled_help' => 'Ši parinktis įgalina autentifikavimą naudojant „REMOTE_USER“ per „Common Gateway Interface (rfc3875)“',
+<<<<<<< HEAD
     'login_common_disabled_text' => 'Išjungti kitus autentifikacijos mechanizmus',
     'login_common_disabled_help' => 'Ši parinktis išjungia kitus autentifikacijos mechanizmus. Šią funkciją įjunkite jeigu esate tikri, jog REMOTE_USER prisijungimas veikia',
+=======
+    'login_common_disabled_text' => 'Išjungti kitus autentifikacijos metodus',
+    'login_common_disabled_help' => 'Ši parinktis išjungia kitus autentifikacijos metodus. Šią funkciją įjunkite jeigu esate tikri, jog REMOTE_USER prisijungimas veikia',
+>>>>>>> origin/upstream
     'login_remote_user_custom_logout_url_text' => 'Pasirinktinis atsijungimo adresas (URL)',
     'login_remote_user_custom_logout_url_help' => 'Jei čia yra pateiktas adresas, į jį bus nukreipti naudotojai po to, kai atsijungs nuo „Snipe-IT“. Tai naudinga norint tinkamai uždaryti autentifikuotų naudotojų sesijas.',
     'login_remote_user_header_name_text' => 'Tinkinta naudotojo vardo antraštė',
     'login_remote_user_header_name_help' => 'Naudoti nurodytą antraštę, o ne REMOTE_USER',
     'logo'                    	=> 'Logotipas',
     'logo_print_assets'         => 'Naudoti spaudiniuose',
+<<<<<<< HEAD
     'logo_print_assets_help'    => 'Naudoti ženklinimą spausdinamuose įrangos sąrašuose ',
     'full_multiple_companies_support_help_text' => 'Naudotojams (įskaitant administratorius), susietiems su konkrečia įmone, leisti pasiekti tik tos įmonės įrangą.',
+=======
+    'logo_print_assets_help'    => 'Naudoti ženklinimą spausdinamuose turto sąrašuose ',
+    'full_multiple_companies_support_help_text' => 'Naudotojams (įskaitant administratorius), susietiems su konkrečia įmone, leisti pasiekti tik tos įmonės turtą.',
+>>>>>>> origin/upstream
     'full_multiple_companies_support_text' => 'Pilnas kelių įmonių palaikymas',
     'show_in_model_list'   => 'Rodyti modelių išskleidžiamuosiuose meniu',
     'optional'					=> 'pasirinktinai',
@@ -195,12 +242,21 @@ return [
     'setting'                   => 'Nustatymas',
     'settings'                  => 'Nustatymai',
     'show_alerts_in_menu'       => 'Rodyti įspėjimus viršutiniame meniu',
+<<<<<<< HEAD
     'show_archived_in_list'     => 'Archyvuota įranga',
     'show_archived_in_list_text'     => 'Rodyti archyvuotą įrangą „visos įrangos“ sąraše',
     'show_assigned_assets'      => 'Rodyti įrangą, priskirtą kitai įrangai',
     'show_assigned_assets_help' => 'Rodyti įrangą, kuri buvo priskirta kitai įrangai, skiltyse: „Peržiūrėti naudotoją -> Įranga“, „Peržiūrėti naudotoją -> Informacija -> Spausdinti visą įrangą“ ir „Paskyra -> Peržiūrėti priskirtą įrangą".',
     'show_images_in_email'     => 'Rodyti atvaizdus el. laiškuose',
     'show_images_in_email_help'   => 'Nuimkite žymelę jeigu jūsų Snipe-IT diegimas yra už VPN arba uždarame tinkle, kitaip tinkle nesantys išorės naudotojai negalės įkelti el. laiškuose pateiktų atvaizdų.',
+=======
+    'show_archived_in_list'     => 'Archyvuotas turtas',
+    'show_archived_in_list_text'     => 'Rodyti archyvuotą turtą „viso turto“ sąraše',
+    'show_assigned_assets'      => 'Rodyti turtą, priskirtą kitam turtui',
+    'show_assigned_assets_help' => 'Rodyti turtą, kuris buvo priskirtas kitam turtui, skiltyse: „Peržiūrėti naudotoją -> Turtas“, „Peržiūrėti naudotoją -> Informacija -> Spausdinti visą turtą“ ir „Paskyra -> Peržiūrėti priskirtą turtą".',
+    'show_images_in_email'     => 'Rodyti atvaizdus el. laiškuose',
+    'show_images_in_email_help'   => 'Nuimkite žymelę jeigu jūsų Snipe-IT diegimas yra už VPN arba uždarame tinkle, kitaip tinkle nesantys išorės naudotojai negalės matyti el. laiškuose pateiktų atvaizdų.',
+>>>>>>> origin/upstream
     'site_name'                 => 'Puslapio pavadinimas',
     'integrations'               => 'Integracijos',
     'slack'                     => 'Slack',
@@ -218,6 +274,11 @@ return [
     'webhook_integration_help'    => ':app integracija nėra privaloma, tačiau, jei norite ją naudoti, būtina nurodyti Endpoint ir Channel. Norėdami sukonfigūruoti :app integraciją, pirmiausia turite <a href=":webhook_link" target="_new" rel="noopener">sukurti įeinantį „Webhook“ pranešimą</a> savo :app paskyroje. Spustelėkite mygtuką <strong>Tikrinti :app integraciją</strong>, kad patvirtintumėte ar nustatymai yra teisingi, prieš juos išsaugodami. ',
     'webhook_integration_help_button'    => 'Išsaugojus :app informaciją, pasirodys testavimo mygtukas.',
     'webhook_test_help'           => 'Patikrinkite, ar jūsų :app integracija sukonfigūruota tinkamai. PIRMA PRIVALOTE IŠSAUGOTI ATNAUJINTUS :app NUSTATYMUS.',
+<<<<<<< HEAD
+=======
+    'shortcuts_enabled'         => 'Įgalinti sparčiuosius klavišus',
+    'shortcuts_help_text'       => '<strong>Windows</strong>: Alt + prieigos klavišas, <strong>Mac</strong>: Control + Option + prieigos klavišas',
+>>>>>>> origin/upstream
     'snipe_version'  			=> 'Snipe-IT versija',
     'support_footer'            => 'Palaikymo nuorodos poraštėje ',
     'support_footer_help'       => 'Nurodykite, kas mato nuorodas į Snipe-IT palaikymo informaciją ir naudotojo vadovą',
@@ -267,7 +328,11 @@ return [
     'two_factor_reset_error'          => 'Dviejų veiksnių įrenginio nustatymas iš naujo nepavyko',
     'two_factor_enabled_warning'        => 'Įjungus dviejų veiksnių autentifikaciją (jei ji šiuo metu nėra įjungta) būsite iš karto priversti autentifikuotis naudojant „Google Authenticator“ užregistruotą įrenginį. Jei šiuo metu neturite užregistruoto įrenginio, tai turėsite galimybę jį užregistruoti.',
     'two_factor_enabled_help'        => 'Bus įjungta dviejų veiksnių autentifikacija naudojant „Google Authenticator“.',
+<<<<<<< HEAD
     'two_factor_optional'        => 'Atrankinis (vartotojai gali įjungti arba išjungti, jei tai leidžiama)',
+=======
+    'two_factor_optional'        => 'Pasirinktinis (naudotojai gali įjungti arba išjungti, jei tai leidžiama)',
+>>>>>>> origin/upstream
     'two_factor_required'        => 'Privalomas visiems naudotojams',
     'two_factor_disabled'        => 'Išjungta',
     'two_factor_enter_code'	=> 'Įveskite dviejų veiksnių kodą',
@@ -275,7 +340,11 @@ return [
     'two_factor_enabled_edit_not_allowed' => 'Jūsų administratorius neleidžia keisti šio nustatymo.',
     'two_factor_enrollment_text'	=> "Būtina dviejų veiksnių autentifikacija, tačiau jūsų dar nesate užregistravę įrenginio. Norėdami užregistruoti įrenginį, jame atidarykite „Google Authenticator“ programą ir nuskaitykite čia pateiktą QR kodą. Užregistravę įrenginį, įveskite jo ekrane rodomą kodą į žemiau esantį lauką",
     'require_accept_signature'      => 'Reikalauti parašo',
+<<<<<<< HEAD
     'require_accept_signature_help_text'      => 'Jei įjungsite šią funkciją, naudotojai turės fiziškai pasirašyti už jiems išduodamą įrangą.',
+=======
+    'require_accept_signature_help_text'      => 'Jei įjungsite šią funkciją, naudotojai turės fiziškai pasirašyti už jiems išduodamą turtą.',
+>>>>>>> origin/upstream
     'left'        => 'kairėje',
     'right'        => 'dešinėje',
     'top'        => 'viršuje',
@@ -283,7 +352,11 @@ return [
     'vertical'        => 'vertikalus',
     'horizontal'        => 'horizontalus',
     'unique_serial'                => 'Unikalus serijinis numeris',
+<<<<<<< HEAD
     'unique_serial_help_text'                => 'Pažymėjus šį langelį, bus užtikrinamas įrangos serijinių numerių unikalumas',
+=======
+    'unique_serial_help_text'                => 'Pažymėjus šį langelį, bus užtikrinamas turto serijinių numerių unikalumas',
+>>>>>>> origin/upstream
     'zerofill_count'        => 'Inventorinių numerių ilgis, įskaitant priekinius nulius',
     'username_format_help'   => 'Šis nustatymas bus naudojamas importavimo procese tik tuo atveju, jei naudotojo vardas nebus pateiktas ir mes turėsime sugeneruoti naudotojo vardą.',
     'oauth_title' => 'OAuth API nustatymai',
@@ -327,7 +400,10 @@ return [
     'labels' => 'Etiketės',
     'labels_title' => 'Atnaujinti etikečių nustatymus',
     'labels_help' => 'Etikečių dydžiai ir nustatymai',
+<<<<<<< HEAD
     'purge' => 'Išvalyti',
+=======
+>>>>>>> origin/upstream
     'purge_keywords' => 'ištrinti visam laikui',
     'purge_help' => 'Išvalyti ištrintus įrašus',
     'ldap_extension_warning' => 'Panašu, kad šiame serveryje nėra įdiegtas arba įjungtas LDAP plėtinys. Vis tiek galite išsaugoti nustatymus, bet turėsite įjungti LDAP plėtinį PHP, kad veiktų LDAP sinchronizavimas arba prisijungimas.',
@@ -349,9 +425,15 @@ return [
     'label2_template_help'    => 'Pasirinkite, kurį šabloną naudoti etikečių generavimui',
     'label2_title'            => 'Antraštė',
     'label2_title_help'       => 'Antraštė, kuri atvaizduojama tai palaikančiose etiketėse',
+<<<<<<< HEAD
     'label2_title_help_phold' => 'Vietaženklis <code>{COMPANY}</code> bus pakeistas įrangos įmonės pavadinimu',
     'label2_asset_logo'       => 'Naudoti įrangos logotipą',
     'label2_asset_logo_help'  => 'Naudokite įrangai priskirtos įmonės logotipą, o ne <code>:setting_name</code> reikšmę',
+=======
+    'label2_title_help_phold' => 'Vietaženklis <code>{COMPANY}</code> bus pakeistas turto įmonės pavadinimu',
+    'label2_asset_logo'       => 'Naudoti turto logotipą',
+    'label2_asset_logo_help'  => 'Naudokite turtui priskirtos įmonės logotipą, o ne <code>:setting_name</code> reikšmę',
+>>>>>>> origin/upstream
     'label2_1d_type'          => '1D brūkšninio kodo tipas',
     'label2_1d_type_help'     => '1D brūkšninio kodo formatas',
     'label2_2d_type'          => '2D brūkšninio kodo tipas',
@@ -374,5 +456,17 @@ return [
     'database_driver' => 'Duomenų bazės tvarkyklės',
     'bs_table_storage' => 'Lentelių saugojimas',
     'timezone' => 'Laiko juosta',
+<<<<<<< HEAD
+=======
+    'profile_edit'          => 'Redaguoti profilį',
+    'profile_edit_help'          => 'Leisti naudotojams redaguoti savo profilius.',
+    'default_avatar' => 'Įkelti pasirinktinį numatytąjį avatarą',
+    'default_avatar_help' => 'Jei naudotojas neturi profilio nuotraukos, šis atvaizdas bus rodomas jo profilyje.',
+    'restore_default_avatar' => 'Atkurti <a href=":default_avatar" data-toggle="lightbox" data-type="image">pradinį sistemos numatytąjį avatarą</a>',
+    'restore_default_avatar_help' => '',
+    'due_checkin_days' => 'Įspėjimas, kad reikia paimti',
+    'due_checkin_days_help' => 'Likus kiek dienų iki numatomo turto paėmimo, jis turėtų būti rodomas puslapyje „Laukia paėmimo“?',
+    'no_groups' => 'Grupės dar nesukurtos. Apsilankykite <code>Administratoriaus nustatymai > Paskyros teisių grupės</code>, kad jų pridėtumėte.',
+>>>>>>> origin/upstream
 
 ];

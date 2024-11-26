@@ -5,7 +5,11 @@ return [
     'asset_tag'   	=> 'Inventorinis numeris',
     'asset_model'       => 'Modelis',
     'assigned_to'   => 'Išduota',
+<<<<<<< HEAD
     'book_value'  	=> 'Dabartinė reikšmė',
+=======
+    'book_value'  	=> 'Dabartinė vertė',
+>>>>>>> origin/upstream
     'change' 		=> 'Į/Iš',
     'checkout_date' => 'Išdavimo data',
     'checkoutto' 	=> 'Išduota',
@@ -21,11 +25,18 @@ return [
     'purchase_date'	=> 'Nupirkta',
     'serial'   		=> 'Serijos numeris',
     'status'   		=> 'Būsena',
+<<<<<<< HEAD
     'title'      	=> 'Įranga ',
     'image'		    => 'Įrenginio atvaizdas',
     'days_without_acceptance' => 'Dienų skaičius laukiant patvirtinimo',
     'monthly_depreciation' => 'Mėnesinis nusidėvėjimas',
     'assigned_to'    => 'Išduota',
+=======
+    'title'      	=> 'Turtas ',
+    'image'		    => 'Įrenginio atvaizdas',
+    'days_without_acceptance' => 'Dienų skaičius laukiant patvirtinimo',
+    'monthly_depreciation' => 'Mėnesinis nusidėvėjimas',
+>>>>>>> origin/upstream
     'requesting_user' => 'Prašantis asmuo',
     'requested_date' => 'Prašymo data',
     'changed'       => 'Keista',
