@@ -8,7 +8,7 @@ return array(
     'createuser' 			=> 'Benutzer erstellen',
     'deny'  				=> 'Ablehnen',
     'email'      			=> 'Email',
-    'employee_num'      	=> 'Mitarbeiternr.',
+    'employee_num'      	=> 'Bibliotheksnummer',
     'first_name' 			=> 'Vorname',
     'groupnotes'			=> 'Wählen Sie eine Gruppe aus, die dem Benutzer zugewiesen werden soll. Denken Sie daran, dass ein Benutzer die Berechtigungen der zugewiesenen Gruppe erhält. Benutzen Sie Strg+Klick (oder cmd+Klick bei MacOS), um Gruppen aus der Auswahl zu entfernen.',
     'id'         			=> 'Id',

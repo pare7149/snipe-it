@@ -8,5 +8,4 @@ return array(
     'remaining' 			            => 'Verbleibend',
     'total' 			                => 'Gesamt',
     'update'                            => 'Verbrauchsmaterial bearbeiten',
-    'inventory_warning'                 => 'Der Bestand dieses Verbrauchsmaterials liegt unter der Mindestmenge von :min_count',
 );
