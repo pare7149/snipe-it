@@ -119,7 +119,7 @@
             </table>
         @endif
 
-        @if ($hsow_user->accessories->count() > 0)
+        @if ($show_user->accessories->count() > 0)
             <div id="accessories-toolbar">
                 <h4>{{ trans_choice('general.countable.accessories', $accessories->count(), ['count' => $accessories->count()]) }}</h4>
             </div>
