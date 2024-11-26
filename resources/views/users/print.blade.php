@@ -2,9 +2,15 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>{{ trans('general.assigned_to', ['name' => $show_user->present()->fullName()]) }} - {{ date('Y-m-d H:i', time()) }}</title>
+    @if ((isset($users) && count($users) === 1))
+        <title>{{ trans('general.assigned_to', ['name' => $users[0]->present()->fullName()]) }} - {{ date('Y-m-d H:i', time()) }}</title>
+    @else
+        <title>{{ trans('admin/users/general.print_assigned') }} - {{ date('Y-m-d H:i', time()) }}</title>
+    @endisset
 
     <link rel="shortcut icon" type="image/ico" href="{{ ($snipeSettings) && ($snipeSettings->favicon!='') ?  Storage::disk('public')->url(e($snipeSettings->favicon)) : config('app.url').'/favicon.ico' }}">
+
+    <link rel="stylesheet" href="{{ url(mix('css/dist/bootstrap-table.css')) }}">
 
     {{-- stylesheets --}}
     <link rel="stylesheet" href="{{ url(mix('css/dist/all.css')) }}">
@@ -37,7 +43,7 @@
             padding: 6px;
             font-size: 22px;
         }
-
+        
         .print-logo {
             height:80px;
             position: absolute;
@@ -60,13 +66,6 @@
         }
     </style>
 
-    <script nonce="{{ csrf_token() }}">
-        window.snipeit = {
-            settings: {
-                "per_page": 50
-            }
-        };
-    </script>
 
 </head>
 <body>
@@ -121,23 +120,23 @@
 
     @if ($accessories->count() > 0)
         <div id="accessories-toolbar">
-            <h4>{{ trans_choice('general.countable.accessories', $accessories->count(), ['count' => $accessories->count()]) }}</h4>
+            <h4>{{ trans_choice('general.countable.accessories', $show_user->accessories->count(), ['count' => $show_user->accessories->count()]) }}</h4>
         </div>
 
         <table
-                class="snipe-table table table-striped inventory"
-                id="accessoriesAssigned"
-                data-toolbar="#accessories-toolbar"
-                data-pagination="false"
-                data-id-table="accessoriesAssigned"
-                data-search="false"
-                data-side-pagination="client"
-                data-sortable="true"
-                data-show-columns="true"
-                data-sort-order="desc"
-                data-sort-name="created_at"
-                data-show-columns-toggle-all="true"
-                data-cookie-id-table="accessoriesAssigned">
+            class="snipe-table table table-striped inventory"
+            id="accessoriesAssigned"
+            data-toolbar="#accessories-toolbar"
+            data-pagination="false"
+            data-id-table="accessoriesAssigned"
+            data-search="false"
+            data-side-pagination="client"
+            data-sortable="true"
+            data-show-columns="true"
+            data-sort-order="desc"
+            data-sort-name="created_at"
+            data-show-columns-toggle-all="true"
+            data-cookie-id-table="accessoriesAssigned">
             <thead>
             <tr>
                 <th style="width: 20px;" data-sortable="false" data-switchable="false">#</th>
@@ -152,8 +151,11 @@
                 $acounter = 1;
             @endphp
 
-            @foreach ($accessories as $accessory)
+            @foreach ($show_user->accessories as $accessory)
                 @if ($accessory)
+                    @php
+                        if (($accessory->category) && ($accessory->category->getEula())) $eulas[] = $accessory->category->getEula()
+                    @endphp
                     <tr>
                         <td>{{ $acounter }}</td>
                         <td>
@@ -167,7 +169,7 @@
 
                         <td>
                             @if (($accessory->assetlog->first()) && ($accessory->assetlog->first()->accept_signature!=''))
-                            <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $accessory->assetlog->first()->accept_signature }}">
+                                <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $accessory->assetlog->first()->accept_signature }}">
                             @endif
                         </td>
                     </tr>

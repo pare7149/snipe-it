@@ -120,7 +120,7 @@ class Ldap extends Model
         Log::debug('Filter query: '.$filterQuery);
 
         if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
-            \Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
+            Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
 	    try {
 			self::bindAdminToLdap($connection);
 			
@@ -139,7 +139,7 @@ class Ldap extends Model
             $userDn = 'cn='.$user["cn"][0].','.$settings->ldap_basedn;
 
             if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
-                \Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
+                Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
             }
 
             if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
@@ -170,9 +170,9 @@ class Ldap extends Model
                  * Let's definitely fix this at the next refactor!!!!
                  *
                  */
-                	\Log::debug("Status of binding Admin user: $userDn to directory instead: ".($ldapbind ? "success" : "FAILURE"));
-	                return false;
-            	}
+                Log::debug("Status of binding Admin user: $userDn to directory instead: ".($ldapbind ? "success" : "FAILURE"));
+                return false;
+            }
         }
 
         if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
@@ -264,6 +264,7 @@ class Ldap extends Model
         $item['department'] = $ldapattributes[$ldap_result_dept][0] ?? '';
         $item['manager'] = $ldapattributes[$ldap_result_manager][0] ?? '';
         $item['location'] = $ldapattributes[$ldap_result_location][0] ?? '';
+        $item['locale'] = app()->getLocale();
 
         return $item;
     }
@@ -274,7 +275,7 @@ class Ldap extends Model
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @since [v3.0]
      * @param $ldapatttibutes
-     * @return array|bool
+     * @return User | bool
      */
     public static function createUserFromLdap($ldapatttibutes, $password)
     {
@@ -287,6 +288,7 @@ class Ldap extends Model
             $user->last_name = $item['lastname'];
             $user->username = $item['username'];
             $user->email = $item['email'];
+            $user->locale = $item['locale'];
             $user->password = $user->noPassword();
 
             if (Setting::getSettings()->ldap_pw_sync == '1') {
@@ -316,9 +318,10 @@ class Ldap extends Model
      * @param $base_dn
      * @param $count
      * @param $filter
+     * @param $attributes
      * @return array|bool
      */
-    public static function findLdapUsers($base_dn = null, $count = -1, $filter = null)
+    public static function findLdapUsers($base_dn = null, $count = -1, $filter = null, $attributes = [])
     {
         $ldapconn = self::connectToLdap();
         self::bindAdminToLdap($ldapconn);
@@ -373,7 +376,7 @@ class Ldap extends Model
                 $cookie = '';
             }
             // Empty cookie means last page
-        
+
             // Get results from page
             $results = ldap_get_entries($ldapconn, $search_results);
             if (! $results) {
