@@ -267,7 +267,6 @@ final class Company extends SnipeModel
             return $query;
         } else {
 		if (str_contains($query->getModel()->getTable(), 'users')) return $query;
-        if (str_contains($query->toSql(), "requestable")) return $query;
 		else static::scopeCompanyablesDirectly($query, $column, $table_name);
         }
     }
