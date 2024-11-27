@@ -75,7 +75,7 @@ class ViewAssetsController extends Controller
      */
     public function getRequestableIndex() : View
     {
-        $assets = Asset::withoutGlobalScopes->with('model', 'defaultLoc', 'location', 'assignedTo', 'requests')->Hardware()->RequestableAssets();
+        $assets = Asset::with('model', 'defaultLoc', 'location', 'assignedTo', 'requests')->Hardware()->RequestableAssets();
         $models = AssetModel::with('category', 'requests', 'assets')->RequestableModels()->get();
 
         return view('account/requestable-assets', compact('assets', 'models'));
