@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use App\View\Label;
 use Illuminate\Support\Facades\Storage;
+use App\Models\CompanyableTrait;
 
 
 /**
@@ -1152,7 +1153,7 @@ class AssetsController extends Controller
             $allowed_columns[] = $field->db_column_name();
         }
 
-        $assets = Asset::select('assets.*')
+        $assets = Asset::withoutGlobalScopes->get('assets.*')
             ->with(
                 'location',
                 'assetstatus',
