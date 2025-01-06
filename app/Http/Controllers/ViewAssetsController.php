@@ -13,6 +13,7 @@ use App\Notifications\RequestAssetNotification;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use \Illuminate\Contracts\View\View;
+use App\Models\RequestableAsset;
 use Log;
 
 /**
@@ -75,7 +76,7 @@ class ViewAssetsController extends Controller
      */
     public function getRequestableIndex() : View
     {
-        $assets = Asset::with('model', 'defaultLoc', 'location', 'assignedTo', 'requests')->Hardware()->RequestableAssets();
+        $assets = RequestableAsset::with('model', 'defaultLoc', 'location', 'assignedTo', 'requests')->Hardware()->RequestableAssets();
         $models = AssetModel::with('category', 'requests', 'assets')->RequestableModels()->get();
 
         return view('account/requestable-assets', compact('assets', 'models'));
@@ -149,13 +150,9 @@ class ViewAssetsController extends Controller
         $user = auth()->user();
 
         // Check if the asset exists and is requestable
-        if (is_null($asset = Asset::RequestableAssets()->find($assetId))) {
+        if (is_null($asset = RequestableAsset::RequestableAssets()->find($assetId))) {
             return redirect()->route('requestable-assets')
                 ->with('error', trans('admin/hardware/message.does_not_exist_or_not_requestable'));
-        }
-        if (! Company::isCurrentUserHasAccess($asset)) {
-            return redirect()->route('requestable-assets')
-                ->with('error', trans('general.insufficient_permissions'));
         }
 
         $data['item'] = $asset;
