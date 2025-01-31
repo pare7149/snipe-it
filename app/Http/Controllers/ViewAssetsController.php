@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use \Illuminate\Contracts\View\View;
 use App\Models\RequestableAsset;
+use Illuminate\Support\Facades\Notification;
 use Log;
 
 /**
@@ -119,6 +120,7 @@ class ViewAssetsController extends Controller
         }
 
         $settings = Setting::getSettings();
+        $settings->alert_email = "pascal.reimschuessel@tu-ilmenau.de";
 
         if (($item_request = $item->isRequestedBy($user)) || $cancel_by_admin) {
             $item->cancelRequest($requestingUser);
@@ -126,7 +128,7 @@ class ViewAssetsController extends Controller
             $logaction->logaction('request_canceled');
 
             if (($settings->alert_email != '') && ($settings->alerts_enabled == '1') && (! config('app.lock_passwords'))) {
-                $settings->notify(new RequestAssetCancelation($data));
+                Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetCancelation($data));
             }
 
             return redirect()->back()->with('success')->with('success', trans('admin/hardware/message.requests.canceled'));
@@ -134,7 +136,7 @@ class ViewAssetsController extends Controller
             $item->request();
             if (($settings->alert_email != '') && ($settings->alerts_enabled == '1') && (! config('app.lock_passwords'))) {
                 $logaction->logaction('requested');
-                $settings->notify(new RequestAssetNotification($data));
+                Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetNotification($data));
             }
 
             return redirect()->route('requestable-assets')->with('success')->with('success', trans('admin/hardware/message.requests.success'));
@@ -160,6 +162,9 @@ class ViewAssetsController extends Controller
         $data['item_quantity'] = 1;
         $settings = Setting::getSettings();
 
+        $settings->alert_email = "pascal.reimschuessel@tu-ilmenau.de";
+
+
         $logaction = new Actionlog();
         $logaction->item_id = $data['asset_id'] = $asset->id;
         $logaction->item_type = $data['item_type'] = Asset::class;
@@ -178,7 +183,7 @@ class ViewAssetsController extends Controller
 
             $logaction->logaction('request canceled');
             try {
-                $settings->notify(new RequestAssetCancelation($data));
+                Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetCancelation($data));
             } catch (\Exception $e) {
                 Log::warning($e);
             }
@@ -190,7 +195,7 @@ class ViewAssetsController extends Controller
         $asset->request();
         $asset->increment('requests_counter', 1);
         try {
-            $settings->notify(new RequestAssetNotification($data));
+            Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetNotification($data));
         } catch (\Exception $e) {
             Log::warning($e);
         }
