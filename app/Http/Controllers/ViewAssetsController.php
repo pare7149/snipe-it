@@ -15,7 +15,6 @@ use Illuminate\Http\RedirectResponse;
 use \Illuminate\Contracts\View\View;
 use App\Models\RequestableAsset;
 use Illuminate\Support\Facades\Notification;
-use Notification;
 use Log;
 
 /**
