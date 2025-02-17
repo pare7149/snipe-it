@@ -6,6 +6,7 @@ use App\Events\CheckoutableCheckedIn;
 use App\Http\Requests\StoreAssetRequest;
 use App\Http\Requests\UpdateAssetRequest;
 use App\Http\Traits\MigratesLegacyAssetLocations;
+use App\Models\AccessoryCheckout;
 use App\Models\CheckoutAcceptance;
 use App\Models\LicenseSeat;
 use Illuminate\Database\Eloquent\Builder;
@@ -26,7 +27,6 @@ use App\Models\License;
 use App\Models\Location;
 use App\Models\Setting;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -131,6 +131,7 @@ class AssetsController extends Controller
 
         $assets = Asset::select('assets.*')
             ->with(
+                'model',
                 'location',
                 'assetstatus',
                 'company',
@@ -142,7 +143,7 @@ class AssetsController extends Controller
                 'model.manufacturer',
                 'model.fieldset',
                 'supplier'
-            ); //it might be tempting to add 'assetlog' here, but don't. It blows up update-heavy users.
+            ); // it might be tempting to add 'assetlog' here, but don't. It blows up update-heavy users.
 
 
         if ($filter_non_deprecable_assets) {
@@ -767,9 +768,9 @@ class AssetsController extends Controller
             }
 
             if ($problems_updating_encrypted_custom_fields) {
-                return response()->json(Helper::formatStandardApiResponse('success', $asset, trans('admin/hardware/message.update.encrypted_warning')));
+                return response()->json(Helper::formatStandardApiResponse('success', (new AssetsTransformer)->transformAsset($asset), trans('admin/hardware/message.update.encrypted_warning')));
             } else {
-                return response()->json(Helper::formatStandardApiResponse('success', $asset, trans('admin/hardware/message.update.success')));
+                return response()->json(Helper::formatStandardApiResponse('success', (new AssetsTransformer)->transformAsset($asset), trans('admin/hardware/message.update.success')));
             }
         }
         return response()->json(Helper::formatStandardApiResponse('error', null, $asset->getErrors()), 200);
@@ -1216,6 +1217,27 @@ class AssetsController extends Controller
         return (new AssetsTransformer)->transformRequestedAssets($assets, $total);
     }
 
+
+    public function assignedAssets(Request $request, Asset $asset) : JsonResponse | array
+    {
+
+        return [];
+        // to do
+    }
+
+    public function assignedAccessories(Request $request, Asset $asset) : JsonResponse | array
+    {
+        $this->authorize('view', Asset::class);
+        $this->authorize('view', $asset);
+        $accessory_checkouts = AccessoryCheckout::AssetsAssigned()->with('adminuser')->with('accessories');
+
+        $offset = ($request->input('offset') > $accessory_checkouts->count()) ? $accessory_checkouts->count() : app('api_offset_value');
+        $limit = app('api_limit_value');
+
+        $total = $accessory_checkouts->count();
+        $accessory_checkouts = $accessory_checkouts->skip($offset)->take($limit)->get();
+        return (new AssetsTransformer)->transformCheckedoutAccessories($accessory_checkouts, $total);
+    }
     /**
      * Generate asset labels by tag
      * 
