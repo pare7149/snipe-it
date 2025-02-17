@@ -1,0 +1,2122 @@
+[33mcommit 4237291f4eee7b01f18ef3afbf51afaebed1f9ba[m[33m ([m[1;36mHEAD -> [m[1;32mtest[m[33m, [m[1;31morigin/test[m[33m)[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Mon Jan 20 14:24:51 2025 +0100
+
+    test
+
+[33mcommit 536abd186a884a0fb7d0f868357bfdaef7e66f40[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: 05833072b 8a0b7dc93
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Mon Jan 6 07:28:36 2025 +0000
+
+    Merge branch 'test' into 'master'
+    
+    Test
+    
+    See merge request pare7149/Snipe-IT!9
+
+[33mcommit 8a0b7dc93fbebcab06ce13c3714bd44502f3ca61[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Mon Jan 6 07:28:36 2025 +0000
+
+    Test
+
+[33mcommit 05833072b2c3bc968d01b22ce3056068914c8f35[m
+Author: root <root@snipe.tu-ilmenau.de>
+Date:   Wed Nov 27 11:06:11 2024 +0100
+
+    revert to 229f66c6eff21c333fb8875d32f660d9ed641446
+
+[33mcommit 3f43b825c1afb5a97b577dc02df06dba469e93ce[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Wed Nov 27 09:58:50 2024 +0000
+
+    4th attempt part 2
+
+[33mcommit e89c91a6bddcb11ea8e77f0e486a67efff1c2bc6[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Wed Nov 27 09:47:28 2024 +0000
+
+    fourth attempt
+
+[33mcommit 2358817efed2a69edc3c484d036e36b44787c5b8[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Wed Nov 27 09:44:07 2024 +0000
+
+    Revert "Revert "revert third attempt""
+    
+    This reverts commit c014799b961a8f5296c46832ad5257aaffac43ab
+
+[33mcommit c014799b961a8f5296c46832ad5257aaffac43ab[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:44:16 2024 +0000
+
+    Revert "revert third attempt"
+    
+    This reverts commit 81b93e4cb4027df08bd2086afed15267475b9333
+
+[33mcommit 81b93e4cb4027df08bd2086afed15267475b9333[m
+Author: root <root@snipe.tu-ilmenau.de>
+Date:   Tue Nov 26 16:41:33 2024 +0100
+
+    revert third attempt
+
+[33mcommit 48395296d2d1cca151921cd7d15223808715cf8b[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:36:07 2024 +0000
+
+    fix fix fix third attempt
+
+[33mcommit 8dbfcdc408746ca496d082a6a3ef11a32110d6bb[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:31:34 2024 +0000
+
+    fix again third attmpt
+
+[33mcommit e9c034b84d475e27d8a4a8140658392ffff7e6cf[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:29:10 2024 +0000
+
+    fix thir attempt
+
+[33mcommit fdf0af401056d3fccebbf2217f6c312daed09a03[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:28:18 2024 +0000
+
+    third attempt
+
+[33mcommit 229f66c6eff21c333fb8875d32f660d9ed641446[m
+Merge: b24349bed f87a3c7cd
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:16:08 2024 +0000
+
+    Merge branch 'revert-b24349be' into 'master'
+    
+    Revert "Update Company.php second attempt"
+    
+    See merge request pare7149/Snipe-IT!8
+
+[33mcommit f87a3c7cdac38cfe5601b35af87bfdb835461693[m[33m ([m[1;31morigin/revert-b24349be[m[33m)[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:12:08 2024 +0000
+
+    Revert "Update Company.php second attempt"
+    
+    This reverts commit b24349bedbd6962d7a6fe89d15e31733e8c91fad
+
+[33mcommit b24349bedbd6962d7a6fe89d15e31733e8c91fad[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:07:17 2024 +0000
+
+    Update Company.php second attempt
+
+[33mcommit 0310df8dd7051118fbcc938f5808cccfb420cb63[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 14:53:49 2024 +0000
+
+    Revert "Update Asset.php (test)"
+    
+    This reverts commit 80ca5c10fb21aa25ff26b92b01929dca02a0bdf4
+
+[33mcommit 80ca5c10fb21aa25ff26b92b01929dca02a0bdf4[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 14:51:42 2024 +0000
+
+    Update Asset.php (test)
+
+[33mcommit 78979ace74edcf545a11147bddab1c0091a35ea0[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:27:37 2024 +0100
+
+    add modified note to version
+
+[33mcommit 62dfa5685b1f55d7c4b6f7f8087c5b906632c419[m
+Merge: ca798ddde e575fbbe5
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:26:03 2024 +0100
+
+    Merge remote-tracking branch 'refs/remotes/origin/master'
+
+[33mcommit ca798ddde7c2774b1ad5fcf860f6cddcf82ec8b2[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 15:25:38 2024 +0100
+
+    apply Text modifications
+
+[33mcommit e575fbbe59662127d47024ae60da814cfd8d0947[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 14:23:28 2024 +0000
+
+    Update version.php
+
+[33mcommit 87dad27c206f08df915e4f7d6bd8acf6d58c488b[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 13:44:51 2024 +0100
+
+    fix typo
+
+[33mcommit ac44e4d2e86369695948c7da69012967d11d6696[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 13:43:57 2024 +0100
+
+    fix asset printout
+
+[33mcommit 08f894cd778b831bdb22055fc13ea074a7cd9596[m
+Merge: 4eeff7872 714705d1a
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 13:41:02 2024 +0100
+
+    Merge remote-tracking branch 'refs/remotes/origin/master'
+
+[33mcommit 4eeff7872a134053a39a6daf2afd9e1aa76e2fed[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 13:39:46 2024 +0100
+
+    fix asset printout
+
+[33mcommit 714705d1a65adbe0227dc5b8374da9c1ef916841[m
+Merge: 7507685b6 84a7109f2
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 12:23:55 2024 +0000
+
+    Merge branch 'merge' into 'master'
+    
+    fix user view
+    
+    See merge request pare7149/Snipe-IT!7
+
+[33mcommit 84a7109f230f9c852d097d92bd200b7456887853[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 13:23:04 2024 +0100
+
+    fix user view
+
+[33mcommit 7507685b6267b3bac6bad40113f32b517f9dd98b[m
+Merge: e8419b0c7 61865985a
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 10:56:29 2024 +0000
+
+    Merge branch 'merge' into 'master'
+    
+    Specify table name in select
+    
+    See merge request pare7149/Snipe-IT!6
+
+[33mcommit 61865985a1ccabd35f3859aa50a46cce4069570d[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 11:54:01 2024 +0100
+
+    finish merge
+
+[33mcommit 96fe90e88c8e0576f53aa48757a227494b8faab8[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 10:46:51 2024 +0000
+
+    Update file AssetModelsController.php
+
+[33mcommit 4f3085ba9244ec4cf1471027be87825113a26888[m
+Merge: e8419b0c7 fd0755080
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 26 11:43:27 2024 +0100
+
+    Merge remote-tracking branch 'origin/upstream' into merge
+
+[33mcommit fd07550803447b1a0fb0411c607937146c07839b[m
+Merge: 25bfd3e84 30b481bc9
+Author: snipe <snipe@snipe.net>
+Date:   Mon Nov 25 14:19:05 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+    
+    # Conflicts:
+    #       config/version.php
+
+[33mcommit 30b481bc9342d6b052015fc8ae811e50131bdeee[m
+Author: snipe <snipe@snipe.net>
+Date:   Mon Nov 25 14:18:31 2024 +0000
+
+    Updated version
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 25bfd3e84592fc79320c2331b9bd54380bcaf81c[m
+Merge: 4a5f65616 0f18ee86f
+Author: snipe <snipe@snipe.net>
+Date:   Mon Nov 25 13:05:28 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 0f18ee86f78d1691f24b2992b2d5f839fafeaf4c[m
+Author: snipe <snipe@snipe.net>
+Date:   Mon Nov 25 13:05:05 2024 +0000
+
+    Updated translations
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 4a5f65616f18c213dca7bd1e67074715ba119d26[m
+Merge: 9f395d1f6 f125c90c9
+Author: snipe <snipe@snipe.net>
+Date:   Mon Nov 25 12:56:08 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit f125c90c941807b5d567f69f1b5455b6701ec136[m
+Merge: feba860a9 87756cac6
+Author: snipe <snipe@snipe.net>
+Date:   Fri Nov 22 00:59:36 2024 +0000
+
+    Merge pull request #15870 from marcusmoore/bug/sc-26857
+    
+    Always call resizeCanvas
+
+[33mcommit 87756cac66896919a1b517291e87327c36f803c1[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Thu Nov 21 14:30:17 2024 -0800
+
+    Remove debugging
+
+[33mcommit 9f49c254016dd3507ec9703e8f6539e8911354f4[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Thu Nov 21 13:12:13 2024 -0800
+
+    WIP: move signature pad creation up and add debugging
+
+[33mcommit d0378070c8fc9286ffd1d1d56b946af76b5fb816[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Thu Nov 21 12:38:53 2024 -0800
+
+    Always call resizeCanvas
+
+[33mcommit 9f395d1f6a0e83122d5f071bedea7f193d70f616[m
+Merge: ad2b85393 feba860a9
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 19:58:49 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit feba860a90118d7b74e63afcc2cb93185373094e[m
+Merge: b7aedb7dc 424316df9
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 19:58:04 2024 +0000
+
+    Merge pull request #15850 from akemidx/bug/sc-27448
+    
+    Adding colon to password translation string
+
+[33mcommit 424316df9f75d9654e71c6fcebc4d6ca75d5bfc9[m
+Author: akemidx <kojotek.dx@gmail.com>
+Date:   Thu Nov 21 14:32:22 2024 -0500
+
+    fixing colon placements
+
+[33mcommit b7aedb7dcba9849880f995415f08c7308de7ff41[m
+Merge: 8b38dc83f 22602c799
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 19:25:27 2024 +0000
+
+    Merge pull request #15818 from spencerrlongg/bug/sc-27213
+    
+    Resolves Validation for Encrypted Numeric and Alpha Custom Fields
+
+[33mcommit 8b38dc83f6dcc53faa6c6a7245ea04a9b02e552a[m
+Merge: 85c1b0ec5 f932a4fc7
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 19:24:12 2024 +0000
+
+    Merge pull request #15851 from marcusmoore/testing/api-component-checkin
+    
+    Fixed bug in component checkins via api
+
+[33mcommit ad2b85393bc07d711434d6348e083d7317580e72[m
+Merge: b99b56b32 85c1b0ec5
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 19:23:10 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+    
+    # Conflicts:
+    #       public/js/build/app.js
+    #       public/js/build/vendor.js
+    #       public/js/dist/all.js
+    #       public/mix-manifest.json
+
+[33mcommit 85c1b0ec57cdbf0453b068018e062b6cae655f5d[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 19:22:08 2024 +0000
+
+    [Snyk] Upgrade jquery-ui from 1.14.0 to 1.14.1 #15868
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit e8419b0c7f0301a3ddd4344fe9ffd7b145fa94ed[m[33m ([m[1;31morigin/old-stable[m[33m)[m
+Author: root <root@snipe.tu-ilmenau.de>
+Date:   Thu Nov 21 17:26:37 2024 +0100
+
+    fix translation
+
+[33mcommit b99b56b32bb93e2bf75737aadea11efb4a7ddda8[m
+Merge: d10f11812 2a21cce4f
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 14:41:42 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 2a21cce4f5e60c6f6f553331d00855fd4ae9f830[m
+Merge: 3a683d84a 6969b8be4
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 14:41:04 2024 +0000
+
+    Merge pull request #15839 from Godmartinz/fix-mail-envelope-variable
+    
+    replace env with config variable for from address
+
+[33mcommit 3a683d84a727e14575ad918f48e9f7fbfc77dbe1[m
+Merge: e05f44388 f7c1fc852
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 14:38:03 2024 +0000
+
+    Merge pull request #15859 from Godmartinz/remove_name_null_warning
+    
+    Adds a ternary for blank emails for mail notifications
+
+[33mcommit e05f44388650c8de0c0174d54d1bfc07d32f4e3b[m
+Merge: 0a3bca078 d65254c4e
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 21 14:37:45 2024 +0000
+
+    Merge pull request #15864 from marcusmoore/testing/api-component-checkout
+    
+    Added tests for component checkout api endpoint
+
+[33mcommit 7a8faf8470e69eafeb7cac6952f0533d635e86ee[m
+Author: root <root@snipe.tu-ilmenau.de>
+Date:   Thu Nov 21 14:10:43 2024 +0100
+
+    Revert "Update file PredefinedKitCheckoutService.php"
+    
+    This reverts commit 941f9bd4dc0b718f4b360c9efda35b1a9f77dabe.
+
+[33mcommit 9bee3adcb2e1c459c1f106ad808dac6481ccccbb[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Thu Nov 21 13:07:06 2024 +0000
+
+    Update file PredefinedKitPresenter.php
+
+[33mcommit e08dc37c23261ffe78dfc4bdcec018f09c5ebf03[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Thu Nov 21 13:06:18 2024 +0000
+
+    Update file PredefinedKitPresenter.php
+
+[33mcommit 941f9bd4dc0b718f4b360c9efda35b1a9f77dabe[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Thu Nov 21 09:04:49 2024 +0000
+
+    Update file PredefinedKitCheckoutService.php
+
+[33mcommit f59ab276dda28774803db84e845f511fb0361d70[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Thu Nov 21 08:50:50 2024 +0000
+
+    Update file kit-accessory.blade.php
+
+[33mcommit d65254c4ec3c5b58160837f436747d63021d4a6a[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Wed Nov 20 15:34:08 2024 -0800
+
+    Add tests for component checkout api endpoint
+
+[33mcommit 6969b8be47ea8163c9abe4fc35398c5f3d5dd0a2[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Wed Nov 20 14:25:57 2024 -0800
+
+    remove the changes to mail.from.address default
+
+[33mcommit 0a3bca078c88431c1ba1e7d48fe21c974a6a1471[m
+Merge: 5522def05 9bbd802fc
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 20 22:09:11 2024 +0000
+
+    Merge pull request #15860 from marcusmoore/tests/switch-to-file-for-sqlite-in-action
+    
+    Improved speed of sqlite tests in GitHub Actions
+
+[33mcommit 9bbd802fce734161d957993cb89755fd284abf20[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Wed Nov 20 12:33:58 2024 -0800
+
+    Use database file for sqlite in GitHub Action for tests
+
+[33mcommit f932a4fc76a3a8102bb39baba971388a57b6d8b9[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Wed Nov 20 12:25:06 2024 -0800
+
+    Always run validation on checkin
+
+[33mcommit f7c1fc852d46e508302c0a3f288f1a40d2d78830[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Wed Nov 20 08:29:28 2024 -0800
+
+    no checked out to email doesnt trigger a 500
+
+[33mcommit 5522def0543a0f71ac197c00ce4daea5b34e84b4[m
+Merge: 8cd4b3303 7618169d7
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 20 13:51:34 2024 +0000
+
+    Merge pull request #15854 from NebelKreis/feature/add-category-to-asset-mails
+    
+    Added #15803: Category Field to Asset Related Mails
+
+[33mcommit 8cd4b3303e7c9fbb1170a8d468f559648aaff0a2[m
+Merge: cca76005a d5c141dc5
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 20 11:14:28 2024 +0000
+
+    Merge pull request #15847 from NebelKreis/feature/hardware-label-generation-api
+    
+    Added #15677: API Route for Generating Asset Labels
+
+[33mcommit d5c141dc59d305996da66a53dc05eb4ceeb99466[m
+Author: NebelKreis <leipold.johannes@web.de>
+Date:   Wed Nov 20 11:55:48 2024 +0100
+
+    Fix: Removed setting validation as it is not strictly necessary
+
+[33mcommit 7618169d7906f2cff00951a366155d2ef70359ac[m
+Author: NebelKreis <leipold.johannes@web.de>
+Date:   Wed Nov 20 11:22:19 2024 +0100
+
+    Feature: Added category to asset requested email
+
+[33mcommit eb026248a8534bf30c12ab72df37fef11eeeebc5[m
+Author: NebelKreis <leipold.johannes@web.de>
+Date:   Wed Nov 20 10:59:59 2024 +0100
+
+    Feature: Added category to asset acceptance/decline email
+
+[33mcommit 4304af0508784ecc9b0e2d67d0d3617aac028a42[m
+Author: NebelKreis <leipold.johannes@web.de>
+Date:   Wed Nov 20 10:27:37 2024 +0100
+
+    Feature: Added category to asset checkin email
+
+[33mcommit 61eff02fcb64710fda8630e0481088138e807eed[m
+Author: NebelKreis <leipold.johannes@web.de>
+Date:   Wed Nov 20 10:27:22 2024 +0100
+
+    Feature: Added category to asset checkout email
+
+[33mcommit cca76005a2ab9a0aa2cc43b0366c947fd08abfc0[m
+Merge: 5a5f1082f 54f5f46e3
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 20 01:27:19 2024 +0000
+
+    Merge pull request #15852 from marcusmoore/testing/ui-delete-component
+    
+    Added tests around deleting component via ui
+
+[33mcommit 54f5f46e31239eb63f42a56f6527d82c7cfb9ef1[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Tue Nov 19 16:44:42 2024 -0800
+
+    Improve check for image existence
+
+[33mcommit 51a0767be94ab22c0dd35636ed00399a275e8d98[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Tue Nov 19 16:44:19 2024 -0800
+
+    Add tests around deleting component via ui
+
+[33mcommit da4c877ed8b75c8f9bc92218dd1d57b64c5d7a68[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Tue Nov 19 16:13:53 2024 -0800
+
+    Use === over ==
+
+[33mcommit e8cad0df692ecba6967fb41763574ad8b08877c3[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Tue Nov 19 16:13:30 2024 -0800
+
+    Formatting
+
+[33mcommit 59fe53842da8d0aa8ade15865e341606781b63f3[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Tue Nov 19 16:11:23 2024 -0800
+
+    Add tests around component check ins via api
+
+[33mcommit 1e513312eb32e56070b3750180c47601d2384800[m
+Author: akemidx <kojotek.dx@gmail.com>
+Date:   Tue Nov 19 16:58:10 2024 -0500
+
+    adding colon to password translation
+
+[33mcommit 99de639be42f910c83b4b279bfbe1af8c42f6ba1[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Tue Nov 19 09:32:11 2024 -0800
+
+    fix mail.from.address variables in config, simplify envelop[ variable
+
+[33mcommit b513575643341152938cb93800846c3be497016d[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Tue Nov 19 09:10:52 2024 -0800
+
+    add testing example var MAIL_FROM_ADDR
+
+[33mcommit 22602c7997a98764ebb8b6473adc95d22d5d3569[m
+Author: spencerrlongg <spencer@spencerlong.com>
+Date:   Tue Nov 19 08:59:47 2024 -0600
+
+    use existing validation strings
+
+[33mcommit 46e64aed7e2e9ca6ae1161476614ae494ca2ecc5[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Tue Nov 19 15:20:27 2024 +0100
+
+    add consumables and accesories to kits
+
+[33mcommit d10f1181282f9e8baf519be0fbd65e0592bdf692[m
+Merge: 4384f8dcb 5a5f1082f
+Author: snipe <snipe@snipe.net>
+Date:   Tue Nov 19 13:55:55 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 5a5f1082fbbbc579d46fb8ed27c14ec650b4cded[m
+Merge: d576016a1 30a6a678d
+Author: snipe <snipe@snipe.net>
+Date:   Tue Nov 19 13:55:22 2024 +0000
+
+    Merge pull request #15848 from snipe/chore/sc-27531
+    
+    Indicate requiredness on status select on bulk user checkin+delete
+
+[33mcommit 30a6a678d4ffdb746d528b688acd0c2a63de073c[m
+Author: snipe <snipe@snipe.net>
+Date:   Tue Nov 19 13:50:18 2024 +0000
+
+    Indicate requiredness on status select on bulk user checkin+delete
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 4384f8dcbbbbcc65013700abfbf883c8ab4b301e[m
+Merge: 53cfcb714 d576016a1
+Author: snipe <snipe@snipe.net>
+Date:   Tue Nov 19 13:32:02 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit d576016a1cfa0f284802e02435992f1d10e00010[m
+Merge: 8f7223128 15a31bd14
+Author: snipe <snipe@snipe.net>
+Date:   Tue Nov 19 13:29:21 2024 +0000
+
+    Merge pull request #15845 from snipe/bug/sc-27523
+    
+    Fixed variable name to correctly log created_by and date for bulk user delete/checkin
+
+[33mcommit 15a31bd1412bee4b06b9da14bc272227e5417fdb[m
+Author: snipe <snipe@snipe.net>
+Date:   Tue Nov 19 13:22:44 2024 +0000
+
+    Fixed variable name
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 5639a84d90a3c2467bd2566dc54b7ae2e2534d08[m
+Author: NebelKreis <leipold.johannes@web.de>
+Date:   Tue Nov 19 14:16:58 2024 +0100
+
+    Feature: Added API route for asset label generation
+
+[33mcommit 66d6b01307d5a10d208552bed12156e6fb458b03[m
+Author: NebelKreis <leipold.johannes@web.de>
+Date:   Tue Nov 19 14:16:06 2024 +0100
+
+    Feature: Added translations for label generation API endpoint
+
+[33mcommit 889aff43c2657566611628480e1553c0add8e540[m
+Author: NebelKreis <leipold.johannes@web.de>
+Date:   Tue Nov 19 14:13:05 2024 +0100
+
+    Feature: Added API endpoint for generating asset labels
+
+[33mcommit 8f7223128f2e4067c6b3a6e32a43669f61103fd0[m
+Merge: d60ac0c78 efeef5cdc
+Author: snipe <snipe@snipe.net>
+Date:   Tue Nov 19 12:34:57 2024 +0000
+
+    Merge pull request #15757 from akemidx/bug/sc-26944
+    
+    FIXED: Bulk Delete page not showing full information
+
+[33mcommit 53cfcb7143584360f365815f7531fecea2bf547d[m
+Merge: 8d321edca a328c7a64
+Author: snipe <snipe@snipe.net>
+Date:   Tue Nov 19 10:50:28 2024 +0000
+
+    Merge pull request #15843 from snipe/viclou-patch-1
+    
+    Update README.md - small typo
+
+[33mcommit d60ac0c78dff5124d15d00bfdbae75ca097f38df[m
+Merge: 3fb543bf0 f5206078d
+Author: snipe <snipe@snipe.net>
+Date:   Tue Nov 19 10:20:58 2024 +0000
+
+    Merge pull request #15840 from marcusmoore/fixes/migration-rollbacks
+    
+    Fixed a couple migrate:rollback issues
+
+[33mcommit a328c7a64c6cc250b4b9ec6b612fcce7e936a3ad[m
+Author: victoria <vpak@grokability.com>
+Date:   Mon Nov 18 23:03:31 2024 -1000
+
+    Update README.md
+    
+    typo mosrt to most under Join our Community links
+
+[33mcommit f533cdc07aea557e53adcf36e2ab1df689fd18ba[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Mon Nov 18 12:39:28 2024 -0800
+
+    update default from address to alternate config variable
+
+[33mcommit f5206078d46004e190f69de3f9b4f073019dfab9[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Mon Nov 18 12:25:02 2024 -0800
+
+    Fix rollback for webhook_endpoint by using correct column type
+
+[33mcommit 0209d270810e1cfa1cebba15de5eee5302f3ea4a[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Mon Nov 18 12:24:47 2024 -0800
+
+    Fix rollback for created_by
+
+[33mcommit d14f43fbbe0e28a3a5b7f1d3c7c31cc6259540d6[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Mon Nov 18 10:54:03 2024 -0800
+
+    replace env with config variable for from address
+
+[33mcommit 8d321edca8600db0ff7adea0f8ae57f29839c182[m
+Merge: 66e82a345 3fb543bf0
+Author: snipe <snipe@snipe.net>
+Date:   Fri Nov 15 18:59:40 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 3fb543bf03128d074a8b241ccc5288feb992ecc5[m
+Merge: 187e231c0 e8d109337
+Author: snipe <snipe@snipe.net>
+Date:   Fri Nov 15 18:59:07 2024 +0000
+
+    Merge pull request #15828 from snipe/bug/sc-27500
+    
+    Fixed admin user not showing in download all activity report
+
+[33mcommit e8d1093376f0db5fb72328dd4972e46f0db2804a[m
+Author: snipe <snipe@snipe.net>
+Date:   Fri Nov 15 18:51:45 2024 +0000
+
+    Fixed admin user not showing in download all activity report
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 66e82a345aef144889092aa15de2e5cd15585c10[m
+Merge: caf92748f 187e231c0
+Author: snipe <snipe@snipe.net>
+Date:   Fri Nov 15 13:18:25 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 187e231c0e3da94961e08c6fd14a5af8dd530e5c[m
+Author: snipe <snipe@snipe.net>
+Date:   Fri Nov 15 13:18:15 2024 +0000
+
+    Fixed #15825
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 958d0b1902fb907b98a3c864b5c948cf7ba0baef[m
+Author: Pascal Reimschüssel <pascal.reimschuessel@tu-ilmenau.de>
+Date:   Fri Nov 15 10:10:43 2024 +0100
+
+    Leihschein Englisch
+
+[33mcommit caf92748fc788b233b95ebd58fbae58b0bf04115[m
+Merge: 5381c4e1e 09b7db510
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 20:57:18 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 09b7db5103ace77450112c6899f729eb4d41a61c[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 20:57:09 2024 +0000
+
+    Additional fix for #15817
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 5381c4e1e37209829dd8ad33a8d66388cc2fcd88[m
+Merge: 96a4391d5 add3edba2
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 20:53:17 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit add3edba20f8b4d27a4267389ef6cd0cfa7d18d2[m
+Merge: f2faf5878 b4a2a4e1e
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 20:52:44 2024 +0000
+
+    Merge pull request #15822 from snipe/add_model_number_to_view_assets
+    
+    Fixed #15820 - added model number to view-assets
+
+[33mcommit b4a2a4e1ec5533f2db74455078b932861a78f737[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 20:51:18 2024 +0000
+
+    Fixed #15820 - added model number to view-assets
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit f2faf5878638a3fb5bb12972258901dc29d7e911[m
+Merge: 7b7a848a4 0f1f6bc6a
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 20:49:31 2024 +0000
+
+    Merge pull request #15817 from Godmartinz/label_fix
+    
+    Removes asset tag if 2D code is not present
+
+[33mcommit 124f9c84c203ef30bcbee73665de5ae0bdfea804[m
+Author: spencerrlongg <spencer@spencerlong.com>
+Date:   Thu Nov 14 13:45:47 2024 -0600
+
+    oops, something went wrong translation
+
+[33mcommit 96a4391d5cc24af3eb3ea58d0e045f7a208436e2[m
+Merge: 0a7d1a27e 7b7a848a4
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 19:05:08 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 7b7a848a43d9f0e7de44bc56d1778a0f38f15761[m
+Merge: 306c97b5b 636e466b8
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 18:01:56 2024 +0000
+
+    Merge pull request #15819 from snipe/fixes_asset_file_deletion
+    
+    Corrected route name for delete action on filestable on assets
+
+[33mcommit 636e466b8a4da1e492121e62974d417860e13317[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 17:58:20 2024 +0000
+
+    Fixed delete model file route
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 838a6d03bd2f3bf03b8c32688949ad3896962451[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 17:51:49 2024 +0000
+
+    Corrected route name for filestable on assets
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 846580653664ff2b0b046abc8fc959bb44ce0ed3[m
+Author: spencerrlongg <spencer@spencerlong.com>
+Date:   Thu Nov 14 11:51:41 2024 -0600
+
+    rm unnecessary imports
+
+[33mcommit 0f1f6bc6a50e1709b4b3e69717fa92b2d93ac064[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Thu Nov 14 09:45:52 2024 -0800
+
+    fixed rest of dymos
+
+[33mcommit 95cd7793343a65b08b1a6ef7b1d1d02df6fe7b43[m
+Author: spencerrlongg <spencer@spencerlong.com>
+Date:   Thu Nov 14 11:42:35 2024 -0600
+
+    translations and attribute names
+
+[33mcommit 0a7d1a27ee1c3b7a7b5e428975b81a84b5b4e01d[m
+Merge: 0be123b11 306c97b5b
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 17:10:16 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 306c97b5b5e63900830951575a03ad67a711f8f8[m
+Merge: c093b4531 702621ec5
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 17:09:47 2024 +0000
+
+    Merge pull request #15816 from Godmartinz/Teams_fix
+    
+    replace the via() channel for MS Teams (deprecated)
+
+[33mcommit 23038ab209a494b22133c0bb46bee93b4cd4bfe0[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Thu Nov 14 08:54:12 2024 -0800
+
+    removes tag if qr code is not present
+
+[33mcommit 702621ec57d184a8f843afce6536d05f85314949[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Thu Nov 14 08:38:18 2024 -0800
+
+    replace the via channel class
+
+[33mcommit 0be123b115520af2b1d29eafdd1026a9a308a599[m
+Merge: 517e923f7 c093b4531
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 14:47:18 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit c093b4531d3826a8bbff13f90f7c03104ef733d4[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 14:47:09 2024 +0000
+
+    Fixed anchor links
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 517e923f703b195b6cd515578cf235d798c63c83[m
+Merge: d427d9e5a a0b848387
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 14:42:44 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit a0b8483878f59fc08ab6017b73fc29c790009c4b[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 14:41:11 2024 +0000
+
+    Removed extra sort
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 075e3503b1b3cbfefc486dd3d0d153a4cd81913a[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 14:38:51 2024 +0000
+
+    Removed Twitter links
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit d427d9e5af78bef3d459599aebc26bf0376c4ce5[m
+Merge: 647ef6a4b 940f1c2ec
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 12:25:10 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 940f1c2eccb1966c1db24d05e41814f056e84fe5[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 12:24:15 2024 +0000
+
+    Fixed #15812 - regression in action_type search
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 3e131d515d77388e17f8cbe57b30933baeb2ec35[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 11:06:55 2024 +0000
+
+    Add @maciej-poleszczyk as a contributor
+
+[33mcommit 364410a5860a2fdf6860729975c6604c3e059e37[m
+Merge: 70d9ef428 d1e2f9db3
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 11:06:18 2024 +0000
+
+    Merge pull request #15558 from maciej-poleszczyk/develop
+    
+    Fixing #15064 - to not fail ldap sync on single data issue with ldap …
+
+[33mcommit 70d9ef428c11f0102e5026346bcc7ce53df58c52[m
+Merge: a060f603b 4e28650ca
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 10:20:16 2024 +0000
+
+    Merge pull request #15811 from snipe/small_fix_for_embiguous_created_by
+    
+    Specify table name in select for models controller
+
+[33mcommit 4e28650ca9f3c6fd0cc85ac9a443db36847a9248[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 10:18:39 2024 +0000
+
+    Specify table name in select
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 8c6869fd3466a4be722f108cc5f80fafe87d0404[m
+Author: spencerrlongg <spencer@spencerlong.com>
+Date:   Wed Nov 13 21:59:32 2024 -0600
+
+    note and rm dump and comment
+
+[33mcommit 7e7cbc4cc8024c7a54304d69222e4a7be308ef0a[m
+Author: spencerrlongg <spencer@spencerlong.com>
+Date:   Wed Nov 13 21:54:25 2024 -0600
+
+    seems to work just fine now, needs translations
+
+[33mcommit 25163d1756f31d77c42fb0961c506ee0e6c59562[m
+Author: spencerrlongg <spencer@spencerlong.com>
+Date:   Wed Nov 13 21:46:23 2024 -0600
+
+    working except for null 🤔
+
+[33mcommit 3982201d0e96576d1c262b75258eee49a8b46b92[m
+Author: spencerrlongg <spencer@spencerlong.com>
+Date:   Wed Nov 13 21:38:09 2024 -0600
+
+    this should work in theory - local is screwy though
+
+[33mcommit 647ef6a4b77a9aa08c6a8ed8c0e60252da96bbc2[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 01:11:29 2024 +0000
+
+    Versioning stuff is hard - fixed v7.0.14 to v7.1.14
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit a060f603b5649359286951aadc5b9b38e4f2fd5d[m
+Author: snipe <snipe@snipe.net>
+Date:   Thu Nov 14 01:11:01 2024 +0000
+
+    Versioning stuff is hard - fixed v7.0.14 to v7.1.14
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit a89e17212eacde1a6882ae755b7fec63e1d99a39[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 23:46:30 2024 +0000
+
+    Bumped version
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit f7dcfca66c32355c7bf2485758e13a64fdd73507[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 23:46:04 2024 +0000
+
+    Bumped version
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit efeef5cdc46760ff51ee9bec9b3c8392c7e4c6ac[m
+Author: akemidx <kojotek.dx@gmail.com>
+Date:   Wed Nov 13 18:29:58 2024 -0500
+
+    removing || parts of if else
+
+[33mcommit eb57652548c943ac5ce222da91151bdbf34ede2c[m
+Merge: 3bf33aa68 cb7e47a3a
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 22:57:00 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+    
+    # Conflicts:
+    #       config/version.php
+    #       public/css/build/app.css
+    #       public/css/build/overrides.css
+    #       public/css/dist/all.css
+    #       public/css/dist/skins/_all-skins.css
+    #       public/css/dist/skins/_all-skins.min.css
+    #       public/css/dist/skins/skin-black-dark.css
+    #       public/css/dist/skins/skin-black-dark.min.css
+    #       public/css/dist/skins/skin-blue-dark.css
+    #       public/css/dist/skins/skin-blue-dark.min.css
+    #       public/css/dist/skins/skin-green-dark.css
+    #       public/css/dist/skins/skin-green-dark.min.css
+    #       public/css/dist/skins/skin-orange-dark.css
+    #       public/css/dist/skins/skin-orange-dark.min.css
+    #       public/css/dist/skins/skin-purple-dark.css
+    #       public/css/dist/skins/skin-purple-dark.min.css
+    #       public/css/dist/skins/skin-red-dark.css
+    #       public/css/dist/skins/skin-red-dark.min.css
+    #       public/css/dist/skins/skin-yellow-dark.css
+    #       public/css/dist/skins/skin-yellow-dark.min.css
+    #       public/mix-manifest.json
+
+[33mcommit cb7e47a3a36849089f98149b3897af4f9eb102a0[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 22:55:33 2024 +0000
+
+    Updated translations
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 0ba861920f754a378404366eac5eb5e82a4c3d31[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 22:51:20 2024 +0000
+
+    Updated dev assets
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit e185b2b7810e4fd84a04135384d200ad59e455d5[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 22:50:13 2024 +0000
+
+    Bumped hash
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 3bf33aa68250a3dec58531d83db3dda101ee03ae[m
+Merge: 24456f723 5084843f9
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 22:39:01 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 5084843f9d1eba570a37e5a4d7d04606bb7f9a54[m
+Merge: 73383c688 e80a456e0
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 22:38:24 2024 +0000
+
+    Merge pull request #15809 from marcusmoore/fixes/teams
+    
+    Fixed Microsoft Teams notifications
+
+[33mcommit e80a456e04c6c69086b7134923f31e3b747f1a86[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Wed Nov 13 14:35:20 2024 -0800
+
+    Remove duplicate method
+
+[33mcommit c399d797b4c7de9d627f4c8fd31384641cfdddb4[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Wed Nov 13 14:29:01 2024 -0800
+
+    Add conditional for microsoft team integration version
+
+[33mcommit ac3ae651b1e84d375597e3fca9e4b72cf2de52d8[m
+Author: Marcus Moore <contact@marcusmoore.io>
+Date:   Wed Nov 13 14:15:43 2024 -0800
+
+    Remove incorrect typehint
+
+[33mcommit 73383c688ebc38f4a9756e866283a8c882b2cf35[m
+Merge: 9d2cbc4bb 2db70379a
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 21:21:40 2024 +0000
+
+    Merge pull request #15782 from Toreg87/fixes/indentation_userscontroller
+    
+    Fix Indentation in UsersController
+
+[33mcommit 24456f723bb05e6d2de9ffe0fcb6fac72e7a005d[m
+Merge: 19bf54945 9d2cbc4bb
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 21:21:08 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 9d2cbc4bb9c6d8d8c1052a79a6f450d776d93780[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 21:20:45 2024 +0000
+
+    Add @DarrenRainey as a contributor
+
+[33mcommit 796a397d08157be5ec2fbdb5888f361e61e51ed6[m
+Merge: 381c6e05b 823af33d1
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 21:20:26 2024 +0000
+
+    Merge pull request #15807 from DarrenRainey/develop
+    
+    Patch for whitespace causing HTTP 500 errors.
+
+[33mcommit 19bf5494508ed5c8b6f85b1288efe6e2eb00ff3b[m
+Merge: 8feb9c49b 381c6e05b
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 21:17:40 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit 381c6e05bb9a9c5c889f34105c894d5ab23d0aa8[m
+Merge: ada8e77b8 1061df8c8
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 21:17:08 2024 +0000
+
+    Merge pull request #15808 from Godmartinz/check-license-for-email-boolean
+    
+    Fixed checkin/checkout email boolean check for Licenses
+
+[33mcommit ada8e77b85776306291c69c1ee0cd862621ba1d4[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 21:16:08 2024 +0000
+
+    Added location to asset view
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 1061df8c8b6ccbe6fa67629bc425a2fbf88208eb[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Wed Nov 13 13:07:28 2024 -0800
+
+    fix user checkout license category email check
+
+[33mcommit 823af33d1fdd0501bf9d540a8fa05e4994d889fe[m
+Author: Darren Rainey <darren@darrenraineys.co.uk>
+Date:   Wed Nov 13 20:58:36 2024 +0000
+
+    Patch for whitespace causing HTTP 500 errors.
+    
+    Patch for whitespace causing HTTP 500 errors.
+    Patch that adds qoutes around MAIL_FROM_NAME and MAIL_REPLYTO_NAME as current script will generate a .env file which causes an 500 error preventing the site from loading.
+    
+    Log File: /var/log/apache2/error.log:
+    The environment file is invalid!
+    Failed to parse dotenv file. Encountered unexpected whitespace at [Asset Management System].
+
+[33mcommit 02ba13be267debc536806995df5b24ab3d92a40d[m
+Merge: 0a87b0b79 b29a2a6ae
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 20:47:20 2024 +0000
+
+    Merge pull request #15730 from akemidx/bug/sc-26974-2
+    
+    FIXED: Login button can disappear under some circumstances
+
+[33mcommit 0a87b0b7902c5f78111e4956020aa5c423c28826[m
+Merge: f2fc11035 ca4bafc04
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 20:40:25 2024 +0000
+
+    Merge pull request #15784 from Godmartinz/Fieldset_table_borders
+    
+    Fixed dark background to fieldsets and right border
+
+[33mcommit 8feb9c49b06fe4bb5751504a584a9a16545f7df8[m
+Merge: e38c2139f f2fc11035
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 20:39:45 2024 +0000
+
+    Merge remote-tracking branch 'origin/develop'
+
+[33mcommit f2fc11035f40068e3537113f43ac2d9dd7c4e3fd[m
+Merge: 3c08760ae 8389c0345
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 20:39:21 2024 +0000
+
+    Merge pull request #15806 from Godmartinz/improved-checkoutable-logging
+    
+    improved logging in checkoutable listener
+
+[33mcommit 3c08760aeb16c0d7334f76241669420c38acfca2[m
+Merge: ab2e7a315 7ccbc60ec
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 20:37:31 2024 +0000
+
+    Merge pull request #15802 from snipe/features/import_models
+    
+    Ability to import asset models (separate from assets)
+
+[33mcommit 8389c034509484abef5f3352fcf1a22fd5f9e349[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Wed Nov 13 12:19:16 2024 -0800
+
+    improved logging in checkoutable listener
+
+[33mcommit ab2e7a315a7ed11532d3e18be7e996762c7cae2d[m
+Merge: 52dceda5a d7b60b348
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 20:13:28 2024 +0000
+
+    Merge pull request #15805 from Godmartinz/license-markdown-fix
+    
+    Fixed license serial gate in markdown
+
+[33mcommit d7b60b348246e909981a6b94c937b7104b0affab[m
+Author: Godfrey M <godmartinz@gmail.com>
+Date:   Wed Nov 13 11:59:22 2024 -0800
+
+    fix serial check in markdown
+
+[33mcommit 52dceda5a24850e600e277a8c6d882b207e3a7e1[m
+Merge: c012bf0ec 92ae7267d
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 19:49:12 2024 +0000
+
+    Merge pull request #15804 from snipe/update_laravel
+    
+    Updated laravel, additional packages for CVE-2024-52301
+
+[33mcommit 92ae7267d01153bbd7e3db615fef99e128fea161[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 19:43:39 2024 +0000
+
+    Updated laravel, additional packages
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 7ccbc60ec0b0abf0423496dc0adac06af506abe5[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 19:35:56 2024 +0000
+
+    Chaneg to ucfirst for Assetmodel -> AssetModel
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 2e340f9a23faa26c2f87d8419bef42970bc761e2[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 19:18:38 2024 +0000
+
+    Two more case fixes
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 304fddb1d19a3bb1b842f6b9fa6b7d2623eec0b8[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:59:32 2024 +0000
+
+    Removed unused test
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 1caf73f9da5625662ca85e57728ede29b8329463[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:58:30 2024 +0000
+
+    Fixed casing, fixed typo
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 4841b891091c9d1e0b19daf03091e9ea1ac4a749[m
+Author: spencerrlongg <spencer@spencerlong.com>
+Date:   Wed Nov 13 12:45:39 2024 -0600
+
+    scratch code for this issue
+
+[33mcommit 6f700ccc95792d97e329a1d0173a2ff03f180247[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:42:44 2024 +0000
+
+    Added relationship for adminuser
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 6fee5332839a96950a86e7fac5c367cb7b156599[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:42:35 2024 +0000
+
+    Updated CSV
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 4a18946dd7019107291e64f52523cb528d920f46[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:42:27 2024 +0000
+
+    Added created by to imports
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 7c3f9ba6afd0fa406da0306d0f53218be0a30a88[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:42:03 2024 +0000
+
+    Fixed tests
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit d3602c05959b46142ca7c5aa2c01fcb1ea9d1fb5[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:23:26 2024 +0000
+
+    Allow sorting on admin name in API
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 1aef7edc430359e6529795c7082d27cda980e234[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:23:11 2024 +0000
+
+    Added created by to the import itself
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit d4018a283490e4a569b5c555210cf64c45cfbaa0[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:22:57 2024 +0000
+
+    Added created_by to models API
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 0c3b8cb11453255bd23fb109518a4c547da61cb6[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:22:46 2024 +0000
+
+    Moved created by to create only
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit b6dbb8879a57cfd3f3c09f7f9602061327ea5c5f[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:22:30 2024 +0000
+
+    Added created by
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 3a1fb615e7fadc2ca5cac165e3b33561464fcca5[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:22:05 2024 +0000
+
+    Added admin sort scope
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 8c3b50dbf2caec9b7ae92fdc41d9cc47ed2dd6a6[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:21:36 2024 +0000
+
+    Added created by
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 54f7917fbe12254b832379fe74744b1e1672e8b2[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:21:27 2024 +0000
+
+    Added created by
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit d7e5fe50ebec2d9af586d313d0ae8f51e13af2b2[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:21:19 2024 +0000
+
+    Use auth facade
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 0a6096e52832f315dd43d07267bce3640f8816d7[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:21:00 2024 +0000
+
+    Updated method name
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 0ae1db6fe325c395a0a34d08fc059869ad84cf83[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:20:47 2024 +0000
+
+    Added created_by
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 4d3137e15a159bd13fe35ae495a7c3a90d77da59[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 18:18:46 2024 +0000
+
+    Added $accessory->created_by = auth()->id();
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 66aaafc4f200918a5bbdfdd9744e0a1820779b93[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 17:08:20 2024 +0000
+
+    Updated variable name
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 85dbbdbbcbdaeb9aea34439e7b3d73685b1878de[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 16:53:19 2024 +0000
+
+    wtf
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 813b304a01adc72353f345f910723d284ac12e30[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 16:49:58 2024 +0000
+
+    Fixed tests
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 2f943bc052f2c2d55b2c1a314a9b5ecd1ab9332d[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 16:44:09 2024 +0000
+
+    Better error messaging for bad fields
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 74ca561ab027bc3157846c9be505a25b20042654[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 16:43:57 2024 +0000
+
+    Fixed welcome email toggle
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 69e36738fe030345af01e315f7e2281e1b30adae[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 16:28:10 2024 +0000
+
+    Updated CSV
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 4afe873f24c5f605a528ae4ccd48b05351123635[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 16:21:40 2024 +0000
+
+    Fixed tests, updated CSV
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 220902a8b444d233936b9b96b560426ef1413c52[m
+Merge: 3740b5858 c012bf0ec
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 15:51:36 2024 +0000
+
+    Merge branch 'develop' into features/import_models
+
+[33mcommit 3740b58580a4e622be6b5293a9c16a0afcbdc551[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 15:46:25 2024 +0000
+
+    Re-added assetmodel import factory
+    
+    Signed-off-by: snipe <snipe@snipe.net>
+
+[33mcommit 3d3e3a955786386423f79dbdff63b03617d0fb70[m
+Author: snipe <snipe@snipe.net>
+Date:   Wed Nov 13 15:45:01 2024 +0000
+
+    Squashed commit of the following:
+    
+    commit c012bf0ece16415fd150532eef40865da51afb52
+    Merge: 787340b98 947351af6
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Nov 13 00:55:53 2024 +0000
+    
+        Merge pull request #15799 from Godmartinz/update_deprecated_trigger_for_ms_teams
+    
+        Updated deprecated trigger for ms teams
+    
+    commit 947351af6716965849ba1b35cacf5d2f667930bd
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Tue Nov 12 16:49:02 2024 -0800
+    
+        removed unused variabl
+    
+    commit 4e0d70e0b843d29115f2cd833bcc39e59ff42452
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Tue Nov 12 15:44:14 2024 -0800
+    
+        checkin notif was missing
+    
+    commit 832ccc6aa3adb97f5b9c275a7ed9dc2989352937
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Tue Nov 12 15:35:09 2024 -0800
+    
+        updated deprecated trigger for ms teams
+    
+    commit 787340b987ce3ce8721f3726034e3144d0e785c8
+    Merge: 6bec57395 c62a02225
+    Author: snipe <snipe@snipe.net>
+    Date:   Tue Nov 12 22:35:11 2024 +0000
+    
+        Merge pull request #14441 from Godmartinz/ldap_location-resync
+    
+        Fixes Assets location not being resynced when Users location is updated via LDAP
+    
+    commit 6bec573956922013dc19cee4840fcb14bcbb74f1
+    Merge: b6ad69fac 1fc5bb54e
+    Author: snipe <snipe@snipe.net>
+    Date:   Mon Nov 11 13:54:09 2024 +0000
+    
+        Merge pull request #15794 from snipe/check_for_file_on_asset_acceptance
+    
+        Check that the file exists before trying to download stored EULA
+    
+    commit 1fc5bb54e1ac036c44e4a6096b958f7e86674248
+    Author: snipe <snipe@snipe.net>
+    Date:   Mon Nov 11 13:50:53 2024 +0000
+    
+        Check that the file exists before trying to download
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit b6ad69fac248658a964ea60dc8d3e909e32795f6
+    Merge: 357ef7e37 47b2cdb84
+    Author: snipe <snipe@snipe.net>
+    Date:   Sun Nov 10 18:05:20 2024 +0000
+    
+        Merge pull request #15793 from snipe/allow_eol_explicit
+    
+        Allow user to specify null for calculation or explicit on bulk edit
+    
+    commit 47b2cdb8469e6d4904f9ad3ffb34bdc6d9a196db
+    Author: snipe <snipe@snipe.net>
+    Date:   Sun Nov 10 18:04:13 2024 +0000
+    
+        Allow user to specify null for calculation or explicit on bulk edit
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 357ef7e3757712307417b5533785d839c0fb58a9
+    Merge: 000f3171e 6928b1b27
+    Author: snipe <snipe@snipe.net>
+    Date:   Sun Nov 10 17:48:25 2024 +0000
+    
+        Merge pull request #15792 from snipe/edit_eol_from_bulk
+    
+        Added EOL date to bulk asset edit
+    
+    commit 6928b1b273667f1b36c97183e167da0418c39dd6
+    Author: snipe <snipe@snipe.net>
+    Date:   Sun Nov 10 17:47:10 2024 +0000
+    
+        Added eol date to bulk asset edit
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 000f3171e39bcdbbb79a12296aa3f6326101d22f
+    Author: snipe <snipe@snipe.net>
+    Date:   Fri Nov 8 10:28:01 2024 +0000
+    
+        Upgrade jspdf-autotable from 3.8.3 to 3.8.4 #15786
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 5ef3183a5261bfe74df7e5616bb2d54b9c64f37c
+    Merge: a41529dbc 050831868
+    Author: snipe <snipe@snipe.net>
+    Date:   Thu Nov 7 11:44:06 2024 +0000
+    
+        Merge pull request #15783 from uberbrady/improve_user_and_location_manager_indexes
+    
+        Improved indexes on manager_id for locations and users, including del…
+    
+    commit 050831868e96722753ef15228d794f8343da5548
+    Author: Brady Wetherington <bwetherington@grokability.com>
+    Date:   Thu Nov 7 11:39:27 2024 +0000
+    
+        Improved indexes on manager_id for locations and users, including deleted_at
+    
+    commit a41529dbc4798d635739bdb77b8ffb8955049c89
+    Merge: aa168fcb5 4fcf5ac7d
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Nov 6 21:22:45 2024 +0000
+    
+        Merge pull request #15780 from uberbrady/add_manager_indexes
+    
+        Add new indexes to locations and users for faster manager lookups
+    
+    commit 4fcf5ac7dae2819e6b19d1d63d7d865d08d056be
+    Author: Brady Wetherington <bwetherington@grokability.com>
+    Date:   Wed Nov 6 21:19:41 2024 +0000
+    
+        Add new indexes to locations and users for faster manager lookups
+    
+    commit aa168fcb5b7d9c9d0c600ca2d7160985ce1a240f
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Nov 6 18:41:52 2024 +0000
+    
+        Updated BS table to 1.23.5
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 9c1c93ad52112a53c7c1e4d502f04091b118c125
+    Merge: b96a31253 ad99b8b45
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Nov 6 18:40:35 2024 +0000
+    
+        Merge pull request #15774 from marcusmoore/feature/sc-27350
+    
+        Added Checkout ID column to user accessory table
+    
+    commit ad99b8b456968c2385f288b20d20d30d41d847b6
+    Author: Marcus Moore <contact@marcusmoore.io>
+    Date:   Wed Nov 6 10:37:31 2024 -0800
+    
+        Use generic ID translation
+    
+    commit b96a31253902a4d702de318b381098f66e474fb8
+    Merge: 654f67b6a bab1e58ea
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Nov 6 18:29:22 2024 +0000
+    
+        Merge pull request #15779 from ubc-cpsc/bugfix/CVE-2024-50345
+    
+        Fixes CVE-2024-50342, CVE-2024-50345, CVE-2024-51736
+    
+    commit bab1e58ea4dc0715478e8feef1aa562d1ab9ce82
+    Author: Joël Pittet <pittet@cs.ubc.ca>
+    Date:   Wed Nov 6 09:46:11 2024 -0800
+    
+        symfony/http-client CVE-2024-50342, symfony/http-foundation CVE-2024-50345, symfony/process CVE-2024-51736
+    
+    commit 654f67b6ac4537794ec134fa96ee924075875b5e
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Nov 6 14:05:42 2024 +0000
+    
+        Updated webpack
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 3965bcd7c116bdde2649e38d96531808d811962b
+    Merge: 287f4addf 2362cb5e5
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Nov 6 14:02:44 2024 +0000
+    
+        Merge pull request #15773 from Godmartinz/Fix_failing_failing_tests
+    
+        Fixed notifications for licenses and asset to asset checkoutables
+    
+    commit 2362cb5e5221ecae78c6aaf28bf8380f5ae20de2
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Nov 4 16:32:46 2024 -0800
+    
+        refactor to getNotifiables
+    
+    commit e7cb4a75eb5cd0d32524bcae0d53d184415acff5
+    Author: Marcus Moore <contact@marcusmoore.io>
+    Date:   Mon Nov 4 15:56:53 2024 -0800
+    
+        Show accessory checkout id in user accessory table
+    
+    commit 93494ac55447b062b80918d84a80e38c5dbd2c3d
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Nov 4 15:17:58 2024 -0800
+    
+        put dataprovider back in for tests
+    
+    commit 0d707a18512aa8e01c242d6d5486b675754ed5ed
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Nov 4 15:13:10 2024 -0800
+    
+        fixes notifications for licenses and asset to asset checkouables
+    
+    commit 287f4addf026f44467376bada0222aa4e489eb0f
+    Merge: f32ebdc7a 2e96d478f
+    Author: snipe <snipe@snipe.net>
+    Date:   Mon Nov 4 20:06:24 2024 +0000
+    
+        Merge pull request #15771 from snipe/revert-15744-chore/action-tests-debugging
+    
+        Revert "Added the display of logs when tests fail in GitHub Actions"
+    
+    commit 2e96d478f15c433c5628e3307cd323fcd8a765ac
+    Author: Marcus Moore <contact@marcusmoore.io>
+    Date:   Mon Nov 4 11:04:17 2024 -0800
+    
+        Revert "Added the display of logs when tests fail in GitHub Actions"
+    
+    commit f32ebdc7acc370ab8d6f0e07a3f8ee59981d1491
+    Merge: 5897d37fc d6c7dc8e1
+    Author: snipe <snipe@snipe.net>
+    Date:   Thu Oct 31 22:39:58 2024 +0000
+    
+        Merge pull request #15765 from marcusmoore/chore/add-missing-livewire-file
+    
+        Added missing Livewire file
+    
+    commit d6c7dc8e1c99c5421c149543a22b8cec0784ba7f
+    Author: Marcus Moore <contact@marcusmoore.io>
+    Date:   Thu Oct 31 15:37:01 2024 -0700
+    
+        Add missing livewire file
+    
+    commit 5897d37fcfd3c79afeef72e095d32145e90798bc
+    Merge: 49de07045 21a27dcac
+    Author: snipe <snipe@snipe.net>
+    Date:   Thu Oct 31 20:54:01 2024 +0000
+    
+        Merge pull request #15763 from Godmartinz/no_to_email_check
+    
+        Fixed emails not being send if target has no email or if not instance of User. Cc_emails will still be sent.
+    
+    commit 21a27dcac11a696a28d35a20d32e5381faa10e43
+    Merge: 379138076 49de07045
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 31 12:55:46 2024 -0700
+    
+        fixed conflicts
+    
+    commit 3791380764fa0ddffeb94d5c5b14d1ae2357bab6
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 31 12:52:47 2024 -0700
+    
+        remove unused uses
+    
+    commit 7a0f79ecd222b23f9e874c354b5881dcaba9d2db
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 31 12:51:22 2024 -0700
+    
+        remove test route
+    
+    commit 97a449e80ece3e553ec12064e74eae9e291f30f6
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 31 12:50:13 2024 -0700
+    
+        removes instanceof User check
+    
+    commit e65942064e3b555885e575aa22315ff02801bde9
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 31 12:45:29 2024 -0700
+    
+        send emails even if target has no email
+    
+    commit 49de07045ad48893daad9ea116b517145a711433
+    Merge: 7e996c40f 73772a013
+    Author: snipe <snipe@snipe.net>
+    Date:   Thu Oct 31 17:53:17 2024 +0000
+    
+        Merge pull request #15731 from Godmartinz/refacto_ms_teams_notifs
+    
+        Fixed MS Team Notifications to utilize workflows after deprecation
+    
+    commit 7e996c40f5770b608b36af035c0118c83fd07864
+    Merge: 73e8f160c 69e74bbdd
+    Author: snipe <snipe@snipe.net>
+    Date:   Thu Oct 31 02:51:42 2024 +0000
+    
+        Merge pull request #15758 from snipe/jerm/fix-deprecation-warning
+    
+        Fix ${var} deprecation warning in License model
+    
+    commit 69e74bbdd39201fad43216a0520d771a58554021
+    Author: Jeremy Price <jeremy@grokability.com>
+    Date:   Wed Oct 30 19:43:54 2024 -0700
+    
+        Fix ${var} deprecation warning in License model
+    
+        When upgrading to php8.3 i started getting deprecation warning about
+        using ${var} instead of {$var} in 2 places in License.php
+    
+        PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /var/www/snipe-it/app/Models/License.php on line 187
+        PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /var/www/snipe-it/app/Models/License.php on line 219
+    
+        This simple fix switches the offending statements to {$var} syntax.
+    
+    commit 73e8f160cf078e3dbc69cf032a899cf6fa8d8739
+    Merge: f68df1fa0 bd23772fe
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Oct 30 19:29:09 2024 +0000
+    
+        Merge pull request #15756 from Godmartinz/cc-email-array
+    
+        changes `admin_cc_email` validation to allow an array
+    
+    commit bd23772fe96dc33db62c0fd286a095d4c99e2067
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 30 11:42:15 2024 -0700
+    
+        changes cc_email validation to allow array
+    
+    commit 73772a01381ea654bf7cca48860e61551f363295
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 30 11:12:31 2024 -0700
+    
+        change button text
+    
+    commit b26cae372cad814dac2a40467aaa122c58c93787
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 30 10:40:23 2024 -0700
+    
+        merged in develop
+    
+    commit d6ba303f39c6b5d00aabfdc61a8aadd74c7ca7bf
+    Merge: 9a0eee8f0 f68df1fa0
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 30 10:27:45 2024 -0700
+    
+        Merge branch 'develop' into refacto_ms_teams_notifs
+    
+        # Conflicts:
+        #   app/Listeners/CheckoutableListener.php
+    
+    commit f68df1fa063125eb1b3f6e5a44b7e5156148c1e4
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Oct 30 13:21:13 2024 +0000
+    
+        Made type searchable in action logs
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit f0813e03bf95f3ab53e650ebb8f7128b7fc90164
+    Merge: 05875ebd1 58ff641f8
+    Author: snipe <snipe@snipe.net>
+    Date:   Wed Oct 30 12:18:41 2024 +0000
+    
+        Merge pull request #15681 from Godmartinz/seperating_notification_n_mail
+    
+        Separated Notifications and Emails: Check ins and Check outs
+    
+    commit 05875ebd1fcea7366288de8833adfcedd66a309c
+    Author: snipe <snipe@snipe.net>
+    Date:   Mon Oct 28 22:04:35 2024 +0000
+    
+        Updated translations
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 9a0eee8f03fa06ba67476996741faffe5cf248e7
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Oct 28 15:03:43 2024 -0700
+    
+        revert testing variables
+    
+    commit 6128765d1f88215c9aa0e528ae2def74cba9bf4c
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Oct 28 15:03:03 2024 -0700
+    
+        change wording on notification button
+    
+    commit c24f79c025cde958335981252d47285e347aae98
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Oct 28 14:58:43 2024 -0700
+    
+        update method comment
+    
+    commit e7c4343c902961268792bd4951930cec56959384
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Oct 28 14:56:48 2024 -0700
+    
+        readd checkin accessory format
+    
+    commit c0620c27ff74ceb66ce23a75431d8f2184eb91e0
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Oct 28 14:30:34 2024 -0700
+    
+        adds back laravels channel formats
+    
+    commit ed81973fe649355a687dfd5dc70b60d9fdb997c3
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Oct 28 13:57:42 2024 -0700
+    
+        adds notifications for deprecation
+    
+    commit 2d318b394c98954c51e9a6457ccf570487e47ae4
+    Merge: 86d784bd5 5c4971612
+    Author: snipe <snipe@snipe.net>
+    Date:   Mon Oct 28 18:41:49 2024 +0000
+    
+        Merge pull request #15744 from marcusmoore/chore/action-tests-debugging
+    
+        Added the display of logs when tests fail in GitHub Actions
+    
+    commit b987b3dc005400e2c5042fc47be7d134e86c4314
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Mon Oct 28 10:57:48 2024 -0700
+    
+        adds back the laravel channels package and applies a deprecated check
+    
+    commit 5c49716129950b19b503c0d05456ea83c2119755
+    Author: Marcus Moore <contact@marcusmoore.io>
+    Date:   Mon Oct 28 10:24:35 2024 -0700
+    
+        Dump logs on test failure
+    
+    commit 86d784bd598393919a7b60a4845d6e47d1931de0
+    Author: snipe <snipe@snipe.net>
+    Date:   Mon Oct 28 13:37:59 2024 +0000
+    
+        Fixed #15740 - use non-translated strings for icons
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 589f9cccdf1f4af8956f527728678e2b2316d723
+    Author: snipe <snipe@snipe.net>
+    Date:   Mon Oct 28 12:04:10 2024 +0000
+    
+        Fixed  #15732
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 4d848e45e6c58aec7cb3d5fc32b5bdab7ddf1bd0
+    Author: snipe <snipe@snipe.net>
+    Date:   Mon Oct 28 11:55:24 2024 +0000
+    
+        Fixed #15736
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 58ff641f822eec54ebd40c9904c26034e215c550
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 22:53:53 2024 -0700
+    
+        removed unused variables
+    
+    commit ce68f550d8edf633d01af476fd95f1161b474e44
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 16:01:17 2024 -0700
+    
+        remove alert emails from cc
+    
+    commit 6f0c1b12b18901bc335bfdda328777399436386c
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 15:04:54 2024 -0700
+    
+        this adds check out message for consumables
+    
+    commit 278bc5e52a133189cfaf5348d709dcf229229e2f
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 14:59:10 2024 -0700
+    
+        ads check in and checkout message for license seats
+    
+    commit cce75a81859d3ff36dee19cf7d0278c17b711549
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 14:48:23 2024 -0700
+    
+        adds check in and checkout messag for accessories
+    
+    commit e27ff13377f8f783b7230287736eeff63e24c75d
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 14:39:40 2024 -0700
+    
+        adds check in and checkout message for assets
+    
+    commit 56365495a1c3b38443772a8ab6d3cc5f9815691c
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 14:26:42 2024 -0700
+    
+        remove unnecessary fields in accessory checkout mail
+    
+    commit 18da80e6de14f285f59012c75696f55be617a2d4
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 14:24:00 2024 -0700
+    
+        fix checkoutable listener for microsoft teams
+    
+    commit 18760e3fa19d4d37cf16995a4ba5f0b56ba3771a
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 12:21:51 2024 -0700
+    
+        replaces teams notification package, passes integration test
+    
+    commit 57107c487cce4f5520b8cfb97408e8c9f02d6547
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Thu Oct 24 09:40:10 2024 -0700
+    
+        fixed last test, definetly the last test
+    
+    commit dfc63641dca2b0a19f632f73733c5bf015517815
+    Merge: 07a51ec8b b6340532d
+    Author: snipe <snipe@snipe.net>
+    Date:   Thu Oct 24 11:40:50 2024 +0100
+    
+        Merge pull request #15550 from uberbrady/fix_multi_create_partial_failure
+    
+        Fix multi create partial failure (fixes: [RB-18591])
+    
+    commit 07a51ec8b128aca554b44af9e9b030f284769650
+    Merge: e0ec6795b 727c0e458
+    Author: snipe <snipe@snipe.net>
+    Date:   Thu Oct 24 10:03:10 2024 +0100
+    
+        Merge pull request #15712 from Godmartinz/fix_import-progress-bar
+    
+        Upgraded `livewire v3.5.9 => v3.5.12`
+    
+    commit 6329f5b87e9dd2ff852073aa290e2930b2f78c10
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 23 17:33:23 2024 -0700
+    
+        removed unused variable from test
+    
+    commit e0ec6795b57406e100fc80af4b5799eb6b00b757
+    Author: snipe <snipe@snipe.net>
+    Date:   Thu Oct 24 01:27:50 2024 +0100
+    
+        Use crucial for seeded data
+    
+        Signed-off-by: snipe <snipe@snipe.net>
+    
+    commit 15073a0d3885dc18609158943254317a2394d9d7
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 23 17:27:37 2024 -0700
+    
+        last test to fix
+    
+    commit a80c09c16d256d67592e35fdde2bd165ff7090bb
+    Merge: ab3b9c451 5509d756b
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 23 17:23:55 2024 -0700
+    
+        Merge branch 'develop' into seperating_notification_n_mail
+    
+    commit 5509d756b7d410f5ec98c599c87ad530003b2cb4
+    Merge: 55ba6279a b16a978f1
+    Author: snipe <snipe@snipe.net>
+    Date:   Thu Oct 24 01:12:11 2024 +0100
+    
+        Merge pull request #15722 from Godmartinz/fix_component_factory
+    
+        Fixed Component Factory: use manufacturer factory for `manufactuer_id`
+    
+    commit b16a978f1b5c11c949f9caff4e297628a21d0511
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 23 16:25:51 2024 -0700
+    
+        uses manufacturer factory for manufactuer_id
+    
+    commit ab3b9c45106fb68522f3832863f6e16c8f4856f7
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 23 16:24:01 2024 -0700
+    
+        remove unnecessary code from checkinasset notification
+    
+    commit 2cc2b2b1dfc3c4040a223c052d4cfff0175b3f0c
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 23 16:06:27 2024 -0700
+    
+        apply array_filter to cc emails to prevent errors
+    
+    commit 62d06b44d634155aff0035dd4340a03f86479918
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 23 15:43:42 2024 -0700
+    
+        set fallback from email address to service.snipe-it.io
+    
+    commit f29a3831796ea5b8e73e17bb4a45919701f221bd
+    Merge: fd74c3510 55ba6279a
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 23 15:15:14 2024 -0700
+    
+        Merge branch 'develop' into seperating_notification_n_mail
+    
+        # Conflicts:
+        #   app/Notifications/CheckoutConsumableNotification.php
+    
+    commit fd74c35102b19ec99118c84e6e8339003936aa0e
+    Author: Godfrey M <godmartinz@gmail.com>
+    Date:   Wed Oct 23 15:08:
