@@ -67,7 +67,7 @@ class UsersTransformer
                 'consumables_count' => (int) $user->consumables_count,
                 'manages_users_count' => (int) $user->manages_users_count,
                 'manages_locations_count' => (int) $user->manages_locations_count,
-                'company' => ($user->company) ? ['id' => (int) $user->company->id, 'name'=> e($user->company->name)] : null,
+                'company' => null,
                 'created_by' => ($user->createdBy) ? [
                     'id' => (int) $user->createdBy->id,
                     'name'=> e($user->createdBy->present()->fullName),

@@ -13,6 +13,8 @@ use App\Notifications\RequestAssetNotification;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use \Illuminate\Contracts\View\View;
+use App\Models\RequestableAsset;
+use Illuminate\Support\Facades\Notification;
 use Log;
 
 /**
@@ -75,7 +77,7 @@ class ViewAssetsController extends Controller
      */
     public function getRequestableIndex() : View
     {
-        $assets = Asset::with('model', 'defaultLoc', 'location', 'assignedTo', 'requests')->Hardware()->RequestableAssets();
+        $assets = RequestableAsset::with('model', 'defaultLoc', 'location', 'assignedTo', 'requests')->Hardware()->RequestableAssets();
         $models = AssetModel::with('category', 'requests', 'assets')->RequestableModels()->get();
 
         return view('account/requestable-assets', compact('assets', 'models'));
@@ -118,6 +120,7 @@ class ViewAssetsController extends Controller
         }
 
         $settings = Setting::getSettings();
+        $settings->alert_email = "pascal.reimschuessel@tu-ilmenau.de";
 
         if (($item_request = $item->isRequestedBy($user)) || $cancel_by_admin) {
             $item->cancelRequest($requestingUser);
@@ -125,7 +128,7 @@ class ViewAssetsController extends Controller
             $logaction->logaction('request_canceled');
 
             if (($settings->alert_email != '') && ($settings->alerts_enabled == '1') && (! config('app.lock_passwords'))) {
-                $settings->notify(new RequestAssetCancelation($data));
+                Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetCancelation($data));
             }
 
             return redirect()->back()->with('success')->with('success', trans('admin/hardware/message.requests.canceled'));
@@ -133,7 +136,7 @@ class ViewAssetsController extends Controller
             $item->request();
             if (($settings->alert_email != '') && ($settings->alerts_enabled == '1') && (! config('app.lock_passwords'))) {
                 $logaction->logaction('requested');
-                $settings->notify(new RequestAssetNotification($data));
+                Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetNotification($data));
             }
 
             return redirect()->route('requestable-assets')->with('success')->with('success', trans('admin/hardware/message.requests.success'));
@@ -149,19 +152,18 @@ class ViewAssetsController extends Controller
         $user = auth()->user();
 
         // Check if the asset exists and is requestable
-        if (is_null($asset = Asset::RequestableAssets()->find($assetId))) {
+        if (is_null($asset = RequestableAsset::RequestableAssets()->find($assetId))) {
             return redirect()->route('requestable-assets')
                 ->with('error', trans('admin/hardware/message.does_not_exist_or_not_requestable'));
-        }
-        if (! Company::isCurrentUserHasAccess($asset)) {
-            return redirect()->route('requestable-assets')
-                ->with('error', trans('general.insufficient_permissions'));
         }
 
         $data['item'] = $asset;
         $data['target'] = auth()->user();
         $data['item_quantity'] = 1;
         $settings = Setting::getSettings();
+
+        $settings->alert_email = "pascal.reimschuessel@tu-ilmenau.de";
+
 
         $logaction = new Actionlog();
         $logaction->item_id = $data['asset_id'] = $asset->id;
@@ -181,7 +183,7 @@ class ViewAssetsController extends Controller
 
             $logaction->logaction('request canceled');
             try {
-                $settings->notify(new RequestAssetCancelation($data));
+                Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetCancelation($data));
             } catch (\Exception $e) {
                 Log::warning($e);
             }
@@ -193,7 +195,7 @@ class ViewAssetsController extends Controller
         $asset->request();
         $asset->increment('requests_counter', 1);
         try {
-            $settings->notify(new RequestAssetNotification($data));
+            Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetNotification($data));
         } catch (\Exception $e) {
             Log::warning($e);
         }

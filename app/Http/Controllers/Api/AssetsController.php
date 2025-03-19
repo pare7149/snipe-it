@@ -30,10 +30,13 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Requests\ImageUploadRequest;
+use App\Models\RequestableAsset;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use App\View\Label;
 use Illuminate\Support\Facades\Storage;
+use App\Models\RequestableAssets;
 
 
 /**
@@ -1156,7 +1159,7 @@ class AssetsController extends Controller
             $allowed_columns[] = $field->db_column_name();
         }
 
-        $assets = Asset::select('assets.*')
+        $assets = RequestableAsset::select('assets.*')
             ->with(
                 'location',
                 'assetstatus',

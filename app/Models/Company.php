@@ -266,7 +266,8 @@ final class Company extends SnipeModel
         if (! static::isFullMultipleCompanySupportEnabled() || (Auth::hasUser() && auth()->user()->isSuperUser()) || (! Auth::hasUser())) {
             return $query;
         } else {
-            return static::scopeCompanyablesDirectly($query, $column, $table_name);
+		if (str_contains($query->getModel()->getTable(), 'users')) return $query;
+		else static::scopeCompanyablesDirectly($query, $column, $table_name);
         }
     }
 
@@ -292,7 +293,6 @@ final class Company extends SnipeModel
 
             // Dynamically get the table name if it's not passed in, based on the model we're querying against
             $table = ($table_name) ? $table_name."." : $query->getModel()->getTable().".";
-
             return $query->where($table.$column, '=', $company_id);
         }
 

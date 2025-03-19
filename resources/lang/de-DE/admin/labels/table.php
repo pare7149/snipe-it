@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'example_company'    => 'Beispielfirma AG',
+    'example_company'    => 'Testfirma limitiert',
     'example_defaultloc' => 'Gebäude 1',
     'example_category'   => 'Testkategorie',
     'example_location'   => 'Baue 2',
     'example_manufacturer'  => 'Test Manufacturing Inc.',
     'example_model'      => 'Testmodell',
-    'example_supplier'   => 'Beispielfirma AG',
+    'example_supplier'   => 'Testfirma limitiert',
     'labels_per_page'    => 'Label',
     'support_fields'     => 'Felder',
     'support_asset_tag'  => 'Tag',

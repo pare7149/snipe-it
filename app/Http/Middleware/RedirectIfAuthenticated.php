@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Settings;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +19,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect()->intended('/');
+            return redirect()->intended(config('app.url'));
         }
 
         return $next($request);
