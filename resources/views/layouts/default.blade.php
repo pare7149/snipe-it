@@ -28,8 +28,6 @@ dir="{{ Helper::determineLanguageDirection() }}">
     <meta name="language-direction" content="{{ Helper::determineLanguageDirection() }}">
     <meta name="baseUrl" content="{{ config('app.url') }}/">
 
-    <base target="_blank">
-
     <script nonce="{{ csrf_token() }}">
         window.Laravel = {csrfToken: '{{ csrf_token() }}'};
     </script>
