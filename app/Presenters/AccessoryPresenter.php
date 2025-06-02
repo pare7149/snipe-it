@@ -165,7 +165,7 @@ class AccessoryPresenter extends Presenter
                 'sortable' => true,
                 'switchable' => true,
                 'title' => "Rückgabedatum",
-                'visible' => true,
+                'visible' => false,
                 'formatter' => 'dateDisplayFormatter',
             ], 
             [
@@ -243,6 +243,15 @@ class AccessoryPresenter extends Presenter
                 'visible' => false,
                 'formatter' => 'usersLinkObjFormatter',
             ],
+            [
+                'field' => 'expected_checkin',
+                'searchable' => true,
+                'sortable' => true,
+                'switchable' => true,
+                'title' => "Rückgabedatum",
+                'visible' => false,
+                'formatter' => 'dateDisplayFormatter',
+            ], 
             [
                 'field' => 'available_actions',
                 'searchable' => false,
