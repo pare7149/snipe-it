@@ -245,9 +245,8 @@ class AccessoryPresenter extends Presenter
             ],
             [
                 'field' => 'expected_checkin',
-                'searchable' => true,
-                'sortable' => true,
-                'switchable' => true,
+                'searchable' => false,
+                'sortable' => false,
                 'title' => "Rückgabedatum",
                 'visible' => false,
                 'formatter' => 'dateDisplayFormatter',
