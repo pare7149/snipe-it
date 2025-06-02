@@ -169,7 +169,14 @@
                                             'none'    => trans('admin/settings/general.none'),
                                         ];
                                     @endphp
-                                    {{ Form::select('label2_1d_type', $select1DValues, old('label2_1d_type', $setting->label2_1d_type), [ 'class'=>'select2 col-md-4', 'aria-label'=>'label2_1d_type' ]) }}
+                                    <x-input.select
+                                        name="label2_1d_type"
+                                        id="label2_1d_type"
+                                        :options="$select1DValues"
+                                        :selected="old('label2_1d_type', $setting->label2_1d_type)"
+                                        class="col-md-4"
+                                        aria-label="label2_1d_type"
+                                    />
                                     {!! $errors->first('label2_1d_type', '<span class="alert-msg" aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i> :message</span>') !!}
                                     <p class="help-block">
                                         {{ trans('admin/settings/general.label2_1d_type_help') }}.
@@ -213,7 +220,14 @@
                                                 'none'       => trans('admin/settings/general.none'),
                                             ]);
                                         @endphp
-                                        {{ Form::select('label2_2d_type', $select2DValues, old('label2_2d_type', $setting->label2_2d_type), [ 'class'=>'select2 col-md-4', 'aria-label'=>'label2_2d_type' ]) }}
+                                        <x-input.select
+                                            name="label2_2d_type"
+                                            id="label2_2d_type"
+                                            :options="$select2DValues"
+                                            :selected="old('label2_2d_type', $setting->label2_2d_type)"
+                                            class="col-md-4"
+                                            aria-label="label2_2d_type"
+                                        />
                                         {!! $errors->first('label2_2d_type', '<span class="alert-msg" aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i> :message</span>') !!}
                                         <p class="help-block">
                                             {{ trans('admin/settings/general.label2_2d_type_help', ['current' => $setting->barcode_type]) }}.
@@ -284,15 +298,42 @@
                                     <label for="label2_2d_target" class="control-label">{{ trans('admin/settings/general.label2_2d_target') }}</label>
                                 </div>
                                 <div class="col-md-9">
-                                    {{ Form::select('label2_2d_target', [
-                                        'hardware_id'           =>  trans('general.url') .': /hardware/{id} ('.trans('admin/settings/general.default').')', 
-                                        'ht_tag'                =>  trans('general.url') .': /ht/{asset_tag}', 
-                                        'plain_asset_id'        =>  trans('admin/settings/general.data') .': '. trans('admin/settings/general.asset_id') .' {id}',
-                                        'plain_asset_tag'       =>  trans('admin/settings/general.data') .': '. trans('general.asset_tag') .' {asset_tag}',
-                                        'plain_serial_number'   =>  trans('admin/settings/general.data') .': '. trans('general.serial_number') .' {serial}',
-                                       ], old('label2_2d_target', $setting->label2_2d_target), [ 'class'=>'select2 col-md-4', 'aria-label'=>'label2_2d_target' ]) }}
+                                    <x-input.select
+                                        name="label2_2d_target"
+                                        id="label2_2d_target"
+                                        :options="['hardware_id'=>'/hardware/{id} ('.trans('admin/settings/general.default').')',
+                                                   'ht_tag'=>'/ht/{asset_tag}',
+                                                   'location' => '/location/{location_id}',
+                                                   ]"
+                                        :selected="old('label2_2d_target', $setting->label2_2d_target)"
+                                        class="col-md-4"
+                                        aria-label="label2_2d_target"
+                                    />
                                     {!! $errors->first('label2_2d_target', '<span class="alert-msg" aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i> :message</span>') !!}
                                     <p class="help-block">{{ trans('admin/settings/general.label2_2d_target_help') }}</p>
+                                </div>
+                            </div>
+                            <!-- Field offset -->
+                            <div class="form-group{{ $errors->has('label2_empty_row_count') ? ' has-error' : '' }}">
+                                <div class="col-md-3 text-right">
+                                    <label for="label2_empty_row_count" class="control-label">{{ trans('admin/settings/general.empty_row_count') }}</label>
+                                </div>
+                                <div class="col-md-9 col-xl-2 col-lg-2">
+                                        <input
+                                                class="form-control"
+                                                aria-label="Empty Row Count"
+                                                name="label2_empty_row_count"
+                                                type="number"
+                                                id="label2_empty_row_count"
+                                                min="0"
+                                                max="5"
+                                                value="{{ old('label2_empty_row_count', $setting->label2_empty_row_count) }}"
+                                        >
+                                </div>
+
+                                <div class="col-md-9 col-md-offset-3">
+                                    <p class="help-block">{!! trans('admin/settings/general.empty_row_count_help') !!}</p>
+                                    {!! $errors->first('label2_empty_row_count', '<span class="alert-msg" aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i> :message</span>') !!}
                                 </div>
                             </div>
                             <div class="col-md-9 col-md-offset-3" style="margin-bottom: 10px;">

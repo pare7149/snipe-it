@@ -64,6 +64,8 @@ return [
     'min_QTY' => 'Mindestmenge',
     'name' => 'Name',
     'new_item_checked' => 'Ein neuer Gegenstand wurde unter Ihrem Namen ausgecheckt. Details finden Sie weiter unten.',
+    'new_item_checked_with_acceptance' => 'Ein neuer Gegenstand, der eine Annahme erfordert, wurde unter Ihrem Namen ausgecheckt. Details finden Sie weiter unten.',
+    'recent_item_checked' => 'Ein Gegenstand, der eine Annahme erfordert, wurde unter Ihrem Namen ausgecheckt. Details finden Sie weiter unten.',
     'notes' => 'Notizen',
     'password' => 'Passwort:',
     'password_reset' => 'Passwort zurücksetzen',

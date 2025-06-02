@@ -40,8 +40,9 @@ class AssetObserver
 
         // If the asset isn't being checked out or audited, log the update.
         // (Those other actions already create log entries.)
-	    if (($attributes['assigned_to'] == $attributesOriginal['assigned_to'])
-	    && ($same_checkout_counter) && ($same_checkin_counter)
+        if (array_key_exists('assigned_to', $attributes) && array_key_exists('assigned_to', $attributesOriginal)
+            && ($attributes['assigned_to'] == $attributesOriginal['assigned_to'])
+            && ($same_checkout_counter) && ($same_checkin_counter)
             && ((isset( $attributes['next_audit_date']) ? $attributes['next_audit_date'] : null) == (isset($attributesOriginal['next_audit_date']) ? $attributesOriginal['next_audit_date']: null))
             && ($attributes['last_checkout'] == $attributesOriginal['last_checkout']) && (!$restoring_or_deleting))
         {
@@ -158,7 +159,7 @@ class AssetObserver
      * is used in this observer, it doesn't actually exist yet and the migration will break unless we
      * use saveQuietly() in the migration which skips this observer.
      *
-     * @see https://github.com/snipe/snipe-it/issues/13723#issuecomment-1761315938
+     * @see https://github.com/grokability/snipe-it/issues/13723#issuecomment-1761315938
      */
     public function saving(Asset $asset)
     {
@@ -171,7 +172,7 @@ class AssetObserver
        // determine if explicit and set eol_explicit to true
        if (!is_null($asset->asset_eol_date) && !is_null($asset->purchase_date)) {
             if($asset->model->eol > 0) {
-                $months = Carbon::parse($asset->asset_eol_date)->diffInMonths($asset->purchase_date); 
+                $months = (int) Carbon::parse($asset->asset_eol_date)->diffInMonths($asset->purchase_date, true);
                 if($months != $asset->model->eol) {
                     $asset->eol_explicit = true;
                 }

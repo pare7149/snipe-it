@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\CheckoutRequests\CancelCheckoutRequestAction;
+use App\Actions\CheckoutRequests\CreateCheckoutRequestAction;
+use App\Exceptions\AssetNotRequestable;
 use App\Models\Actionlog;
 use App\Models\Asset;
 use App\Models\AssetModel;
-use App\Models\Company;
 use App\Models\Setting;
 use App\Models\User;
 use App\Notifications\RequestAssetCancelation;
 use App\Notifications\RequestAssetNotification;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use \Illuminate\Contracts\View\View;
@@ -83,7 +86,7 @@ class ViewAssetsController extends Controller
         return view('account/requestable-assets', compact('assets', 'models'));
     }
 
-    public function getRequestItem(Request $request, $itemType, $itemId = null, $cancel_by_admin = false, $requestingUser = null) : RedirectResponse
+    public function getRequestItem(Request $request, $itemType, $itemId = null, $cancel_by_admin = false, $requestingUser = null): RedirectResponse
     {
         $item = null;
         $fullItemType = 'App\\Models\\'.studly_case($itemType);
@@ -147,7 +150,7 @@ class ViewAssetsController extends Controller
      * Process a specific requested asset
      * @param null $assetId
      */
-    public function getRequestAsset($assetId = null) : RedirectResponse
+    public function store(Asset $asset): RedirectResponse
     {
         $user = auth()->user();
 
@@ -199,9 +202,19 @@ class ViewAssetsController extends Controller
         } catch (\Exception $e) {
             Log::warning($e);
         }
-
-        return redirect()->route('requestable-assets')->with('success')->with('success', trans('admin/hardware/message.requests.success'));
     }
+
+    public function destroy(Asset $asset): RedirectResponse
+    {
+        try {
+            CancelCheckoutRequestAction::run($asset, auth()->user());
+            return redirect()->route('requestable-assets')->with('success')->with('success', trans('admin/hardware/message.requests.canceled'));
+        } catch (Exception $e) {
+            report($e);
+            return redirect()->back()->with('error', trans('general.something_went_wrong'));
+        }
+    }
+
 
     public function getRequestedAssets() : View
     {

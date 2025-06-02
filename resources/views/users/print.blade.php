@@ -101,7 +101,40 @@
                     </tr>
                 </thead>
 
-                @foreach ($show_user->assets as $asset)
+        <div id="assets-toolbar">
+            <h4>{{ trans_choice('general.countable.assets', $show_user->assets->count(), ['count' => $show_user->assets->count()]) }}
+            </h4>
+        </div>
+
+        <table
+            class="snipe-table table table-striped inventory"
+            id="AssetsAssigned"
+            data-pagination="false"
+            data-id-table="AssetsAssigned"
+            data-search="false"
+            data-side-pagination="client"
+            data-sortable="true"
+            data-toolbar="#assets-toolbar"
+            data-show-columns="true"
+            data-sort-order="desc"
+            data-sort-name="created_at"
+            data-show-columns-toggle-all="true"
+            data-cookie-id-table="AssetsAssigned">
+            <thead>
+                <th data-field="asset_id" data-sortable="false" data-visible="true" data-switchable="false">#</th>
+                <th data-field="asset_image" data-sortable="true" data-visible="false" data-switchable="true">{{ trans('general.image') }}</th>
+                <th data-field="asset_tag" data-sortable="true" data-visible="true" data-switchable="false">{{ trans('admin/hardware/table.asset_tag') }}</th>
+                <th data-field="asset_name" data-sortable="true" data-visible="true">{{ trans('general.name') }}</th>
+                <th data-field="asset_category" data-sortable="true" data-visible="true">{{ trans('general.category') }}</th>
+                <th data-field="asset_model" data-sortable="true" data-visible="true">{{ trans('admin/hardware/form.model') }}</th>
+                <th data-field="rtd_location" data-sortable="true" data-visible="true">{{ trans('admin/hardware/form.default_location') }}</th>
+                <th data-field="asset_location" data-sortable="true" data-visible="false">{{ trans('general.location') }}</th>
+                <th data-field="asset_serial" data-sortable="true" data-visible="true">{{ trans('admin/hardware/form.serial') }}</th>
+                <th data-field="asset_checkout_date" data-sortable="true" data-visible="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
+                <th data-field="signature" data-sortable="false" data-visible="true">{{ trans('general.signature') }}</th>
+            </thead>
+            <tbody>
+            @foreach ($show_user->assets as $asset)
                 @php
                 $checkout_date_object = date_create_from_format("Y-m-d H:i:s", $asset->last_checkout); 
                 $checkin_date_object = date_create_from_format("Y-m-d H:i:s", $asset->expected_checkin);
@@ -140,12 +173,26 @@
                     data-cookie-id-table="accessoriesAssigned">
                 <thead>
                 <tr>
-                    <th style="width: 20px;" data-sortable="false" data-switchable="false">#</th>
-                    <th data-field="accessory_image" data-sortable="true"  data-visible="true">{{ trans('general.image') }}</th>
-                    <th style="width: 40%;" data-sortable="true" data-switchable="false">{{ trans('general.name') }}</th>
-                    <th style="width: 50%;" data-sortable="true">{{ trans('general.category') }}</th>
-                    <th style="width: 10%;" data-sortable="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
-                    <th style="width: 10%;" data-sortable="true">{{ trans('general.signature') }}</th>
+                    <td>{{ $counter }}</td>
+                    <td>
+                        @if ($asset->getImageUrl())
+                            <img src="{{ $asset->getImageUrl() }}" class="thumbnail" style="max-height: 50px;">
+                        @endif
+                    </td>
+                    <td>{{ $asset->asset_tag }}</td>
+                    <td>{{ $asset->name }}</td>
+                    <td>{{ (($asset->model) && ($asset->model->category)) ? $asset->model->category->name : trans('general.invalid_category') }}</td>
+                    <td>{{ ($asset->model) ? $asset->model->name : trans('general.invalid_model') }}</td>
+                    <td>{{ ($asset->defaultLoc) ? $asset->defaultLoc->name : '' }}</td>
+                    <td>{{ ($asset->location) ? $asset->location->name : '' }}</td>
+                    <td>{{ $asset->serial }}</td>
+                    <td>
+                        {{ Helper::getFormattedDateObject($asset->last_checkout, 'datetime', false) }}</td>
+                    <td>
+                        @if ($asset->getLatestSignedAcceptance($show_user))
+                            <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $asset->getLatestSignedAcceptance($show_user)->accept_signature }}">
+                        @endif
+                    </td>
                 </tr>
                 </thead>
                 @php
@@ -166,8 +213,11 @@
                             <td>{{ $accessory->pivot->created_at }}</td>
 
                             <td>
-                                @if (($accessory->assetlog->first()) && ($accessory->assetlog->first()->accept_signature!=''))
-                                <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $accessory->assetlog->first()->accept_signature }}">
+                                {{ Helper::getFormattedDateObject($asset->last_checkout, 'datetime', false) }}
+                            </td>
+                            <td>
+                                @if ($asset->getLatestSignedAcceptance($show_user))
+                                    <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $asset->getLatestSignedAcceptance($show_user)->accept_signature }}">
                                 @endif
                             </td>
                         </tr>
@@ -185,21 +235,60 @@
             <h3>Der Entleiher haftet persöhnlich für den entliehenen Gegenstand. Mit ihrer Unterschrift bestätigen Sie die Übernahme der oben aufgeführten Hardware.</h3>
             <br>
 
-            <h3>The return deadlines are listed next to the device. The device must be returned by the specified return deadline!</h3>
-            <h3>The borrower is personally liable for the borrowed item. With your signature you confirm that you have accepted the hardware listed above.</h3>
-            <br>
-            <br>
-            <br>
-            <p>Erstellt am / Created at: {{ Helper::getFormattedDateObject(now(), 'datetime', false) }}</p>
-            <br>
-            <br>
-            <table class="signature">
+    @if ($show_user->licenses->count() > 0)
+        <div id="licenses-toolbar">
+            <h4>{{ trans_choice('general.countable.licenses', $show_user->licenses->count(), ['count' => $show_user->licenses->count()]) }}</h4>
+        </div>
+
+        <table
+            class="snipe-table table table-striped inventory"
+            id="licensessAssigned"
+            data-toolbar="#licenses-toolbar"
+            data-pagination="false"
+            data-id-table="licensessAssigned"
+            data-search="false"
+            data-side-pagination="client"
+            data-sortable="true"
+            data-show-columns="true"
+            data-sort-order="desc"
+            data-sort-name="created_at"
+            data-show-columns-toggle-all="true"
+            data-cookie-id-table="licensessAssigned">
+            <thead>
+            <tr>
+                <th data-sortable="false" data-switchable="false">#</th>
+                <th data-sortable="true" data-switchable="false">{{ trans('general.name') }}</th>
+                <th data-sortable="true">{{ trans('admin/licenses/form.license_key') }}</th>
+                <th data-sortable="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
+                <th data-field="signature" data-sortable="false" data-visible="true">{{ trans('general.signature') }}</th>
+            </tr>
+            </thead>
+            @php
+                $lcounter = 1;
+            @endphp
+
+            @foreach ($show_user->licenses as $license)
+                @php
+                    if (($license->category) && ($license->category->getEula())) $eulas[] = $license->category->getEula()
+                @endphp
                 <tr>
-                    <td>Unterschrift / Signature:</td>
-                    <td>__________________________________________</td>
-                <br>
-                    <td>Abholdatum / Pick-up date:</td>
-                    <td>__________________________________________</td>
+                    <td>{{ $lcounter }}</td>
+                    <td>{{ $license->name }}</td>
+                    <td>
+                        @can('viewKeys', $license)
+                            <p class="monospace">{{ $license->serial }}</p>
+                        @else
+                            <i class="fa-lock" aria-hidden="true"></i> {{ str_repeat('x', 15) }}
+                        @endcan
+                    </td>
+                    <td>
+                        {{ Helper::getFormattedDateObject($license->pivot->updated_at, 'datetime', false) }}
+                    </td>
+                    <td>
+                        @if ($license->getLatestSignedAcceptance($show_user))
+                            <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $license->getLatestSignedAcceptance($show_user)->accept_signature }}">
+                        @endif
+                    </td>
                 </tr>
             </table>
         </div>
@@ -226,12 +315,23 @@
             <table class="inventory">
                 <thead>
                     <tr>
-                        <th style="width: 20px;"></th>
-                        <th style="width: 20%;">Inventarnummer /<br>Inventory-ID</th>
-                        <th style="width: 20%;">Name</th>
-                        <th style="width: 10%;">Ausgabe am /<br>Issued on</th>
-                        <th style="width: 10%;">Rückgabe bis /<br>Return until</th>
-                        <th style="width: 40%;">Notizen / Notes</th>
+                        <td>{{ $acounter }}</td>
+                        <td>
+                            @if ($accessory->getImageUrl())
+                                <img src="{{ $accessory->getImageUrl() }}" class="thumbnail" style="max-height: 50px;">
+                            @endif
+                        </td>
+                        <td>{{ ($accessory->manufacturer) ? $accessory->manufacturer->name : '' }} {{ $accessory->name }} {{ $accessory->model_number }}</td>
+                        <td>{{ $accessory->category->name }}</td>
+                        <td>
+                            {{ Helper::getFormattedDateObject($accessory->pivot->created_at, 'datetime', false) }}
+                        </td>
+
+                        <td>
+                            @if ($accessory->getLatestSignedAcceptance($show_user))
+                                <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $accessory->getLatestSignedAcceptance($show_user)->accept_signature }}">
+                            @endif
+                        </td>
                     </tr>
                 </thead>
 
@@ -241,58 +341,21 @@
                 $checkin_date_object = date_create_from_format("Y-m-d H:i:s", $asset->expected_checkin);
             @endphp
                     <tr>
-                        <td>{{ $counter }}</td>
-                        <td>{{ $asset->asset_tag }}</td>
-                        <td>{{ $asset->name }}</td>
-                        <td>{{ Helper::getFormattedDateObject( $asset->last_checkout, "date", false ) }}</td>
-                        <td>{{ Helper::getFormattedDateObject( $asset->expected_checkin, "date", false )  }}</td>
-                        <td>{{ $asset->notes }}</td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        @endif
-
-        @if ($show_user->accessories->count() > 0)
-            <div id="accessories-toolbar">
-                <h4>{{ trans_choice('general.countable.accessories', $accessories->count(), ['count' => $accessories->count()]) }}</h4>
-            </div>
-
-            <table
-                    class="snipe-table table table-striped inventory"
-                    id="accessoriesAssigned"
-                    data-toolbar="#accessories-toolbar"
-                    data-pagination="false"
-                    data-id-table="accessoriesAssigned"
-                    data-search="false"
-                    data-side-pagination="client"
-                    data-sortable="true"
-                    data-show-columns="true"
-                    data-sort-order="desc"
-                    data-sort-name="created_at"
-                    data-show-columns-toggle-all="true"
-                    data-cookie-id-table="accessoriesAssigned">
-                <thead>
-                <tr>
-                    <th style="width: 20px;" data-sortable="false" data-switchable="false">#</th>
-                    <th data-field="accessory_image" data-sortable="true"  data-visible="true">{{ trans('general.image') }}</th>
-                    <th style="width: 40%;" data-sortable="true" data-switchable="false">{{ trans('general.name') }}</th>
-                    <th style="width: 50%;" data-sortable="true">{{ trans('general.category') }}</th>
-                    <th style="width: 10%;" data-sortable="true">{{ trans('admin/hardware/table.checkout_date') }}</th>
-                    <th style="width: 10%;" data-sortable="true">{{ trans('general.signature') }}</th>
-                </tr>
-                </thead>
-                @php
-                    $acounter = 1;
-                @endphp
-
-                @foreach ($show_user->accessories as $accessory)
-                    @if ($accessory)
-                        <tr>
-                            <td>{{ $acounter }}</td>
+                        <td>{{ $ccounter }}</td>
+                        <td>
+                        @if ($consumable->deleted_at!='')
+                            <td>{{ ($consumable->manufacturer) ? $consumable->manufacturer->name : '' }}  {{ $consumable->name }} {{ $consumable->model_number }}</td>
+                            @else
+                                {{ ($consumable->manufacturer) ? $consumable->manufacturer->name : '' }}  {{ $consumable->name }} {{ $consumable->model_number }}
+                            @endif
+                            </td>
+                            <td>{{ ($consumable->category) ? $consumable->category->name : ' invalid/deleted category' }} </td>
                             <td>
-                                @if ($accessory->getImageUrl())
-                                    <img src="{{ $accessory->getImageUrl() }}" class="thumbnail" style="max-height: 50px;">
+                                {{ Helper::getFormattedDateObject($consumable->pivot->created_at, 'datetime', false) }}
+                            </td>
+                            <td>
+                                @if ($consumable->getLatestSignedAcceptance($show_user))
+                                    <img style="width:auto;height:100px;" src="{{ asset('/') }}display-sig/{{ $consumable->getLatestSignedAcceptance($show_user)->accept_signature }}">
                                 @endif
                             </td>
                             <td>{{ ($accessory->manufacturer) ? $accessory->manufacturer->name : '' }} {{ $accessory->name }} {{ $accessory->model_number }}</td>
