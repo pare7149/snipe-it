@@ -48,7 +48,6 @@ class AccessoriesTransformer
             ] : null,
             'created_at' => Helper::getFormattedDateObject($accessory->created_at, 'datetime'),
             'updated_at' => Helper::getFormattedDateObject($accessory->updated_at, 'datetime'),
-            'expected_checkin' => Helper::getFormattedDateObject($accessory->expected_checkin, "date"),
         ];
 
         $permissions_array['available_actions'] = [
@@ -85,7 +84,7 @@ class AccessoriesTransformer
                     'name'=> e($checkout->adminuser->present()->fullName),
                 ]: null,
                 'created_at' => Helper::getFormattedDateObject($checkout->created_at, 'datetime'),
-                'expected_checkin' => Helper::getFormattedDateObject($accessory->expected_checkin, "date"),
+                'expected_checkin' => Helper::getFormattedDateObject($checkout->expected_checkin, "date"),
                 'available_actions' => Gate::allows('checkout', Accessory::class) ? ['checkin' => true] : ['checkin' => false],
             ];
         }
