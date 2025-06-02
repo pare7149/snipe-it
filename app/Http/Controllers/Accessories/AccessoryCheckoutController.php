@@ -78,7 +78,8 @@ class AccessoryCheckoutController extends Controller
 
             $accessory_checkout = new AccessoryCheckout([
                 'accessory_id' => $accessory->id,
-                'created_at' => Carbon::now(),
+                'created_at' => $accessory->last_checkout,
+                'expected_checkin' => $accessory->expected_checkin,
                 'assigned_to' => $target->id,
                 'assigned_type' => $target::class,
                 'note' => $request->input('note'),

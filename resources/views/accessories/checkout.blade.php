@@ -87,6 +87,43 @@
 
              @include ('partials.forms.edit.location-select', ['translated_name' => trans('general.location'), 'fieldname' => 'assigned_location', 'style' => 'display:none;'])
 
+            <!-- Checkout/Checkin Date -->
+            <div class="form-group {{ $errors->has('checkout_at') ? 'error' : '' }}">
+                <label for="checkout_at" class="col-md-3 control-label">
+                    {{ trans('admin/hardware/form.checkout_date') }}
+                </label>
+                <div class="col-md-8">
+                    <div class="input-group date col-md-7" data-provide="datepicker"
+                          data-date-format="yyyy-mm-dd" data-date-end-date="0d" data-date-clear-btn="true">
+                        <input type="text" class="form-control"
+                                placeholder="{{ trans('general.select_date') }}" name="checkout_at"
+                                id="checkout_at" value="{{ old('checkout_at', date('Y-m-d')) }}">
+                        <span class="input-group-addon">
+                            <x-icon type="calendar" /></span>
+                    </div>
+                    {!! $errors->first('checkout_at', '<span class="alert-msg" aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i> :message</span>') !!}
+                </div>
+            </div>
+
+            <!-- Expected Checkin Date -->
+            <div class="form-group {{ $errors->has('expected_checkin') ? 'error' : '' }}">
+                <label for="expected_checkin" class="col-md-3 control-label">
+                    {{ trans('admin/hardware/form.expected_checkin') }}
+                </label>
+
+                <div class="col-md-8">
+                    <div class="input-group date col-md-7" data-provide="datepicker"
+                          data-date-format="yyyy-mm-dd" data-date-start-date="0d" data-date-clear-btn="true">
+                        <input type="text" class="form-control"
+                                placeholder="{{ trans('general.select_date') }}" name="expected_checkin"
+                                id="expected_checkin" value="{{ old('expected_checkin') }}">
+                        <span class="input-group-addon">
+                            <x-icon type="calendar" />
+                        </span>
+                    </div>
+                    {!! $errors->first('expected_checkin', '<span class="alert-msg" aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i> :message</span>') !!}
+                </div>
+            </div>
 
              <!-- Checkout QTY -->
              <div class="form-group {{ $errors->has('checkout_qty') ? 'error' : '' }} ">
