@@ -158,7 +158,17 @@ class AccessoryPresenter extends Presenter
                 'title' => trans('general.updated_at'),
                 'visible' => false,
                 'formatter' => 'dateDisplayFormatter',
-            ], [
+            ], 
+            [
+                'field' => 'expected_checkin',
+                'searchable' => true,
+                'sortable' => true,
+                'switchable' => true,
+                'title' => "Rückgabedatum",
+                'visible' => true,
+                'formatter' => 'dateDisplayFormatter',
+            ], 
+            [
                 'field' => 'change',
                 'searchable' => false,
                 'sortable' => false,
