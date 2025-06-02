@@ -30,7 +30,7 @@
                         table_html += '<th></th>';
                         table_html += '<th>{{ trans('admin/hardware/form.name') }}</th>';
                         table_html += '<th>{{ trans('admin/hardware/form.tag') }}</th>';
-                        table_html += '<th>{{ trans('admin/hardware/form.serial') }}</th>';
+                        table_html += '<th>{{ trans('admin/hardware/form.status') }}</th>';
                         table_html += '</tr></thead><tbody>';
 
                         $('#current_assets_content').append('');
@@ -56,7 +56,7 @@
 
                                 table_html += '</a></td>';
                                 table_html += '<td class="col-md-4">' + asset.asset_tag + '</td>';
-                                table_html += '<td class="col-md-4">' + asset.serial + '</td>';
+                                table_html += '<td class="col-md-4">' + asset.status_label.name + '</td>';
                                 table_html += "</tr>";
                             }
                         } else {

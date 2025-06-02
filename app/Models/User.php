@@ -897,7 +897,7 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      */
     public function scopeOrderCompany($query, $order)
     {
-        return $query->leftJoin('companies as companies_user', 'users.company_id', '=', 'companies_user.id')->orderBy('companies_user.name', $order);
+        return $query->leftJoin('companies as companies_user', 'users.company_id', '=', '*')->orderBy('companies_user.name', $order);
     }
 
 

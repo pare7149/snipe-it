@@ -1481,7 +1481,7 @@ class Asset extends Depreciable
     {
         $table = $query->getModel()->getTable();
 
-        return Company::scopeCompanyables($query->where($table.'.requestable', '=', 1))
+        return $query->where($table.'.requestable', '=', 1)
         ->whereHas('assetstatus', function ($query) {
             $query->where(function ($query) {
                 $query->where('deployable', '=', 1)

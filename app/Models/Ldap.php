@@ -121,7 +121,42 @@ class Ldap extends Model
 
         if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
             Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
-            if (! $ldapbind = self::bindAdminToLdap($connection)) {
+	    try {
+			self::bindAdminToLdap($connection);
+			
+            if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
+                throw new Exception('Could not search LDAP: ');
+            }
+
+            if (! $entry = ldap_first_entry($connection, $results)) {
+                return false;
+            }
+    
+            if (! $user = ldap_get_attributes($connection, $entry)) {
+                return false;
+			}
+
+            $userDn = 'cn='.$user["cn"][0].','.$settings->ldap_basedn;
+
+            if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
+                Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
+            }
+
+            if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
+                throw new Exception('Could not search LDAP: ');
+            }
+    
+            if (! $entry = ldap_first_entry($connection, $results)) {
+                return false;
+            }
+    
+            if (! $user = ldap_get_attributes($connection, $entry)) {
+                return false;
+            }
+    
+            return array_change_key_case($user);
+		}
+		catch (Exception $e) {
                 /*
                  * TODO PLEASE:
                  *
@@ -320,7 +355,7 @@ class Ldap extends Model
             //if($count == -1) { //count is -1 means we have to employ paging to query the entire directory
                 $ldap_controls = [['oid' => LDAP_CONTROL_PAGEDRESULTS, 'iscritical' => false, 'value' => ['size'=> $count == -1||$count>$page_size ? $page_size : $count, 'cookie' => $cookie]]];
             //}
-            $search_results = ldap_search($ldapconn, $base_dn, $filter, $attributes, 0, /* $page_size */ -1, -1, LDAP_DEREF_NEVER, $ldap_controls); // TODO - I hate the @, and I hate that we get a full page even if we ask for 10 records. Can we use an ldap_control?
+            $search_results = ldap_search($ldapconn, $base_dn, $filter, [], 0, /* $page_size */ -1, -1, LDAP_DEREF_NEVER, $ldap_controls); // TODO - I hate the @, and I hate that we get a full page even if we ask for 10 records. Can we use an ldap_control?
             Log::debug("LDAP search executed successfully.");
             if (! $search_results) {
                 return redirect()->route('users.index')->with('error', trans('admin/users/message.error.ldap_could_not_search').ldap_error($ldapconn)); // TODO this is never called in any routed context - only from the Artisan command. So this redirect will never work.

@@ -6,5 +6,5 @@ return array (
   'prerelease_version' => '',
   'hash_version' => 'g101b8afb5',
   'full_hash' => 'v8.1.4-180-g101b8afb5',
-  'branch' => 'master',
+  'branch' => 'MOD-UniRZ-pare7149'
 );

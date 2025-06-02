@@ -7,7 +7,6 @@ return [
     'checkin_and_delete'  	    => 'Alle einchecken / Benutzer löschen',
     'delete'  	                => 'Löschen',
     'edit'    	                => 'Bearbeiten',
-    'clone'    	                => 'Duplizieren',
     'restore' 	                => 'Wiederherstellen',
     'remove'                    => 'Entfernen',
     'request'                   => 'Anfragen',
@@ -22,13 +21,4 @@ return [
     'add_maintenance'           => 'Füge Wartung hinzu',
     'append'                    => 'Anhängen',
     'new'                       => 'Neu',
-    'var' => [
-        'clone'     => ':item_type duplizieren',
-        'edit'      => ':item_type bearbeiten',
-        'delete'    => ':item_type löschen',
-        'restore'   => ':item_type wiederherstellen',
-        'create'    => 'Neue&#47;s :item_type erstellen',
-        'checkout'  => ':item_type auschecken',
-        'checkin'   => ':item_type einchecken',
-    ]
 ];

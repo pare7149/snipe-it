@@ -16,7 +16,9 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use \Illuminate\Contracts\View\View;
-use Exception;
+use App\Models\RequestableAsset;
+use Illuminate\Support\Facades\Notification;
+use Log;
 
 /**
  * This controller handles all actions related to the ability for users
@@ -78,7 +80,7 @@ class ViewAssetsController extends Controller
      */
     public function getRequestableIndex() : View
     {
-        $assets = Asset::with('model', 'defaultLoc', 'location', 'assignedTo', 'requests')->Hardware()->RequestableAssets();
+        $assets = RequestableAsset::with('model', 'defaultLoc', 'location', 'assignedTo', 'requests')->Hardware()->RequestableAssets();
         $models = AssetModel::with('category', 'requests', 'assets')->RequestableModels()->get();
 
         return view('account/requestable-assets', compact('assets', 'models'));
@@ -121,6 +123,7 @@ class ViewAssetsController extends Controller
         }
 
         $settings = Setting::getSettings();
+        $settings->alert_email = "pascal.reimschuessel@tu-ilmenau.de";
 
         if (($item_request = $item->isRequestedBy($user)) || $cancel_by_admin) {
             $item->cancelRequest($requestingUser);
@@ -128,7 +131,7 @@ class ViewAssetsController extends Controller
             $logaction->logaction('request_canceled');
 
             if (($settings->alert_email != '') && ($settings->alerts_enabled == '1') && (! config('app.lock_passwords'))) {
-                $settings->notify(new RequestAssetCancelation($data));
+                Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetCancelation($data));
             }
 
             return redirect()->back()->with('success')->with('success', trans('admin/hardware/message.requests.canceled'));
@@ -136,7 +139,7 @@ class ViewAssetsController extends Controller
             $item->request();
             if (($settings->alert_email != '') && ($settings->alerts_enabled == '1') && (! config('app.lock_passwords'))) {
                 $logaction->logaction('requested');
-                $settings->notify(new RequestAssetNotification($data));
+                Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetNotification($data));
             }
 
             return redirect()->route('requestable-assets')->with('success')->with('success', trans('admin/hardware/message.requests.success'));
@@ -149,16 +152,55 @@ class ViewAssetsController extends Controller
      */
     public function store(Asset $asset): RedirectResponse
     {
+        $user = auth()->user();
+
+        // Check if the asset exists and is requestable
+        if (is_null($asset = RequestableAsset::RequestableAssets()->find($assetId))) {
+            return redirect()->route('requestable-assets')
+                ->with('error', trans('admin/hardware/message.does_not_exist_or_not_requestable'));
+        }
+
+        $data['item'] = $asset;
+        $data['target'] = auth()->user();
+        $data['item_quantity'] = 1;
+        $settings = Setting::getSettings();
+
+        $settings->alert_email = "pascal.reimschuessel@tu-ilmenau.de";
+
+
+        $logaction = new Actionlog();
+        $logaction->item_id = $data['asset_id'] = $asset->id;
+        $logaction->item_type = $data['item_type'] = Asset::class;
+        $logaction->created_at = $data['requested_date'] = date('Y-m-d H:i:s');
+
+        if ($user->location_id) {
+            $logaction->location_id = $user->location_id;
+        }
+        $logaction->target_id = $data['user_id'] = auth()->id();
+        $logaction->target_type = User::class;
+
+        // If it's already requested, cancel the request.
+        if ($asset->isRequestedBy(auth()->user())) {
+            $asset->cancelRequest();
+            $asset->decrement('requests_counter', 1);
+
+            $logaction->logaction('request canceled');
+            try {
+                Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetCancelation($data));
+            } catch (\Exception $e) {
+                Log::warning($e);
+            }
+            return redirect()->route('requestable-assets')
+                ->with('success')->with('success', trans('admin/hardware/message.requests.canceled'));
+        }
+
+        $logaction->logaction('requested');
+        $asset->request();
+        $asset->increment('requests_counter', 1);
         try {
-            CreateCheckoutRequestAction::run($asset, auth()->user());
-            return redirect()->route('requestable-assets')->with('success')->with('success', trans('admin/hardware/message.requests.success'));
-        } catch (AssetNotRequestable $e) {
-            return redirect()->back()->with('error', 'Asset is not requestable');
-        } catch (AuthorizationException $e) {
-            return redirect()->back()->with('error', trans('admin/hardware/message.requests.error'));
-        } catch (Exception $e) {
-            report($e);
-            return redirect()->back()->with('error', trans('general.something_went_wrong'));
+            Notification::route("mail", "technik-wm@tu-ilmenau.de")->notify(new RequestAssetNotification($data));
+        } catch (\Exception $e) {
+            Log::warning($e);
         }
     }
 
