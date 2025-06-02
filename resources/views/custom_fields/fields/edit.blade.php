@@ -46,7 +46,7 @@
               {{ trans('admin/custom_fields/general.field_name') }}
             </label>
             <div class="col-md-8 required">
-                <input class="form-control" aria-label="name" name="name" type="text" value="{{ old('name', $field->name) }}">
+                <input class="form-control" aria-label="name" name="name" type="text" required value="{{ old('name', $field->name) }}">
                 {!! $errors->first('name', '<span class="alert-msg" aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i> :message</span>') !!}
             </div>
           </div>
@@ -94,7 +94,14 @@
               }
               @endphp
             <div class="col-md-8 required">
-              {{ Form::select("format",Helper::predefined_formats(), ($field_format == '') ? $field->format : $field_format, array('class'=>'format select2 form-control', 'aria-label'=>'format', 'style' => 'width:100%;')) }}
+                <x-input.select
+                    name="format"
+                    :options="Helper::predefined_formats()"
+                    :selected="($field_format == '') ? $field->format : $field_format"
+                    class="format form-control"
+                    style="width:100%"
+                    aria-label="format"
+                />
               {!! $errors->first('format', '<span class="alert-msg" aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i> :message</span>') !!}
             </div>
           </div>
@@ -214,6 +221,14 @@
                  <label class="form-control">
                      <input type="checkbox" name="display_checkin" aria-label="display_checkin" value="1" {{ (old('display_checkin') || $field->display_checkin) ? ' checked="checked"' : '' }}>
                      {{ trans('admin/custom_fields/general.display_checkin') }}
+                 </label>
+             </div>
+
+             <!-- Show in Audit Form  -->
+             <div class="col-md-9 col-md-offset-3" id="display_audit" style="padding-bottom: 10px;">
+                 <label class="form-control">
+                     <input type="checkbox" name="display_audit" aria-label="display_audit" value="1" {{ (old('display_audit') || $field->display_audit) ? ' checked="checked"' : '' }}>
+                     {{ trans('admin/custom_fields/general.display_audit') }}
                  </label>
              </div>
 
