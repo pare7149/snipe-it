@@ -38,6 +38,7 @@
                                 <th class="col-sm-1" data-field="model_number">{{ trans('general.model_no') }}</th>
                                 <th class="col-sm-1" data-field="qty">{{ trans('admin/accessories/general.total') }}</th>
                                 <th class="col-sm-1" data-field="remaining_qty">{{ trans('admin/accessories/general.remaining') }}</th>
+                                <th class="col-sm-1" data-field="expected_checkin">Rückgabedatum</th>
                             </tr>
                             </thead>
                             <tbody>
