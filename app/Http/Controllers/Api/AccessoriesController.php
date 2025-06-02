@@ -53,6 +53,7 @@ class AccessoriesController extends Controller
                 'company_id',
                 'notes',
                 'checkouts_count',
+                'expected_checkin',
                 'qty',
             ];
 
