@@ -886,6 +886,8 @@
                     <th class="col-md-4">{{ trans('general.name') }}</th>
                     <th class-="col-md-5" data-fieldname="note">{{ trans('general.notes') }}</th>
                     <th class="col-md-1" data-footer-formatter="sumFormatter" data-fieldname="purchase_cost">{{ trans('general.purchase_cost') }}</th>
+                    <th class="col-md-1">Ausleihdatum</th>
+                    <th class="col-md-1">Rückgabedatum</th>
                     <th class="col-md-1 hidden-print">{{ trans('general.action') }}</th>
                 </tr>
               </thead>
@@ -898,6 +900,8 @@
                       <td>
                       {!! Helper::formatCurrencyOutput($accessory->purchase_cost) !!}
                       </td>
+                      <td>{{ $accessory->created_at }}</td>
+                      <td>{{ $accessory->expected_checkin }}</td>
                     <td class="hidden-print">
                       @can('checkin', $accessory)
                         <a href="{{ route('accessories.checkin.show', array('accessoryID'=> $accessory->pivot->id, 'backto'=>'user')) }}" class="btn btn-primary btn-sm hidden-print">{{ trans('general.checkin') }}</a>
