@@ -69,7 +69,7 @@
                           data-date-format="yyyy-mm-dd" data-date-end-date="0d" data-date-clear-btn="true">
                         <input type="text" class="form-control"
                                 placeholder="{{ trans('general.select_date') }}" name="checkout_at"
-                                id="checkout_at" value="{{ old($checkout->created_at, date('Y-m-d')) }}">
+                                id="checkout_at" value="{{ old(date($checkout->created_at), date('Y-m-d')) }}">
                         <span class="input-group-addon">
                             <x-icon type="calendar" /></span>
                     </div>
