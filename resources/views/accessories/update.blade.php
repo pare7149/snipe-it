@@ -88,7 +88,7 @@
                           data-date-format="yyyy-mm-dd" data-date-start-date="0d" data-date-clear-btn="true">
                         <input type="text" class="form-control"
                                 placeholder="{{ trans('general.select_date') }}" name="expected_checkin"
-                                id="expected_checkin" value="{{ old($checkout->expected_checkin) }}">
+                                id="expected_checkin" value="{{ old(date($checkout->expected_checkin)) }}">
                         <span class="input-group-addon">
                             <x-icon type="calendar" />
                         </span>
