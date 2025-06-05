@@ -59,7 +59,6 @@
             </div>
           </div>
           @endif
-
             <!-- Expected Checkin Date -->
             <div class="form-group {{ $errors->has('expected_checkin') ? 'error' : '' }}">
                 <label for="expected_checkin" class="col-md-3 control-label">
@@ -71,7 +70,7 @@
                           data-date-format="yyyy-mm-dd" data-date-start-date="0d" data-date-clear-btn="true">
                         <input type="text" class="form-control"
                                 placeholder="{{ trans('general.select_date') }}" name="expected_checkin"
-                                id="expected_checkin" value="{{ old(date($checkout->expected_checkin), date("Y-m-d")) }}">
+                                id="expected_checkin" value="{{ old(date($checkout->expected_checkin), date("Y-m-d"))  }}">
                         <span class="input-group-addon">
                             <x-icon type="calendar" />
                         </span>
@@ -80,6 +79,10 @@
                 </div>
             </div>
        </div>
+          <x-redirect_submit_options
+                  index_route="accessories.index"
+                  :button_label="trans('general.update')"
+          />
     </div> <!-- .box.box-default -->
   </form>
   </div> <!-- .col-md-9-->
