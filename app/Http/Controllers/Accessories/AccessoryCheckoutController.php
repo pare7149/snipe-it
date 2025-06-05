@@ -109,6 +109,6 @@ class AccessoryCheckoutController extends Controller
         $checkout = AccessoryCheckout::find($id);
         return view("accessories.update")
         ->with("checkout", $checkout)
-        ->with("accessory", $checkout->accessory());
+        ->with("accessory", $checkout->accessory);
     }
 }
