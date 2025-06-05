@@ -900,8 +900,8 @@
                       <td>
                       {!! Helper::formatCurrencyOutput($accessory->purchase_cost) !!}
                       </td>
-                      <td>{{ $accessory->created_at }}</td>
-                      <td>{{ $accessory->expected_checkin }}</td>
+                      <td>{{ $accessory->pivot->created_at }}</td>
+                      <td>{{ $accessory->pivot->expected_checkin }}</td>
                     <td class="hidden-print">
                       @can('checkin', $accessory)
                         <a href="{{ route('accessories.checkin.show', array('accessoryID'=> $accessory->pivot->id, 'backto'=>'user')) }}" class="btn btn-primary btn-sm hidden-print">{{ trans('general.checkin') }}</a>
