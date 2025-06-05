@@ -541,7 +541,7 @@
                 }
 
             }
-            if (row.available_actions.update == true)  {
+            if (true)  {
                 if (row.assigned_to) {
                     return '<a target="_blank" href="{{ config('app.url') }}/' + destination + '/' + row.id + '/checkin" class="btn btn-sm bg-purple" data-tooltip="true" title="{{ trans('general.checkin_tooltip') }}">{{ trans('general.update') }}</a>';
                 } else if (row.assigned_pivot_id) {
