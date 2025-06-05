@@ -902,6 +902,9 @@
                       @can('checkin', $accessory)
                         <a href="{{ route('accessories.checkin.show', array('accessoryID'=> $accessory->pivot->id, 'backto'=>'user')) }}" class="btn btn-primary btn-sm hidden-print">{{ trans('general.checkin') }}</a>
                       @endcan
+                      @can('update', $accessory)
+                        <a target="_blank" href="{{ config('app.url') }}/' + destination + '/' + row.id + '/update" class="btn btn-sm bg-orange ml-4" data-tooltip="true" title="{{ trans('general.checkin_tooltip') }}">{{ trans('general.update') }}</a>
+                      @endcan
                     </td>
                   </tr>
                   @endforeach
