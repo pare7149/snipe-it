@@ -900,7 +900,7 @@
                       <td>
                       {!! Helper::formatCurrencyOutput($accessory->purchase_cost) !!}
                       </td>
-                      <td>{{ Helper::getFormattedDateObject(date(App\Models\AccessoryCheckout::find($accessory->pivot->id)), "date") }}</td>
+                      <td>{{ Helper::getFormattedDateObject(date(App\Models\AccessoryCheckout::find($accessory->pivot->id)->created_at), "date") }}</td>
                       <td>{{ Helper::getFormattedDateObject(date(App\Models\AccessoryCheckout::find($accessory->pivot->id)->expected_checkin), "date") }}</td>
                     <td class="hidden-print">
                       @can('checkin', $accessory)
