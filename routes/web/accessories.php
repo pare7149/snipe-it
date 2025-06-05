@@ -18,6 +18,11 @@ Route::group(['prefix' => 'accessories', 'middleware' => ['auth']], function () 
     )->name('accessories.update.view');
 
     Route::post(
+        '{accessory}/update',
+        [Accessories\AccessoryCheckoutController::class, 'update']
+    )->name('accessories.update.store');
+
+    Route::post(
         '{accessory}/checkout',
         [Accessories\AccessoryCheckoutController::class, 'store']
     )->name('accessories.checkout.store');

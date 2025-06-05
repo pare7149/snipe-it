@@ -111,4 +111,16 @@ class AccessoryCheckoutController extends Controller
         ->with("checkout", $checkout)
         ->with("accessory", $checkout->accessory);
     }
+
+    public function update(Request $request, $id)
+    {
+        $this->authorize('update', Accessory::class);
+
+        $checkout = AccessoryCheckout::find($id);
+        $checkout->expected_checkin = $request->input("expected_checkin");
+        $checkout->save();
+
+        return redirect()->back()
+            ->with('success', trans('admin/accessories/message.checkout.success'));
+    }
 }
