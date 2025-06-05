@@ -101,4 +101,14 @@ class AccessoryCheckoutController extends Controller
         return redirect()->to(Helper::getRedirectOption($request, $accessory->id, 'Accessories'))
             ->with('success', trans('admin/accessories/message.checkout.success'));
     }
+
+    public function update_view($id)
+    {
+        $this->authorize('update', Accessory::class);
+
+        $checkout = AccessoryCheckout::find($id);
+        return view("accessories.update")
+        ->with("checkout", $checkout)
+        ->with("accessory", $checkout->accessory());
+    }
 }

@@ -12,6 +12,11 @@ Route::group(['prefix' => 'accessories', 'middleware' => ['auth']], function () 
         [Accessories\AccessoryCheckoutController::class, 'create']
     )->name('accessories.checkout.show');
 
+    Route::get(
+        '{accessoryID}/update',
+        [Accessories\AccessoryCheckoutController::class, 'view_update']
+    )->name('accessories.update.view');
+
     Route::post(
         '{accessory}/checkout',
         [Accessories\AccessoryCheckoutController::class, 'store']
