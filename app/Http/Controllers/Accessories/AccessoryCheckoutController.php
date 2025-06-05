@@ -102,7 +102,7 @@ class AccessoryCheckoutController extends Controller
             ->with('success', trans('admin/accessories/message.checkout.success'));
     }
 
-    public function update_view($id)
+    public function view_update($id)
     {
         $this->authorize('update', Accessory::class);
 
