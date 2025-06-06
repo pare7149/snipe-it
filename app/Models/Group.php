@@ -18,7 +18,8 @@ class Group extends SnipeModel
 
     protected $fillable = [
         'name',
-        'permissions'
+        'permissions',
+        'notes',
     ];
 
     /**
@@ -37,7 +38,7 @@ class Group extends SnipeModel
      *
      * @var array
      */
-    protected $searchableAttributes = ['name', 'created_at'];
+    protected $searchableAttributes = ['name', 'created_at', 'notes'];
 
     /**
      * The relations and their attributes that should be included when searching the model.
@@ -75,11 +76,32 @@ class Group extends SnipeModel
      *
      * @author A. Gianotto <snipe@snipe.net>
      * @since [v1.0]
-     * @return array
+     * @return array | \stdClass
      */
     public function decodePermissions()
     {
-        return json_decode($this->permissions, true);
+        // If the permissions are an array, convert it to JSON
+        if (is_array($this->permissions)) {
+            $this->permissions = json_encode($this->permissions);
+        }
+
+        $permissions = json_decode($this->permissions ?? '{}', JSON_OBJECT_AS_ARRAY);
+
+        // Otherwise, loop through the permissions and cast the values as integers
+        if ((is_array($permissions)) && ($permissions)) {
+            foreach ($permissions as $permission => $value) {
+
+                if (!is_integer($permission)) {
+                    $permissions[$permission] = (int) $value;
+                } else {
+                    \Log::info('Weird data here - skipping it');
+                    unset($permissions[$permission]);
+                }
+            }
+            return $permissions ?: new \stdClass;
+        }
+        return new \stdClass;
+
     }
 
     /**

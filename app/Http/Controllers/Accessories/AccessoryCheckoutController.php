@@ -78,7 +78,8 @@ class AccessoryCheckoutController extends Controller
 
             $accessory_checkout = new AccessoryCheckout([
                 'accessory_id' => $accessory->id,
-                'created_at' => Carbon::now(),
+                'created_at' => $request->input("checkout_at"),
+                'expected_checkin' => $request->input("expected_checkin"),
                 'assigned_to' => $target->id,
                 'assigned_type' => $target::class,
                 'note' => $request->input('note'),
@@ -98,6 +99,28 @@ class AccessoryCheckoutController extends Controller
 
         // Redirect to the new accessory page
         return redirect()->to(Helper::getRedirectOption($request, $accessory->id, 'Accessories'))
+            ->with('success', trans('admin/accessories/message.checkout.success'));
+    }
+
+    public function view_update($id)
+    {
+        $this->authorize('update', Accessory::class);
+
+        $checkout = AccessoryCheckout::find($id);
+        return view("accessories.update")
+        ->with("checkout", $checkout)
+        ->with("accessory", $checkout->accessory);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->authorize('update', Accessory::class);
+
+        $checkout = AccessoryCheckout::find($id);
+        $checkout->expected_checkin = $request->input("expected_checkin");
+        $checkout->save();
+
+        return redirect()->back()
             ->with('success', trans('admin/accessories/message.checkout.success'));
     }
 }

@@ -71,6 +71,7 @@ class Category extends SnipeModel
         'require_acceptance',
         'use_default_eula',
         'created_by',
+        'notes',
     ];
 
     use Searchable;
@@ -80,7 +81,7 @@ class Category extends SnipeModel
      *
      * @var array
      */
-    protected $searchableAttributes = ['name', 'category_type'];
+    protected $searchableAttributes = ['name', 'category_type', 'notes'];
 
     /**
      * The relations and their attributes that should be included when searching the model.
@@ -98,6 +99,14 @@ class Category extends SnipeModel
      */
     public function isDeletable()
     {
+
+        // We have to check for models as well if the category type is asset
+        if ($this->category_type == 'asset') {
+            return Gate::allows('delete', $this)
+                && ($this->itemCount() == 0)
+                && ($this->models_count == 0)
+                && ($this->deleted_at == '');
+        }
 
         return Gate::allows('delete', $this)
                 && ($this->itemCount() == 0)

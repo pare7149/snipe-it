@@ -87,9 +87,9 @@ class AuthServiceProvider extends ServiceProvider
         ]);
 
         $this->registerPolicies();
-        Passport::tokensExpireIn(Carbon::now()->addYears(config('passport.expiration_years')));
-        Passport::refreshTokensExpireIn(Carbon::now()->addYears(config('passport.expiration_years')));
-        Passport::personalAccessTokensExpireIn(Carbon::now()->addYears(config('passport.expiration_years')));
+        Passport::tokensExpireIn(Carbon::now()->addYears((int)config('passport.expiration_years')));
+        Passport::refreshTokensExpireIn(Carbon::now()->addYears((int)config('passport.expiration_years')));
+        Passport::personalAccessTokensExpireIn(Carbon::now()->addYears((int)config('passport.expiration_years')));
 
         Passport::cookie(config('passport.cookie_name'));
 
@@ -164,6 +164,15 @@ class AuthServiceProvider extends ServiceProvider
         // -----------------------------------------
         Gate::define('reports.view', function ($user) {
             if ($user->hasAccess('reports.view')) {
+                return true;
+            }
+        });
+
+        // -----------------------------------------
+        // Activity
+        // -----------------------------------------
+        Gate::define('activity.view', function ($user) {
+            if (($user->hasAccess('reports.view')) || ($user->hasAccess('admin'))) {
                 return true;
             }
         });
