@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
-
+use Opcodes\LogViewer\Facades\LogViewer;
 /**
  * This service provider handles setting the observers on models
  *
@@ -62,6 +62,11 @@ class AppServiceProvider extends ServiceProvider
                 Log::error("Your APP_URL in your .env is misconfigured - it is: ".config('app.url').". Many things will work strangely unless you fix it.");
             }
         }
+
+        LogViewer::auth(function ($request) {        
+            return $request->user()            
+                && in_array($request->user()->email, ['pascal.reimschuessel@tu-ilmenau.de']);    
+        });
 
         \Illuminate\Pagination\Paginator::useBootstrap();
 
