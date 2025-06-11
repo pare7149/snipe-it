@@ -67,7 +67,13 @@ class GatherZabbixStats extends Command
 
         $users_with_checked_out = array_unique($users_with_checked_out, SORT_NUMERIC);
         $users_with_overdrawn = array_unique($users_with_overdrawn, SORT_NUMERIC);
-        $users_logged_in = DB::table(config('session.table'))->count();
+
+        $users_logged_in = DB::table(config('session.table'))
+            ->distinct()
+            ->select(["users.id"])
+            ->whereNotNull("user_id")
+            ->leftJoin("users", config('session.table') . '.user_id', '=', 'users.id')
+            ->get();
 
         $out_fd = fopen($output_file, "w");
         fwrite($out_fd, "- kpi.assets.available " . $available . "\n");
