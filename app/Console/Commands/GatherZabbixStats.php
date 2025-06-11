@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Asset;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class GatherZabbixStats extends Command
 {
@@ -64,14 +65,9 @@ class GatherZabbixStats extends Command
             }
         }
 
-        $this->info(json_encode($users_with_checked_out));
-        $this->info(json_encode($users_with_overdrawn));
-
         $users_with_checked_out = array_unique($users_with_checked_out, SORT_NUMERIC);
         $users_with_overdrawn = array_unique($users_with_overdrawn, SORT_NUMERIC);
-
-        $this->info(json_encode($users_with_checked_out));
-        $this->info(json_encode($users_with_overdrawn));
+        $users_logged_in = DB::table(config('session.table'))->count();
 
         $out_fd = fopen($output_file, "w");
         fwrite($out_fd, "- kpi.assets.available " . $available . "\n");
@@ -80,6 +76,7 @@ class GatherZabbixStats extends Command
         fwrite($out_fd, "- kpi.assets.overdrawn " . $overdrawn. "\n");
         fwrite($out_fd, "- kpi.users.with_checked_out " . count($users_with_checked_out) . "\n");
         fwrite($out_fd, "- kpi.users.with_overdrawn " . count($users_with_overdrawn) . "\n");
+        fwrite($out_fd, "- kpi.users.logged_in " . $users_logged_in . "\n");
         fclose($out_fd);
     }
 }
