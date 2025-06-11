@@ -40,6 +40,9 @@ class GatherZabbixStats extends Command
         $overdrawn = 0;
         $unavailable = 0;
 
+        $users_with_checked_out = [];
+        $users_with_overdrawn = [];
+
         foreach ($assets as $asset)
         {
             switch ($asset->status_id)
@@ -49,9 +52,11 @@ class GatherZabbixStats extends Command
                     break;
                 case ($this->checked_out_status):
                     $checked_out++;
+                    array_push($users_with_checked_out, $asset->assigned_to);
                     break;
                 case ($this->overdue_status):
                     $overdrawn++;
+                    array_push($users_with_overdrawn, $asset->assigned_to);
                     break;
                 default:
                     $unavailable++;
@@ -59,11 +64,22 @@ class GatherZabbixStats extends Command
             }
         }
 
+        $this->info(json_encode($users_with_checked_out));
+        $this->info(json_encode($users_with_overdrawn));
+
+        $users_with_checked_out = array_unique($users_with_checked_out, SORT_NUMERIC);
+        $users_with_overdrawn = array_unique($users_with_overdrawn, SORT_NUMERIC);
+
+        $this->info(json_encode($users_with_checked_out));
+        $this->info(json_encode($users_with_overdrawn));
+
         $out_fd = fopen($output_file, "w");
         fwrite($out_fd, "- kpi.assets.available " . $available . "\n");
         fwrite($out_fd, "- kpi.assets.unavailable " . $unavailable . "\n");
         fwrite($out_fd, "- kpi.assets.checked_out " . $checked_out . "\n");
         fwrite($out_fd, "- kpi.assets.overdrawn " . $overdrawn. "\n");
+        fwrite($out_fd, "- kpi.users.with_checked_out " . count($users_with_checked_out) . "\n");
+        fwrite($out_fd, "- kpi.users.with_overdrawn " . count($users_with_overdrawn) . "\n");
         fclose($out_fd);
     }
 }
