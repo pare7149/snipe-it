@@ -100,10 +100,6 @@ class GatherZabbixStats extends Command
             }
         }
 
-        $this->info(json_encode($checkout_periods));
-        $this->info(array_sum($checkout_periods));
-        $this->info(count($checkout_periods));
-        $this->info(array_sum($checkout_periods) / count($checkout_periods));
         return array_sum($checkout_periods) / count($checkout_periods);
     }
 
