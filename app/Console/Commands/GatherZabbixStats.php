@@ -94,11 +94,17 @@ class GatherZabbixStats extends Command
                     $checkin_date = new Carbon($meta["expected_checkin"]["new"]);
                     $checkout_period = $checkin_date->timestamp - Carbon::today()->timestamp;
                     $day_period = round ($checkout_period / 86400, 1);
+                    
+                    if ($day_period == 0)
+                        $day_period = 1;
 
                     array_push($checkout_periods, $day_period);
                 }
             }
         }
+
+        if (count($checkout_periods) == 0)
+            return 0;
 
         return array_sum($checkout_periods) / count($checkout_periods);
     }
@@ -154,7 +160,6 @@ class GatherZabbixStats extends Command
 
         $checkins_checkouts = $this->get_checkouts_checkins_today($company_id);
         $average_checkout_time = $this->get_average_checkout_time($company_id);
-        $this->info($average_checkout_time);
 
         $out_fd = fopen($output_file, "w");
         fwrite($out_fd, "- kpi.assets.available " . $available . "\n");
