@@ -2,9 +2,19 @@
 
 namespace App\Console\Commands;
 
+use App\Models\User;
 use App\Models\Asset;
+use App\Models\Actionlog;
+use Illuminate\Support\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
+
+class CheckoutCheckinReturnValue
+
+{
+    public int $checkouts;
+    public int $checkins;
+}
 
 class GatherZabbixStats extends Command
 {
@@ -25,6 +35,37 @@ class GatherZabbixStats extends Command
     protected $checked_out_status = 4;
     protected $overdue_status = 5;
     protected $usable_status = 11;
+
+    private function get_checkouts_checkins_today($company_id): CheckoutCheckinReturnValue
+    {
+        $checkouts = Actionlog::whereDate('action_logs.created_at', Carbon::today())
+            ->leftJoin("assets", function($join) 
+                {
+                    $join->on("action_logs.item_id", "=", "assets.id");
+                })
+            ->where("action_logs.item_type", Asset::class)
+            ->where("action_logs.target_type", User::class)
+            ->where("assets.company_id", $company_id)
+            ->where("action_logs.action_type", "checkout")
+            ->get();
+
+        $checkins = Actionlog::whereDate('action_logs.created_at', Carbon::today())
+            ->leftJoin("assets", function($join) 
+                {
+                    $join->on("action_logs.item_id", "=", "assets.id");
+                })
+            ->where("action_logs.item_type", Asset::class)
+            ->where("action_logs.target_type", User::class)
+            ->where("assets.company_id", $company_id)
+            ->where("action_logs.action_type", "checkin from")
+            ->get();
+
+        $data = new CheckoutCheckinReturnValue();
+        $data->checkouts = count($checkouts);
+        $data->checkins = count($checkins);
+
+        return $data;
+    }
 
     /**
      * Execute the console command.
@@ -75,6 +116,8 @@ class GatherZabbixStats extends Command
             ->leftJoin("users", config('session.table') . '.user_id', '=', 'users.id')
             ->get());
 
+        $checkins_checkouts = $this->get_checkouts_checkins_today($company_id);
+
         $out_fd = fopen($output_file, "w");
         fwrite($out_fd, "- kpi.assets.available " . $available . "\n");
         fwrite($out_fd, "- kpi.assets.unavailable " . $unavailable . "\n");
@@ -83,6 +126,8 @@ class GatherZabbixStats extends Command
         fwrite($out_fd, "- kpi.users.with_checked_out " . count($users_with_checked_out) . "\n");
         fwrite($out_fd, "- kpi.users.with_overdrawn " . count($users_with_overdrawn) . "\n");
         fwrite($out_fd, "- kpi.users.logged_in " . $users_logged_in . "\n");
+        fwrite($out_fd, "- kpi.assets.checkedout_today " . $checkins_checkouts->checkouts . "\n");
+        fwrite($out_fd, "- kpi.assets.checkedin_today " . $checkins_checkouts->checkins . "\n");
         fclose($out_fd);
     }
 }
