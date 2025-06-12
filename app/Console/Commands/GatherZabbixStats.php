@@ -92,8 +92,7 @@ class GatherZabbixStats extends Command
                 if ($meta["expected_checkin"]["new"] != null)
                 {
                     $checkin_date = new Carbon($meta["expected_checkin"]["new"]);
-                    $checkout_date = new Carbon($checkout->created_at);
-                    $checkout_period = $checkin_date->timestamp - $checkout_date->timestamp;
+                    $checkout_period = $checkin_date->timestamp - Carbon::today()->timestamp;
                     $day_period = round ($checkout_period / 86400, 1);
                     
                     if ($day_period == 0)
@@ -147,8 +146,6 @@ class GatherZabbixStats extends Command
 
         if (count($checkout_periods) == 0)
             return 0;
-
-        $this->info(json_encode($checkout_periods));
 
         return array_sum($checkout_periods) / count($checkout_periods);
     }
