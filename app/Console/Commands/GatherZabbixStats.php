@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\User;
 use App\Models\Asset;
 use App\Models\Actionlog;
+use Carbon\CarbonPeriod;
 use Illuminate\Support\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
@@ -67,6 +68,45 @@ class GatherZabbixStats extends Command
         return $data;
     }
 
+    private function get_average_checkout_time(int $company_id): float
+    {
+        $checkouts = Actionlog::whereDate('action_logs.created_at', Carbon::today())
+            ->leftJoin("assets", function($join) 
+                {
+                    $join->on("action_logs.item_id", "=", "assets.id");
+                })
+            ->where("action_logs.item_type", Asset::class)
+            ->where("action_logs.target_type", User::class)
+            ->where("assets.company_id", $company_id)
+            ->where("action_logs.action_type", "checkout")
+            ->whereNotNull("action_logs.log_meta")
+            ->get();
+
+        $checkout_periods = [];
+
+        foreach ($checkouts as $checkout)
+        {
+            $meta = json_decode($checkout["log_meta"], true);
+            if ($meta["expected_checkin"])
+            {
+                if ($meta["expected_checkin"]["new"] != null)
+                {
+                    $checkin_date = new Carbon($meta["expected_checkin"]["new"]);
+                    $checkout_period = $checkin_date->timestamp - Carbon::today()->timestamp;
+                    $day_period = round ($checkout_period / 86400, 1);
+
+                    array_push($checkout_periods, $day_period);
+                }
+            }
+        }
+
+        $this->info(json_encode($checkout_periods));
+        $this->info(array_sum($checkout_periods));
+        $this->info(count($checkout_periods));
+        $this->info(array_sum($checkout_periods) / count($checkout_periods));
+        return array_sum($checkout_periods) / count($checkout_periods);
+    }
+
     /**
      * Execute the console command.
      */
@@ -117,6 +157,8 @@ class GatherZabbixStats extends Command
             ->get());
 
         $checkins_checkouts = $this->get_checkouts_checkins_today($company_id);
+        $average_checkout_time = $this->get_average_checkout_time($company_id);
+        $this->info($average_checkout_time);
 
         $out_fd = fopen($output_file, "w");
         fwrite($out_fd, "- kpi.assets.available " . $available . "\n");
@@ -128,6 +170,7 @@ class GatherZabbixStats extends Command
         fwrite($out_fd, "- kpi.users.logged_in " . $users_logged_in . "\n");
         fwrite($out_fd, "- kpi.assets.checkedout_today " . $checkins_checkouts->checkouts . "\n");
         fwrite($out_fd, "- kpi.assets.checkedin_today " . $checkins_checkouts->checkins . "\n");
+        fwrite($out_fd, "- kpi.assets.average_checkout_time_today ". $average_checkout_time . "\n");
         fclose($out_fd);
     }
 }
