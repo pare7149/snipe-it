@@ -860,11 +860,13 @@
         </div><!-- /licenses-tab -->
 
         <div class="tab-pane" id="accessories">
+          @include('partials.assigned-accessories-bulk-actions')
           <div class="table-responsive">
             <table
                     data-cookie-id-table="userAccessoryTable"
                     data-id-table="userAccessoryTable"
                     id="userAccessoryTable"
+                    data-columns="{{ \App\Presenters\AccessoryPresenter::userAssignedDataTableLayout() }}"
                     data-search="true"
                     data-pagination="true"
                     data-side-pagination="client"
@@ -875,13 +877,18 @@
                     data-show-refresh="true"
                     data-sort-order="asc"
                     data-sort-name="name"
+                    data-toolbar="#assignedAccessoriesBulkEditToolbar"
+                    data-bulk-button-id="#assignedAccessoriesBulkEditButton"
+                    data-bulk-form-id="#assignedAccessoriesBulkForm"
+                    
                     class="table table-striped snipe-table table-hover"
+                    data-url="{{route('api.accessories.checked_out', ["user_id" => $user->id]) }}"
                     data-export-options='{
                     "fileName": "export-accessory-{{ str_slug($user->username) }}-{{ date('Y-m-d') }}",
                     "ignoreColumn": ["actions","image","change","checkbox","checkincheckout","delete","download","icon"]
                     }'>
               <thead>
-                <tr>
+                <!--<tr>
                     <th class="col-md-1">{{ trans('general.id') }}</th>
                     <th class="col-md-4">{{ trans('general.name') }}</th>
                     <th class-="col-md-5" data-fieldname="note">{{ trans('general.notes') }}</th>
@@ -912,7 +919,7 @@
                     </td>
                   </tr>
                   @endforeach
-              </tbody>
+              </tbody>-->
             </table>
           </div>
         </div><!-- /accessories-tab -->

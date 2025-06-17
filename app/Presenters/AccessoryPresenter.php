@@ -199,8 +199,7 @@ class AccessoryPresenter extends Presenter
                 'switchable' => true,
                 'title' => trans('general.id'),
                 'visible' => false,
-            ],
-            [
+            ], [
                 'field' => 'assigned_to.image',
                 'searchable' => false,
                 'sortable' => false,
@@ -258,6 +257,74 @@ class AccessoryPresenter extends Presenter
                 'switchable' => false,
                 'title' => trans('table.actions'),
                 'formatter' => 'accessoriesInOutFormatter',
+            ],
+        ];
+
+        return json_encode($layout);
+    }
+
+ public static function userAssignedDataTableLayout()
+    {
+        $layout = [
+            [
+                'field' => 'checkbox',
+                'checkbox' => true,
+                'titleTooltip' => trans('general.select_all_none'),
+            ],
+            [
+                'field' => 'id',
+                'searchable' => false,
+                'sortable' => false,
+                'switchable' => true,
+                'title' => trans('general.id'),
+                'visible' => false,
+            ], [
+                'field' => 'name',
+                'searchable' => true,
+                'sortable' => true,
+                'switchable' => false,
+                'title' => trans('general.name'),
+                'formatter' => 'accessoriesLinkFormatter',
+            ], [
+                'field' => 'note',
+                'searchable' => false,
+                'sortable' => false,
+                'switchable' => true,
+                'title' => trans('general.notes'),
+                'visible' => true,
+            ],
+            [
+                'field' => 'created_at',
+                'searchable' => false,
+                'sortable' => false,
+                'switchable' => true,
+                'title' => trans('admin/hardware/table.checkout_date'),
+                'visible' => true,
+                'formatter' => 'dateDisplayFormatter',
+            ],
+            [
+                'field' => 'created_by',
+                'searchable' => false,
+                'sortable' => false,
+                'title' => trans('general.created_by'),
+                'visible' => false,
+                'formatter' => 'usersLinkObjFormatter',
+            ],
+            [
+                'field' => 'expected_checkin',
+                'searchable' => false,
+                'sortable' => false,
+                'title' => "Rückgabedatum",
+                'visible' => false,
+                'formatter' => 'dateDisplayFormatter',
+            ], 
+            [
+                'field' => 'available_actions',
+                'searchable' => false,
+                'sortable' => false,
+                'switchable' => false,
+                'title' => trans('table.actions'),
+                #'formatter' => 'accessoriesInOutFormatter',
             ],
         ];
 

@@ -2,28 +2,29 @@
 
 namespace App\Http\Controllers\Users;
 
-use App\Helpers\Helper;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\DeleteUserRequest;
-use App\Http\Requests\ImageUploadRequest;
-use App\Http\Requests\SaveUserRequest;
-use App\Models\Actionlog;
-use App\Models\Asset;
-use App\Models\Company;
-use App\Models\Group;
-use App\Models\Setting;
+use Str;
+use Redirect;
 use App\Models\User;
-use App\Notifications\WelcomeNotification;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+use App\Models\Asset;
+use App\Models\Group;
+use App\Helpers\Helper;
+use App\Models\Company;
+use App\Models\Setting;
+use App\Models\Actionlog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Facades\Storage;
-use Redirect;
-use Str;
-use Symfony\Component\HttpFoundation\StreamedResponse;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\SaveUserRequest;
 use App\Notifications\CurrentInventory;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\DeleteUserRequest;
+use Illuminate\Support\Facades\Password;
+use App\Http\Requests\ImageUploadRequest;
+use App\Notifications\WelcomeNotification;
+use App\Http\Transformers\AccessoriesTransformer;
+use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
  * This controller handles all actions related to Users for
@@ -684,5 +685,41 @@ class UsersController extends Controller
         }
 
         return redirect()->back()->with('error', trans('general.pwd_reset_not_sent'));
+    }
+
+    public function get_accessories_checked_out_to(Request $request)
+    {
+        $this->authorize('view', User::class);
+
+        $user_id = $request->query("user_id");
+        $user = User::find($user_id);
+
+        /*@foreach ($user->accessories as $accessory)
+                  <tr>
+                      <td>{{ $accessory->pivot->id }}</td>
+                      <td>{!!$accessory->present()->nameUrl()!!}</td>
+                      <td>{!! $accessory->pivot->note !!}</td>
+                      <td>
+                      {!! Helper::formatCurrencyOutput($accessory->purchase_cost) !!}
+                      </td>
+                      <td>{{ App\Models\AccessoryCheckout::find($accessory->pivot->id)->created_at }}</td>
+                      <td>{{ App\Models\AccessoryCheckout::find($accessory->pivot->id)->expected_checkin }}</td>
+                    <td class="hidden-print">
+                      @can('checkin', $accessory)
+                        <a href="{{ route('accessories.checkin.show', array('accessoryID'=> $accessory->pivot->id, 'backto'=>'user')) }}" class="btn btn-primary btn-sm hidden-print">{{ trans('general.checkin') }}</a>
+                      @endcan
+                      @can('update', $accessory)
+                        <a target="_blank" href="{{ config('app.url') }}/accessories/{{ $accessory->pivot->id }}/update" class="btn btn-sm bg-orange ml-4" data-tooltip="true" title="{{ trans('general.checkin_tooltip') }}">{{ trans('general.update') }}</a>
+                      @endcan
+                    </td>
+                  </tr>
+                  @endforeach
+                  */
+
+        $accessories = $user->accessories;
+
+        $total = $accessories->count();
+
+        return (new AccessoriesTransformer)->transformAssignedAccessories($accessories, $total);
     }
 }

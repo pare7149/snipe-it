@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users\UsersController;
 
 
 /*
@@ -1346,5 +1347,9 @@ Route::group(['prefix' => 'v1', 'middleware' => ['api', 'throttle:api']], functi
         ])->name('api.assets.labels');
         // end generate label routes
 
+
+        Route::get("user/accessories/checked_out", [
+            UsersController::class, "get_accessories_checked_out_to"
+        ])->name("api.accessories.checked_out");
 
 }); // end API routes
