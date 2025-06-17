@@ -39,5 +39,7 @@ Artisan::command('snipeit:travisci-install', function () {
 })->purpose('Travis-cli install script for unit tests');
 
 Schedule::command("pascal:update-asset-status")->everyTenSeconds()->runInBackground();
-Schedule::command("pascal:send-operator-overdraw-email 1")->weeklyOn(3, "8:00");
-Schedule::command("pascal:send-operator-overdraw-email 2")->weeklyOn(3, "8:00");
+Schedule::command("snipeit:expected_checkin 1")->weeklyOn(2, "8:00");
+Schedule::command("snipeit:expected_checkin 1")->weeklyOn(4, "8:00");
+Schedule::command("snipeit:expected_checkin 2")->weeklyOn(2, "8:00");
+Schedule::command("snipeit:expected_checkin 2")->weeklyOn(4, "8:00");

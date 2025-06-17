@@ -2,13 +2,15 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Asset;
-use App\Models\Recipients\AlertRecipient;
-use App\Models\Setting;
-use App\Notifications\ExpectedCheckinAdminNotification;
-use App\Notifications\ExpectedCheckinNotification;
 use Carbon\Carbon;
+use App\Models\Asset;
+use App\Models\Company;
+use App\Models\Setting;
 use Illuminate\Console\Command;
+use App\Models\Recipients\AlertRecipient;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\ExpectedCheckinNotification;
+use App\Notifications\ExpectedCheckinAdminNotification;
 
 class SendExpectedCheckinAlerts extends Command
 {
@@ -17,7 +19,7 @@ class SendExpectedCheckinAlerts extends Command
      *
      * @var string
      */
-    protected $name = 'snipeit:expected-checkin';
+    protected $signature = 'snipeit:expected-checkin {company_id}';
 
     /**
      * The console command description.
@@ -41,12 +43,15 @@ class SendExpectedCheckinAlerts extends Command
      */
     public function handle()
     {
-        /*$settings = Setting::getSettings();
+        $settings = Setting::getSettings();
         $interval = $settings->audit_warning_days ?? 0;
         $today = Carbon::now();
         $interval_date = $today->copy()->addDays($interval);
-        
-        $assets = Asset::whereNull('deleted_at')->DueOrOverdueForCheckin($settings)->orderBy('assets.expected_checkin', 'desc')->get();
+        $company = Company::find($this->argument("company_id"));
+
+        $assets = Asset::whereNull('deleted_at')
+        ->where("company_id", $company->id)
+        ->DueOrOverdueForCheckin($settings)->orderBy('assets.expected_checkin', 'desc')->get();
 
         $this->info($assets->count().' assets must be checked in on or before '.$interval_date.' is deadline');
 
@@ -58,15 +63,15 @@ class SendExpectedCheckinAlerts extends Command
             }
         }
 
-        if (($assets) && ($assets->count() > 0) && ($settings->alert_email != '')) {
+        if (($assets) && ($assets->count() > 0) && ($company->email != '')) {
             // Send a rollup to the admin, if settings dictate
-            $recipients = collect(explode(',', $settings->alert_email))->map(function ($item) {
+            $recipients = collect(explode(',', $company->email))->map(function ($item) {
                 return new AlertRecipient($item);
             });
 
-            $this->info('Sending Admin ExpectedCheckinNotification to: '.$settings->alert_email);
-            \Notification::send($recipients, new ExpectedCheckinAdminNotification($assets));
+            $this->info('Sending Admin ExpectedCheckinNotification to: '.$company->email);
+            Notification::send($recipients, new ExpectedCheckinAdminNotification($assets));
 
-	}*/
+	    }
     }
 }
