@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Accessories;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Accessories\BulkAssignedAccessoriesController;
 
 /*
 * Accessories
@@ -60,6 +61,15 @@ Route::group(['prefix' => 'accessories', 'middleware' => ['auth']], function () 
         [Accessories\AccessoriesController::class, 'postCreate']
     );
 
+    Route::post(
+        'bulkedit',
+        [BulkAssignedAccessoriesController::class, 'edit']
+    )->name('accessories/bulkedit');
+
+    Route::post(
+        'bulkupdate',
+        [BulkAssignedAccessoriesController::class, 'update']
+    )->name('accessories/bulkupdate');
 });
 
 Route::resource('accessories', Accessories\AccessoriesController::class, [
