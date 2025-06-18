@@ -264,6 +264,7 @@ class LdapSync extends Command
             $user = User::where('username', $item['username'])->first();
             if ($user) {
                 // Updating an existing user.
+                $user->activated = 1;
                 $item['createorupdate'] = 'updated';
             } else {
                 // Creating a new user.
