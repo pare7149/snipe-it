@@ -31,7 +31,7 @@ class LdapSyncAndDelete extends Command
 
         Artisan::call("snipeit:ldap-sync");
 
-        $inactive_users = User::where("activated", false)->get();
+        $inactive_users = User::where("activated", false)->where("ldap_import", true)->get();
         foreach ($inactive_users as $user)
         {
             if (($user->assets->count() === 0)
@@ -49,5 +49,7 @@ class LdapSyncAndDelete extends Command
             }
             $this->info("Skipping user: " . $user->username);
         }
+
+        Artisan::call("snipeit:merge-users");
     }
 }

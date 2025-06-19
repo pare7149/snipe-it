@@ -252,6 +252,7 @@ class LdapSync extends Command
             $location = $default_location; //initially, set '$location' to the default_location (which may just be `null`)
 
             if($item['jobtitle'] == "Funktion") continue;
+            if($item['jobtitle'] == null || $item['jobtitle'] == "") continue;
 
             // ONLY if you are using the "ldap_location" option *AND* you have an actual result
             if ($ldap_map["location"] && $item['location']) {
