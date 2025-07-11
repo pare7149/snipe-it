@@ -12,6 +12,7 @@ use App\Mail\CheckoutConsumableMail;
 use App\Mail\CheckoutLicenseMail;
 use App\Models\Accessory;
 use App\Models\Asset;
+use App\Models\Category;
 use App\Models\CheckoutAcceptance;
 use App\Models\Component;
 use App\Models\Consumable;
@@ -69,15 +70,15 @@ class CheckoutableListener
             return;
         }
 
+        $acceptance = $this->getCheckoutAcceptance($event);
+
         $shouldSendEmailToUser = $this->shouldSendCheckoutEmailToUser($event->checkoutable);
-        $shouldSendEmailToAlertAddress = $this->shouldSendEmailToAlertAddress();
+        $shouldSendEmailToAlertAddress = $this->shouldSendEmailToAlertAddress($acceptance);
         $shouldSendWebhookNotification = $this->shouldSendWebhookNotification();
 
         if (!$shouldSendEmailToUser && !$shouldSendEmailToAlertAddress && !$shouldSendWebhookNotification) {
             return;
         }
-
-        $acceptance = $this->getCheckoutAcceptance($event);
 
         if ($shouldSendEmailToUser || $shouldSendEmailToAlertAddress) {
             $mailable = $this->getCheckoutMailType($event, $acceptance);
@@ -227,6 +228,7 @@ class CheckoutableListener
         if ($checkedOutToType != "App\Models\User") {
             return null;
         }
+
         if (!$event->checkoutable->requireAcceptance()) {
             return null;
         }
@@ -234,6 +236,13 @@ class CheckoutableListener
         $acceptance = new CheckoutAcceptance;
         $acceptance->checkoutable()->associate($event->checkoutable);
         $acceptance->assignedTo()->associate($event->checkedOutTo);
+
+        $category = $this->getCategoryFromCheckoutable($event->checkoutable);
+
+        if ($category?->alert_on_response) {
+            $acceptance->alert_on_response_id = auth()->id();
+        }
+        
         $acceptance->save();
 
         return $acceptance;
@@ -360,23 +369,6 @@ class CheckoutableListener
         return in_array(get_class($checkoutable), $this->skipNotificationsFor);
     }
 
-    private function shouldSendEmailNotifications(Model $checkoutable): bool
-    {
-        //runs a check if the category wants to send checkin/checkout emails to users
-        $category = match (true) {
-            $checkoutable instanceof Asset => $checkoutable->model->category,
-            $checkoutable instanceof Accessory,
-            $checkoutable instanceof Consumable => $checkoutable->category,
-            $checkoutable instanceof LicenseSeat => $checkoutable->license->category,
-            default => null,
-        };
-
-        if (!$category?->checkin_email) {
-            return false;
-        }
-        return true;
-    }
-
     private function shouldSendWebhookNotification(): bool
     {
         return Setting::getSettings() && Setting::getSettings()->webhook_endpoint;
@@ -419,9 +411,19 @@ class CheckoutableListener
         return false;
     }
 
-    private function shouldSendEmailToAlertAddress(): bool
+    private function shouldSendEmailToAlertAddress($acceptance = null): bool
     {
-        return Setting::getSettings() && Setting::getSettings()->admin_cc_email;
+        $setting = Setting::getSettings();
+
+        if (!$setting) {
+            return false;
+        }
+
+        if (is_null($acceptance) && !$setting->admin_cc_always) {
+            return false;
+        }
+
+        return (bool) $setting->admin_cc_email;
     }
 
     private function getFormattedAlertAddresses(): array
@@ -460,5 +462,15 @@ class CheckoutableListener
         }
 
         return array($to, $cc);
+    }
+
+    private function getCategoryFromCheckoutable(Model $checkoutable): ?Category
+    {
+        return match (true) {
+            $checkoutable instanceof Asset => $checkoutable->model->category,
+            $checkoutable instanceof Accessory,
+                $checkoutable instanceof Consumable => $checkoutable->category,
+            $checkoutable instanceof LicenseSeat => $checkoutable->license->category,
+        };
     }
 }
