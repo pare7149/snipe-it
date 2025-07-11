@@ -115,7 +115,7 @@ class AccessoriesTransformer
                 ]: null,
                 'created_at' => Helper::getFormattedDateObject($checkout->created_at, 'datetime'),
                 'expected_checkin' => Helper::getFormattedDateObject($checkout->expected_checkin, "date"),
-                'available_actions' => Gate::allows('checkout', Accessory::class) ? ['checkin' => true, 'update' => true] : ['checkin' => false],
+                'available_actions' => Gate::allows('checkout', Accessory::class) ? ['checkin' => true, 'extend' => true] : ['checkin' => false],
             ];
         }
 
