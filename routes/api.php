@@ -1344,8 +1344,8 @@ Route::group(['prefix' => 'v1', 'middleware' => ['api', 'api-throttle:api']], fu
     )->name('api.files.destroy')
         ->where(['object_type' => 'assets|hardware|models|users|locations|accessories|consumables|licenses|components']);
 
-        Route::get("user/accessories/checked_out", [
-            UsersController::class, "get_accessories_checked_out_to"
-        ])->name("api.accessories.checked_out");
+    Route::get("user/accessories/checked_out", [
+        UsersController::class, "get_accessories_checked_out_to"
+    ])->name("api.accessories.checked_out");
 
 }); // end API routes
