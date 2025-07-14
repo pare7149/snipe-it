@@ -27,7 +27,6 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 class User extends SnipeModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, HasLocalePreference
 {
     use HasFactory;
-    use CompanyableTrait;
     use HasUploads;
 
     protected $presenter = \App\Presenters\UserPresenter::class;
