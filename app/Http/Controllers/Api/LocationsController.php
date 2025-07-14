@@ -93,8 +93,7 @@ class LocationsController extends Controller
 
         // Only scope locations if the setting is enabled
         if (Setting::getSettings()->scope_locations_fmcs) {
-            $company_id = auth()->user()->company_id;
-            $locations->where("location.company_id", '=', $company_id);
+            $locations = Company::scopeCompanyables($locations);
         }
 
         dd($locations);
