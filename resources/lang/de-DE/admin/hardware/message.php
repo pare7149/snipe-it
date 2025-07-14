@@ -2,11 +2,10 @@
 
 return [
 
-    'undeployable' 		=> '<strong>Achtung:</strong>Dieses Asset wurde kürzlich als nicht verteilbar markiert.
-                        Falls sich dieser Status verändert hat, aktualisieren Sie bitte den Asset Status.',
-    'does_not_exist' 	=> 'Asset existiert nicht.',
-    'does_not_exist_var'=> 'Asset mit Tag :asset_tag nicht gefunden.',
-    'no_tag' 	        => 'Kein Asset Tag angegeben.',
+    'undeployable' 		 => 'Die folgenden Assets sind nicht Einsetzbar und wurden aus der Herausgabe entfernt: :asset_tags',
+    'does_not_exist' 	 => 'Asset existiert nicht.',
+    'does_not_exist_var' => 'Asset mit Tag :asset_tag nicht gefunden.',
+    'no_tag' 	         => 'Kein Asset Tag angegeben.',
     'does_not_exist_or_not_requestable' => 'Dieses Asset existiert nicht oder kann nicht angefordert werden.',
     'assoc_users'	 	=> 'Dieses Asset ist im Moment an einen Benutzer herausgegeben und kann nicht entfernt werden. Bitte buchen sie das Asset wieder ein und versuchen Sie dann erneut es zu entfernen. ',
     'warning_audit_date_mismatch' 	=> 'This asset\'s next audit date (:next_audit_date) is before the last audit date (:last_audit_date). Please update the next audit date.',
@@ -15,6 +14,13 @@ return [
         'error'   		=> 'Asset wurde nicht erstellt. Bitte versuchen Sie es erneut. :(',
         'success' 		=> 'Asset wurde erfolgreich erstellt. :)',
         'success_linked' => 'Asset mit Tag :tag wurde erfolgreich erstellt. <strong><a href=":link" style="color: white;">Klicken Sie hier, um</a></strong> anzuzeigen.',
+        'multi_success_linked' => 'Asset mit Tag :links wurde erfolgreich erstellt.|:count Assets wurden erfolgreich erstellt. :links.',
+        'partial_failure' => 'Ein Asset konnte nicht erstellt werden. Grund: :failures|:count Assets konnten nicht erstellt werden. Gründe: :failures',
+        'target_not_found' => [
+            'user' => 'Der zugeordnete Benutzer konnte nicht gefunden werden.',
+            'asset' => 'Das zugewiesene Asset konnte nicht gefunden werden.',
+            'location' => 'Der zugeordnete Standort konnte nicht gefunden werden.',
+        ],
     ],
 
     'update' => [

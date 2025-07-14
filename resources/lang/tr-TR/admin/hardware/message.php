@@ -2,7 +2,7 @@
 
 return [
 
-    'undeployable' 		 => '<strong>Uyarı: </strong> Bu demirbaş dağıtılamaz durumdadır. Eğer bu durum değişti ise demirbaş durumunu değiştiriniz.',
+    'undeployable' 		 => 'The following assets cannot be deployed and have been removed from checkout: :asset_tags',
     'does_not_exist' 	 => 'Demirbaş mevcut değil.',
     'does_not_exist_var' => 'Asset with tag :asset_tag not found.',
     'no_tag' 	         => 'No asset tag provided.',
@@ -19,15 +19,20 @@ return [
         'success_linked' => 'Etiketli ürün :etiket oluşturuldu. <strong><a href=":link" style="color: white;">Görmek için tıklayın.</a></strong>.',
         'multi_success_linked' => 'Asset with tag :links was created successfully.|:count assets were created succesfully. :links.',
         'partial_failure' => 'An asset was unable to be created. Reason: :failures|:count assets were unable to be created. Reasons: :failures',
+        'target_not_found' => [
+            'user' => 'The assigned user could not be found.',
+            'asset' => 'The assigned asset could not be found.',
+            'location' => 'The assigned location could not be found.',
+        ],
     ],
 
     'update' => [
         'error'   			=> 'Demirbaş güncellenemedi, lütfen tekrar deneyin',
         'success' 			=> 'Demirbaş güncellendi.',
-        'encrypted_warning' => 'Asset updated successfully, but encrypted custom fields were not due to permissions',
+        'encrypted_warning' => 'Varlık başarıyla güncellendi, ancak şifreli özel alanlar izin nedeniyle güncellenemedi',
         'nothing_updated'	=>  'Hiçbir alan seçilmedi, dolayısıyla hiç bir alan güncellenmedi.',
         'no_assets_selected'  =>  'Hiçbir varlık seçilmedi, bu nedenle hiçbir şey güncellenmedi.',
-        'assets_do_not_exist_or_are_invalid' => 'Selected assets cannot be updated.',
+        'assets_do_not_exist_or_are_invalid' => '',
     ],
 
     'restore' => [

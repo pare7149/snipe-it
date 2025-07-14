@@ -61,6 +61,7 @@ class PredefinedKitPresenter extends Presenter
             'title' => trans('general.checkin').'/'.trans('general.checkout'),
             'visible' => true,
             'formatter' => 'kitsInOutFormatter',
+            'printIgnore' => true,
         ];
 
         $layout[] = [
@@ -70,6 +71,7 @@ class PredefinedKitPresenter extends Presenter
             'switchable' => false,
             'title' => trans('table.actions'),
             'formatter' => 'kitsActionsFormatter',
+            'printIgnore' => true,
         ];
 
         return json_encode($layout);
@@ -127,6 +129,7 @@ class PredefinedKitPresenter extends Presenter
                 'switchable' => false,
                 'title' => trans('table.actions'),
                 'formatter' => 'kits_modelsActionsFormatter',
+                'printIgnore' => true,
             ],
         ];
 
@@ -179,6 +182,7 @@ class PredefinedKitPresenter extends Presenter
                 'switchable' => false,
                 'title' => trans('table.actions'),
                 'formatter' => 'kits_licensesActionsFormatter',
+                'printIgnore' => true,
             ],
         ];
 
@@ -231,6 +235,7 @@ class PredefinedKitPresenter extends Presenter
                 'switchable' => false,
                 'title' => trans('table.actions'),
                 'formatter' => 'kits_accessoriesActionsFormatter',
+                'printIgnore' => true,
             ],
         ];
 
@@ -283,6 +288,7 @@ class PredefinedKitPresenter extends Presenter
                 'switchable' => false,
                 'title' => trans('table.actions'),
                 'formatter' => 'kits_consumablesActionsFormatter',
+                'printIgnore' => true,
             ],
         ];
 
