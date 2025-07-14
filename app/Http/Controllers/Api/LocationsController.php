@@ -96,8 +96,6 @@ class LocationsController extends Controller
             $locations = Company::scopeCompanyables($locations);
         }
 
-        dd($locations);
-
         if ($request->filled('search')) {
             $locations = $locations->TextSearch($request->input('search'));
         }
