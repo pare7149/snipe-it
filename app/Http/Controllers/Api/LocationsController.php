@@ -90,10 +90,14 @@ class LocationsController extends Controller
             ->withCount('users as users_count')
             ->with('adminuser');
 
+        dd($locations);
+
         // Only scope locations if the setting is enabled
         if (Setting::getSettings()->scope_locations_fmcs) {
             $locations = Company::scopeCompanyables($locations);
         }
+
+        dd($locations);
 
         if ($request->filled('search')) {
             $locations = $locations->TextSearch($request->input('search'));
