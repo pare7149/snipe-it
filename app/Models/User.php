@@ -213,6 +213,13 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
         );
     }
 
+    public function fullName(): Attribute
+    {
+        return Attribute:: make(
+            get: fn(mixed $value) => $value ?? $this->getFullNameAttribute(),
+        );
+    }
+
     public function isAvatarExternal() : bool
     {
         // Check if it's a google avatar or some external avatar
