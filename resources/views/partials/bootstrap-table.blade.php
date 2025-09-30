@@ -374,9 +374,9 @@
                     var polymorphicItemFormatterDest = 'fields/';
                 } 
 
-                return '<nobr><a target="_blank" href="{{ config('app.url') }}/' + dpolymorphicItemFormatterest + dest + '/' + value.id + '">' + value.name + '</a></span>';
+                return '<nobr><a target="_blank" href="{{ config('app.url') }}/' + polymorphicItemFormatterDest + dest + '/' + value.id + '">' + value.name + '</a></span>';
             }
-        };
+        };f
     }
 
 
