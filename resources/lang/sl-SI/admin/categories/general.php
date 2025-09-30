@@ -4,7 +4,7 @@ return array(
     'asset_categories' 					=> 'Kategorije sredstev',
     'category_name'  					=> 'Ime kategorije',
     'checkin_email'                     => 'Pošlji e-pošto uporabniku ob sprejemu/izdaji.',
-    'email_to_initiator'                => 'Send email to you when user accepts or declines checkout.',
+    'email_to_initiator'                => 'Pošljite vam e-pošto, ko uporabnik sprejme ali zavrne plačilo.',
     'checkin_email_notification'        => 'Uporabnik bo poslan e-pošto ob sprejemu/izdaji.',
     'clone'                             => 'Kloniraj Karegorijo',
     'create'  							=> 'Ustvari kategorijo',
@@ -22,9 +22,9 @@ return array(
     'use_default_eula'					=> 'Uporabite <a href="#" data-toggle="modal" data-target="#eulaModal">privzeto EULA</a> namesto tega.',
     'use_default_eula_disabled'			=> '<del>Namesto tega uporabite privzeto EULA.</del> Ni privzete EULA. Dodajte jo v Nastavitvah.',
     'use_default_eula_column'			=> 'Uporabi privzeto EULA',
-    'import_require_acceptance'         => 'Require Acceptance',
-    'import_checkin_email'              => 'Send Checkin Email',
-    'import_eula_text'                  => 'EULA text',
-    'import_category_type'              => 'Category Type',
+    'import_require_acceptance'         => 'Zahtevaj sprejem',
+    'import_checkin_email'              => 'Pošlji email za prijavo',
+    'import_eula_text'                  => 'EULA besedilo',
+    'import_category_type'              => 'Vrsta kategorije',
 
 );

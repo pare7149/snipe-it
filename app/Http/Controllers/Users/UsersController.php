@@ -2,29 +2,23 @@
 
 namespace App\Http\Controllers\Users;
 
-use Str;
-use Redirect;
-use App\Models\User;
-use App\Models\Asset;
-use App\Models\Group;
 use App\Helpers\Helper;
-use App\Models\Company;
-use App\Models\Setting;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\DeleteUserRequest;
+use App\Http\Requests\ImageUploadRequest;
+use App\Http\Requests\SaveUserRequest;
 use App\Models\Actionlog;
+use App\Models\Asset;
+use App\Models\Company;
+use App\Models\Group;
+use App\Models\Setting;
+use App\Models\User;
+use App\Notifications\WelcomeNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\SaveUserRequest;
-use App\Notifications\CurrentInventory;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\DeleteUserRequest;
 use Illuminate\Support\Facades\Password;
-use App\Http\Requests\ImageUploadRequest;
-use App\Notifications\WelcomeNotification;
-use App\Http\Transformers\AccessoriesTransformer;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+use App\Notifications\CurrentInventory;
 
 /**
  * This controller handles all actions related to Users for
@@ -96,6 +90,7 @@ class UsersController extends Controller
         //Username, email, and password need to be handled specially because the need to respect config values on an edit.
         $user->email = trim($request->input('email'));
         $user->username = trim($request->input('username'));
+        $user->display_name = $request->input('display_name');
         if ($request->filled('password')) {
             $user->password = bcrypt($request->input('password'));
         }
@@ -106,6 +101,7 @@ class UsersController extends Controller
         $user->activated = $request->input('activated', 0);
         $user->jobtitle = $request->input('jobtitle');
         $user->phone = $request->input('phone');
+        $user->mobile = $request->input('mobile');
         $user->location_id = $request->input('location_id', null);
         $user->department_id = $request->input('department_id', null);
         $user->company_id = Company::getIdForUser($request->input('company_id', null));
@@ -131,28 +127,33 @@ class UsersController extends Controller
         }
         $user->permissions = json_encode($permissions_array);
 
-        // we have to invoke the
+        // we have to invoke the form request here to handle image uploads
         app(ImageUploadRequest::class)->handleImages($user, 600, 'avatar', 'avatars', 'avatar');
 
-        session()->put(['redirect_option' => $request->get('redirect_option')]);
+        if ($request->get('redirect_option') === 'back'){
+            session()->put(['redirect_option' => 'index']);
+        } else {
+            session()->put(['redirect_option' => $request->get('redirect_option')]);
+        }
+
 
         if ($user->save()) {
+
+            if (($user->activated == '1') && ($user->email != '') && ($request->input('send_welcome') == '1')) {
+
+                try {
+                    $user->notify(new WelcomeNotification($user));
+                } catch (\Exception $e) {
+                    Log::warning('Could not send welcome notification for user: ' . $e->getMessage());
+                }
+
+
+            }
+
             if ($request->filled('groups')) {
                 $user->groups()->sync($request->input('groups'));
             } else {
                 $user->groups()->sync([]);
-            }
-
-            if (($request->input('email_user') == 1) && ($request->filled('email'))) {
-                // Send the credentials through email
-                $data = [];
-                $data['email'] = e($request->input('email'));
-                $data['username'] = e($request->input('username'));
-                $data['first_name'] = e($request->input('first_name'));
-                $data['last_name'] = e($request->input('last_name'));
-                $data['password'] = e($request->input('password'));
-
-                $user->notify(new WelcomeNotification($data));
             }
 
             return Helper::getRedirectOption($request, $user->id, 'Users')
@@ -249,22 +250,18 @@ class UsersController extends Controller
             }
         }
 
-        // Only save groups if the user is a superuser
-        if (auth()->user()->isSuperUser()) {
-            $user->groups()->sync($request->input('groups'));
-        }
 
         // Update the user fields
-        $user->username = trim($request->input('username'));
-        $user->email = trim($request->input('email'));
+
         $user->first_name = $request->input('first_name');
         $user->last_name = $request->input('last_name');
+        $user->display_name = $request->input('display_name');
         $user->two_factor_optin = $request->input('two_factor_optin') ?: 0;
         $user->locale = $request->input('locale');
         $user->employee_num = $request->input('employee_num');
-        $user->activated = $request->input('activated', 0);
         $user->jobtitle = $request->input('jobtitle', null);
         $user->phone = $request->input('phone');
+        $user->mobile = $request->input('mobile');
         $user->location_id = $request->input('location_id', null);
         $user->company_id = Company::getIdForUser($request->input('company_id', null));
         $user->manager_id = $request->input('manager_id', null);
@@ -274,8 +271,6 @@ class UsersController extends Controller
         $user->city = $request->input('city', null);
         $user->state = $request->input('state', null);
         $user->country = $request->input('country', null);
-        // if a user is editing themselves we should always keep activated true
-        $user->activated = $request->input('activated', $request->user()->is($user) ? 1 : 0);
         $user->zip = $request->input('zip', null);
         $user->remote = $request->input('remote', 0);
         $user->vip = $request->input('vip', 0);
@@ -284,30 +279,49 @@ class UsersController extends Controller
         $user->end_date = $request->input('end_date', null);
         $user->autoassign_licenses = $request->input('autoassign_licenses', 0);
 
+        // Set this here so that we can overwrite it later if the user is an admin or superadmin
+        $user->activated = $request->input('activated', auth()->user()->is($user) ? 1 : $user->activated);
+
+
         // Update the location of any assets checked out to this user
         Asset::where('assigned_type', User::class)
             ->where('assigned_to', $user->id)
             ->update(['location_id' => $request->input('location_id', null)]);
 
-        // Do we want to update the user password?
-        if ($request->filled('password')) {
-            $user->password = bcrypt($request->input('password'));
+        // check for permissions related fields and only set them if the user has permission to edit them
+        if (auth()->user()->can('canEditAuthFields', $user) && auth()->user()->can('editableOnDemo')) {
+
+            $user->username = trim($request->input('username'));
+            $user->email = trim($request->input('email'));
+            $user->activated = $request->input('activated', $request->user()->is($user) ? 1 : 0);
+
+            // Do we want to update the user password?
+            if ($request->filled('password')) {
+                $user->password = bcrypt($request->input('password'));
+            }
+
+            $permissions_array = $request->input('permission');
+
+            // Strip out the superuser permission if the user isn't a superadmin
+            if (! auth()->user()->isSuperUser()) {
+                unset($permissions_array['superuser']);
+                $permissions_array['superuser'] = $orig_superuser;
+            }
+
+            $user->permissions = json_encode($permissions_array);
+
+            // Only save groups if the user is a superuser
+            if (auth()->user()->isSuperUser()) {
+                $user->groups()->sync($request->input('groups'));
+            }
         }
+
 
         // Update the location of any assets checked out to this user
         Asset::where('assigned_type', User::class)
             ->where('assigned_to', $user->id)
             ->update(['location_id' => $user->location_id]);
 
-        $permissions_array = $request->input('permission');
-
-        // Strip out the superuser permission if the user isn't a superadmin
-        if (! auth()->user()->isSuperUser()) {
-            unset($permissions_array['superuser']);
-            $permissions_array['superuser'] = $orig_superuser;
-        }
-
-        $user->permissions = json_encode($permissions_array);
 
         // Handle uploaded avatar
         app(ImageUploadRequest::class)->handleImages($user, 600, 'avatar', 'avatars', 'avatar');
@@ -441,7 +455,7 @@ class UsersController extends Controller
         app('request')->request->set('permissions', $permissions);
 
 
-        $user_to_clone = User::with('assets', 'assets.model', 'consumables', 'accessories', 'licenses', 'userloc')->withTrashed()->find($user->id);
+        $user_to_clone = User::with('userloc')->withTrashed()->find($user->id);
         // Make sure they can view this particular user
         $this->authorize('view', $user_to_clone);
 
@@ -456,6 +470,8 @@ class UsersController extends Controller
             $user->last_name = '';
             $user->email = substr($user->email, ($pos = strpos($user->email, '@')) !== false ? $pos : 0);
             $user->id = null;
+            $user->username = null;
+            $user->avatar = null;
 
             // Get this user's groups
             $userGroups = $user_to_clone->groups()->pluck('name', 'id');
@@ -471,7 +487,7 @@ class UsersController extends Controller
                 ->with('user', $user)
                 ->with('groups', Group::pluck('name', 'id'))
                 ->with('userGroups', $userGroups)
-                ->with('clone_user', $user_to_clone)
+                ->with('cloned_model', $user_to_clone)
                 ->with('item', $user);
         }
 
@@ -562,10 +578,10 @@ class UsersController extends Controller
                             $user->employee_num,
                             $user->first_name,
                             $user->last_name,
-                            $user->present()->fullName(),
+                            $user->display_name,
                             $user->username,
                             $user->email,
-                            ($user->manager) ? $user->manager->present()->fullName() : '',
+                            ($user->manager) ? $user->manager->display_name : '',
                             ($user->userloc) ? $user->userloc->name : '',
                             ($user->department) ? $user->department->name : '',
                             $user->assets->count(),

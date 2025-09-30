@@ -58,6 +58,13 @@ class AssetsTransformer
                 'id' => (int) $asset->model->manufacturer->id,
                 'name'=> e($asset->model->manufacturer->name),
             ] : null,
+            'depreciation' => (($asset->model) && ($asset->model->depreciation)) ? [
+                'id' => (int) $asset->model->depreciation->id,
+                'name'=> e($asset->model->depreciation->name),
+                'months'=> (int) $asset->model->depreciation->months,
+                'type'=>  e($asset->model->depreciation->depreciation_type),
+                'minimum'=> ($asset->model->depreciation->depreciation_min) ? (int) $asset->model->depreciation->depreciation_min : null,
+            ] : null,
             'supplier' => ($asset->supplier) ? [
                 'id' => (int) $asset->supplier->id,
                 'name'=> e($asset->supplier->name),
@@ -80,12 +87,11 @@ class AssetsTransformer
             'qr' => ($setting->qr_code=='1') ? config('app.url').'/uploads/barcodes/qr-'.str_slug($asset->asset_tag).'-'.str_slug($asset->id).'.png' : null,
             'alt_barcode' => ($setting->alt_barcode_enabled=='1') ? config('app.url').'/uploads/barcodes/'.str_slug($setting->alt_barcode).'-'.str_slug($asset->asset_tag).'.png' : null,
             'assigned_to' => $this->transformAssignedTo($asset),
-            'jobtitle' => $asset->assigned ? e($asset->assigned->jobtitle) : null,
             'warranty_months' =>  ($asset->warranty_months > 0) ? e($asset->warranty_months.' '.trans('admin/hardware/form.months')) : null,
             'warranty_expires' => ($asset->warranty_months > 0) ? Helper::getFormattedDateObject($asset->warranty_expires, 'date') : null,
             'created_by' => ($asset->adminuser) ? [
                 'id' => (int) $asset->adminuser->id,
-                'name'=> e($asset->adminuser->present()->fullName()),
+                'name'=> e($asset->adminuser->display_name),
             ] : null,
             'created_at' => Helper::getFormattedDateObject($asset->created_at, 'datetime'),
             'updated_at' => Helper::getFormattedDateObject($asset->updated_at, 'datetime'),
@@ -204,6 +210,7 @@ class AssetsTransformer
                     'last_name'=> ($asset->assigned->last_name) ? e($asset->assigned->last_name) : null,
                     'email'=> ($asset->assigned->email) ? e($asset->assigned->email) : null,
                     'employee_number' =>  ($asset->assigned->employee_num) ? e($asset->assigned->employee_num) : null,
+                    'jobtitle' => $asset->assigned->jobtitle ? e($asset->assigned->jobtitle) : null,
                     'type' => 'user',
                 ] : null;
         }
@@ -280,7 +287,7 @@ class AssetsTransformer
             'id' => (int) $asset->id,
             'image' => ($asset->getImageUrl()) ? $asset->getImageUrl() : null,
             'type' => 'asset',
-            'name' => e($asset->present()->fullName()),
+            'name' => e($asset->display_name),
             'model' => ($asset->model) ? e($asset->model->name) : null,
             'model_number' => (($asset->model) && ($asset->model->model_number)) ? e($asset->model->model_number) : null,
             'asset_tag' => e($asset->asset_tag),

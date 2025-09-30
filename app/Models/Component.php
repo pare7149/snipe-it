@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Helpers\Helper;
+use App\Models\Traits\CompanyableTrait;
 use App\Models\Traits\HasUploads;
 use App\Models\Traits\Searchable;
 use App\Presenters\Presentable;
@@ -41,7 +43,7 @@ class Component extends SnipeModel
         'location_id'    => 'exists:locations,id|nullable|fmcs_location',
         'min_amt'        => 'integer|min:0|nullable',
         'purchase_date'   => 'date_format:Y-m-d|nullable',
-        'purchase_cost'  => 'numeric|nullable|gte:0|max:9999999999999',
+        'purchase_cost'     =>  'numeric|nullable|gte:0|max:99999999999999999.99',
         'manufacturer_id'   => 'integer|exists:manufacturers,id|nullable',
     ];
 
@@ -203,6 +205,18 @@ class Component extends SnipeModel
     {
         return $this->belongsTo(\App\Models\Manufacturer::class, 'manufacturer_id');
     }
+    /**
+     * Determine whether this asset requires acceptance by the assigned user
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @since [v4.0]
+     * @return bool
+     */
+    public function requireAcceptance()
+    {
+        return $this->category->require_acceptance;
+    }
+
 
     /**
      * Establishes the component -> action logs relationship
@@ -248,6 +262,19 @@ class Component extends SnipeModel
 
     }
 
+    /**
+     * Determine whether to send a checkin/checkout email based on
+     * asset model category
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @since [v4.0]
+     * @return bool
+     */
+    public function checkin_email()
+    {
+        return $this->category?->checkin_email;
+    }
+
 
     /**
      * Check how many items within a component are remaining
@@ -261,7 +288,10 @@ class Component extends SnipeModel
         return $this->qty - $this->numCheckedOut();
     }
 
+    public function totalCostSum() {
 
+        return $this->purchase_cost !== null ? $this->qty * $this->purchase_cost : null;
+    }
     /**
      * -----------------------------------------------
      * BEGIN MUTATORS

@@ -1,10 +1,10 @@
 <?php
 return array (
-  'app_version' => 'v8.1.18',
-  'full_app_version' => 'v8.1.18 - build 18876-g4c6249eb9',
-  'build_version' => '18876',
+  'app_version' => 'v8.3.2',
+  'full_app_version' => 'v8.3.2 - build 19905-g028b4e7b7',
+  'build_version' => '19905',
   'prerelease_version' => '',
+  'hash_version' => 'g028b4e7b7',
+  'full_hash' => 'v8.3.2-319-g028b4e7b7',
   'branch' => 'MOD-UniRZ-pare7149',
-  'hash_version' => 'g4c6249eb9',
-  'full_hash' => 'v8.1.18-77-g4c6249eb9',
 );

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Asset;
+use App\Models\Traits\CompanyableTrait;
 
 /**
  * Model for Assets.
