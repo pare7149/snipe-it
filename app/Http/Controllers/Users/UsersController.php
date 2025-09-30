@@ -16,6 +16,7 @@ use App\Http\Requests\DeleteUserRequest;
 use App\Http\Requests\ImageUploadRequest;
 use App\Http\Transformers\AccessoriesTransformer;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use App\Http\Controllers\Controller;
 
 /**
  * This controller handles all actions related to Users for
