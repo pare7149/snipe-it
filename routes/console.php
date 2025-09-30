@@ -2,6 +2,8 @@
 
 use App\Models\Setting;
 use Illuminate\Foundation\Inspiring;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +37,9 @@ Artisan::command('snipeit:travisci-install', function () {
         $this->comment('Setup already ran');
     }
 })->purpose('Travis-cli install script for unit tests');
+
+Schedule::command("pascal:update-asset-status")->everyTenSeconds()->runInBackground();
+Schedule::command("snipeit:expected-checkin 1")->weeklyOn(2, "8:00");
+Schedule::command("snipeit:expected-checkin 1")->weeklyOn(4, "8:00");
+Schedule::command("snipeit:expected-checkin 2")->weeklyOn(2, "8:00");
+Schedule::command("snipeit:expected-checkin 2")->weeklyOn(4, "8:00");

@@ -26,6 +26,8 @@ class AccessoryCheckout extends Model
         'accessory_id',
         'assigned_to',
         'assigned_type',
+        'expected_checkin',
+        'last_checkout',
         'note'
     ];
 

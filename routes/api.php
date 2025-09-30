@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users\UsersController;
 
 
 /*
@@ -1371,5 +1372,9 @@ Route::group(['prefix' => 'v1', 'middleware' => ['api', 'api-throttle:api']], fu
         ]
     )->name('api.files.destroy')
         ->where(['object_type' => 'accessories|assets|components|consumables|hardware|licenses|locations|maintenances|models|users']);
+
+    Route::get("user/accessories/checked_out", [
+        UsersController::class, "get_accessories_checked_out_to"
+    ])->name("api.accessories.checked_out");
 
 }); // end API routes

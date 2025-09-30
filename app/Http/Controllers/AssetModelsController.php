@@ -20,7 +20,6 @@ use \Illuminate\Contracts\View\View;
 use \Illuminate\Http\RedirectResponse;
 use Illuminate\Support\MessageBag;
 
-
 /**
  * This class controls all actions related to asset models for
  * the Snipe-IT Asset Management application.
@@ -66,6 +65,7 @@ class AssetModelsController extends Controller
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @since [v1.0]
      * @param ImageUploadRequest $request
+
      */
     public function store(StoreAssetModelRequest $request) : RedirectResponse
     {
@@ -80,7 +80,9 @@ class AssetModelsController extends Controller
         $model->manufacturer_id = $request->input('manufacturer_id');
         $model->category_id = $request->input('category_id');
         $model->notes = $request->input('notes');
+
         $model->created_by = auth()->id();
+
         $model->requestable = $request->has('requestable');
         $model->require_serial = $request->input('require_serial', 0);
 
@@ -191,6 +193,7 @@ class AssetModelsController extends Controller
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @since [v1.0]
      * @param int $modelId
+
      */
     public function destroy(AssetModel $model) : RedirectResponse
     {
@@ -215,6 +218,7 @@ class AssetModelsController extends Controller
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @since [v1.0]
      * @param int $id
+
      */
     public function getRestore($id) : RedirectResponse
     {
@@ -390,6 +394,7 @@ class AssetModelsController extends Controller
      * @author [A. Gianotto] [<snipe@snipe.net>]
      * @since [v1.0]
      * @param int $modelId
+
      */
     public function postBulkDelete(Request $request) : RedirectResponse
     {

@@ -919,27 +919,35 @@
         </div><!-- /licenses-tab -->
 
         <div class="tab-pane" id="accessories">
+          @include('partials.assigned-accessories-bulk-actions')
           <div class="table-responsive">
             <table
                     data-cookie-id-table="userAccessoryTable"
                     data-id-table="userAccessoryTable"
                     id="userAccessoryTable"
-                    data-buttons="accessoryButtons"
+                    data-columns="{{ \App\Presenters\AccessoryPresenter::userAssignedDataTableLayout() }}"
+                    data-search="true"
+                    data-pagination="true"
                     data-side-pagination="client"
                     data-sort-name="name"
+                    data-toolbar="#assignedAccessoriesBulkEditToolbar"
+                    data-bulk-button-id="#assignedAccessoriesBulkEditButton"
+                    data-bulk-form-id="#assignedAccessoriesBulkForm"
                     class="table table-striped snipe-table table-hover"
+                    data-url="{{route('api.accessories.checked_out', ["user_id" => $user->id]) }}"
                     data-export-options='{
                     "fileName": "export-accessory-{{ str_slug($user->username) }}-{{ date('Y-m-d') }}",
                     "ignoreColumn": ["actions","image","change","checkbox","checkincheckout","delete","download","icon"]
                     }'>
               <thead>
-                <tr>
-                    <th>{{ trans('general.id') }}</th>
-                    <th>{{ trans('general.name') }}</th>
-                    <th>{{ trans('general.date') }}</th>
-                    <th data-fieldname="note">{{ trans('general.notes') }}</th>
-                    <th data-footer-formatter="sumFormatter" data-fieldname="purchase_cost">{{ trans('general.unit_cost') }}</th>
-                    <th class="hidden-print">{{ trans('general.action') }}</th>
+                <!--<tr>
+                    <th class="col-md-1">{{ trans('general.id') }}</th>
+                    <th class="col-md-4">{{ trans('general.name') }}</th>
+                    <th class="col-md-5" data-fieldname="note">{{ trans('general.notes') }}</th>
+                    <th class="col-md-1" data-footer-formatter="sumFormatter" data-fieldname="purchase_cost">{{ trans('general.purchase_cost') }}</th>
+                    <th class="col-md-1">Ausleihdatum</th>
+                    <th class="col-md-1">Rückgabedatum</th>
+                    <th class="col-md-1 hidden-print">{{ trans('general.action') }}</th>
                 </tr>
               </thead>
               <tbody>
@@ -952,14 +960,19 @@
                       <td>
                       {!! Helper::formatCurrencyOutput($accessory->purchase_cost) !!}
                       </td>
+                      <td>{{ App\Models\AccessoryCheckout::find($accessory->pivot->id)->created_at }}</td>
+                      <td>{{ App\Models\AccessoryCheckout::find($accessory->pivot->id)->expected_checkin }}</td>
                     <td class="hidden-print">
                       @can('checkin', $accessory)
                         <a href="{{ route('accessories.checkin.show', array('accessoryID'=> $accessory->pivot->id, 'backto'=>'user')) }}" class="btn btn-primary btn-sm hidden-print">{{ trans('general.checkin') }}</a>
                       @endcan
+                      @can('update', $accessory)
+                        <a target="_blank" href="{{ config('app.url') }}/accessories/{{ $accessory->pivot->id }}/update" class="btn btn-sm bg-orange ml-4" data-tooltip="true" title="{{ trans('general.checkin_tooltip') }}">{{ trans('general.update') }}</a>
+                      @endcan
                     </td>
                   </tr>
                   @endforeach
-              </tbody>
+              </tbody>-->
             </table>
           </div>
         </div><!-- /accessories-tab -->

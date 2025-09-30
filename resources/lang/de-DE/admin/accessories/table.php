@@ -6,4 +6,6 @@ return array(
     'id'      					=> 'ID',
     'require_acceptance'      	=> 'Zustimmung',
     'title'      				=> 'Zubehör Name',
+
+
 );

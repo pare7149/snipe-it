@@ -4,9 +4,10 @@ namespace App\Http\Transformers;
 
 use App\Helpers\Helper;
 use App\Models\Accessory;
+use App\Models\AccessoryCheckout;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Collection;
 
 class AccessoriesTransformer
 {
@@ -49,7 +50,6 @@ class AccessoriesTransformer
             ] : null,
             'created_at' => Helper::getFormattedDateObject($accessory->created_at, 'datetime'),
             'updated_at' => Helper::getFormattedDateObject($accessory->updated_at, 'datetime'),
-
         ];
 
         $permissions_array['available_actions'] = [
@@ -72,6 +72,35 @@ class AccessoriesTransformer
         return $array;
     }
 
+    public function transformAssignedAccessories(Collection $accessories, $total)
+    {
+        $array = [];
+        foreach ($accessories as $accessory) {
+            $array[] = self::transformAssignedAccessory($accessory, $total);
+        }
+
+        return (new DatatablesTransformer)->transformDatatables($array, $total);
+    }
+
+    public function transformAssignedAccessory($accessory, $total)
+    {
+        $actions = "";
+        if (Gate::allows('checkin', Accessory::class))
+            $actions = '<a target="_blank" href="' . config('app.url') . '/accessories/'. $accessory->pivot->id . '/checkin" class="btn btn-sm bg-purple" data-tooltip="true" title="' . trans('general.checkin_tooltip') . '">' . trans('general.checkin') . '</a><a target="_blank" href="' . config('app.url') . '/accessories/' . $accessory->pivot->id . '/update" class="btn btn-sm bg-orange ml-4" data-tooltip="true" title="' . trans('general.checkin_tooltip') . '">' . trans('general.update') . '</a>';
+    
+
+        $array = [
+            'id' => $accessory->pivot->id,
+            'name' => $accessory->present()->nameUrl,
+            'note' => $accessory->pivot->note,
+            'created_at' => Helper::getFormattedDateObject(AccessoryCheckout::find($accessory->pivot->id)->created_at, 'datetime'),
+            'expected_checkin' => Helper::getFormattedDateObject(AccessoryCheckout::find($accessory->pivot->id)->expected_checkin, "date"),
+            'available_actions' => $actions,
+        ];
+
+        return $array;
+    }
+
     public function transformCheckedoutAccessory($accessory_checkouts, $total)
     {
         $array = [];
@@ -86,7 +115,8 @@ class AccessoriesTransformer
                     'name'=> e($checkout->adminuser->present()->fullName),
                 ]: null,
                 'created_at' => Helper::getFormattedDateObject($checkout->created_at, 'datetime'),
-                'available_actions' => Gate::allows('checkout', Accessory::class) ? ['checkin' => true] : ['checkin' => false],
+                'expected_checkin' => Helper::getFormattedDateObject($checkout->expected_checkin, "date"),
+                'available_actions' => Gate::allows('checkout', Accessory::class) ? ['checkin' => true, 'extend' => true] : ['checkin' => false],
             ];
         }
 

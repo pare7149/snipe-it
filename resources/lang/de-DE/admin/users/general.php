@@ -16,7 +16,7 @@ return [
     'restore_user'		=> 'Klicken Sie hier, um sie wiederherzustellen.',
     'last_login'        => 'Letzte Anmeldung',
     'ldap_config_text'  => 'Die LDAP Konfigurations Einstellungen finden Sie hier Admin -> Einstellungen. Der (optional) wählbare Standort wird für alle importierten Benutzer gesetzt.',
-    'print_assigned'    => 'Alles zugewiesene drucken',
+    'print_assigned'    => 'Leihschein drucken',
     'email_assigned'    => 'Alles zugewiesene per Mail zusenden',
     'user_notified'     => 'Der Benutzer hat eine Liste seiner aktuell zugewiesenen Artikel per E-Mail erhalten.',
     'users_notified'    => 'Dem Benutzer wurde eine Liste seiner aktuell zugewiesenen Gegenstände per E-Mail zugesendet.|:count Benutzer wurden eine Liste ihrer aktuell zugewiesenen Gegenstände per E-Mail zugesendet.',
