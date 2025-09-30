@@ -2,8 +2,16 @@
 
 namespace App\Http\Controllers\Users;
 
-use Str;
-use Redirect;
+use App\Helpers\Helper;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\DeleteUserRequest;
+use App\Http\Requests\ImageUploadRequest;
+use App\Http\Requests\SaveUserRequest;
+use App\Models\Actionlog;
+use App\Models\Asset;
+use App\Models\Company;
+use App\Models\Group;
+use App\Models\Setting;
 use App\Models\User;
 use App\Notifications\WelcomeNotification;
 use Illuminate\Http\Request;
@@ -11,12 +19,6 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use App\Notifications\CurrentInventory;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\DeleteUserRequest;
-use App\Http\Requests\ImageUploadRequest;
-use App\Http\Transformers\AccessoriesTransformer;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use App\Http\Controllers\Controller;
 
 /**
  * This controller handles all actions related to Users for
