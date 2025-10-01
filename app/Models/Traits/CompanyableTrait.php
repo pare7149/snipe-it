@@ -18,6 +18,10 @@ trait CompanyableTrait
     {
         // In Version 7.0 and before locations weren't scoped by companies, so add a check for the backward compatibility setting
         if (__CLASS__ != 'App\Models\Location') {
+            if (__CLASS__ == 'App\Models\User' && config("app.make_users_available_to_all_comapnies")) {
+                return;
+            }
+
             static::addGlobalScope(new CompanyableScope);
         } else {
             if (Setting::getSettings()->scope_locations_fmcs == 1) {

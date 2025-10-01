@@ -29,6 +29,7 @@ use Watson\Validating\ValidatingTrait;
 class User extends SnipeModel implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, HasLocalePreference
 {
     use HasFactory;
+    use CompanyableTrait;
     use HasUploads;
 
     protected $presenter = UserPresenter::class;
