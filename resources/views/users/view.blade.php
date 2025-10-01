@@ -337,6 +337,22 @@
 
 
 
+
+                  <div class="row">
+                     <div class="col-md-3">
+                        Hat ausgeliehene Assets (Mandantenübergreifend)
+                      </div>
+                      <div class="col-md-9">
+                        @if (\Illuminate\Support\Facades\DB::table("assets")->where("assigned_type", "=", \App\Models\User::class)->where("assigned_to", "=", $user->id)->count() > 0)
+                          <span class="label label-danger">Ja</span>
+                        @else
+                          <span class="label label-success">Nein</span>
+                        @endif
+                      </div>
+
+                  </div>
+
+
                     <!-- username -->
                     <div class="row">
 
