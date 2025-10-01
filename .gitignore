@@ -70,3 +70,6 @@ storage/ldap_client_tls.key
 /storage/framework/testing
 
 /.phpunit.cache
+*.pid
+.ansible
+.vscode
