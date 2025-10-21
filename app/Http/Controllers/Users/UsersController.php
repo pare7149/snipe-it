@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use App\Notifications\CurrentInventory;
+use App\Http\Transformers\AccessoriesTransformer;
 
 /**
  * This controller handles all actions related to Users for
