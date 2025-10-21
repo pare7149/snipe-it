@@ -127,7 +127,7 @@
 
         @if ($show_user->accessories->count() > 0)
             <div id="accessories-toolbar">
-                <h4>{{ trans_choice('general.countable.accessories', $accessories->count(), ['count' => $accessories->count()]) }}</h4>
+                <h4>{{ trans_choice('general.countable.accessories', $show_user->accessories->count(), ['count' => $show_user->accessories->count()]) }}</h4>
             </div>
 
             <table
@@ -261,7 +261,7 @@
 
         @if ($show_user->accessories->count() > 0)
             <div id="accessories-toolbar">
-                <h4>{{ trans_choice('general.countable.accessories', $accessories->count(), ['count' => $accessories->count()]) }}</h4>
+                <h4>{{ trans_choice('general.countable.accessories', $show_user->accessories->count(), ['count' => $show_user->accessories->count()]) }}</h4>
             </div>
 
             <table
