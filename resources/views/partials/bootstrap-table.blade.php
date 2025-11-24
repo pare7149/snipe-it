@@ -294,6 +294,28 @@
     @endcan
 
 
+    @can('create', \App\Models\Groups::class)
+    // Groups table buttons
+    window.groupButtons = () => ({
+        btnAdd: {
+            text: '{{ trans('general.create') }}',
+            icon: 'fa fa-plus',
+            event () {
+                window.location.href = '{{ route('groups.create') }}';
+            },
+            attributes: {
+                class: 'btn-info',
+                title: '{{ trans('general.create') }}',
+                @if ($snipeSettings->shortcuts_enabled == 1)
+                accesskey: 'n'
+                @endif
+            }
+        },
+
+    }); // End Groups table buttons
+    @endcan
+
+
     // Asset table buttons
     window.assetButtons = () => ({
         @can('create', \App\Models\Asset::class)
@@ -1517,9 +1539,9 @@
         }
     }
 
-    function auditImageFormatter(value){
-        if (value){
-            return '<a href="' + value.url + '" data-toggle="lightbox" data-type="image"><img src="' + value.url + '" style="max-height: {{ $snipeSettings->thumbnail_max_h }}px; width: auto;" class="img-responsive" alt=""></a>'
+    function auditImageFormatter(value, row) {
+        if ((row) && (row.file) && (row.file.url)) {
+            return '<a href="' + row.file.url + '" data-toggle="lightbox" data-type="image"><img src="' + row.file.url + '" style="max-height: {{ $snipeSettings->thumbnail_max_h }}px; width: auto;" class="img-responsive" alt=""></a>'
         }
     }
 

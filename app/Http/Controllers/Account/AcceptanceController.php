@@ -116,8 +116,6 @@ class AcceptanceController extends Controller
 
         $item = $acceptance->checkoutable_type::find($acceptance->checkoutable_id);
 
-
-
         // If signatures are required, make sure we have one
         if (Setting::getSettings()->require_accept_signature == '1') {
 
@@ -164,10 +162,8 @@ class AcceptanceController extends Controller
             'signature' => (($sig_filename && array_key_exists('1', $encoded_image))) ? $encoded_image[1] : null,
             'logo' => ($encoded_logo) ?? null,
             'date_settings' => $settings->date_display_format,
-            'admin' => auth()->user()->present()?->fullName,
             'qty' => $acceptance->qty ?? 1,
         ];
-
 
         if ($request->input('asset_acceptance') == 'accepted') {
 
