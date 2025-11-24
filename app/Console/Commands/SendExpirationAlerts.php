@@ -71,8 +71,23 @@ class SendExpirationAlerts extends Command
                 Mail::to($recipients)->send(new ExpiringLicenseMail($licenses, $alert_interval));
 
                 $this->table(
-                    ['ID', 'Name', 'Expires', 'Termination Date'],
-                    $licenses->map(fn($item) => ['ID' => $item->id, 'Name' => $item->name, 'Expires' => $item->expiration_date, 'Termination Date' => $item->termination_date])
+                    [
+                        trans('general.id'),
+                        trans('general.name'),
+                        trans('general.purchase_date'),
+                        trans('admin/licenses/form.expiration'),
+                        trans('mail.expires'),
+                        trans('admin/licenses/form.termination_date'),
+                        trans('mail.terminates')],
+                    $licenses->map(fn($item) => [
+                        trans('general.id') => $item->id,
+                        trans('general.name') => $item->name,
+                        trans('general.purchase_date') => $item->purchase_date_formatted,
+                        trans('admin/licenses/form.expiration') => $item->expires_formatted_date,
+                        trans('mail.expires') => $item->expires_formatted_date ? $item->expires_diff_for_humans : '',
+                        trans('admin/licenses/form.termination_date') => $item->terminates_formatted_date,
+                        trans('mail.terminates') => $item->terminates_diff_for_humans
+                    ])
                 );
             }
 

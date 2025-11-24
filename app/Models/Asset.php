@@ -308,6 +308,54 @@ class Asset extends Depreciable
 
     }
 
+
+    protected function lastAuditFormattedDate(): Attribute
+    {
+
+        return Attribute:: make(
+            get: fn(mixed $value, array $attributes) => Helper::getFormattedDateObject($this->last_audit_date, 'datetime', false)
+        );
+    }
+
+    protected function lastAuditDiff(): Attribute
+    {
+        return Attribute:: make(
+            get: fn(mixed $value, array $attributes) => $this->warrantyExpires ? round((Carbon::now()->diffInDays($this->warrantyExpires))) : null,
+        );
+
+    }
+
+    protected function lastAuditDiffForHumans(): Attribute
+    {
+        return Attribute:: make(
+            get: fn(mixed $value, array $attributes) =>  $attributes['last_audit_date'] ? Carbon::parse($attributes['last_audit_date'])->diffForHumans() : null,
+        );
+
+    }
+
+    protected function nextAuditFormattedDate(): Attribute
+    {
+
+        return Attribute:: make(
+            get: fn(mixed $value, array $attributes) => Helper::getFormattedDateObject($this->next_audit_date, 'date', false)
+        );
+    }
+
+    protected function nextAuditDiffInDays(): Attribute
+    {
+        return Attribute:: make(
+            get: fn(mixed $value, array $attributes) => $attributes['next_audit_date'] ? Carbon::now()->diffInDays($attributes['next_audit_date']) : null,
+        );
+    }
+
+    protected function nextAuditDiffForHumans(): Attribute
+    {
+        return Attribute:: make(
+            get: fn(mixed $value, array $attributes) => $attributes['next_audit_date'] ? Carbon::parse($attributes['next_audit_date'])->diffForHumans() : null,
+        );
+
+    }
+
     protected function eolDate(): Attribute
     {
 
@@ -324,6 +372,7 @@ class Asset extends Depreciable
         );
 
     }
+
 
 
     protected function eolFormattedDate(): Attribute
@@ -350,6 +399,12 @@ class Asset extends Depreciable
 
     }
 
+    protected function expectedCheckinFormattedDate(): Attribute
+    {
+        return Attribute:: make(
+            get: fn(mixed $value, array $attributes) => array_key_exists('expected_checkin', $attributes) ? Helper::getFormattedDateObject($attributes['expected_checkin'], 'date', false) : null,
+        );
+    }
 
     /**
      * Establishes the asset -> company relationship
@@ -1828,16 +1883,32 @@ class Asset extends Depreciable
                         );
                     }
 
-                    if ($fieldname =='assigned_to') {
+                    if ($fieldname == 'assigned_to') {
                         $query->whereHasMorph(
                             'assignedTo', [User::class], function ($query) use ($search_val) {
                                 $query->where(
                                     function ($query) use ($search_val) {
                                         $query->where('users.first_name', 'LIKE', '%'.$search_val.'%')
-                                            ->orWhere('users.last_name', 'LIKE', '%'.$search_val.'%');
+                                            ->orWhere('users.last_name', 'LIKE', '%'.$search_val.'%')
+                                            ->orWhere('users.username', 'LIKE', '%'.$search_val.'%');
                                     }
                                 );
                             }
+                        )->orWhereHasMorph(
+                            'assignedTo', [Location::class], function ($query) use ($search_val) {
+                                $query->where('locations.name', 'LIKE', '%'.$search_val.'%');
+                            }
+                        )->orWhereHasMorph(
+                            'assignedTo', [Asset::class], function ($query) use ($search_val) {
+                            $query->where(
+                                function ($query) use ($search_val) {
+                                    // Don't use the asset table prefix here because it will pull from the original asset,
+                                    // not the subselect we're doing here to get the assigned asset
+                                    $query->where('name', 'LIKE', '%'.$search_val.'%')
+                                        ->orWhere('asset_tag', 'LIKE', '%'.$search_val.'%');
+                                }
+                            );
+                        }
                         );
                     }
 
@@ -1877,51 +1948,44 @@ class Asset extends Depreciable
                     }
 
                     if ($fieldname == 'model') {
-                        $query->where(
-                            function ($query) use ($search_val) {
-                                $query->whereHas(
-                                    'model', function ($query) use ($search_val) {
-                                        $query->where('models.name', 'LIKE', '%'.$search_val.'%');
-                                    }
-                                );
-                            }
+                        $query->whereHas(
+                            'model', function ($query) use ($search_val) {
+                            $query->where('models.name', 'LIKE', '%'.$search_val.'%');
+                        }
                         );
                     }
 
+
                     if ($fieldname == 'model_number') {
-                        $query->where(
-                            function ($query) use ($search_val) {
-                                $query->whereHas(
-                                    'model', function ($query) use ($search_val) {
-                                        $query->where('models.model_number', 'LIKE', '%'.$search_val.'%');
-                                    }
-                                );
-                            }
+                        $query->whereHas(
+                            'model', function ($query) use ($search_val) {
+                            $query->where('models.model_number', 'LIKE', '%'.$search_val.'%');
+                        }
                         );
                     }
 
 
                     if ($fieldname == 'company') {
-                        $query->where(
-                            function ($query) use ($search_val) {
-                                $query->whereHas(
-                                    'company', function ($query) use ($search_val) {
-                                        $query->where('companies.name', 'LIKE', '%'.$search_val.'%');
-                                    }
-                                );
-                            }
+                        $query->whereHas(
+                            'company', function ($query) use ($search_val) {
+                            $query->where('companies.name', 'LIKE', '%'.$search_val.'%');
+                        }
                         );
                     }
 
                     if ($fieldname == 'supplier') {
-                        $query->where(
-                            function ($query) use ($search_val) {
-                                $query->whereHas(
-                                    'supplier', function ($query) use ($search_val) {
-                                        $query->where('suppliers.name', 'LIKE', '%'.$search_val.'%');
-                                    }
-                                );
-                            }
+                        $query->whereHas(
+                            'supplier', function ($query) use ($search_val) {
+                            $query->where('suppliers.name', 'LIKE', '%'.$search_val.'%');
+                        }
+                        );
+                    }
+                    
+                    if ($fieldname == 'status_label') {
+                        $query->whereHas(
+                            'assetstatus', function ($query) use ($search_val) {
+                            $query->where('status_labels.name', 'LIKE', '%'.$search_val.'%');
+                        }
                         );
                     }
 
