@@ -394,6 +394,7 @@ return [
         'StorageHelper' => App\Helpers\StorageHelper::class,
         'Icon' => App\Helpers\IconHelper::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
