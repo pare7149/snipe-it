@@ -451,4 +451,14 @@ return [
 
     'make_users_available_to_all_comapnies' => env("USERS_AVAILABLE_TO_ALL_COMPANIES", false),
     
+  /*
+  |--------------------------------------------------------------------------
+  | Max Unpaginated Records
+  |--------------------------------------------------------------------------
+  | This sets the maximum number of records that can be exported or
+  | viewed without pagination. This is to prevent server timeouts.
+  */
+
+    'max_unpaginated_records' => env('MAX_UNPAGINATED', '5000'),
+
 ];
