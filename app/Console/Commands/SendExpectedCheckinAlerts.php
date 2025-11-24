@@ -61,7 +61,7 @@ class SendExpectedCheckinAlerts extends Command
                 $asset->assignedTo->notify((new ExpectedCheckinNotification($asset)));
                 $count++;
             }
-        }  'branch' => 'master',
+        }
 
         if ($this->option('with-output')) {
             if (($assets) && ($assets->count() > 0) && ($settings->alert_email != '')) {
