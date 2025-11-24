@@ -96,11 +96,9 @@ class LocationsController extends Controller
             ->withCount('components as components_count')
             ->with('adminuser');
 
-
         // Only scope locations if the setting is enabled
         if (Setting::getSettings()->scope_locations_fmcs) {
-            $company_id = auth()->user()->company_id;
-            $locations ->where("locations.company_id", "=", $company_id);
+            $locations = Company::scopeCompanyables($locations);
         }
 
         if ($request->filled('search')) {

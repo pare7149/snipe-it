@@ -207,7 +207,8 @@ class AccessoryPresenter extends Presenter
                 'switchable' => true,
                 'title' => trans('general.id'),
                 'visible' => false,
-            ], [
+            ],
+            [
                 'field' => 'assigned_to.image',
                 'searchable' => false,
                 'sortable' => false,

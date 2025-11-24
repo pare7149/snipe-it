@@ -278,7 +278,7 @@ final class Company extends SnipeModel
         if (! static::isFullMultipleCompanySupportEnabled() || (Auth::hasUser() && auth()->user()->isSuperUser()) || (! Auth::hasUser())) {
             return $query;
         } else {
-		    static::scopeCompanyablesDirectly($query, $column, $table_name);
+            return static::scopeCompanyablesDirectly($query, $column, $table_name);
         }
     }
 

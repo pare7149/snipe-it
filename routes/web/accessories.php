@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Accessories;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Accessories\BulkAssignedAccessoriesController;
 
 /*
 * Accessories
@@ -12,16 +11,6 @@ Route::group(['prefix' => 'accessories', 'middleware' => ['auth']], function () 
         '{accessoryID}/checkout',
         [Accessories\AccessoryCheckoutController::class, 'create']
     )->name('accessories.checkout.show');
-
-    Route::get(
-        '{accessoryID}/update',
-        [Accessories\AccessoryCheckoutController::class, 'view_update']
-    )->name('accessories.update.view');
-
-    Route::post(
-        '{accessory}/update',
-        [Accessories\AccessoryCheckoutController::class, 'update']
-    )->name('accessories.update.store');
 
     Route::post(
         '{accessory}/checkout',
