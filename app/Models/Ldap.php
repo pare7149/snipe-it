@@ -232,57 +232,11 @@ class Ldap extends Model
 
         if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
             Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
-	    try {
-			self::bindAdminToLdap($connection);
-			
-            if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
-                throw new Exception('Could not search LDAP: ');
-            }
-
-            if (! $entry = ldap_first_entry($connection, $results)) {
-                return false;
-            }
-    
-            if (! $user = ldap_get_attributes($connection, $entry)) {
-                return false;
-			}
-
-            $userDn = 'cn='.$user["cn"][0].','.$settings->ldap_basedn;
-
-            if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
-                Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
-            }
-
-            if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
-                throw new Exception('Could not search LDAP: ');
-            }
-    
-            if (! $entry = ldap_first_entry($connection, $results)) {
-                return false;
-            }
-    
-            if (! $user = ldap_get_attributes($connection, $entry)) {
-                return false;
-            }
-    
-            return array_change_key_case($user);
-		}
-		catch (Exception $e) {
-                /*
-                 * TODO PLEASE:
-                 *
-                 * this isn't very clear, so it's important to note: the $ldapbind value is never correctly returned - we never 'return true' from self::bindAdminToLdap() (the function
-                 * just "falls off the end" without ever explictly returning 'true')
-                 *
-                 * but it *does* have an interesting side-effect of checking for the LDAP password being incorrectly encrypted with the wrong APP_KEY, so I'm leaving it in for now.
-                 *
-                 * If it *did* correctly return 'true' on a succesful bind, it would _probably_ allow users to log in with an incorrect password. Which would be horrible!
-                 *
-                 * Let's definitely fix this at the next refactor!!!!
-                 *
-                 */
-                Log::debug("Status of binding Admin user: $userDn to directory instead: ".($ldapbind ? "success" : "FAILURE"));
-                return false;
+            // replicate the old bad-decryption-key detection behavior here
+            try {
+                Crypt::decrypt(Setting::getSettings()->ldap_pword);
+            } catch (\Exception $e) {
+                throw new \Exception('Your app key has changed! Could not decrypt LDAP password using your current app key, so LDAP authentication has been disabled. Login with a local account, update the LDAP password and re-enable it in Admin > Settings.');
             }
             //regardless of anything else; stuff isn't working. Return false.
             return false;
@@ -466,7 +420,7 @@ class Ldap extends Model
             // if a $count is set and it's smaller than $page_size then use that as the page size
             $ldap_controls = [];
             //if($count == -1) { //count is -1 means we have to employ paging to query the entire directory
-                $ldap_controls = [['oid' => LDAP_CONTROL_PAGEDRESULTS, 'iscritical' => false, 'value' => ['size'=> $count == -1||$count>$page_size ? $page_size : $count, 'cookie' => $cookie]]];
+            $ldap_controls = [['oid' => LDAP_CONTROL_PAGEDRESULTS, 'iscritical' => false, 'value' => ['size'=> $count == -1||$count>$page_size ? $page_size : $count, 'cookie' => $cookie]]];
             //}
             $search_results = ldap_search($ldapconn, $base_dn, $filter, $attributes, 0, /* $page_size */ -1, -1, LDAP_DEREF_NEVER, $ldap_controls); // TODO - I hate the @, and I hate that we get a full page even if we ask for 10 records. Can we use an ldap_control?
             Log::debug("LDAP search executed successfully.");
