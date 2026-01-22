@@ -49,7 +49,7 @@ class AccessoryPresenter extends Presenter
                 'field' => 'category',
                 'searchable' => true,
                 'sortable' => true,
-                'title' => trans('admin/accessories/general.accessory_category'),
+                'title' => trans('general.category'),
                 'formatter' => 'categoriesLinkObjFormatter',
             ], [
                 'field' => 'model_number',
@@ -207,7 +207,8 @@ class AccessoryPresenter extends Presenter
                 'switchable' => true,
                 'title' => trans('general.id'),
                 'visible' => false,
-            ], [
+            ],
+            [
                 'field' => 'assigned_to.image',
                 'searchable' => false,
                 'sortable' => false,

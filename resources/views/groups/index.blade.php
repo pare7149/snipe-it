@@ -8,18 +8,13 @@
 
 @section('header_right')
 <a href="{{ route('groups.create') }}" class="btn btn-primary text-right"> {{ trans('general.create') }}</a>
-<a href="{{ route('settings.index') }}" class="btn btn-default text-right">{{ trans('general.back') }}</a>
 @stop
 
 
-{{-- Content --}}
+{{-- Page content --}}
 @section('content')
-<div class="row">
-  <div class="col-md-12">
-    <div class="box box-default">
-      <div class="box-body">
-        <div class="table-responsive">
-
+    <x-container>
+        <x-box>
             <table
                 data-cookie-id-table="groupsTable"
                 data-side-pagination="server"
@@ -42,16 +37,15 @@
                   <th data-switchable="true" data-sortable="true" data-field="notes" data-visible="true">{{ trans('general.notes') }}</th>
                   <th data-switchable="true" data-sortable="true" data-field="created_at" data-visible="true" data-formatter="dateDisplayFormatter">{{ trans('general.created_at') }}</th>
                <th data-switchable="false" data-searchable="false" data-sortable="true" data-field="created_by"  data-formatter="usersLinkObjFormatter">{{ trans('general.created_by') }}</th>
-               <th data-switchable="false" data-searchable="false" data-sortable="false" data-field="actions"   data-formatter="groupsActionsFormatter">{{ trans('table.actions') }}</th>
+                  <th data-switchable="false" data-searchable="false" data-sortable="true" data-field="created_at"  data-formatter="dateDisplayFormatter">{{ trans('general.created_at') }}</th>
+                  <th data-switchable="false" data-searchable="false" data-sortable="true" data-field="updated_at"  data-formatter="dateDisplayFormatter">{{ trans('general.updated_at') }}</th>
+                  <th data-switchable="false" data-searchable="false" data-sortable="false" data-field="actions"   data-formatter="groupsActionsFormatter">{{ trans('table.actions') }}</th>
 
               </tr>
             </thead>
           </table>
-        </div>
-      </div> <!--.box-body-->
-    </div> <!-- /.box.box-default-->
-  </div> <!-- .col-md-12-->
-</div>
+        </x-box>
+    </x-container>
 @stop
 @section('moar_scripts')
 @include ('partials.bootstrap-table', ['exportFile' => 'groups-export', 'search' => true])

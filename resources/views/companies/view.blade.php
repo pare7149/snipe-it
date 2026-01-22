@@ -8,9 +8,8 @@
 
 {{-- Page content --}}
 @section('content')
-
-    <div class="row">
-        <div class="col-md-12">
+    <x-container>
+        <x-box>
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
 
@@ -22,7 +21,6 @@
                             </span>
                             <span class="hidden-xs hidden-sm">{{ trans('general.assets') }}
                                 {!! ($company->assets()->AssetsForShow()->count() > 0 ) ? '<span class="badge badge-secondary">'.number_format($company->assets()->AssetsForShow()->count()).'</span>' : '' !!}
-
                             </span>
                         </a>
                     </li>
@@ -86,7 +84,6 @@
 
                     <div class="tab-pane fade in active" id="asset_tab">
                         <!-- checked out assets table -->
-                        <div class="table table-responsive">
                             @include('partials.asset-bulk-actions')
 
                             <table
@@ -94,6 +91,7 @@
                                     data-cookie-id-table="assetsListingTable"
                                     data-id-table="assetsListingTable"
                                     data-side-pagination="server"
+                                    data-show-columns-search="true"
                                     data-sort-order="asc"
                                     data-toolbar="#assetsBulkEditToolbar"
                                     data-bulk-button-id="#bulkAssetEditButton"
@@ -106,11 +104,9 @@
                               "ignoreColumn": ["actions","image","change","checkbox","checkincheckout","icon"]
                               }'>
                             </table>
-                        </div>
                     </div><!-- /asset_tab -->
 
                     <div class="tab-pane" id="licenses_tab">
-                        <div class="table-responsive">
 
                             <table
                                     data-columns="{{ \App\Presenters\LicensePresenter::dataTableLayout() }}"
@@ -127,11 +123,9 @@
                               }'>
                             </table>
 
-                        </div>
                     </div><!-- /licenses-tab -->
 
                     <div class="tab-pane" id="accessories_tab">
-                        <div class="table-responsive">
 
                             <table
                                     data-columns="{{ \App\Presenters\AccessoryPresenter::dataTableLayout() }}"
@@ -148,11 +142,9 @@
                               }'>
                             </table>
 
-                        </div>
                     </div><!-- /accessories-tab -->
 
                     <div class="tab-pane" id="consumables_tab">
-                        <div class="table-responsive">
 
                             <table
                                     data-columns="{{ \App\Presenters\ConsumablePresenter::dataTableLayout() }}"
@@ -169,11 +161,9 @@
                               }'>
                             </table>
 
-                        </div>
                     </div><!-- /consumables-tab -->
 
                     <div class="tab-pane" id="components_tab">
-                        <div class="table-responsive">
 
                             <table
                                     data-columns="{{ \App\Presenters\ComponentPresenter::dataTableLayout() }}"
@@ -190,12 +180,10 @@
                               }'>
 
                             </table>
-                        </div>
+
                     </div><!-- /consumables-tab -->
 
                     <div class="tab-pane" id="users_tab">
-                        <div class="table-responsive">
-
                             <table
                                     data-columns="{{ \App\Presenters\UserPresenter::dataTableLayout() }}"
                                     data-cookie-id-table="usersTable"
@@ -209,9 +197,7 @@
                               "fileName": "export-companies-{{ str_slug($company->name) }}-users-{{ date('Y-m-d') }}",
                               "ignoreColumn": ["actions","image","change","checkbox","checkincheckout","icon"]
                               }'>
-
                             </table>
-                        </div>
                     </div><!-- /consumables-tab -->
 
 
@@ -219,8 +205,8 @@
 
                 </div><!-- /.tab-content -->
             </div><!-- nav-tabs-custom -->
-        </div>
-    </div>
+        </x-box>
+    </x-container>
 
 @stop
 @section('moar_scripts')

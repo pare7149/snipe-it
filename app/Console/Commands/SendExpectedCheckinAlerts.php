@@ -44,7 +44,7 @@ class SendExpectedCheckinAlerts extends Command
     public function handle()
     {
         $settings = Setting::getSettings();
-        $interval = $settings->audit_warning_days ?? 0;
+        $interval = $settings->due_checkin_days ?? 0;
         $today = Carbon::now();
         $interval_date = $today->copy()->addDays($interval);
         $company = Company::find($this->argument("company_id"));
@@ -53,13 +53,36 @@ class SendExpectedCheckinAlerts extends Command
         ->where("company_id", $company->id)
         ->DueOrOverdueForCheckin($settings)->orderBy('assets.expected_checkin', 'desc')->get();
 
-        $this->info($assets->count().' assets must be checked in on or before '.$interval_date.' is deadline');
+        $this->info($assets->count().' assets must be checked on or before '.Helper::getFormattedDateObject($interval_date, 'date', false));
 
 
         foreach ($assets as $asset) {
             if ($asset->assignedTo && (isset($asset->assignedTo->email)) && ($asset->assignedTo->email!='') && $asset->checkedOutToUser()) {
-                $this->info('Sending User ExpectedCheckinNotification to: '.$asset->assignedTo->email);
                 $asset->assignedTo->notify((new ExpectedCheckinNotification($asset)));
+                $count++;
+            }
+        }
+
+        if ($this->option('with-output')) {
+            if (($assets) && ($assets->count() > 0) && ($settings->alert_email != '')) {
+                $this->table(
+                    [
+                        trans('general.id'),
+                        trans('admin/hardware/form.tag'),
+                        trans('admin/hardware/form.model'),
+                        trans('general.model_no'),
+                        trans('general.purchase_date'),
+                        trans('admin/hardware/form.expected_checkin'),
+                    ],
+                    $assets->map(fn($assets) => [
+                        trans('general.id') => $assets->id,
+                        trans('admin/hardware/form.tag') => $assets->asset_tag,
+                        trans('admin/hardware/form.model') => $assets->model->name,
+                        trans('general.model_no') => $assets->model->model_number,
+                        trans('general.purchase_date') => $assets->purchase_date_formatted,
+                        trans('admin/hardware/form.eol_date') => $assets->expected_checkin_formattedDate ? $assets->expected_checkin_formattedDate . ' (' . $assets->expected_checkin_diff_for_humans . ')' : '',
+                    ])
+                );
             }
         }
 

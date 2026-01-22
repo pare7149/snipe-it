@@ -104,6 +104,78 @@ class Ldap extends Model
         return $connection;
     }
 
+    /**
+     * Finds user via Admin search *first*, and _then_ try to bind as that user, returning the user attributes on success,
+     * or false on failure. This enables login when the DN is harder to programmatically 'guess' due to having users in
+     * various different OU's or other LDAP entities.
+     */
+    public static function findAndBindMultiOU(string $baseDn, string $filterQuery, string $password, int $slow_failure = 3): array|false
+    {
+        /**
+         *  If you *don't* set the slow_failure variable, do note that we might permit timing attacks in here - if
+         *  your find results come back 'slow' when a user *does* exist, but fast if they *don't* exist, then you
+         *  can use this to enumerate users.
+         *
+         *  Even if that's *not* true, we still might have an issue: if we don't find the user, then we don't even _try_
+         *  to bind as them. Again, that could permit a timing attack.
+         *
+         *  Instead of checking every little thing, we just wrap everything in a try/catch in order to unify the
+         *  'slow_failure' treatment. All failures are re-raised as exceptions so that all failures exit from the
+         *  same place.
+         */
+        $connection = null;
+        $admin_conn = null;
+        try {
+            /**
+             * First we get an 'admin' connection, which will need search permissions. That was already a requirement
+             * here, so that's not a big lift. But it _is_ possible to configure LDAP to only login, and *not* to be
+             * able to import lists of users. In that case, this function *will not work* - and you should use the
+             * legacy 'findAndBindUserLdap' method, below. Otherwise, it looks like this would attempt an anonymous
+             * bind - which you might want, but you probably don't.
+             *
+             **/
+            $admin_conn = self::connectToLdap();
+            self::bindAdminToLdap($admin_conn);
+            $results = ldap_search($admin_conn, $baseDn, $filterQuery);
+            $entry_count = ldap_count_entries($admin_conn, $results);
+            if ($entry_count != 1) {
+                throw new \Exception('Wrong number of entries found: ' . $entry_count);
+            }
+            $entry = ldap_first_entry($admin_conn, $results);
+            $user = ldap_get_attributes($admin_conn, $entry);
+            $userDn = ldap_get_dn($admin_conn, $entry);
+            if (!$userDn) {
+                throw new \Exception("No user DN found");
+            }
+            \Log::debug("FOUND DN IS: $userDn");
+            // The temptation now is to do ldap_unbind on the $admin_conn, but that gets handled in the 'finally' below.
+            // I don't know if that means a separate 'connection' is maintained to the LDAP server or not, and would
+            // definitely prefer to not do that if we can avoid it. But I don't know enough about the LDAP protocol to
+            // be certain that that happens.
+
+            //now we try to log in (bind) as that found user
+            $connection = self::connectToLdap();
+            $bind_results = ldap_bind($connection, $userDn, $password);
+            if (!$bind_results) {
+                throw new \Exception("Unable to bind as user");
+            }
+            return array_change_key_case($user);
+        } catch (\Exception $e) {
+            \Log::debug("Exception on fast find-and-bind: " . $e->getMessage());
+            if ($slow_failure) {
+                sleep($slow_failure);
+            }
+            return false; //TODO - make this null instead for a slightly nicer type signature
+        } finally {
+            if ($admin_conn) {
+                ldap_unbind($admin_conn);
+            }
+            if ($connection) {
+                ldap_unbind($connection);
+            }
+        }
+    }
+
 
     /**
      * Binds/authenticates the user to LDAP, and returns their attributes.
@@ -147,60 +219,27 @@ class Ldap extends Model
 
         Log::debug('Filter query: '.$filterQuery);
 
+        // only try this if we have an Admin username set; otherwise use the 'legacy' method
+        if (($settings->ldap_uname) && ($baseDn)) {
+            // in the fallowing call, we pick a slow-failure of 0 because we might need to fall through to 'legacy'
+            $fast_bind = self::findAndBindMultiOU($baseDn, $filterQuery, $password, 0);
+            if ($fast_bind) {
+                \Log::debug("Fast bind worked");
+                return $fast_bind;
+            }
+            \Log::debug("Fast bind failed; falling through to legacy bind");
+        }
+
         if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
             Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
-	    try {
-			self::bindAdminToLdap($connection);
-			
-            if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
-                throw new Exception('Could not search LDAP: ');
+            // replicate the old bad-decryption-key detection behavior here
+            try {
+                Crypt::decrypt(Setting::getSettings()->ldap_pword);
+            } catch (\Exception $e) {
+                throw new \Exception('Your app key has changed! Could not decrypt LDAP password using your current app key, so LDAP authentication has been disabled. Login with a local account, update the LDAP password and re-enable it in Admin > Settings.');
             }
-
-            if (! $entry = ldap_first_entry($connection, $results)) {
-                return false;
-            }
-    
-            if (! $user = ldap_get_attributes($connection, $entry)) {
-                return false;
-			}
-
-            $userDn = 'cn='.$user["cn"][0].','.$settings->ldap_basedn;
-
-            if (! $ldapbind = @ldap_bind($connection, $userDn, $password)) {
-                Log::debug("Status of binding user: $userDn to directory: (directly!) ".($ldapbind ? "success" : "FAILURE"));
-            }
-
-            if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
-                throw new Exception('Could not search LDAP: ');
-            }
-    
-            if (! $entry = ldap_first_entry($connection, $results)) {
-                return false;
-            }
-    
-            if (! $user = ldap_get_attributes($connection, $entry)) {
-                return false;
-            }
-    
-            return array_change_key_case($user);
-		}
-		catch (Exception $e) {
-                /*
-                 * TODO PLEASE:
-                 *
-                 * this isn't very clear, so it's important to note: the $ldapbind value is never correctly returned - we never 'return true' from self::bindAdminToLdap() (the function
-                 * just "falls off the end" without ever explictly returning 'true')
-                 *
-                 * but it *does* have an interesting side-effect of checking for the LDAP password being incorrectly encrypted with the wrong APP_KEY, so I'm leaving it in for now.
-                 *
-                 * If it *did* correctly return 'true' on a succesful bind, it would _probably_ allow users to log in with an incorrect password. Which would be horrible!
-                 *
-                 * Let's definitely fix this at the next refactor!!!!
-                 *
-                 */
-                Log::debug("Status of binding Admin user: $userDn to directory instead: ".($ldapbind ? "success" : "FAILURE"));
-                return false;
-            }
+            //regardless of anything else; stuff isn't working. Return false.
+            return false;
         }
 
         if (! $results = ldap_search($connection, $baseDn, $filterQuery)) {
@@ -381,9 +420,9 @@ class Ldap extends Model
             // if a $count is set and it's smaller than $page_size then use that as the page size
             $ldap_controls = [];
             //if($count == -1) { //count is -1 means we have to employ paging to query the entire directory
-                $ldap_controls = [['oid' => LDAP_CONTROL_PAGEDRESULTS, 'iscritical' => false, 'value' => ['size'=> $count == -1||$count>$page_size ? $page_size : $count, 'cookie' => $cookie]]];
+            $ldap_controls = [['oid' => LDAP_CONTROL_PAGEDRESULTS, 'iscritical' => false, 'value' => ['size'=> $count == -1||$count>$page_size ? $page_size : $count, 'cookie' => $cookie]]];
             //}
-            $search_results = ldap_search($ldapconn, $base_dn, $filter, [], 0, /* $page_size */ -1, -1, LDAP_DEREF_NEVER, $ldap_controls); // TODO - I hate the @, and I hate that we get a full page even if we ask for 10 records. Can we use an ldap_control?
+            $search_results = ldap_search($ldapconn, $base_dn, $filter, $attributes, 0, /* $page_size */ -1, -1, LDAP_DEREF_NEVER, $ldap_controls); // TODO - I hate the @, and I hate that we get a full page even if we ask for 10 records. Can we use an ldap_control?
             Log::debug("LDAP search executed successfully.");
             if (! $search_results) {
                 return redirect()->route('users.index')->with('error', trans('admin/users/message.error.ldap_could_not_search').ldap_error($ldapconn)); // TODO this is never called in any routed context - only from the Artisan command. So this redirect will never work.

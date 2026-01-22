@@ -49,6 +49,30 @@ class CheckoutAcceptance extends Model
         };
     }
     /**
+     * Accessor for the checkoutable item's category name.
+     *
+     * @return Attribute
+     */
+    protected function checkoutableCategoryName(): Attribute
+    {
+        return Attribute::make(
+            get: function () {
+                $item = $this->checkoutable;
+
+                if ($item instanceof Asset) {
+
+                    return $item->model?->category?->name;
+                }
+                if ($item instanceof LicenseSeat) {
+
+                    return $item->license?->category?->name;
+                }
+
+                return $item->category?->name;
+            },
+        );
+    }
+    /**
      * The resource that was is out
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
@@ -61,7 +85,7 @@ class CheckoutAcceptance extends Model
     /**
      * The user that the checkoutable was checked out to
      *
-     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function assignedTo()
     {
@@ -162,6 +186,10 @@ class CheckoutAcceptance extends Model
         );
     }
 
+    protected function scopeHasFiles(Builder $query) {
+        return $query->whereNotNull('signature_filename')->orWhereNotNull('stored_eula_file');
+    }
+
     public function generateAcceptancePdf($data, $pdf_filename) {
 
         // set some language dependent data:
@@ -184,12 +212,17 @@ class CheckoutAcceptance extends Model
 
         $pdf->AddPage();
         if ($data['logo'] != null) {
-            $pdf->writeHTML('<img src="'.$data['logo'].'">', true, 0, true, 0, '');
+            $pdf->writeHTML('<img src="@'.$data['logo'].'">', true, 0, true, 0, '');
         } else {
             $pdf->writeHTML('<h3>'.$data['site_name'].'</h3><br /><br />', true, 0, true, 0, 'C');
         }
 
         $pdf->Ln();
+
+        // Check for CJK in the translation string for date. (This is a good proxy for the rest of the document)
+        Helper::hasRtl(trans('general.date')) ? $pdf->setRTL(true) : $pdf->setRTL(false);
+        Helper::isCjk(trans('general.date')) ? $pdf->SetFont('cid0cs', '', 9) : $pdf->SetFont('dejavusans', '', 8, '', true);
+
         $pdf->writeHTML(trans('general.date') . ': ' . Helper::getFormattedDateObject(now(), 'datetime', false), true, 0, true, 0, '');
 
         if ($data['company_name'] != null) {
@@ -210,7 +243,10 @@ class CheckoutAcceptance extends Model
         if (($data['qty'] != null) && ($data['qty'] > 1)) {
             $pdf->writeHTML(trans('general.qty').': '.e($data['qty']), true, 0, true, 0, '');
         }
-        $pdf->writeHTML(trans('general.assignee').': '.e($data['assigned_to']), true, 0, true, 0, '');
+        $pdf->writeHTML(trans('general.assignee').': '.e($data['assigned_to']) . ($data['employee_num'] ? ' ('.$data['employee_num'].')' : ''), true, 0, true, 0, '');
+        if ($data['email'] != null) {
+            $pdf->writeHTML(trans('general.email').': '.e($data['email']), true, 0, true, 0, '');
+        }
         $pdf->Ln();
         $pdf->writeHTML('<hr>', true, 0, true, 0, '');
 
@@ -221,7 +257,6 @@ class CheckoutAcceptance extends Model
         foreach ($eula_lines as $eula_line) {
             Helper::hasRtl($eula_line) ? $pdf->setRTL(true) : $pdf->setRTL(false);
             Helper::isCjk($eula_line) ? $pdf->SetFont('cid0cs', '', 9) : $pdf->SetFont('dejavusans', '', 8, '', true);
-
             $pdf->writeHTML(Helper::parseEscapedMarkedown($eula_line), true, 0, true, 0, '');
         }
         $pdf->Ln();
@@ -230,14 +265,17 @@ class CheckoutAcceptance extends Model
         $pdf->Ln();
 
         if ($data['signature'] != null) {
-            $pdf->writeHTML('<img src="'.$data['signature'].'">', true, 0, true, 0, '');
+            $pdf->writeHTML('<img src="@'.$data['signature'].'">', true, 0, true, 0, '');
             $pdf->writeHTML('<hr>', true, 0, true, 0, '');
             $pdf->writeHTML(e($data['assigned_to']), true, 0, true, 0, 'C');
             $pdf->Ln();
         }
 
+        Helper::hasRtl(trans('general.notes')) ? $pdf->setRTL(true) : $pdf->setRTL(false);
+        Helper::isCjk(trans('general.notes')) ? $pdf->SetFont('cid0cs', '', 9) : $pdf->SetFont('dejavusans', '', 8, '', true);
+
         if ($data['note'] != null) {
-            Helper::isCjk($data['note']) ? $pdf->SetFont('cid0cs', '', 9) : $pdf->SetFont('dejavusans', '', 8, '', true);
+            Helper::isCjk(trans('general.notes')) ? $pdf->SetFont('cid0cs', '', 9) : $pdf->SetFont('dejavusans', '', 8, '', true);
             $pdf->writeHTML(trans('general.notes') . ': ' . e($data['note']), true, 0, true, 0, '');
             $pdf->Ln();
         }

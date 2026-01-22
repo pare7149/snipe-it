@@ -59,6 +59,7 @@ class LocationsController extends Controller
             'state',
             'updated_at',
             'zip',
+            'tag_color',
             'notes',
             ];
 
@@ -81,6 +82,8 @@ class LocationsController extends Controller
             'locations.ldap_ou',
             'locations.currency',
             'locations.company_id',
+            'locations.tag_color',
+            'locations.tag_color',
             'locations.notes',
             'locations.created_by',
             'locations.deleted_at',
@@ -96,11 +99,9 @@ class LocationsController extends Controller
             ->withCount('components as components_count')
             ->with('adminuser');
 
-
         // Only scope locations if the setting is enabled
         if (Setting::getSettings()->scope_locations_fmcs) {
-            $company_id = auth()->user()->company_id;
-            $locations ->where("locations.company_id", "=", $company_id);
+            $locations = Company::scopeCompanyables($locations);
         }
 
         if ($request->filled('search')) {
@@ -145,6 +146,10 @@ class LocationsController extends Controller
 
         if ($request->input('status') == 'deleted') {
             $locations->onlyTrashed();
+        }
+
+        if ($request->filled('tag_color')) {
+            $locations->where('tag_color', '=', $request->input('locations.tag_color'));
         }
 
         // Make sure the offset and limit are actually integers and do not exceed system limits
@@ -195,7 +200,7 @@ class LocationsController extends Controller
 
         // Only scope location if the setting is enabled
         if (Setting::getSettings()->scope_locations_fmcs) {
-            $location->company_id = Company::getIdForCurrentUser($request->get('company_id'));
+            $location->company_id = Company::getIdForCurrentUser($request->input('company_id'));
             // check if parent is set and has a different company
             if ($location->parent_id && Location::find($location->parent_id)->company_id != $location->company_id) {
                 response()->json(Helper::formatStandardApiResponse('error', null, 'different company than parent'));
@@ -237,6 +242,7 @@ class LocationsController extends Controller
                 'locations.currency',
                 'locations.company_id',
                 'locations.notes',
+                'locations.tag_color',
             ])
             ->withCount('assignedAssets as assigned_assets_count')
             ->withCount('assets as assets_count')
@@ -272,13 +278,13 @@ class LocationsController extends Controller
         if ($request->filled('company_id')) {
             // Only scope location if the setting is enabled
             if (Setting::getSettings()->scope_locations_fmcs) {
-                $location->company_id = Company::getIdForCurrentUser($request->get('company_id'));
+                $location->company_id = Company::getIdForCurrentUser($request->input('company_id'));
                 // check if there are related objects with different company
                 if (Helper::test_locations_fmcs(false, $id, $location->company_id)) {
                     return response()->json(Helper::formatStandardApiResponse('error', null, 'error scoped locations'));
                 }                
             } else {
-                $location->company_id = $request->get('company_id');
+                $location->company_id = $request->input('company_id');
             }
         }
 
@@ -404,6 +410,7 @@ class LocationsController extends Controller
             'locations.name',
             'locations.parent_id',
             'locations.image',
+            'locations.tag_color',
         ]);
 
         // Only scope locations if the setting is enabled

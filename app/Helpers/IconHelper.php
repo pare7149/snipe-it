@@ -40,10 +40,14 @@ class IconHelper
                 return 'fa-solid fa-trash-arrow-up';
             case 'external-link':
                 return 'fa fa-external-link';
+            case 'link':
+                return 'fa fa-link';
             case 'email':
                 return 'fa-regular fa-envelope';
             case 'phone':
                 return 'fa-solid fa-phone';
+            case 'fax':
+                return 'fa-solid fa-fax';
             case 'mobile':
                 return 'fas fa-mobile-screen-button';
             case 'long-arrow-right':
@@ -195,6 +199,10 @@ class IconHelper
             case 'note':
             case 'notes':
                 return 'fas fa-sticky-note';
+            case 'tip':
+                return 'fa-solid fa-lightbulb';
+            case 'highlight':
+                return 'fa-solid fa-highlighter';
         }
     }
 }

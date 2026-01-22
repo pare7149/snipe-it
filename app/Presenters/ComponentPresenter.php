@@ -131,7 +131,7 @@ class ComponentPresenter extends Presenter
                 'class' => 'text-right',
             ], [
                 'field' => 'total_cost',
-                'searchable' => true,
+                'searchable' => false,
                 'sortable' => true,
                 'title' => trans('general.total_cost'),
                 'footerFormatter' => 'sumFormatterQuantity',
@@ -206,6 +206,6 @@ class ComponentPresenter extends Presenter
      */
     public function viewUrl()
     {
-        return route('accessories.show', $this->id);
+        return route('components.show', $this->id);
     }
 }

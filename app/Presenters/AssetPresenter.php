@@ -152,6 +152,13 @@ class AssetPresenter extends Presenter
                 'title' => trans('general.purchase_date'),
                 'formatter' => 'dateDisplayFormatter',
             ], [
+                'field' => 'first_checkout',
+                'searchable' => true,
+                'sortable' => true,
+                'visible' => false,
+                'title' => trans('general.first_checkout'),
+                'formatter' => 'dateDisplayFormatter',
+            ], [
                 'field' => 'age',
                 'searchable' => false,
                 'sortable' => false,
@@ -519,7 +526,7 @@ class AssetPresenter extends Presenter
 
         // Asset tag
         if ($this->asset_tag) {
-            $str .= ' ('.$this->model->asset_tag.')';
+            $str .= ' #'.$this->model->asset_tag;
         }
 
         // Asset Model name

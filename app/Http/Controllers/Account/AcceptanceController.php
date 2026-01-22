@@ -13,9 +13,9 @@ use App\Models\Company;
 use App\Models\Contracts\Acceptable;
 use App\Models\Setting;
 use App\Models\User;
-use App\Notifications\AcceptanceAssetAcceptedNotification;
-use App\Notifications\AcceptanceAssetAcceptedToUserNotification;
-use App\Notifications\AcceptanceAssetDeclinedNotification;
+use App\Notifications\AcceptanceItemAcceptedNotification;
+use App\Notifications\AcceptanceItemAcceptedToUserNotification;
+use App\Notifications\AcceptanceItemDeclinedNotification;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -77,7 +77,6 @@ class AcceptanceController extends Controller
         $acceptance = CheckoutAcceptance::find($id);
         $assigned_user = User::find($acceptance->assigned_to_id);
         $settings = Setting::getSettings();
-        $path_logo = '';
         $sig_filename='';
 
 
@@ -117,8 +116,6 @@ class AcceptanceController extends Controller
 
         $item = $acceptance->checkoutable_type::find($acceptance->checkoutable_id);
 
-
-
         // If signatures are required, make sure we have one
         if (Setting::getSettings()->require_accept_signature == '1') {
 
@@ -138,10 +135,17 @@ class AcceptanceController extends Controller
         }
 
 
+        // Convert PDF logo to base64 for TCPDF
+        // This is needed for TCPDF to properly embed the image if it's a png and the cache isn't writable
+        $encoded_logo = null;
+        if (($settings->acceptance_pdf_logo) && (Storage::disk('public')->exists($settings->acceptance_pdf_logo))) {
+            $encoded_logo = base64_encode(file_get_contents(public_path() . '/uploads/' . $settings->acceptance_pdf_logo));
+        }
+
         // Get the data array ready for the notifications and PDF generation
         $data = [
             'item_tag' => $item->asset_tag,
-            'item_name' => $item->name, // this handles licenses seats, which don't have a 'name' field
+            'item_name' => $item->display_name, // this handles licenses seats, which don't have a 'name' field
             'item_model' => $item->model?->name,
             'item_serial' => $item->serial,
             'item_status' => $item->assetstatus?->name,
@@ -151,15 +155,15 @@ class AcceptanceController extends Controller
             'accepted_date' => Helper::getFormattedDateObject(now()->format('Y-m-d H:i:s'), 'datetime', false),
             'declined_date' => Helper::getFormattedDateObject(now()->format('Y-m-d H:i:s'), 'datetime', false),
             'assigned_to' => $assigned_user->display_name,
+            'email' => $assigned_user->email,
+            'employee_num' => $assigned_user->employee_num,
             'site_name' => $settings->site_name,
             'company_name' => $item->company?->name?? $settings->site_name,
-            'signature' => ($sig_filename) ? storage_path() . '/private_uploads/signatures/' . $sig_filename : null,
-            'logo' => ($settings->acceptance_pdf_logo) ? public_path() . '/uploads/' . $settings->acceptance_pdf_logo : null,
+            'signature' => (($sig_filename && array_key_exists('1', $encoded_image))) ? $encoded_image[1] : null,
+            'logo' => ($encoded_logo) ?? null,
             'date_settings' => $settings->date_display_format,
-            'admin' => auth()->user()->present()?->fullName,
             'qty' => $acceptance->qty ?? 1,
         ];
-
 
         if ($request->input('asset_acceptance') == 'accepted') {
 
@@ -179,13 +183,13 @@ class AcceptanceController extends Controller
                 // Add the attachment for the signing user into the $data array
                 $data['file'] = $pdf_filename;
                 try {
-                    $assigned_user->notify((new AcceptanceAssetAcceptedToUserNotification($data))->locale($assigned_user->locale));
+                    $assigned_user->notify((new AcceptanceItemAcceptedToUserNotification($data))->locale($assigned_user->locale));
                 } catch (\Exception $e) {
                     Log::warning($e);
                 }
             }
             try {
-                $acceptance->notify((new AcceptanceAssetAcceptedNotification($data))->locale(Setting::getSettings()->locale));
+                $acceptance->notify((new AcceptanceItemAcceptedNotification($data))->locale(Setting::getSettings()->locale));
             } catch (\Exception $e) {
                 Log::warning($e);
             }
@@ -200,7 +204,7 @@ class AcceptanceController extends Controller
                 $acceptance->decline($sig_filename, $request->input('note'));
             }
 
-            $acceptance->notify(new AcceptanceAssetDeclinedNotification($data));
+            $acceptance->notify(new AcceptanceItemDeclinedNotification($data));
             Log::debug('New event acceptance.');
             event(new CheckoutDeclined($acceptance));
             $return_msg = trans('admin/users/message.declined');
@@ -212,7 +216,7 @@ class AcceptanceController extends Controller
             try {
                 $recipient = User::find($acceptance->alert_on_response_id);
 
-                if ($recipient) {
+                if ($recipient?->email) {
                     Log::debug('Attempting to send email acceptance.');
                     Mail::to($recipient)->send(new CheckoutAcceptanceResponseMail(
                         $acceptance,

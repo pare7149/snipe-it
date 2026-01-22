@@ -2,73 +2,38 @@
 
 namespace App\Models\Labels\Sheets\Avery;
 
+use App\Helpers\Helper;
 
 class L6009_A extends L6009
 {
-    private const BARCODE_MARGIN =   1.80;
-    private const TAG_SIZE       =   4.80;
-    private const TITLE_SIZE     =   3.00;
-    private const TITLE_MARGIN   =   1.80;
-    private const LABEL_SIZE     =   2.8;
-    private const LABEL_MARGIN   = - 0.45;
-    private const FIELD_SIZE     =   3.80;
-    private const FIELD_MARGIN   =   0.20;
+    private const BARCODE_MARGIN = 1.80;
+    private const TAG_SIZE       = 4.80;
+    private const TITLE_SIZE     = 3.00;
+    private const TITLE_MARGIN   = 1.80;
+    private const LABEL_SIZE     = 2.8;
+    private const LABEL_MARGIN   = -0.45;
+    private const FIELD_SIZE     = 3.80;
+    private const FIELD_MARGIN   = 0.20;
 
-    public function getUnit()
-    {
-        return 'mm';
-    }
+    public function getUnit() { return 'mm'; }
 
-    public function getLabelMarginTop()
-    {
-        return 0.06;
-    }
-    public function getLabelMarginBottom()
-    {
-        return 0.06;
-    }
-    public function getLabelMarginLeft()
-    {
-        return 0.06;
-    }
-    public function getLabelMarginRight()
-    {
-        return 0.06;
-    }
+    public function getLabelMarginTop()    { return 0.06; }
+    public function getLabelMarginBottom() { return 0.06; }
+    public function getLabelMarginLeft()   { return 0.06; }
+    public function getLabelMarginRight()  { return 0.06; }
 
-    public function getSupportAssetTag()
-    {
-        return true;
-    }
-    public function getSupport1DBarcode()
-    {
-        return false;
-    }
-    public function getSupport2DBarcode()
-    {
-        return true;
-    }
-    public function getSupportFields()
-    {
-        return 4;
-    }
-    public function getSupportLogo()
-    {
-        return false;
-    }
-    public function getSupportTitle()
-    {
-        return true;
-    }
+    public function getSupportAssetTag() { return true; }
+    public function getSupport1DBarcode() { return false; }
+    public function getSupport2DBarcode() { return true; }
+    public function getSupportFields() { return 4; }
+    public function getSupportLogo() { return false; }
+    public function getSupportTitle() { return false; }
 
-    public function preparePDF($pdf)
-    {
-    }
+    public function preparePDF($pdf) {}
 
     public function write($pdf, $record)
     {
         $pa = $this->getLabelPrintableArea();
-
         $currentX = $pa->x1;
         $currentY = $pa->y1;
         $usableWidth = $pa->w;
@@ -81,10 +46,11 @@ class L6009_A extends L6009
                 'freesans', '', self::TITLE_SIZE, 'C',
                 $pa->w, self::TITLE_SIZE, true, 0
             );
-
         }
-            $currentY += self::TITLE_SIZE + self::TITLE_MARGIN;
-            $usableHeight -= self::TITLE_SIZE + self::TITLE_MARGIN;
+
+        $currentY += self::TITLE_SIZE + self::TITLE_MARGIN;
+        $usableHeight -= self::TITLE_SIZE + self::TITLE_MARGIN;
+
         $barcodeSize = $usableHeight;
         if ($record->has('barcode2d')) {
             static::write2DBarcode(
@@ -95,27 +61,39 @@ class L6009_A extends L6009
             $currentX += $barcodeSize + self::BARCODE_MARGIN;
             $usableWidth -= $barcodeSize + self::BARCODE_MARGIN;
         }
+        $fields = $record->get('fields');
 
-        foreach ($record->get('fields') as $field) {
+        $field_layout = Helper::labelFieldLayoutScaling(
+            pdf: $pdf,
+            fields: $fields,
+            currentX: $currentX,
+            usableWidth: $usableWidth,
+            usableHeight: $usableHeight,
+            baseLabelSize: self::LABEL_SIZE,
+            baseFieldSize: self::FIELD_SIZE,
+            baseFieldMargin: self::FIELD_MARGIN,
+            baseLabelPadding: 1.5,
+            baseGap: 1.5,
+            maxScale: 1.8,
+            labelFont: 'freesans',
+        );
+        foreach ($fields as $field) {
             static::writeText(
                 $pdf, $field['label'],
                 $currentX, $currentY,
-                'freesans', '', self::LABEL_SIZE, 'L',
-                $usableWidth, self::LABEL_SIZE, true, 0
+                'freesans', '', $field_layout['labelSize'], 'L',
+                $field_layout['labelWidth'], $field_layout['rowAdvance'], true, 0
             );
-            $currentY += self::LABEL_SIZE + self::LABEL_MARGIN;
 
             static::writeText(
                 $pdf, $field['value'],
-                $currentX, $currentY,
-                'freemono', 'B', self::FIELD_SIZE, 'L',
-                $usableWidth, self::FIELD_SIZE, true, 0, 0.01
+                $field_layout['valueX'], $currentY,
+                'freemono', 'B', $field_layout['fieldSize'], 'L',
+                $field_layout['valueWidth'], $field_layout['rowAdvance'], true, 0, 0.01
             );
-            $currentY += self::FIELD_SIZE + self::FIELD_MARGIN;
+            $currentY += $field_layout['rowAdvance'];
         }
-
     }
 }
-
 
 ?>
