@@ -36,7 +36,7 @@ class Component extends SnipeModel
      * Category validation rules
      */
     public $rules = [
-        'name'           => 'required|min:3|max:191',
+        'name'           => 'required|max:191',
         'qty'            => 'required|integer|min:1',
         'category_id'    => 'required|integer|exists:categories,id',
         'supplier_id'    => 'nullable|integer|exists:suppliers,id',
@@ -109,6 +109,18 @@ class Component extends SnipeModel
         'supplier'     => ['name'],
         'manufacturer' => ['name'],
     ];
+
+    public static function booted()
+    {
+        static::saving(function ($model) {
+            // We use 'sum_unconstrained_assets' as a 'cache' of the count of the sum of unconstrained assets, but
+            // Eloquent will gladly try to save the value of that attribute in the case where we populate it ourselves.
+            // But when it gets populated by 'withSum()' - it seems to work fine due to some Eloquent magic I am not
+            // aware of. During a save, the quantity may have changed or other aspects may have changed, so
+            // "invalidating the 'cache'" seems like a fair choice here.
+            unset($model->sum_unconstrained_assets);
+        });
+    }
 
 
     public function isDeletable()
@@ -238,14 +250,28 @@ class Component extends SnipeModel
      * @since  [v5.0]
      * @return int
      */
-    public function numCheckedOut()
+    public function numCheckedOut(bool $recalculate = false)
     {
-        $checkedout = 0;
+        /**
+         *
+         * WARNING: This method caches the result, so if you're doing something
+         * that is going to change the number of checked-out items, make sure to pass
+         * 'true' as the first parameter to force this to recalculate the number of checked-out
+         * items!!!!!
+         *
+         */
 
         // In case there are elements checked out to assets that belong to a different company
         // than this asset and full multiple company support is on we'll remove the global scope,
         // so they are included in the count.
-        return $this->uncontrainedAssets->sum('pivot.assigned_qty');
+        if (is_null($this->sum_unconstrained_assets) || $recalculate) {
+            // This, in a components-listing context, is mostly important for when it sets a 'zero' which
+            // is *not* null - so we don't have to keep recalculating for un-checked-out components
+            // NOTE: doing this will add a 'pseudo-attribute' to the component in question, so we need to _remove_ this
+            // before we save - so that gets handled in the 'saving' callback defined in the 'booted' method, above.
+            $this->sum_unconstrained_assets = $this->uncontrainedAssets()->sum('assigned_qty') ?? 0;
+        }
+        return $this->sum_unconstrained_assets;
     }
 
 

@@ -21,7 +21,7 @@
         <h2 class="box-title">{{ trans('admin/custom_fields/general.fieldsets') }}</h2>
         <div class="box-tools pull-right">
           @can('create', \App\Models\CustomFieldset::class)
-          <a href="{{ route('fieldsets.create') }}" class="btn btn-sm btn-primary" data-tooltip="true" title="{{ trans('admin/custom_fields/general.create_fieldset_title') }}">{{ trans('admin/custom_fields/general.create_fieldset') }}</a>
+          <a href="{{ route('fieldsets.create') }}" class="btn btn-sm btn-theme" data-tooltip="true" title="{{ trans('admin/custom_fields/general.create_fieldset_title') }}">{{ trans('admin/custom_fields/general.create_fieldset') }}</a>
           @endcan
         </div>
       </div><!-- /.box-header -->
@@ -32,6 +32,7 @@
                 data-id-table="customFieldsetsTable"
                 data-side-pagination="client"
                 data-sort-order="asc"
+                data-show-refresh="false"
                 data-sort-name="name"
                 data-advanced-search="false"
                 id="customFieldsetTable"
@@ -115,7 +116,7 @@
         <h2 class="box-title">{{ trans('admin/custom_fields/general.custom_fields') }}</h2>
         <div class="box-tools pull-right">
           @can('create', \App\Models\CustomField::class)
-          <a href="{{ route('fields.create') }}" class="btn btn-sm btn-primary" data-tooltip="true" title="{{ trans('admin/custom_fields/general.create_field_title') }}">{{ trans('admin/custom_fields/general.create_field') }}</a>
+          <a href="{{ route('fields.create') }}" class="btn btn-sm btn-theme" data-tooltip="true" title="{{ trans('admin/custom_fields/general.create_field_title') }}">{{ trans('admin/custom_fields/general.create_field') }}</a>
           @endcan
         </div>
 
@@ -128,6 +129,7 @@
                 data-side-pagination="client"
                 data-sort-order="asc"
                 data-sort-name="name"
+                data-show-refresh="false"
                 id="customFieldsTable"
                 data-advanced-search="false"
                 data-buttons="customFieldButtons"

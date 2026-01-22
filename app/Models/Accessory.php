@@ -61,7 +61,7 @@ class Accessory extends SnipeModel
      * Accessory validation rules
      */
     public $rules = [
-        'name'              => 'required|min:3|max:255',
+        'name'              => 'required|max:255',
         'qty'               => 'required|integer|min:1',
         'category_id'       => 'required|integer|exists:categories,id',
         'company_id'        => 'integer|nullable',
@@ -243,6 +243,19 @@ class Accessory extends SnipeModel
     public function checkouts()
     {
         return $this->hasMany(\App\Models\AccessoryCheckout::class, 'accessory_id')
+            ->with('assignedTo');
+    }
+
+    /**
+     * Establishes the accessory -> users relationship
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @since  [v3.0]
+     * @return \Illuminate\Database\Eloquent\Relations\Relation
+     */
+    public function users()
+    {
+        return $this->belongsToMany(\App\Models\AccessoryCheckout::class, 'accessories_checkout')
             ->with('assignedTo');
     }
 

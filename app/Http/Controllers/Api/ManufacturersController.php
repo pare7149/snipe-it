@@ -78,9 +78,15 @@ class ManufacturersController extends Controller
             $manufacturers->onlyTrashed();
         }
 
+        if ($request->input('status') == 'deleted') {
+            $manufacturers->onlyTrashed();
+        }
+
         if ($request->filled('search')) {
             $manufacturers = $manufacturers->TextSearch($request->input('search'));
         }
+
+
 
         if ($request->filled('name')) {
             $manufacturers->where('name', '=', $request->input('name'));
@@ -268,7 +274,7 @@ class ManufacturersController extends Controller
         ]);
 
         if ($request->filled('search')) {
-            $manufacturers = $manufacturers->where('name', 'LIKE', '%'.$request->get('search').'%');
+            $manufacturers = $manufacturers->where('name', 'LIKE', '%'.$request->input('search').'%');
         }
 
         $manufacturers = $manufacturers->orderBy('name', 'ASC')->paginate(50);

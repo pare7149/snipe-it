@@ -11,10 +11,6 @@
 @parent
 @stop
 
-@section('header_right')
-<a href="{{ URL::previous() }}" class="btn btn-primary pull-right">
-  {{ trans('general.back') }}</a>
-@stop
 
 {{-- Page content --}}
 @section('content')
@@ -24,12 +20,22 @@
       padding-top: 0px;
     }
 
-    input[type='text'][disabled], input[disabled], textarea[disabled], input[readonly], textarea[readonly], .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-      background-color: white;
-      color: #555555;
-      cursor:text;
+    input[type='text'][disabled],
+    input[disabled],
+    textarea[disabled],
+    input[readonly],
+    textarea[readonly],
+    .form-control[disabled],
+    .form-control[readonly],
+    fieldset[disabled]
+     {
+        cursor:text !important;
+        background-color: var(--table-stripe-bg) !important;
+        color: var(--color-fg) !important;
     }
-
+    input:required, select:required {
+        border-right: 5px solid orange !important;
+    }
 
 </style>
 
@@ -148,7 +154,7 @@
                   <div class="col-md-1 pull-left">
 
                     @if (Gate::allows('editableOnDemo') && (Gate::allows('canEditAuthFields', $user)) && ($user->ldap_import!='1'))
-                      <a href="#" class="text-left btn btn-default btn-sm" id="genPassword" data-tooltip="true" title="{{ trans('admin/users/general.generate_password') }}">
+                      <a href="#" class="text-left btn btn-theme btn-sm" id="genPassword" data-tooltip="true" title="{{ trans('admin/users/general.generate_password') }}">
                           <i class="fa-solid fa-wand-magic-sparkles"></i>
                       </a>
                     @endif
@@ -594,6 +600,7 @@
                                                <div class="controls">
                                                 <select
                                                         name="groups[]"
+                                                        size="{{ ($groups->count() > 25) ? '25' : '10' }}"
                                                         aria-label="groups[]"
                                                         id="groups[]"
                                                         multiple="multiple"

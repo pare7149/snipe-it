@@ -23,7 +23,7 @@ class Supplier extends SnipeModel
     protected $table = 'suppliers';
 
     protected $rules = [
-        'name'               => 'required|min:1|max:255|unique_undeleted',
+        'name'               => 'required|max:255|unique_undeleted',
         'fax'               => 'min:7|max:35|nullable',
         'phone'             => 'min:7|max:35|nullable',
         'contact'           => 'max:100|nullable',
@@ -35,7 +35,7 @@ class Supplier extends SnipeModel
         'state'              => 'min:2|max:191|nullable',
         'country'            => 'min:2|max:191|nullable',
         'zip'               => 'max:10|nullable',
-        'url'               => 'sometimes|nullable|string|max:250',
+        'url'               => 'sometimes|url|nullable|string|max:250',
     ];
 
     /**

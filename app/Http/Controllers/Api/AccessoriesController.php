@@ -326,7 +326,14 @@ class AccessoriesController extends Controller
         }
 
         // Set this value to be able to pass the qty through to the event
-        event(new CheckoutableCheckedOut($accessory, $target, auth()->user(), $request->input('note')));
+        event(new CheckoutableCheckedOut(
+            $accessory,
+            $target,
+            auth()->user(),
+            $request->input('note'),
+            [],
+            $accessory->checkout_qty,
+        ));
 
         return response()->json(Helper::formatStandardApiResponse('success', $payload, trans('admin/accessories/message.checkout.success')));
 
@@ -390,7 +397,7 @@ class AccessoriesController extends Controller
         ]);
 
         if ($request->filled('search')) {
-            $accessories = $accessories->where('accessories.name', 'LIKE', '%'.$request->get('search').'%');
+            $accessories = $accessories->where('accessories.name', 'LIKE', '%'.$request->input('search').'%');
         }
 
         $accessories = $accessories->orderBy('name', 'ASC')->paginate(50);
