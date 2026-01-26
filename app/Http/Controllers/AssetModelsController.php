@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
 use App\Http\Requests\ImageUploadRequest;
-
+use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
