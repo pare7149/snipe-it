@@ -5,7 +5,25 @@ namespace App\Http\Controllers;
 use App\Helpers\Helper;
 use App\Http\Requests\ImageUploadRequest;
 use Illuminate\View\View;
+use App\Models\AssetsModel;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Helpers\Helper;
+use App\Http\Requests\ImageUploadRequest;
+use App\Http\Requests\StoreAssetModelRequest;
+use App\Models\Actionlog;
+use App\Models\AssetModel;
+use App\Models\CustomField;
+use App\Models\SnipeModel;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+use \Illuminate\Contracts\View\View;
+use \Illuminate\Http\RedirectResponse;
+use Illuminate\Support\MessageBag;
 
 /**
  * This class controls all actions related to asset models for
