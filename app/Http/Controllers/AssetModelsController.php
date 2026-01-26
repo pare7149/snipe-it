@@ -135,6 +135,70 @@ class AssetModelsController extends Controller
         $model->defaultValues()->detach();
     }
 
+
+    /**
+     * Returns true if a fieldset is set, 'add default values' is ticked and if
+     * any default values were entered into the form.
+     *
+     * @param  array  $input
+     */
+    private function shouldAddDefaultValues(array $input) : bool
+    {
+        return ! empty($input['add_default_values'])
+            && ! empty($input['default_values'])
+            && ! empty($input['fieldset_id']);
+    }
+
+    /**
+     * Adds default values to a model (as long as they are truthy)
+     *
+     * @param  AssetModel $model
+     * @param  array      $defaultValues
+     */
+    private function assignCustomFieldsDefaultValues(AssetModel|SnipeModel $model, array $defaultValues): bool
+    {
+        $data = array();
+        foreach ($defaultValues as $customFieldId => $defaultValue) {
+            $customField = CustomField::find($customFieldId);
+
+            $data[$customField->db_column] = $defaultValue;
+        }
+
+        $allRules = $model->fieldset->validation_rules();
+        $rules = array();
+
+        foreach ($allRules as $field => $validation) {
+            // If the field is marked as required, eliminate the rule so it doesn't interfere with the default values
+            // (we are at model level, the rule still applies when creating a new asset using this model)
+            $index = array_search('required', $validation);
+            if ($index !== false){
+                $validation[$index] = 'nullable';
+            }
+            $rules[$field] = $validation;
+        }
+
+        $attributes = [];
+        foreach ($model->fieldset->fields as $field) {
+            $attributes[$field->db_column] = trim(preg_replace('/_+|snipeit|\d+/', ' ', $field->db_column));
+        }
+
+        $validator = Validator::make($data, $rules)->setAttributeNames($attributes);
+
+        if($validator->fails()){
+            $this->validatorErrors = $validator->errors();
+            return false;
+        }
+
+        foreach ($defaultValues as $customFieldId => $defaultValue) {
+            if(is_array($defaultValue)){
+                $model->defaultValues()->attach($customFieldId, ['default_value' => implode(', ', $defaultValue)]);
+            }elseif ($defaultValue) {
+                $model->defaultValues()->attach($customFieldId, ['default_value' => $defaultValue]);
+            }
+        }
+        return true;
+    }
+
     /**
      * Validates and processes form data from the edit
      * Asset Model form based on the model ID passed.
