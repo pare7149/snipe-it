@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\Helper;
-use App\Http\Requests\ImageUploadRequest;
-use Illuminate\View\View;
-use App\Models\AssetsModel;
-use Symfony\Component\HttpFoundation\JsonResponse;
+
 use App\Helpers\Helper;
 use App\Http\Requests\ImageUploadRequest;
 use App\Http\Requests\StoreAssetModelRequest;
@@ -24,6 +20,7 @@ use Illuminate\Support\Facades\Log;
 use \Illuminate\Contracts\View\View;
 use \Illuminate\Http\RedirectResponse;
 use Illuminate\Support\MessageBag;
+
 
 /**
  * This class controls all actions related to asset models for
