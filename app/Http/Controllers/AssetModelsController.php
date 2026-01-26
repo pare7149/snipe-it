@@ -130,6 +130,11 @@ class AssetModelsController extends Controller
     }
 
 
+    private function removeCustomFieldsDefaultValues(AssetModel|SnipeModel $model): void
+    {
+        $model->defaultValues()->detach();
+    }
+
     /**
      * Validates and processes form data from the edit
      * Asset Model form based on the model ID passed.
