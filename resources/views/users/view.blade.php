@@ -954,6 +954,7 @@
                     "ignoreColumn": ["actions","image","change","checkbox","checkincheckout","delete","download","icon"]
                     }'>
             </table>
+          </div>
         </div><!-- /accessories-tab -->
 
         <div class="tab-pane" id="consumables">
