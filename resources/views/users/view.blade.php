@@ -953,40 +953,6 @@
                     "fileName": "export-accessory-{{ str_slug($user->username) }}-{{ date('Y-m-d') }}",
                     "ignoreColumn": ["actions","image","change","checkbox","checkincheckout","delete","download","icon"]
                     }'>
-              <thead>
-                <!--<tr>
-                    <th class="col-md-1">{{ trans('general.id') }}</th>
-                    <th class="col-md-4">{{ trans('general.name') }}</th>
-                    <th class="col-md-5" data-fieldname="note">{{ trans('general.notes') }}</th>
-                    <th class="col-md-1" data-footer-formatter="sumFormatter" data-fieldname="purchase_cost">{{ trans('general.purchase_cost') }}</th>
-                    <th class="col-md-1">Ausleihdatum</th>
-                    <th class="col-md-1">Rückgabedatum</th>
-                    <th class="col-md-1 hidden-print">{{ trans('general.action') }}</th>
-                </tr>
-              </thead>
-              <tbody>
-                  @foreach ($user->accessories as $accessory)
-                  <tr>
-                      <td>{{ $accessory->pivot->id }}</td>
-                      <td>{!! $accessory->present()->nameUrl() !!}</td>
-                      <td>{{ Helper::getFormattedDateObject($accessory->pivot->created_at, 'datetime',  false) }}</td>
-                      <td>{{ $accessory->pivot->note }}</td>
-                      <td>
-                      {!! Helper::formatCurrencyOutput($accessory->purchase_cost) !!}
-                      </td>
-                      <td>{{ App\Models\AccessoryCheckout::find($accessory->pivot->id)->created_at }}</td>
-                      <td>{{ App\Models\AccessoryCheckout::find($accessory->pivot->id)->expected_checkin }}</td>
-                    <td class="hidden-print">
-                      @can('checkin', $accessory)
-                        <a href="{{ route('accessories.checkin.show', array('accessoryID'=> $accessory->pivot->id, 'backto'=>'user')) }}" class="btn btn-primary btn-sm hidden-print">{{ trans('general.checkin') }}</a>
-                      @endcan
-                      @can('update', $accessory)
-                        <a target="_blank" href="{{ config('app.url') }}/accessories/{{ $accessory->pivot->id }}/update" class="btn btn-sm bg-orange ml-4" data-tooltip="true" title="{{ trans('general.checkin_tooltip') }}">{{ trans('general.update') }}</a>
-                      @endcan
-                    </td>
-                  </tr>
-                  @endforeach
-              </tbody>-->
             </table>
         </div><!-- /accessories-tab -->
 
