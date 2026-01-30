@@ -134,8 +134,6 @@
                             </div>
                         </div>
 
-                    </form>
-
                 </div> <!--./box-body-->
                 <div class="box-footer">
                     <a class="btn btn-link" href="{{ URL::previous() }}"> {{ trans('button.cancel') }}</a>
@@ -143,6 +141,7 @@
                         <x-icon type="checkmark"/> {{ trans('general.checkout') }}</button>
                 </div>
             </div>
+             </form>
         </div> <!--/.col-md-7-->
 
         <!-- right column -->
