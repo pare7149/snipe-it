@@ -53,6 +53,7 @@ class AccessoriesController extends Controller
                 'company_id',
                 'notes',
                 'checkouts_count',
+                'order_number',
                 'expected_checkin',
                 'qty',
                 // These are *relationships* so we wouldn't normally include them in this array,
@@ -90,6 +91,10 @@ class AccessoriesController extends Controller
 
         if ($request->filled('company_id')) {
             $accessories->where('accessories.company_id', '=', $request->input('company_id'));
+        }
+
+        if ($request->filled('order_number')) {
+            $accessories->where('accessories.order_number', '=', $request->input('order_number'));
         }
 
         if ($request->filled('category_id')) {

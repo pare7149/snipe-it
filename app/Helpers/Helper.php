@@ -775,11 +775,11 @@ class Helper
     public static function checkLowInventory()
     {
         $alert_threshold = \App\Models\Setting::getSettings()->alert_threshold;
-        $consumables = Consumable::withCount('consumableAssignments as consumable_assignments_count')->whereNotNull('min_amt')->get();
+        $consumables = Consumable::withCount('consumableAssignments as consumables_users_count')->whereNotNull('min_amt')->get();
         $accessories = Accessory::withCount('checkouts as checkouts_count')->whereNotNull('min_amt')->get();
-        $components = Component::whereNotNull('min_amt')->get();
-        $asset_models = AssetModel::where('min_amt', '>', 0)->get();
-        $licenses = License::where('min_amt', '>', 0)->get();
+        $components = Component::withCount('assets as sum_unconstrained_assets')->whereNotNull('min_amt')->get();
+        $asset_models = AssetModel::where('min_amt', '>', 0)->withCount(['availableAssets', 'assets'])->get();
+        $licenses = License::withCount('availCount as licenses_available')->where('min_amt', '>', 0)->get();
 
         $items_array = [];
         $all_count = 0;
@@ -844,8 +844,8 @@ class Helper
         foreach ($asset_models as $asset_model){
 
             $asset = new Asset();
-            $total_owned = $asset->where('model_id', '=', $asset_model->id)->count();
-            $avail = $asset->where('model_id', '=', $asset_model->id)->whereNull('assigned_to')->count();
+            $total_owned = $asset_model->assets_count; //requires the withCount() clause in the initial query!
+            $avail = $asset_model->available_assets_count; //requires the withCount() clause in the initial query!
 
             if ($avail <= ($asset_model->min_amt) + $alert_threshold) {
                 if ($avail > 0) {
@@ -1404,43 +1404,6 @@ class Helper
         }
 
 
-    /**
-     * Generic helper (largely used by livewire right now) that returns the font-awesome icon
-     * for the object type.
-     *
-     * @author A. Gianotto <snipe@snipe.net>
-     * @since 6.1.0
-     *
-     * @return string
-     */
-    public static function iconTypeByItem($item) {
-
-        switch ($item) {
-            case 'asset':
-                return 'fas fa-barcode';
-            case 'accessory':
-                return 'fas fa-keyboard';
-            case 'component':
-                return 'fas fa-hdd';
-            case 'consumable':
-                return 'fas fa-tint';
-            case 'license':
-                return 'far fa-save';
-            case 'location':
-                return 'fas fa-map-marker-alt';
-            case 'user':
-                return 'fas fa-user';
-            case 'supplier':
-                return 'fa-solid fa-store';
-            case 'manufacturer':
-                return 'fa-solid fa-building';
-            case 'category':
-                return 'fa-solid fa-table-columns';
-        }
-
-    }
-
-
      /*
      * This is a shorter way to see if the app is in demo mode.
      *
@@ -1583,20 +1546,6 @@ class Helper
                 'he-IL'
             ]) ? 'rtl' : 'ltr';
     }
-    public static function getAssetFirstCheckout($assetId) {
-
-        if (!$assetId) {
-            return null;
-        }
-        $first_checkout = Actionlog::where('item_id', $assetId)
-            ->where('item_type', Asset::class)
-            ->where('action_type', 'checkout')
-            ->oldest('created_at')
-            ->first();
-
-        return self::getFormattedDateObject($first_checkout?->created_at, 'datetime');
-    }
-
 
     static public function getRedirectOption($request, $id, $table, $item_id = null) : RedirectResponse
     {
