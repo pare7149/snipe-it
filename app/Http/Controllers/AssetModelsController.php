@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Helpers\Helper;
 use App\Http\Requests\ImageUploadRequest;
 use App\Http\Requests\StoreAssetModelRequest;
@@ -62,26 +61,28 @@ class AssetModelsController extends Controller
     }
 
     /**
-    * Validate and process the new Asset Model data.
-    *
-    * @author [A. Gianotto] [<snipe@snipe.net>]
-    * @since [v1.0]
-    * @return Redirect
-    */
-    public function store(ImageUploadRequest $request)
+     * Validate and process the new Asset Model data.
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @since [v1.0]
+     * @param ImageUploadRequest $request
+     */
+    public function store(StoreAssetModelRequest $request) : RedirectResponse
     {
         $this->authorize('create', AssetModel::class);
         $model = new AssetModel;
 
         $model->eol = $request->input('eol');
         $model->depreciation_id = $request->input('depreciation_id');
-        $model->name                = $request->input('name');
-        $model->model_number        = $request->input('model_number');
-        $model->manufacturer_id     = $request->input('manufacturer_id');
-        $model->category_id         = $request->input('category_id');
-        $model->notes               = $request->input('notes');
-        $model->user_id             = Auth::id();
-        $model->requestable         = Input::has('requestable');
+        $model->name = $request->input('name');
+        $model->model_number = $request->input('model_number');
+        $model->min_amt = $request->input('min_amt');
+        $model->manufacturer_id = $request->input('manufacturer_id');
+        $model->category_id = $request->input('category_id');
+        $model->notes = $request->input('notes');
+        $model->created_by = auth()->id();
+        $model->requestable = $request->has('requestable');
+        $model->require_serial = $request->input('require_serial', 0);
 
         if ($request->input('fieldset_id') != '') {
             $model->fieldset_id = $request->input('fieldset_id');
@@ -130,75 +131,6 @@ class AssetModelsController extends Controller
     }
 
 
-    private function removeCustomFieldsDefaultValues(AssetModel|SnipeModel $model): void
-    {
-        $model->defaultValues()->detach();
-    }
-
-
-    /**
-     * Returns true if a fieldset is set, 'add default values' is ticked and if
-     * any default values were entered into the form.
-     *
-     * @param  array  $input
-     */
-    private function shouldAddDefaultValues(array $input) : bool
-    {
-        return ! empty($input['add_default_values'])
-            && ! empty($input['default_values'])
-            && ! empty($input['fieldset_id']);
-    }
-
-    /**
-     * Adds default values to a model (as long as they are truthy)
-     *
-     * @param  AssetModel $model
-     * @param  array      $defaultValues
-     */
-    private function assignCustomFieldsDefaultValues(AssetModel|SnipeModel $model, array $defaultValues): bool
-    {
-        $data = array();
-        foreach ($defaultValues as $customFieldId => $defaultValue) {
-            $customField = CustomField::find($customFieldId);
-
-            $data[$customField->db_column] = $defaultValue;
-        }
-
-        $allRules = $model->fieldset->validation_rules();
-        $rules = array();
-
-        foreach ($allRules as $field => $validation) {
-            // If the field is marked as required, eliminate the rule so it doesn't interfere with the default values
-            // (we are at model level, the rule still applies when creating a new asset using this model)
-            $index = array_search('required', $validation);
-            if ($index !== false){
-                $validation[$index] = 'nullable';
-            }
-            $rules[$field] = $validation;
-        }
-
-        $attributes = [];
-        foreach ($model->fieldset->fields as $field) {
-            $attributes[$field->db_column] = trim(preg_replace('/_+|snipeit|\d+/', ' ', $field->db_column));
-        }
-
-        $validator = Validator::make($data, $rules)->setAttributeNames($attributes);
-
-        if($validator->fails()){
-            $this->validatorErrors = $validator->errors();
-            return false;
-        }
-
-        foreach ($defaultValues as $customFieldId => $defaultValue) {
-            if(is_array($defaultValue)){
-                $model->defaultValues()->attach($customFieldId, ['default_value' => implode(', ', $defaultValue)]);
-            }elseif ($defaultValue) {
-                $model->defaultValues()->attach($customFieldId, ['default_value' => $defaultValue]);
-            }
-        }
-        return true;
-    }
-
     /**
      * Validates and processes form data from the edit
      * Asset Model form based on the model ID passed.
@@ -237,15 +169,15 @@ class AssetModelsController extends Controller
             }
 
             if ($model->wasChanged('eol')) {
-                    if ($model->eol > 0) {
-                        $newEol = $model->eol; 
-                        $model->assets()->whereNotNull('purchase_date')->where('eol_explicit', false)
-                            ->update(['asset_eol_date' => DB::raw('DATE_ADD(purchase_date, INTERVAL ' . $newEol . ' MONTH)')]);
-                        } elseif ($model->eol == 0) {
-    						$model->assets()->whereNotNull('purchase_date')->where('eol_explicit', false)
-    							->update(['asset_eol_date' => DB::raw('null')]);
-					}
+                if ($model->eol > 0) {
+                    $newEol = $model->eol;
+                    $model->assets()->whereNotNull('purchase_date')->where('eol_explicit', false)
+                        ->update(['asset_eol_date' => DB::raw('DATE_ADD(purchase_date, INTERVAL ' . $newEol . ' MONTH)')]);
+                } elseif ($model->eol == 0) {
+                    $model->assets()->whereNotNull('purchase_date')->where('eol_explicit', false)
+                        ->update(['asset_eol_date' => DB::raw('null')]);
                 }
+            }
             return redirect()->route('models.index')->with('success', trans('admin/models/message.update.success'));
         }
 
@@ -253,20 +185,17 @@ class AssetModelsController extends Controller
     }
 
     /**
-    * Validate and delete the given Asset Model. An Asset Model
-    * cannot be deleted if there are associated assets.
-    *
-    * @author [A. Gianotto] [<snipe@snipe.net>]
-    * @since [v1.0]
-    * @param int $modelId
-    * @return Redirect
-    */
-    public function destroy($modelId)
+     * Validate and delete the given Asset Model. An Asset Model
+     * cannot be deleted if there are associated assets.
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @since [v1.0]
+     * @param int $modelId
+     */
+    public function destroy(AssetModel $model) : RedirectResponse
     {
-        // Check if the model exists
-        if (is_null($model = AssetModel::find($modelId))) {
-            return redirect()->route('models.index')->with('error', trans('admin/models/message.not_found'));
-        }
+        $this->authorize('delete', AssetModel::class);
+
 
         if ($model->assets()->count() > 0) {
             // Throw an error that this model is associated with assets
@@ -281,14 +210,13 @@ class AssetModelsController extends Controller
     }
 
     /**
-    * Restore a given Asset Model (mark as un-deleted)
-    *
-    * @author [A. Gianotto] [<snipe@snipe.net>]
-    * @since [v1.0]
-    * @param int $modelId
-    * @return Redirect
-    */
-    public function getRestore($modelId = null)
+     * Restore a given Asset Model (mark as un-deleted)
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @since [v1.0]
+     * @param int $id
+     */
+    public function getRestore($id) : RedirectResponse
     {
         $this->authorize('create', AssetModel::class);
 
@@ -400,7 +328,7 @@ class AssetModelsController extends Controller
 
                 return view('models/bulk-delete', compact('models'))->with('valid_count', $valid_count);
 
-            // Otherwise display the bulk edit screen
+                // Otherwise display the bulk edit screen
             } else {
                 $nochange = ['NC' => 'No Change'];
                 $fieldset_list = $nochange + Helper::customFieldsetList();
@@ -443,7 +371,7 @@ class AssetModelsController extends Controller
             $update_array['depreciation_id'] = $request->input('depreciation_id');
         }
 
-        
+
         if (count($update_array) > 0) {
             AssetModel::whereIn('id', $models_raw_array)->update($update_array);
 
@@ -453,7 +381,119 @@ class AssetModelsController extends Controller
 
         return redirect()->route('models.index')
             ->with('warning', trans('admin/models/message.bulkedit.error'));
-
     }
 
+    /**
+     * Validate and delete the given Asset Models. An Asset Model
+     * cannot be deleted if there are associated assets.
+     *
+     * @author [A. Gianotto] [<snipe@snipe.net>]
+     * @since [v1.0]
+     * @param int $modelId
+     */
+    public function postBulkDelete(Request $request) : RedirectResponse
+    {
+        $models_raw_array = $request->input('ids');
+
+        if ((is_array($models_raw_array)) && (count($models_raw_array) > 0)) {
+            $models = AssetModel::whereIn('id', $models_raw_array)->withCount('assets as assets_count')->get();
+
+            $del_error_count = 0;
+            $del_count = 0;
+
+            foreach ($models as $model) {
+
+                if ($model->assets_count > 0) {
+                    $del_error_count++;
+                } else {
+                    $model->delete();
+                    $del_count++;
+                }
+            }
+
+
+            if ($del_error_count == 0) {
+                return redirect()->route('models.index')
+                    ->with('success', trans('admin/models/message.bulkdelete.success', ['success_count'=> $del_count]));
+            }
+
+            return redirect()->route('models.index')
+                ->with('warning', trans('admin/models/message.bulkdelete.success_partial', ['fail_count'=>$del_error_count, 'success_count'=> $del_count]));
+        }
+
+        return redirect()->route('models.index')
+            ->with('error', trans('admin/models/message.bulkdelete.error'));
+    }
+
+    /**
+     * Returns true if a fieldset is set, 'add default values' is ticked and if
+     * any default values were entered into the form.
+     *
+     * @param  array  $input
+     */
+    private function shouldAddDefaultValues(array $input) : bool
+    {
+        return ! empty($input['add_default_values'])
+            && ! empty($input['default_values'])
+            && ! empty($input['fieldset_id']);
+    }
+
+    /**
+     * Adds default values to a model (as long as they are truthy)
+     *
+     * @param  AssetModel $model
+     * @param  array      $defaultValues
+     */
+    private function assignCustomFieldsDefaultValues(AssetModel|SnipeModel $model, array $defaultValues): bool
+    {
+        $data = array();
+        foreach ($defaultValues as $customFieldId => $defaultValue) {
+            $customField = CustomField::find($customFieldId);
+
+            $data[$customField->db_column] = $defaultValue;
+        }
+
+        $allRules = $model->fieldset->validation_rules();
+        $rules = array();
+
+        foreach ($allRules as $field => $validation) {
+            // If the field is marked as required, eliminate the rule so it doesn't interfere with the default values
+            // (we are at model level, the rule still applies when creating a new asset using this model)
+            $index = array_search('required', $validation);
+            if ($index !== false){
+                $validation[$index] = 'nullable';
+            }
+            $rules[$field] = $validation;
+        }
+
+        $attributes = [];
+        foreach ($model->fieldset->fields as $field) {
+            $attributes[$field->db_column] = trim(preg_replace('/_+|snipeit|\d+/', ' ', $field->db_column));
+        }
+
+        $validator = Validator::make($data, $rules)->setAttributeNames($attributes);
+
+        if($validator->fails()){
+            $this->validatorErrors = $validator->errors();
+            return false;
+        }
+
+        foreach ($defaultValues as $customFieldId => $defaultValue) {
+            if(is_array($defaultValue)){
+                $model->defaultValues()->attach($customFieldId, ['default_value' => implode(', ', $defaultValue)]);
+            }elseif ($defaultValue) {
+                $model->defaultValues()->attach($customFieldId, ['default_value' => $defaultValue]);
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Removes all default values
+     *
+     */
+    private function removeCustomFieldsDefaultValues(AssetModel|SnipeModel $model): void
+    {
+        $model->defaultValues()->detach();
+    }
 }

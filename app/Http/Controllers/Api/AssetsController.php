@@ -31,13 +31,13 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Models\RequestableAsset;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 
 /**
@@ -69,14 +69,14 @@ class AssetsController extends Controller
         $filter_non_deprecable_assets = false;
 
         /**
-         * This looks MAD janky (and it is), but the AssetsController@index does a LOT of heavy lifting throughout the 
-         * app. This bit here just makes sure that someone without permission to view assets doesn't 
-         * end up with priv escalations because they asked for a different endpoint. 
-         * 
-         * Since we never gave the specification for which transformer to use before, it should default 
-         * gracefully to just use the AssetTransformer by default, which shouldn't break anything. 
-         * 
-         * It was either this mess, or repeating ALL of the searching and sorting and filtering code, 
+         * This looks MAD janky (and it is), but the AssetsController@index does a LOT of heavy lifting throughout the
+         * app. This bit here just makes sure that someone without permission to view assets doesn't
+         * end up with priv escalations because they asked for a different endpoint.
+         *
+         * Since we never gave the specification for which transformer to use before, it should default
+         * gracefully to just use the AssetTransformer by default, which shouldn't break anything.
+         *
+         * It was either this mess, or repeating ALL of the searching and sorting and filtering code,
          * which would have been far worse of a mess. *sad face*  - snipe (Sept 1, 2021)
          */
         if (Route::currentRouteName()=='api.depreciation-report.index') {
@@ -209,7 +209,7 @@ class AssetsController extends Controller
          * Handle due and overdue audits and checkin dates
          */
         switch ($action) {
-                // Audit (singular) is left over from earlier legacy APIs
+            // Audit (singular) is left over from earlier legacy APIs
             case 'audits':
                 switch ($upcoming_status) {
                     case 'due':
@@ -334,7 +334,7 @@ class AssetsController extends Controller
         if ($request->input('requestable') == 'true') {
             $assets->where('assets.requestable', '=', '1');
         }
-        
+
         if ($request->filled('model_id')) {
             // If model_id is already an array, just use it as-is
             if (is_array($request->input('model_id'))) {
@@ -982,7 +982,7 @@ class AssetsController extends Controller
 
         // Set the location ID to the RTD location id if there is one
         // Wait, why are we doing this? This overrides the stuff we set further up, which makes no sense.
-        // TODO: Follow up here. WTF. Commented out for now. 
+        // TODO: Follow up here. WTF. Commented out for now.
 
 
         //        if ((isset($target->rtd_location_id)) && ($asset->rtd_location_id!='')) {
@@ -1159,7 +1159,7 @@ class AssetsController extends Controller
              * Update custom fields in the database.
              * Validation for these fields is handled through the AssetRequest form request
              * $model = AssetModel::find($request->input('model_id'));
-            */
+             */
             if (($asset->model) && ($asset->model->fieldset)) {
                 $payload['custom_fields'] = [];
                 foreach ($asset->model->fieldset->fields as $field) {
@@ -1211,7 +1211,7 @@ class AssetsController extends Controller
              * @see \App\Models\Asset::save()
              */
 
-             $asset->unsetEventDispatcher();
+            $asset->unsetEventDispatcher();
 
 
             /**
@@ -1259,7 +1259,7 @@ class AssetsController extends Controller
             $allowed_columns[] = $field->db_column_name();
         }
 
-        $assets = RequestableAsset::select('assets.*')
+        $assets = Asset::select('assets.*')
             ->with(
                 'location',
                 'assetstatus',
@@ -1371,9 +1371,9 @@ class AssetsController extends Controller
 
     /**
      * Generate asset labels by tag
-     * 
+     *
      * @author [Nebelkreis] [https://github.com/NebelKreis]
-     * 
+     *
      * @param Request $request Contains asset_tags array of asset tags to generate labels for
      * @return JsonResponse Returns base64 encoded PDF on success, error message on failure
      */
@@ -1382,17 +1382,17 @@ class AssetsController extends Controller
         try {
             $this->authorize('view', Asset::class);
 
-             // Validate that asset tags were provided in the request
+            // Validate that asset tags were provided in the request
             if (!$request->filled('asset_tags')) {
-                return response()->json(Helper::formatStandardApiResponse('error', null, 
+                return response()->json(Helper::formatStandardApiResponse('error', null,
                     trans('admin/hardware/message.no_assets_selected')), 400);
             }
 
-             // Convert asset tags from request into collection and fetch matching assets
+            // Convert asset tags from request into collection and fetch matching assets
             $asset_tags = collect($request->input('asset_tags'));
             $assets = Asset::whereIn('asset_tag', $asset_tags)->get();
 
-             // Return error if no assets were found for the provided tags
+            // Return error if no assets were found for the provided tags
             if ($assets->isEmpty()) {
                 return response()->json(Helper::formatStandardApiResponse('error', null,
                     trans('admin/hardware/message.does_not_exist')), 404);
@@ -1407,7 +1407,7 @@ class AssetsController extends Controller
 
 
                 $label = new Label();
-                
+
                 if (!$label) {
                     throw new \Exception('Label object could not be created');
                 }
@@ -1415,9 +1415,9 @@ class AssetsController extends Controller
                 // Configure label with assets and settings
                 // bulkedit=false and count=0 are default values for label generation
                 $label = $label->with('assets', $assets)
-                              ->with('settings', $settings)
-                              ->with('bulkedit', false)
-                              ->with('count', 0);
+                    ->with('settings', $settings)
+                    ->with('bulkedit', false)
+                    ->with('count', 0);
 
                 // Generate PDF using callback function
                 // The callback captures the PDF content in $pdf_content variable

@@ -1020,7 +1020,7 @@
 
                 return '<nobr>'+ tag_icon + ' <a href="{{ config('app.url') }}/' + polymorphicItemFormatterDest + dest + '/' + value.id + '">' + value.name + '</a></span>';
             }
-        };f
+        }
     }
 
 

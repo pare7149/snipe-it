@@ -446,8 +446,6 @@ return [
   */
 
     'escape_formulas' => env('CSV_ESCAPE_FORMULAS', true),
-
-    'make_users_available_to_all_comapnies' => env("USERS_AVAILABLE_TO_ALL_COMPANIES", false),
     
   /*
   |--------------------------------------------------------------------------

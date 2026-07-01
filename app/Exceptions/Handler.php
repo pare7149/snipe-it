@@ -45,14 +45,16 @@ class Handler extends ExceptionHandler
     public function report(Throwable $exception)
     {
         if ($this->shouldReport($exception)) {
-            //Log::error($exception);
+            if (class_exists(Log::class)) {
+                Log::error($exception);
+            }
             return parent::report($exception);
         }
     }
 
     /**
      * Render an exception into an HTTP response.
-     * 
+     *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Exception  $e
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
@@ -109,8 +111,8 @@ class Handler extends ExceptionHandler
                 // API throttle requests are handled in the RouteServiceProvider configureRateLimiting() method, so we don't need to handle them here
                 switch ($e->getStatusCode()) {
                     case '404':
-                       return response()->json(Helper::formatStandardApiResponse('error', null, $statusCode . ' endpoint not found'), 404);
-                     case '405':
+                        return response()->json(Helper::formatStandardApiResponse('error', null, $statusCode . ' endpoint not found'), 404);
+                    case '405':
                         return response()->json(Helper::formatStandardApiResponse('error', null, 'Method not allowed'), 405);
                     default:
                         return response()->json(Helper::formatStandardApiResponse('error', null, $statusCode), $statusCode);
@@ -134,7 +136,7 @@ class Handler extends ExceptionHandler
             $ids = method_exists($e, 'getIds') ? $e->getIds() : [];
 
             if (in_array('bulkedit', $ids, true)) {
-            $error_array = session()->get('bulk_asset_errors');
+                $error_array = session()->get('bulk_asset_errors');
                 return redirect()
                     ->route('hardware.index')
                     ->withErrors($error_array, 'bulk_asset_errors')
@@ -178,13 +180,13 @@ class Handler extends ExceptionHandler
 
     }
 
- /**
+    /**
      * Convert an authentication exception into an unauthenticated response.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Illuminate\Auth\AuthenticationException  $exception
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
-  */
+     */
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if ($request->expectsJson()) {
@@ -200,7 +202,7 @@ class Handler extends ExceptionHandler
     }
 
 
-    /** 
+    /**
      * A list of the inputs that are never flashed for validation exceptions.
      *
      * @var array
